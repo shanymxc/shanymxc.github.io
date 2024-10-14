@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Maven Maven内容 初识Maven Maven概述 Maven模型介绍 Maven仓库介绍 Maven安装与配置 IDEA集成Maven 依赖管理 01. Maven介绍 1.1 后端Web开发技术的学习，我们需要先了解Java项目的构建工具：Maven\n">
+<title>Maven详解与安装文档</title>
+
+<link rel='canonical' href='http://localhost:1313/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Maven详解与安装文档">
+<meta property='og:description' content="Maven Maven内容 初识Maven Maven概述 Maven模型介绍 Maven仓库介绍 Maven安装与配置 IDEA集成Maven 依赖管理 01. Maven介绍 1.1 后端Web开发技术的学习，我们需要先了解Java项目的构建工具：Maven\n">
+<meta property='og:url' content='http://localhost:1313/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/'>
+<meta property='og:site_name' content='山有木兮'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-13T23:08:04&#43;08:00'/><meta property='article:modified_time' content='2024-10-13T23:08:04&#43;08:00'/>
+<meta name="twitter:title" content="Maven详解与安装文档">
+<meta name="twitter:description" content="Maven Maven内容 初识Maven Maven概述 Maven模型介绍 Maven仓库介绍 Maven安装与配置 IDEA集成Maven 依赖管理 01. Maven介绍 1.1 后端Web开发技术的学习，我们需要先了解Java项目的构建工具：Maven\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12487634835597679327.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">山有木兮</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1338856997'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">  <image id="image0" width="512" height="512" x="0" y="0"
+    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAQAAABecRxxAAAAAmJLR0QA/4ePzL8AAAAHdElNRQfo
+CggQHR6ggvEOAAAYeUlEQVR42u3de7xVZZ3H8e+5cAe5iQIaFwkwEs2XV0DkpqlReUUbb0ViZjb1
+KsucZsbXZDo1TWWZmjnapKhckiy10sRTgkZahKWgCMkl6YBwPMgd5Jw1f5yXI+A5uC/r9/zW2s/n
+vf/zJc/6/Z7zPN+99tpr7y0BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJBNVd4FZEh7DdNQ9VFXNWmbXtUy
+vaJm76KQgv4aqoPVQ9ImNWiZVvN3xZ4G6iv6nbYr2efRqId1hXp7l4cSddMlmqX6Vv+uV+kg7/KQ
+BZP0mJrfsUT2fOzUdB3pXSaKNEw/0rb9/l3f1Byd4F0mPA3To/tdIm8/mnWP+nqXiwL11Pe1u8C/
+7MM6zLtceKjSNdpV4CJpebyuc7yLRgE+pNeK+rtu06e9S0ZoXfRIUYvkrcd3VO1dOvajSje+ywu6
+1h8z1dG7dITTS38oafsnSjRDtd7low01+nHJf9ffqbt3+Qijs54ueZkkSvSA2nm3gFbUaHpZf9cn
+OQuIQZUeKmuZJEr0U84CMqdWM8r+u870bgL2ri57mXAWkD3lPvu/9bjSuxHYGq6dqSwUzgKyJI1n
+/5bHNt4UrGyPpbRQiIDsSG/7J0r0c+92YOfkFBcKLwSyIa2T/7cfo71bgpXS3vvf32M2ZwGu0n32
+b3n8zLsp2Ohf8O2hnAXkQ43uNfiL7tbB3o3BwhcNFgtnAX4snv1bHp/1bg0W0rwAyFmAN5tn/5bH
+I97NIX212my2YDgLCM3u2T9Roo2q8W4QaRtquGA4CwjL8tm/5THYu0WkbbLxkuEsIJRazTT/W57m
+3WQo8Xy49UDzI0zRTM4CzNXoJ7rA/Ch9vNsMJZ4A6BrgGOfqPs4CTNXqPl0U4DjdvBsNJZ4ACPM9
+sJwFWArz7C+FWi0ZEE8AbA50HM4CrIR69pekLd7NhhJPANQHOxJnARbCPftL0hrvdpG2Q82vHO/5
++CkRkCr7N/72fhzi3TDSVqW1QZfQLF4IpCbEG397Ptbxi1mVaHbQRcRZQFpCP/snmu3dMixcGngZ
+cRaQhtDP/okSfdy7aVjopq1EQM54bP/tOsC7bdj4UfDFRASUw2P7J7rTu21Yea/JV4IQATZ8tn+T
+hns3Dju3OiwpLgeWIvylv5bHj7wbh6WeWueyrDgLKI7Ps3+iDQE+NAZXp6uJs4CM83r2b9aZ3q3D
+3vUui4uzgELVapbTX+i/vFtHCFW602mB8VMi787r2T/RjIg+GRO59H9MgghIh9/2f0QdvJtHOERA
+FrH9EQwRkDVsfwRFBGQJ2x/BEQFZwfaHCyIgC2p0n9NfYQ53Z8SOCPDG9ocrIsB39tn+cEYE+M08
+2x8ZQAT4zDrbHxlBBISfcbY/MoQICDvbbH9kDBEQbqa9tj8/4479IALCzDLbHxlFBNjPMNsfGUYE
+2M4u2x8Z53dneqVHANsfuUAE2Mwq2x85QQSkP6Nsf+QIEZDubHptf76PGSUiAtKbSbY/cogISGcW
+2f7IKb8ImF0hEcD2R64RAeXNHtsfOUcElD5zfts/3zOHTCECSps1tj8qBBFQ/Iyx/VFBiIDiZovt
+jwpDBBQ+U2x/VCC/hZ2nCGD7o2IRAcwQosYCZ3YQNRY5M4OosdBbn5X7mRXEgQh454yw/RERImDv
+2WD7IzJEwNszwfZHhIiAllnw2v6zMjQLiBIRwPbPsSrvAgz01HAN0kANVF/1Vm/1VgdVqYd3WciV
+jUq0Uw1qUIPqtVortVIvq9G7rLRVTgD00WidoKM0Uu/xLgUVa7We11/1By3Qeu9S0pH/AOihU3S6
+xmqYdyGIylLN16Oaqze8CylPngPgUE3RWRrN60C42a2n9aAe0BrvQkqVzwDooQt1oUap2rsQQFKz
+ntYM3Z/Hs4H8BcBofUpT1Nm7DGAf2zRbd2iBdxnFyVMAVGuy/kWjvMsA9mORvqf7tdu7jELlJQDa
+a5qu0UDvMoACrNC3dJfe9C6jEHkIgFpdqOs0xLsMoAirdaN+nP0zgewHwCm6SUd4FwGUYKmu1i+9
+i9i/bAfAcN2kM7yLAMrwiL6oZd5FtK3Gu4A21erLmqXDvcsAyjJMl6udfq8m70Jal9UzgON1p0Z6
+FwGk5C+6TAu9i2hNFs8AanSNpqu/dxlAavrqk6rRfCXehewre2cAg3SvxngXARiYp0u02ruIvWUt
+AE7XferlXQRgpEEX6jfeRewpSy8BqvQV3aUu3mUAZjrrQlVrXnZeCmTnDKCj7tb53kUAAczQVO30
+LqJFVgKgl36usd5FAIEs0JnZ+EqRbATAIP1GQ72LAAJaqg9m4YJgFgJgmObyNV6Izmqd4n+PoP9X
+ahyhJ9n+iNAAzdP7vYvwPgMYqnnq6z0JgJP1GqcXPQvwDYABmsdn/BG1NRqrFX6H9wyAfnpagx2P
+D2TB3zRG67wO7ncNoLMeZPsDGqJf+t3+5hUANbpfJ3g1DWTKMZrldU+u163A39ZUpyMD2TNMHTXX
+48A+AfAxfcfluEBWjdaLWhz+sB4XAUdqAR/5AfaxRSeGj4DwAdBRf+RLPoFWLNGx2h72kOFfAtys
+ycGPCeRBH3XTo2EPGfoM4MN6yP3uQyCrEk3Wr0MeMOxm7K7FOiToEYF8qdcIbQx3uLAvAW7R+KDH
+A/Kmm7qH/DGRkGcAE/QEp//Au2jWeM0PdbBwG7JWi7j6DxRgiY4K9auC4W4F/gzbHyjICF0e6lCh
+zgB6apl6h2oKyLnXNUwNIQ4U6iLgDZoU6EhA/nVSEuazAWHOAPppuToHORJQGbZqSIhvCQhzBvBN
+fuwLKEp71egx+8OEOAPor1fUIcBx2rJer2qjtmurYw3Il67qrG56j/o41rBdg+3PAWoDNPJZl+2/
+VvP0lBZoecj7qlBhemq4jtF4jdeBwY/dSVfpOu8JKF8XNSgJ+linH+ikDHzhOSpHtUbp1uAreUMl
+XDm7KuiU/UWfcH25gUrWXpdocdD1fKV3y+V7PthkLdM53s2i4lXrXC0Ntqaf8263XKMCTdQ2fUnt
+vZtFJDro37Qt0Mo+3rvZ8vw4yCQ9q8O9G0Vk3quFQdb2Hd6NlqOTNgeYopuDvJcB7K2Dbgmwujfm
++ZrWeebT86b+2btJRGyq3jRf42d6N1m62cZTs1NnebeIyJ1pfjXgPu8WS9VJW0wnZoc+4t0ioI8Y
+nwVsyuuLgNNNp6VZF3k3CEiSLlaz6VrP6Sdpv286Kdd7twf8v+tN1/q3vdsrjeXtEr/k2wWRITWq
+M1ztL3i3V4pDDSdkvfp6twfspZ/WGa74g63KtvvIzGizkaVPa63h6EDx6nW14ehm36dhFwB2XwFS
+pzlmYwOlule/NRs7h1+o86zRydBuHendGtCqkWoyWvULvFsrVo3Z7RG5vS0CEXjAaNVvzdv3W4ww
+uxxytHdrQJs+YHZHwDCbgq1yZaTRuHVaZDQyUL7n9KTRyEY7yioARhiN+79G4wLpuMdoXKMdZRUA
+g0xG3aGHjOoF0jFH20zGHWRTbr4C4FfaZFQvkI5Netxk3ME25VoFgE25TxhVC6TH5m6AXAVAldGt
+ulYXWID02DxN9bf59IvNR2p6qNFg1Eb1VmJSL5CeKjWqu8G43S1eANucAdj8ispStj9yINHLJuP2
+thjUJgB6mYy63GRUIG0vmYyaowDoYjLqKyajAmmzWakmu8omAGy+w8ziugKQPps3q01++MYmAGx+
+o2ezyahA2mwCwORp1SYA2pmMusVkVCBtNis1RwFgM2qzyahA2ppMRjXZVTn7lDGANBEAQMQIACBi
+BAAQMQIAiBgBAESMAAAiRgAAESMAgIgRAEDECAAgYgQAEDECAIgYAQBEjAAAIkYAABEjAICIEQBA
+xAgAIGIEABAxAgCIGAEARIwAACJGAAARIwCAiBEAQMQIACBiBAAQMQIAiBgBAESs1ruACtNbQ9VV
+PbVVW7VKq/lJ8xRUa6AGqIu6qFFbtEwN3gVVEgIgHX11ribpJPXZ67/u0J9Up1/oz97l5dSx+qgm
+6hh13Ou/rtd8PaE5WuddHtoyRYnBY4p3W20Yr0e0e7+Vv6Ar1MG7zFzpoCu1eL9z+qYe1sneZbYh
+rvUf9QQcqScLrP5VXaQq73JzoUqXak2Bs1qnI7zLbUWO1j8XAUtXqxu0sOBnoUN0rx5Xf++iM+8Q
+PaG7C56nCfqzvqYa76LziwAoVR/V6V+LvIYySYs0zrvwTJugRZpQ1L9op+s0V729C88rAqA0AzVf
+Y0v4dwfpMZ3jXXxmnatf73MZtTDj9ZQGeBefTwRAKfroNxpe4r/toNk627uBTPqIZpZ8qfRw1amv
+dwN5RAAUr5Me07Ay/n2N7tUx3k1kzvGaVdab0kP08D5vF6IABEDxbtbRZY7QWXPUy7uNTOmhmepU
+5hjH6rvebeQPAVCsyZqWwigD9d/ejWTK9zQ4hVGu1GnejeQNAVCcTro5pZGmapR3M5kxVpemNNIP
+uOGqOARAcabpsJRGqtIN3s1kxo2p3SI1VFO9m8kXAqAYtfpSiqNN5BxAkjSmpDdU2/IVPt9SDAKg
+GKen/G7zZd4NZcLlqY42SKd4N5QnBEAxLkp5vCm8caVOqd8YdbF3S3lCABSuOvXnlgN4EaAx6pby
+iB/kQ1eFIwAKN1IHpj7meO+m3KX/2Yg+mfyEYEYRAIU70mDMkd5NuWNWXREAhSvn9t+2lPqJgsrB
+rLoiAApXyufU3s1B3k25s5gBi79UhSIACtfVYMy0L4DlD7PqigAoXHuDMblxlVl1RQAAESMAgIgR
+AEDECAAgYgQAEDECAIgYAQBEjAAAIkYAABEjAICIEQBAxAgAIGIEABAxAgCIGAEARIwAACJGAAAR
+IwCAiBEAQMQIACBiBAAQMQIAiBgBAESMAAAiRgAAESMAgIgRAEDECAAgYgQAEDECAIgYAQBEjAAA
+IkYAABEjAICIEQBAxAgAIGIEABAxAgCIGAEARIwAACJGAAARIwB8Jd4FuGMGXBEAhduWkzHzZbvB
+mFu9m8oPAqBwmw3G3OTdlDuLWbUYs0IRAIX7u8GYq72bcmcxq6u8m8oPAqBwSw3GfNm7KXfMqisC
+oHDP5mTMfPlj6iMmBmNWLAKgcPUGz1Z13k25S38Glmitd1P5QQAU4+cpj7dcL3q35O751E/Yf+Hd
+Up4QAMW4J/XxeBdcmpHyePd7N5QnBEAxlqR6wrpDd3k3lAm3p3ovwONa7N1QnhAAxbkxxbHu1D+8
+28mEtfpJiqN93budfCEAilOnh1IaqVHXezeTGV9TY0ojzdF872byhQAo1udTus/sGq33biUz1umr
+qYyzSV/wbiVvCIBirdS0FEZ5QHd6N5Ipt+tnKYxypcl9hRWNACjebN1U5gh/1WXeTWTOZXqhzBG+
+xfX/4hEApbha95bxr1/RGXwI6B026nStKOPf361rvVvIIwKgFIkuLfksYLHGcfW/VWs0Rs+V+G9v
+1Se5p6IUBEBpEn1Rn9POov/dTzVar3oXn1n1Gq85Rf+rnbpKn1Wzd/H5RACU7gcao0VF/P+v63Kd
+z8n/fr2h83RFUW8KLtQo3eZddn4RAOVYqON0ZUGf6d+hW3Q4V/4LcocO163aUcD/uUpX6PiiQhhB
+TFFi8Jji3VYb2usSzVVTm3Uv1b+rr3eRudNP12lZm3PapMd1sdp5F9mGHK3/Wu+5qgC7NF3TdZAm
+6CS9T0PUXT21RVu0Wkv1rOq0xLvAXKrX9bpe79dEHafhGqCu6qpGvaHleknz9Vtuo0oHAZCW1zRL
+s7yLqDiL+WiPLa4BABEjAICIEQBAxAgAIGIEABAxAgCIGAEARIwAACJGAAARIwCAiBEAQMQIACBi
+BAAQMQIAiBgBAESMAAAiRgAAESMAgIgRAEDECAAgYgQAEDECAIgYAQBEjAAAIkYAABEjAICIEQBA
+xAgAIGIEABAxAgCIGAEARIwAACJGAAARIwCAiBEAQMQIACBiBAAQMQIAiBgBAESMAAAiRgAAESMA
+gIgRAEDECAAgYgQAEDECAIgYAQBEjAAAIkYAABEjAICIEQBAxAgAIGI2AdCco1qBtOVoV9mU+qbJ
+qF1MRgXS1s1k1J0Wg9oEwC6TUbuajAqkLfoAMClVPU1GBdLWw2RUk6dVmwDYajLqYSajAmkbYjKq
+ya6yCYAGk1HfazIqkLZhJqNusBjUJgBMStX7VGUyLpCmag03GdfkadUmADaZvA/QUyNMqgXSNFIH
+GIy6S5stirUJgET1JuOONRkVSNM4k1HX2BRrdXPNSpNRTzWqFkjPJJNRV9oUm68A+JDJyRWQnh46
+zWTcFTblWgWATbkd9VGjeoF0nK0OJuPmLACWGI17mdG4QDo+aTSu1Y4ycrgSo8fx3q0BbTrObN3n
+7C6YGm0zmoj7vFsD2jTLaNVvzd9nYZ8xmoomHe3dGtCqY9RktOoXWJVslyu/N6v4u2Y1A+X4rtl+
+esqq5PwFgDReF5iNDZTqIp1sNrbdbjLT3+xySKJGHerdHrCXQ9Rgtt6bdZB3e6V4yTACfpW/iyKo
+YNV63HC1P29ZuJ1HDcc+Q183HB0ozjd1iuHov/ZurzSnGWZiomZd7N0gIEmaarrSE030brA0HbXZ
+dFp26SzvFgGdo12m6/wNtfdusVQzjJNxp870bhGRs97+iaZ7t1i6s42nJtFufc67SUTsU+bbP9GH
+vZssXUdtMp+eRLeonXejiFB73R5gdTcafbowkLsCTFGiv+oo70YRmRFaGGRt3+7daHlOCDJJibbr
+2nwnJXKko76qHYFW9rHezZbrL4EmKtHfdB7fGwxjVbpAK4Kt6UXe7ZbvM8EmK1GixZrGmQCMdNQ0
+LQ66nj/t3XL5umhD0ClLtEE/1DhuFUaKqjVOt+m1wCv5NXXybjwNNwSetrcmb44+rxPVy7t95Fgv
+najPa07wrd/y+A/7BkO8Zu6rFeoY4DhteV2rtElbjX6xEJWoi7qouwa4Pn1s0yCttz5IbYBG1uoO
+19t1enEWgBy6zX77hzkDkPrqb+oc5EhAZdiqw/Sa/WHCXCpbq1uDHAeoFDeH2P6hzgCknnpZBwY6
+FpB3r2mY3ghxoJpADe3QVk0OdCwg774Q6lsAw905V6NFGhnsaEB+Padj1RTmUOFul2nSVUqCHQ3I
+q2Z9JtT2D/cSQJJWq1/+P9oAGLtVd4Q7WNgPzxygxXyhN7Af/9CIMJf/WoS9Y36TPsXLAKBNiaaG
+3P5hXwJI0nIdyO/7Am24ST8Me8Dwn5/vqGd0ZPCjAtn3go7TjrCHDP+h2R06X5uCHxXIus06P/T2
+9wgAaak+zpUAYC+JpurF8IcNfQ2gxUvqojEuRway6Ru6xeOwXt+hV60HdLbTsYGseURnhbv5Z09+
+X6LZSXU60e3oQHb8SeO9vq7G81t0D9bTGuJ4fCALlumkMB/9bY3nV2eu0wStcjw+4O9VfdBv+/sG
+gPR3naq1rhUAntbrVK30LMD7y7OX6RTVO9cA+KjXBL3kW0IWfklnsObqMO8igMBW6VQt8y7C+wxA
+klZogpZ6FwEE9aJO8t/+2QgAabVG6UnvIoBgntbJetW7CCkrASA16jTN8C4CCGK6JmqDdxEtfG4F
+bk2TfqZGTcpQRUD6mvRVfdnnrr/WZOEi4J7GaZYO9i4CMLJB/6S53kXsKSsvAd7ypI7jagAqVJ0+
+kK3tn6WXAG/ZpLvVqIkZrAwo3W59XdOy900YWXsJ8JZjdJeO8i4CSMkiXaZF3kW0JqvPs/W6U69r
+rNp7FwKUabv+Ux/XGu8yWpfVAJCa9Yxma5CGexcClOFBnaUHs3PVf19ZfQnwtom6iS8RRS69pC/o
+Ue8i9i9r7wK8U52O1vlZuGkSKMJKXaEjsr7983AG0KKdPqFr+cgQcmG5vqF7tNu7jELkJQAkqVqT
+da1Ge5cB7MdC3az787H5pXwFQIsTdbkuUBfvMoB9bNEs/Y+e8S6jOPkLAEk6QB/ThRqbgysYiEGT
+5mmGZmqzdyHFy2cAtOin83S2xnCvANzs0lN6UA/k94vt8hwALbppkk7TyXpfBfSCvEi0RPP0qOq0
+xbuU8lTOpuml0TpRR2qkBnmXggqVaKWe1/P6g36v172LSUflBMDbDtAwDdJgDVA/9VZv9VYnST0q
+slfYSLRR0nY1qEENqtcqrdQKLcveh3kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAMiC/wP8pT1wp9ta5gAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0xMC0wOFQxNjoyOTozMCsw
+MDowMFFV+rgAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMTAtMDhUMTY6Mjk6MzArMDA6MDAgCEIE
+AAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI0LTEwLTA4VDE2OjI5OjMwKzAwOjAwdx1j2wAAAABJ
+RU5ErkJggg==" />
+</svg>
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#maven内容">Maven内容</a></li>
+    <li><a href="#01-maven介绍">01. Maven介绍</a>
+      <ol>
+        <li><a href="#11">1.1</a></li>
+        <li><a href="#12-初识maven">1.2 初识Maven</a>
+          <ol>
+            <li><a href="#121-什么是maven">1.2.1 什么是Maven</a></li>
+            <li><a href="#122-maven的作用">1.2.2 Maven的作用</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#02-maven概述">02. Maven概述</a>
+      <ol>
+        <li><a href="#21-maven介绍">2.1 Maven介绍</a></li>
+        <li><a href="#22-maven模型">2.2 Maven模型</a></li>
+        <li><a href="#23-maven仓库">2.3 Maven仓库</a></li>
+        <li><a href="#24-maven安装">2.4 Maven安装</a>
+          <ol>
+            <li><a href="#241-下载">2.4.1 下载</a></li>
+            <li><a href="#242-安装步骤">2.4.2 安装步骤</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#03-idea集成maven">03. IDEA集成Maven</a>
+      <ol>
+        <li><a href="#31-配置maven环境">3.1 配置Maven环境</a>
+          <ol>
+            <li><a href="#311-当前工程设置">3.1.1 当前工程设置</a></li>
+            <li><a href="#312-全局设置">3.1.2 全局设置</a></li>
+          </ol>
+        </li>
+        <li><a href="#32-maven项目">3.2 Maven项目</a>
+          <ol>
+            <li><a href="#321-创建maven项目">3.2.1 创建Maven项目</a></li>
+            <li><a href="#322-pom配置详解">3.2.2 POM配置详解</a></li>
+            <li><a href="#323-maven坐标详解">3.2.3 Maven坐标详解</a></li>
+          </ol>
+        </li>
+        <li><a href="#33-导入maven项目">3.3 导入Maven项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#04-依赖管理">04. 依赖管理</a>
+      <ol>
+        <li><a href="#41-依赖配置">4.1 依赖配置</a></li>
+        <li><a href="#42-依赖传递">4.2 依赖传递</a>
+          <ol>
+            <li><a href="#421-依赖具有传递性">4.2.1 依赖具有传递性</a></li>
+            <li><a href="#422-排除依赖">4.2.2 排除依赖</a></li>
+          </ol>
+        </li>
+        <li><a href="#43-依赖范围">4.3 依赖范围</a></li>
+        <li><a href="#44-生命周期">4.4 生命周期</a>
+          <ol>
+            <li><a href="#441-介绍">4.4.1 介绍</a></li>
+            <li><a href="#442-执行">4.4.2 执行</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#05-附录">05. 附录</a>
+      <ol>
+        <li><a href="#51-更新依赖索引">5.1 更新依赖索引</a></li>
+        <li><a href="#52-清理maven仓库">5.2 清理maven仓库</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">Maven详解与安装文档</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 13, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="maven">Maven
+</h1><h2 id="maven内容">Maven内容
+</h2><blockquote>
+<ol>
+<li>初识Maven</li>
+<li>Maven概述
+<ul>
+<li>Maven模型介绍</li>
+<li>Maven仓库介绍</li>
+<li>Maven安装与配置</li>
+</ul>
+</li>
+<li>IDEA集成Maven</li>
+<li>依赖管理</li>
+</ol>
+</blockquote>
+<h2 id="01-maven介绍">01. Maven介绍
+</h2><h3 id="11">1.1
+</h3><p>后端Web开发技术的学习，我们需要先了解Java项目的构建工具：Maven</p>
+<h3 id="12-初识maven">1.2 初识Maven
+</h3><h4 id="121-什么是maven">1.2.1 什么是Maven
+</h4><p>Maven是Apache旗下的一个开源项目，是一款用于管理和构建java项目的工具。</p>
+<p>官网：https://maven.apache.org/</p>
+<blockquote>
+<p>Apache 软件基金会，成立于1999年7月，是目前世界上最大的最受欢迎的开源软件基金会，也是一个专门为支持开源项目而生的非盈利性组织。</p>
+<p>开源项目：https://www.apache.org/index.html#projects-list</p>
+</blockquote>
+<h4 id="122-maven的作用">1.2.2 Maven的作用
+</h4><p>使用Maven能够做什么呢？</p>
+<ol>
+<li>依赖管理</li>
+<li>统一项目结构</li>
+<li>项目构建</li>
+</ol>
+<p><strong>依赖管理</strong>：</p>
+<ul>
+<li>方便快捷的管理项目依赖的资源(jar包)，避免版本冲突问题</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130104014162.png"
+	width="1159"
+	height="547"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130104014162_hu12156272795077339193.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130104014162_hu1039056425651848364.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130104014162"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="211"
+		data-flex-basis="508px"
+	
+></p>
+<p>当使用maven进行项目依赖(jar包)管理，则很方便的可以解决这个问题。 我们只需要在maven项目的pom.xml文件中，添加一段如下图所示的配置即可实现。</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616001159531.png"
+	width="625"
+	height="578"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616001159531_hu14366555062795626000.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616001159531_hu2499091970674060859.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616001159531"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="108"
+		data-flex-basis="259px"
+	
+></p>
+<p>**统一项目结构 : **</p>
+<ul>
+<li>提供标准、统一的项目结构</li>
+</ul>
+<p>在项目开发中，当你使用不同的开发工具 (如：Eclipse、Idea)，创建项目工程时：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130212841973.png"
+	width="1240"
+	height="287"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130212841973_hu7371524147320637908.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130212841973_hu10007184982432764462.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130212841973"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="432"
+		data-flex-basis="1036px"
+	
+></p>
+<p>若我们创建的是一个maven工程，是可以帮我们自动生成统一、标准的项目目录结构：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130220539444.png"
+	width="1100"
+	height="265"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130220539444_hu4488715832938026583.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130220539444_hu18262089765624855273.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130220539444"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="415"
+		data-flex-basis="996px"
+	
+></p>
+<p>具体的统一结构如下：</p>
+<img src="index.assets/image-20221130140132209.png" alt="image-20221130140132209" style="zoom:80%;" />
+<blockquote>
+<p>目录说明：</p>
+<ul>
+<li>src/main/java: java源代码目录</li>
+<li>src/main/resources:  配置文件信息</li>
+<li>src/test/java: 测试代码</li>
+<li>src/test/resources: 测试配置文件信息</li>
+</ul>
+</blockquote>
+<p><strong>项目构建 :</strong></p>
+<ul>
+<li>maven提供了标准的、跨平台(Linux、Windows、MacOS) 的自动化项目构建方式</li>
+</ul>
+<img src="index.assets/image-20221130140247524.png" alt="image-20221130140247524" style="zoom:67%;" />
+<p>如上图所示我们开发了一套系统，代码需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，而Maven提供了一套简单的命令来完成项目构建。</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130222907628.png"
+	width="1348"
+	height="813"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130222907628_hu16455852482796556521.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130222907628_hu9820935825894208176.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130222907628"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="165"
+		data-flex-basis="397px"
+	
+></p>
+<p>综上所述，可以得到一个结论：<strong>Maven是一款管理和构建java项目的工具</strong></p>
+<h2 id="02-maven概述">02. Maven概述
+</h2><h3 id="21-maven介绍">2.1 Maven介绍
+</h3><p>Apache Maven是一个项目管理和构建工具，它基于项目对象模型(Project Object Model , 简称: POM)的概念，通过一小段描述信息来管理项目的构建、报告和文档。</p>
+<p>官网：https://maven.apache.org/</p>
+<p>Maven的作用：</p>
+<ol>
+<li>方便的依赖管理</li>
+<li>统一的项目结构</li>
+<li>标准的项目构建流程</li>
+</ol>
+<h3 id="22-maven模型">2.2 Maven模型
+</h3><ul>
+<li>项目对象模型 (Project Object Model)</li>
+<li>依赖管理模型(Dependency)</li>
+<li>构建生命周期/阶段(Build lifecycle &amp; phases)</li>
+</ul>
+<p>1). 构建生命周期/阶段(Build lifecycle &amp; phases)</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142100703.png"
+	width="1239"
+	height="518"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142100703_hu12658166222031676331.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142100703_hu9851372755758230342.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130142100703"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="239"
+		data-flex-basis="574px"
+	
+></p>
+<p>以上图中紫色框起来的部分，就是用来完成标准化构建流程 。当我们需要编译，Maven提供了一个编译插件供我们使用；当我们需要打包，Maven就提供了一个打包插件供我们使用等。</p>
+<p>2). 项目对象模型 (Project Object Model)</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142643255.png"
+	width="1237"
+	height="517"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142643255_hu17754359131264178779.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142643255_hu620908792313838860.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130142643255"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="239"
+		data-flex-basis="574px"
+	
+></p>
+<p>以上图中紫色框起来的部分属于项目对象模型，就是将我们自己的项目抽象成一个对象模型，有自己专属的坐标，如下图所示是一个Maven项目：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616094113852.png"
+	width="1301"
+	height="349"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616094113852_hu10003062131401211805.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616094113852_hu18273172482879306077.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616094113852"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="372"
+		data-flex-basis="894px"
+	
+></p>
+<blockquote>
+<p>坐标，就是资源(jar包)的唯一标识，通过坐标可以定位到所需资源(jar包)位置</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130230134757.png"
+	width="1174"
+	height="494"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130230134757_hu11955080972065851756.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130230134757_hu2613949649193914062.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130230134757"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="237"
+		data-flex-basis="570px"
+	
+></p>
+</blockquote>
+<p>3). 依赖管理模型(Dependency)</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130143139644.png"
+	width="1239"
+	height="518"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130143139644_hu6016068718501296579.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130143139644_hu997176488108332925.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130143139644"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="239"
+		data-flex-basis="574px"
+	
+></p>
+<p>以上图中紫色框起来的部分属于依赖管理模型，是使用坐标来描述当前项目依赖哪些第三方jar包</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130174805973.png"
+	width="1190"
+	height="609"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130174805973_hu17044477162741124634.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130174805973_hu11461745355794951777.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130174805973"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="195"
+		data-flex-basis="468px"
+	
+></p>
+<p>之前我们项目中需要jar包时，直接就把jar包复制到项目下的lib目录，而现在书写在pom.xml文件中的坐标又是怎么能找到所要的jar包文件的呢？</p>
+<blockquote>
+<p>答案：Maven仓库</p>
+</blockquote>
+<h3 id="23-maven仓库">2.3 Maven仓库
+</h3><p>仓库：用于存储资源，管理各种jar包</p>
+<blockquote>
+<p>仓库的本质就是一个目录(文件夹)，这个目录被用来存储开发中所有依赖(就是jar包)和插件</p>
+</blockquote>
+<p>Maven仓库分为：</p>
+<ul>
+<li>本地仓库：自己计算机上的一个目录(用来存储jar包)</li>
+<li>中央仓库：由Maven团队维护的全球唯一的。仓库地址：https://repo1.maven.org/maven2/</li>
+<li>远程仓库(私服)：一般由公司团队搭建的私有仓库</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616095633552.png"
+	width="1213"
+	height="400"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616095633552_hu1075267486089295903.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616095633552_hu15111218451408224693.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616095633552"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="303"
+		data-flex-basis="727px"
+	
+></p>
+<p>当项目中使用坐标引入对应依赖jar包后，首先会查找本地仓库中是否有对应的jar包</p>
+<ul>
+<li>
+<p>如果有，则在项目直接引用</p>
+</li>
+<li>
+<p>如果没有，则去中央仓库中下载对应的jar包到本地仓库</p>
+</li>
+</ul>
+<p>如果还可以搭建远程仓库(私服)，将来jar包的查找顺序则变为： 本地仓库 &ndash;&gt; 远程仓库&ndash;&gt; 中央仓库</p>
+<h3 id="24-maven安装">2.4 Maven安装
+</h3><p>认识了Maven后，我们就要开始使用Maven了，那么首先我们要进行Maven的下载与安装。</p>
+<h4 id="241-下载">2.4.1 下载
+</h4><p>下载地址：https://maven.apache.org/download.cgi</p>
+<h4 id="242-安装步骤">2.4.2 安装步骤
+</h4><p>Maven安装配置步骤：</p>
+<ol>
+<li>解压安装</li>
+<li>配置仓库</li>
+<li>配置Maven环境变量</li>
+</ol>
+<p><strong>1、解压 apache-maven-3.6.1-bin.zip（解压即安装）</strong></p>
+<blockquote>
+<p>建议解压到没有中文、特殊字符的路径下。如课程中解压到 <code>E:\develop</code> 下。</p>
+</blockquote>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1-1669821012006.gif"
+	width="740"
+	height="468"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1-1669821012006_hu8634184752370829046.gif 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1-1669821012006_hu10207888402041110129.gif 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="158"
+		data-flex-basis="379px"
+	
+></p>
+<p>解压缩后的目录结构如下：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616100529868-1669794069698.png"
+	width="522"
+	height="283"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616100529868-1669794069698_hu9830295319109671990.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616100529868-1669794069698_hu14705934980195179573.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616100529868"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="442px"
+	
+></p>
+<ul>
+<li>bin目录 ： 存放的是可执行命令。（mvn 命令重点关注）</li>
+<li>conf目录 ：存放Maven的配置文件。（settings.xml配置文件后期需要修改）</li>
+<li>lib目录 ：存放Maven依赖的jar包。（Maven也是使用java开发的，所以它也依赖其他的jar包）</li>
+</ul>
+<p><strong>2、配置本地仓库</strong></p>
+<p>2.1、在自己计算机上新一个目录（本地仓库，用来存储jar包）</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130231857537.png"
+	width="379"
+	height="295"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130231857537_hu2154206711590422510.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130231857537_hu3473543801065150611.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130231857537"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="128"
+		data-flex-basis="308px"
+	
+></p>
+<p>2.2、进入到conf目录下修改settings.xml配置文件</p>
+<p>1). 使用超级记事本软件，打开settings.xml文件，定位到53行</p>
+<p>2). 复制<localRepository>标签，粘贴到注释的外面（55行）</p>
+<p>3). 复制之前新建的用来存储jar包的路径，替换掉<localRepository>标签体内容</p>
+<img src="index.assets/2.gif" style="zoom:80%;" />
+<p><strong>3、配置阿里云私服</strong></p>
+<p>由于中央仓库在国外，所以下载jar包速度可能比较慢，而阿里公司提供了一个远程仓库，里面基本也都有开源项目的jar包。</p>
+<p>进入到conf目录下修改settings.xml配置文件：</p>
+<p>1). 使用超级记事本软件，打开settings.xml文件，定位到160行左右</p>
+<p>2). 在<mirrors>标签下为其添加子标签<mirror>，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;mirror&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;id&gt;</span>alimaven<span class="nt">&lt;/id&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;name&gt;</span>aliyun maven<span class="nt">&lt;/name&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;url&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="nt">&lt;/url&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>          
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/mirror&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/3.gif"
+	width="1423"
+	height="702"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/3_hu13951812211882096831.gif 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/3_hu15802847228005318768.gif 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="202"
+		data-flex-basis="486px"
+	
+></p>
+<p>注意配置的位置，在<mirrors> &hellip; </mirrors> 中间添加配置。如下图所示：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130161346565.png"
+	width="1106"
+	height="642"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130161346565_hu4381531594903518887.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130161346565_hu13048029002406367545.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130161346565"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="172"
+		data-flex-basis="413px"
+	
+></p>
+<p>==注:  只可配置一个<mirror>(另一个要注释!) ，不然两个可能发生冲突，导致jar包无法下载!!!!!!!==</p>
+<p><strong>4、配置环境变量</strong></p>
+<blockquote>
+<p>Maven环境变量的配置类似于JDK环境变量配置一样</p>
+</blockquote>
+<p>1). 在系统变量处新建一个变量MAVEN_HOME</p>
+<ul>
+<li>MAVEN_HOME环境变量的值，设置为maven的解压安装目录</li>
+</ul>
+<img src="index.assets/image-20220616102344350.png" style="zoom:80%;" />
+<p>2). 在Path中进行配置</p>
+<ul>
+<li>PATH环境变量的值，设置为：%MAVEN_HOME%\bin</li>
+</ul>
+<img src="index.assets/image-20220616102435856.png" style="zoom:80%;" /> 
+<p>3). 打开DOS命令提示符进行验证，出现如图所示表示安装成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mvn -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616102554143.png"
+	width="1225"
+	height="397"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616102554143_hu8859167237444276864.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616102554143_hu13635359634879660771.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616102554143"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="308"
+		data-flex-basis="740px"
+	
+></p>
+<h2 id="03-idea集成maven">03. IDEA集成Maven
+</h2><p>我们要想在IDEA中使用Maven进行项目构建，就需要在IDEA中集成Maven</p>
+<h3 id="31-配置maven环境">3.1 配置Maven环境
+</h3><h4 id="311-当前工程设置">3.1.1 当前工程设置
+</h4><p>1、选择 IDEA中 File  =&gt;  Settings  =&gt;  Build,Execution,Deployment  =&gt;  Build Tools  =&gt;  Maven</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616103219646.png"
+	width="308"
+	height="429"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616103219646_hu12013706905427518198.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616103219646_hu13408130568526098856.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616103219646"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="71"
+		data-flex-basis="172px"
+	
+></p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130234731629.png"
+	width="1227"
+	height="880"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130234731629_hu12121322641698334084.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130234731629_hu10179029831314944691.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130234731629"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="139"
+		data-flex-basis="334px"
+	
+></p>
+<p>2、设置IDEA使用本地安装的Maven，并修改配置文件及本地仓库路径</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616103302386.png"
+	width="1131"
+	height="776"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616103302386_hu16268276432011411924.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616103302386_hu12919059702449314982.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="145"
+		data-flex-basis="349px"
+	
+></p>
+<blockquote>
+<p>Maven home path ：指定当前Maven的安装目录</p>
+<p>User settings file ：指定当前Maven的settings.xml配置文件的存放路径</p>
+<p>Local repository ：指定Maven的本地仓库的路径 (如果指定了settings.xml, 这个目录会自动读取出来, 可以不用手动指定)</p>
+</blockquote>
+<p>3、配置工程的编译版本为11</p>
+<ul>
+<li>Maven默认使用的编译版本为5（版本过低）</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201093737128.png"
+	width="1227"
+	height="880"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201093737128_hu15572377331047952228.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201093737128_hu15685398487498151588.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201093737128"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="139"
+		data-flex-basis="334px"
+	
+></p>
+<p>上述配置的maven环境，只是针对于当前工程的，如果我们再创建一个project，又恢复成默认的配置了。 要解决这个问题， 我们就需要配置全局的maven环境。</p>
+<h4 id="312-全局设置">3.1.2 全局设置
+</h4><p>1、进入到IDEA欢迎页面</p>
+<ul>
+<li>选择 IDEA中 File  =&gt;  close project</li>
+</ul>
+<img src="index.assets/4.gif" style="zoom:80%;" />
+<img src="index.assets/image-20220616104338612.png" style="zoom:80%;" />
+<p>2、打开 All settings , 选择 Build,Execution,Deployment  =&gt;  Build Tools  =&gt;  Maven</p>
+<img src="index.assets/image-20220616104517726.png" style="zoom:80%;" />
+<p>3、配置工程的编译版本为11</p>
+<img src="index.assets/image-20221201093737128.png" alt="image-20221201093737128" style="zoom:80%;" />
+<p>这里所设置的maven的环境信息，并未指定任何一个project，此时设置的信息就属于全局配置信息。 以后，我们再创建project，默认就是使用我们全局配置的信息。</p>
+<h3 id="32-maven项目">3.2 Maven项目
+</h3><h4 id="321-创建maven项目">3.2.1 创建Maven项目
+</h4><p>1、创建一个空项目</p>
+<img src="index.assets/image-20221201095621738.png" alt="image-20221201095621738" style="zoom:80%;" />
+<img src="index.assets/image-20221201095600057.png" alt="image-20221201095600057" style="zoom:80%;" />
+<p>2、创建模块，选择Maven，点击Next</p>
+<img src="index.assets/image-20221201095831320.png" alt="image-20221201095831320" style="zoom:80%;" />
+<img src="index.assets/image-20221201100011799.png" alt="image-20221201100011799" style="zoom:80%;" />
+<p>3、填写模块名称，坐标信息，点击finish，创建完成</p>
+<img src="index.assets/image-20221201100502234.png" alt="image-20221201100502234" style="zoom:80%;" /> 
+<p>4、在Maven工程下，创建HelloWorld类</p>
+<img src="index.assets/image-20221201101603397.png" alt="image-20221201101603397" style="zoom:80%;" />
+<img src="index.assets/image-20221201101643427.png" alt="image-20221201101643427" style="zoom:80%;" />
+<blockquote>
+<ul>
+<li>
+<p>Maven项目的目录结构:</p>
+<p>maven-project01
+|&mdash;  src  (源代码目录和测试代码目录)
+|&mdash;  main (源代码目录)
+|&mdash; java (源代码java文件目录)
+|&mdash; resources (源代码配置文件目录)
+|&mdash;  test (测试代码目录)
+|&mdash; java (测试代码java目录)
+|&mdash; resources (测试代码配置文件目录)
+|&mdash; target (编译、打包生成文件存放目录)</p>
+</li>
+</ul>
+</blockquote>
+<p>5、编写 HelloWorld，并运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hello Maven ...&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="322-pom配置详解">3.2.2 POM配置详解
+</h4><p>POM (Project Object Model) ：指的是项目对象模型，用来描述当前的maven项目。</p>
+<ul>
+<li>使用pom.xml文件来实现</li>
+</ul>
+<p>pom.xml文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- POM模型版本 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 当前项目坐标 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.itheima<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>maven_project1<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 打包方式 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>pom文件详解：</p>
+<ul>
+<li><project> ：pom文件的根标签，表示当前maven项目</li>
+<li><modelVersion> ：声明项目描述遵循哪一个POM模型版本
+<ul>
+<li>虽然模型本身的版本很少改变，但它仍然是必不可少的。目前POM模型版本是4.0.0</li>
+</ul>
+</li>
+<li>坐标 ：<groupId>、<artifactId>、<version>
+<ul>
+<li>定位项目在本地仓库中的位置，由以上三个标签组成一个坐标</li>
+</ul>
+</li>
+<li><packaging> ：maven项目的打包方式，通常设置为jar或war（默认值：jar）</li>
+</ul>
+<h4 id="323-maven坐标详解">3.2.3 Maven坐标详解
+</h4><p>什么是坐标？</p>
+<ul>
+<li>Maven中的坐标是==资源的唯一标识== , 通过该坐标可以唯一定位资源位置</li>
+<li>使用坐标来定义项目或引入项目中需要的依赖</li>
+</ul>
+<p>Maven坐标主要组成</p>
+<ul>
+<li>groupId：定义当前Maven项目隶属组织名称（通常是域名反写，例如：com.itheima）</li>
+<li>artifactId：定义当前Maven项目名称（通常是模块名称，例如 order-service、goods-service）</li>
+<li>version：定义当前项目版本号</li>
+</ul>
+<p>如下图就是使用坐标表示一个项目：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616111031057.png"
+	width="397"
+	height="160"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616111031057_hu8608884725940442528.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616111031057_hu6126907561273371730.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616111031057"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="248"
+		data-flex-basis="595px"
+	
+></p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<ul>
+<li>上面所说的资源可以是插件、依赖、当前项目。</li>
+<li>我们的项目如果被其他的项目依赖时，也是需要坐标来引入的。</li>
+</ul>
+</blockquote>
+<h3 id="33-导入maven项目">3.3 导入Maven项目
+</h3><ul>
+<li><strong>方式1：使用Maven面板，快速导入项目</strong></li>
+</ul>
+<p>打开IDEA，选择右侧Maven面板，点击 + 号，选中对应项目的pom.xml文件，双击即可</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201104320521.png"
+	width="1919"
+	height="554"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201104320521_hu12104351114042099725.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201104320521_hu1169940972428098504.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201104320521"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="346"
+		data-flex-basis="831px"
+	
+></p>
+<img src="index.assets/image-20221201104906754.png" alt="image-20221201104906754" style="zoom:80%;" /> 
+<blockquote>
+<p>说明：如果没有Maven面板，选择 View  =&gt;  Appearance  =&gt;  Tool Window Bars</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616111937679.png"
+	width="519"
+	height="436"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616111937679_hu1887446462435550134.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616111937679_hu5832392115959198081.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616111937679"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="119"
+		data-flex-basis="285px"
+	
+></p>
+</blockquote>
+<ul>
+<li><strong>方式2：使用idea导入模块项目</strong></li>
+</ul>
+<p>File  =&gt;  Project Structure  =&gt;  Modules  =&gt;  +  =&gt;  Import Module</p>
+<img src="index.assets/image-20220823161727718.png" style="zoom:80%;" />
+<p>找到要导入工程的pom.xml</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201105532909.png"
+	width="922"
+	height="573"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201105532909_hu3590067976437595593.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201105532909_hu8263005657291318979.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201105532909"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="160"
+		data-flex-basis="386px"
+	
+></p>
+<img src="index.assets/image-20221201105845872.png" alt="image-20221201105845872" style="zoom:80%;" />
+<h2 id="04-依赖管理">04. 依赖管理
+</h2><h3 id="41-依赖配置">4.1 依赖配置
+</h3><p>依赖：指当前项目运行所需要的jar包。一个项目中可以引入多个依赖：</p>
+<p>例如：在当前工程中，我们需要用到logback来记录日志，此时就可以在maven工程的pom.xml文件中，引入logback的依赖。具体步骤如下：</p>
+<ol>
+<li>
+<p>在pom.xml中编写<dependencies>标签</p>
+</li>
+<li>
+<p>在<dependencies>标签中使用<dependency>引入坐标</p>
+</li>
+<li>
+<p>定义坐标的 groupId、artifactId、version</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 第1个依赖 : logback --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>ch.qos.logback<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>logback-classic<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>1.2.11<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 第2个依赖 : junit --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencies&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>点击刷新按钮，引入最新加入的坐标
+<ul>
+<li>刷新依赖：保证每一次引入新的依赖，或者修改现有的依赖配置，都可以加入最新的坐标</li>
+</ul>
+</li>
+</ol>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130184402805.png"
+	width="581"
+	height="219"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130184402805_hu15430429832056417897.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130184402805_hu15948404980060018369.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130184402805"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="265"
+		data-flex-basis="636px"
+	
+></p>
+<blockquote>
+<p>注意事项：</p>
+<ol>
+<li>如果引入的依赖，在本地仓库中不存在，将会连接远程仓库 / 中央仓库，然后下载依赖（这个过程会比较耗时，耐心等待）</li>
+<li>如果不知道依赖的坐标信息，可以到mvn的中央仓库（https://mvnrepository.com/）中搜索</li>
+</ol>
+</blockquote>
+<p><strong>添加依赖的几种方式：</strong></p>
+<ol>
+<li>
+<p>利用中央仓库搜索的依赖坐标</p>
+<img src="index.assets/5.gif" style="zoom:80%;" />
+</li>
+<li>
+<p>利用IDEA工具搜索依赖</p>
+<img src="index.assets/6.gif" style="zoom:80%;" />
+</li>
+<li>
+<p>熟练上手maven后，快速导入依赖</p>
+<img src="index.assets/7.gif" style="zoom:80%;" />
+</li>
+</ol>
+<h3 id="42-依赖传递">4.2 依赖传递
+</h3><h4 id="421-依赖具有传递性">4.2.1 依赖具有传递性
+</h4><p>早期我们没有使用maven时，向项目中添加依赖的jar包，需要把所有的jar包都复制到项目工程下。如下图所示，需要logback-classic时，由于logback-classic又依赖了logback-core和slf4j，所以必须把这3个jar包全部复制到项目工程下</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201120514644.png"
+	width="1061"
+	height="172"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201120514644_hu17318173607260443966.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201120514644_hu2101196941251306428.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201120514644"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="616"
+		data-flex-basis="1480px"
+	
+></p>
+<p>我们现在使用了maven，当项目中需要使用logback-classic时，只需要在pom.xml配置文件中，添加logback-classic的依赖坐标即可。</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201113659400.png"
+	width="1604"
+	height="507"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201113659400_hu10395879300582938096.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201113659400_hu17531972877974349210.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201113659400"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="316"
+		data-flex-basis="759px"
+	
+></p>
+<p>在pom.xml文件中只添加了logback-classic依赖，但由于maven的依赖具有传递性，所以会自动把所依赖的其他jar包也一起导入。</p>
+<p>依赖传递可以分为：</p>
+<ol>
+<li>
+<p>直接依赖：在当前项目中通过依赖配置建立的依赖关系</p>
+</li>
+<li>
+<p>间接依赖：被依赖的资源如果依赖其他资源，当前项目间接依赖其他资源</p>
+</li>
+</ol>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616115445812.png"
+	width="1199"
+	height="413"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616115445812_hu17761264011460633233.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616115445812_hu9281256920263092120.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616115445812"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="290"
+		data-flex-basis="696px"
+	
+></p>
+<p>比如以上图中：</p>
+<ul>
+<li>projectA依赖了projectB。对于projectA 来说，projectB 就是直接依赖。</li>
+<li>而projectB依赖了projectC及其他jar包。 那么此时，在projectA中也会将projectC的依赖传递下来。对于projectA 来说，projectC就是间接依赖。</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201115801806.png"
+	width="1328"
+	height="625"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201115801806_hu9743830049699359568.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201115801806_hu14139696832836155236.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201115801806"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="212"
+		data-flex-basis="509px"
+	
+></p>
+<h4 id="422-排除依赖">4.2.2 排除依赖
+</h4><p>问题：之前我们讲了依赖具有传递性。那么A依赖B，B依赖C，如果A不想将C依赖进来，是否可以做到？</p>
+<p>答案：在maven项目中，我们可以通过排除依赖来实现。</p>
+<p>什么是排除依赖？</p>
+<ul>
+<li>排除依赖：指主动断开依赖的资源。（被排除的资源无需指定版本）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.itheima<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>maven-projectB<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--排除依赖, 主动断开依赖的资源--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;exclusions&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="nt">&lt;exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/exclusion&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/exclusions&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>依赖排除示例：</p>
+<ul>
+<li>maven-projectA依赖了maven-projectB，maven-projectB依赖了Junit。基于依赖的传递性，所以maven-projectA也依赖了Junit</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201141929240.png"
+	width="1567"
+	height="851"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201141929240_hu4962835734618770750.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201141929240_hu10040534441667325995.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201141929240"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="441px"
+	
+></p>
+<ul>
+<li>使用排除依赖后</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201142501556.png"
+	width="1570"
+	height="839"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201142501556_hu14878630885400185071.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201142501556_hu8700358294759993639.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201142501556"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="187"
+		data-flex-basis="449px"
+	
+></p>
+<h3 id="43-依赖范围">4.3 依赖范围
+</h3><p>在项目中导入依赖的jar包后，默认情况下，可以在任何地方使用。</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201135142706.png"
+	width="1585"
+	height="811"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201135142706_hu9436375035862094402.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201135142706_hu5727426037048692102.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201135142706"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="195"
+		data-flex-basis="469px"
+	
+></p>
+<p>如果希望限制依赖的使用范围，可以通过<scope>标签设置其作用范围。</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616123806894.png"
+	width="206"
+	height="209"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616123806894_hu4179050388707065306.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616123806894_hu6344817201752807345.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616123806894"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="98"
+		data-flex-basis="236px"
+	
+></p>
+<p>作用范围：</p>
+<ol>
+<li>
+<p>主程序范围有效（main文件夹范围内）</p>
+</li>
+<li>
+<p>测试程序范围有效（test文件夹范围内）</p>
+</li>
+<li>
+<p>是否参与打包运行（package指令范围内）</p>
+</li>
+</ol>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201140140947.png"
+	width="1583"
+	height="812"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201140140947_hu5071891787815508258.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201140140947_hu7114251420306871279.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201140140947"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="467px"
+	
+></p>
+<p>如上图所示，给junit依赖通过scope标签指定依赖的作用范围。 那么这个依赖就只能作用在测试环境，其他环境下不能使用。</p>
+<p>scope标签的取值范围：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>scope</strong>值</th>
+          <th style="text-align: left"><strong>主程序</strong></th>
+          <th style="text-align: left"><strong>测试程序</strong></th>
+          <th style="text-align: left"><strong>打包（运行）</strong></th>
+          <th style="text-align: left"><strong>范例</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">compile（默认）</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">log4j</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">test</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">junit</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">provided</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">servlet-api</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">runtime</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">Y</td>
+          <td style="text-align: left">jdbc驱动</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="44-生命周期">4.4 生命周期
+</h3><h4 id="441-介绍">4.4.1 介绍
+</h4><p>Maven的生命周期就是为了对所有的构建过程进行抽象和统一。 描述了一次项目构建，经历哪些阶段。</p>
+<p>在Maven出现之前，项目构建的生命周期就已经存在，软件开发人员每天都在对项目进行清理，编译，测试及部署。虽然大家都在不停地做构建工作，但公司和公司间、项目和项目间，往往使用不同的方式做类似的工作。</p>
+<p>Maven从大量项目和构建工具中学习和反思，然后总结了一套高度完美的，易扩展的项目构建生命周期。这个生命周期包含了项目的清理，初始化，编译，测试，打包，集成测试，验证，部署和站点生成等几乎所有构建步骤。</p>
+<p>Maven对项目构建的生命周期划分为3套（相互独立）：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616124015567.png"
+	width="1059"
+	height="161"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616124015567_hu14785016386095267898.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616124015567_hu13313420716800484096.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="657"
+		data-flex-basis="1578px"
+	
+></p>
+<ul>
+<li>
+<p>clean：清理工作。</p>
+</li>
+<li>
+<p>default：核心工作。如：编译、测试、打包、安装、部署等。</p>
+</li>
+<li>
+<p>site：生成报告、发布站点等。</p>
+</li>
+</ul>
+<p>三套生命周期又包含哪些具体的阶段呢, 我们来看下面这幅图:</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616124348972.png"
+	width="999"
+	height="510"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616124348972_hu7816004571533241581.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220616124348972_hu14003779516398291188.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220616124348972"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="195"
+		data-flex-basis="470px"
+	
+></p>
+<p>我们看到这三套生命周期，里面有很多很多的阶段，这么多生命周期阶段，其实我们常用的并不多，主要关注以下几个：</p>
+<p>• clean：移除上一次构建生成的文件</p>
+<p>• compile：编译项目源代码</p>
+<p>• test：使用合适的单元测试框架运行测试(junit)</p>
+<p>• package：将编译后的文件打包，如：jar、war等</p>
+<p>• install：安装项目到本地仓库</p>
+<p>Maven的生命周期是抽象的，这意味着生命周期本身不做任何实际工作。<strong>在Maven的设计中，实际任务（如源代码编译）都交由插件来完成。</strong></p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142100703.png"
+	width="1239"
+	height="518"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142100703_hu12658166222031676331.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221130142100703_hu9851372755758230342.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221130142100703"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="239"
+		data-flex-basis="574px"
+	
+></p>
+<p>IDEA工具为了方便程序员使用maven生命周期，在右侧的maven工具栏中，已给出快速访问通道</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201151340340.png"
+	width="1892"
+	height="752"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201151340340_hu12893401783263901575.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201151340340_hu2392571749924811646.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201151340340"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="251"
+		data-flex-basis="603px"
+	
+></p>
+<p>生命周期的顺序是：clean &ndash;&gt; validate &ndash;&gt; compile &ndash;&gt; test &ndash;&gt; package &ndash;&gt; verify &ndash;&gt; install &ndash;&gt; site &ndash;&gt; deploy</p>
+<p>我们需要关注的就是：clean &ndash;&gt;  compile &ndash;&gt; test &ndash;&gt; package  &ndash;&gt; install</p>
+<blockquote>
+<p>说明：在同一套生命周期中，我们在执行后面的生命周期时，前面的生命周期都会执行。</p>
+</blockquote>
+<blockquote>
+<p>思考：当运行package生命周期时，clean、compile生命周期会不会运行？</p>
+<p>​		clean不会运行，compile会运行。  因为compile与package属于同一套生命周期，而clean与package不属于同一套生命周期。</p>
+</blockquote>
+<h4 id="442-执行">4.4.2 执行
+</h4><p>在日常开发中，当我们要执行指定的生命周期时，有两种执行方式：</p>
+<ol>
+<li>在idea工具右侧的maven工具栏中，选择对应的生命周期，双击执行</li>
+<li>在DOS命令行中，通过maven命令执行</li>
+</ol>
+<p><strong>方式一：在idea中执行生命周期</strong></p>
+<ul>
+<li>选择对应的生命周期，双击执行</li>
+</ul>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201161957301.png"
+	width="1579"
+	height="522"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201161957301_hu10039082463228283679.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201161957301_hu4274738335773874384.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201161957301"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="302"
+		data-flex-basis="725px"
+	
+></p>
+<p>compile：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201163711835.png"
+	width="1801"
+	height="901"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201163711835_hu12439164974254895434.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201163711835_hu15541327071398057712.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201163711835"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="199"
+		data-flex-basis="479px"
+	
+></p>
+<p>test：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201164627403.png"
+	width="1868"
+	height="905"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201164627403_hu5218878745443131127.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201164627403_hu12753730344565690376.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201164627403"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="206"
+		data-flex-basis="495px"
+	
+></p>
+<p>package：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201165801341.png"
+	width="1838"
+	height="885"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201165801341_hu17677099904930660274.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201165801341_hu12133804756135345595.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201165801341"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="207"
+		data-flex-basis="498px"
+	
+></p>
+<p>install：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201170830837.png"
+	width="1867"
+	height="901"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201170830837_hu7635664138233716165.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201170830837_hu14014235440808993701.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201170830837"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="207"
+		data-flex-basis="497px"
+	
+></p>
+<p>clean：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201171529382.png"
+	width="1805"
+	height="879"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201171529382_hu10391828719636414356.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201171529382_hu1551586056322329896.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201171529382"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="205"
+		data-flex-basis="492px"
+	
+></p>
+<p><strong>方式二：在命令行中执行生命周期</strong></p>
+<ol>
+<li>进入到DOS命令行</li>
+</ol>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201172210253.png"
+	width="821"
+	height="497"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201172210253_hu8026936670604025169.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201172210253_hu6670448173221378644.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201172210253"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="165"
+		data-flex-basis="396px"
+	
+></p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201172914648.png"
+	width="1292"
+	height="899"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201172914648_hu15584746525470223822.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221201172914648_hu11935680581646426558.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221201172914648"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="143"
+		data-flex-basis="344px"
+	
+></p>
+<h2 id="05-附录">05. 附录
+</h2><h3 id="51-更新依赖索引">5.1 更新依赖索引
+</h3><p>有时候给idea配置完maven仓库信息后，在idea中依然搜索不到仓库中的jar包。这是因为仓库中的jar包索引尚未更新到idea中。这个时候我们就需要更新idea中maven的索引了，具体做法如下：</p>
+<p>打开设置&mdash;-搜索maven&mdash;-Repositories&mdash;-选中本地仓库&mdash;&ndash;点击Update</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1537786634456-1582625518984.png"
+	width="1038"
+	height="560"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1537786634456-1582625518984_hu554010696774312730.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1537786634456-1582625518984_hu2912118814915355629.png 1024w"
+	loading="lazy"
+	
+		alt="1537786634456"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="185"
+		data-flex-basis="444px"
+	
+></p>
+<h3 id="52-清理maven仓库">5.2 清理maven仓库
+</h3><p>初始情况下，我们的本地仓库是没有任何jar包的，此时会从私服去下载（如果没有配置，就直接从中央仓库去下载），可能由于网络的原因，jar包下载不完全，这些不完整的jar包都是以lastUpdated结尾。此时，maven不会再重新帮你下载，需要你删除这些以lastUpdated结尾的文件，然后maven才会再次自动下载这些jar包。</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/lastUpdated-1582625518983.png"
+	width="824"
+	height="161"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/lastUpdated-1582625518983_hu2875538977789956356.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/lastUpdated-1582625518983_hu17881400267858786323.png 1024w"
+	loading="lazy"
+	
+		alt="lastUpdate"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="511"
+		data-flex-basis="1228px"
+	
+></p>
+<p>如果本地仓库中有很多这样的以lastUpadted结尾的文件，可以定义一个批处理文件，在其中编写如下脚本来删除：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">set REPOSITORY_PATH=E:\develop\apache-maven-3.6.1\mvn_repo
+</span></span><span class="line"><span class="cl">rem 正在搜索...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">del /s /q %REPOSITORY_PATH%\*.lastUpdated
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">rem 搜索完毕
+</span></span><span class="line"><span class="cl">pause
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>操作步骤如下：</p>
+<p>1). 定义批处理文件del_lastUpdated.bat  (直接创建一个文本文件，命名为del_lastUpdated，后缀名直接改为bat即可 )</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221214154949482.png"
+	width="895"
+	height="25"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221214154949482_hu5014225259135986544.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221214154949482_hu15648008048082774789.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221214154949482"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="3580"
+		data-flex-basis="8592px"
+	
+></p>
+<p>2). 在上面的bat文件上<strong>右键&mdash;》编辑</strong> 。修改文件：</p>
+<p><img src="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221214154559817.png"
+	width="1261"
+	height="187"
+	srcset="/p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221214154559817_hu11224642052197379883.png 480w, /p/maven%E8%AF%A6%E8%A7%A3%E4%B8%8E%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221214154559817_hu388231081307589677.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221214154559817"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="674"
+		data-flex-basis="1618px"
+	
+></p>
+<p>修改完毕后，双击运行即可删除maven仓库中的残留文件。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 山有木兮
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
