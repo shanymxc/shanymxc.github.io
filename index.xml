@@ -5835,7 +5835,44 @@ $$</description>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
+        <description>&lt;h3 id=&#34;李乔伟&#34;&gt;李乔伟
+&lt;/h3&gt;&lt;p&gt;性别：男&lt;/p&gt;
+&lt;p&gt;籍贯：河南许昌&lt;/p&gt;
+&lt;p&gt;邮箱： &lt;a class=&#34;link&#34; href=&#34;mailto:mvz09630521@126.com&#34; &gt;mvz09630521@126.com&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;教育背景&#34;&gt;教育背景
+&lt;/h4&gt;&lt;h5 id=&#34;河南科技大学-洛阳&#34;&gt;河南科技大学, 洛阳
+&lt;/h5&gt;&lt;p&gt;2021 – 至今&lt;/p&gt;
+&lt;p&gt;在读本科大学生 计算机科学与技术, 预计 2025 年 6 月毕业&lt;/p&gt;
+&lt;h4 id=&#34;项目经历&#34;&gt;项目经历
+&lt;/h4&gt;&lt;h5 id=&#34;健康管理平台类项目-springboot-vue-个人项目&#34;&gt;健康管理平台类项目 （&lt;em&gt;SpringBoot, Vue&lt;/em&gt; 个人项目）
+&lt;/h5&gt;&lt;p&gt;2023 年 11 月&lt;/p&gt;
+&lt;p&gt;记录用户每天不同时段的饮食运动信息，给出热量摄入与消耗信息等。&lt;/p&gt;
+&lt;p&gt;• SpringBoot3+Vue3 前后端分离式开发&lt;/p&gt;
+&lt;p&gt;• 设计了微信小程序端界面&lt;/p&gt;
+&lt;p&gt;• 将项目部署到服务器（宝塔面板）&lt;/p&gt;
+&lt;p&gt;• 设计使用 redis 缓存 jwt 令牌&lt;/p&gt;
+&lt;h5 id=&#34;外卖电商平台类项目-springmvc-html--团队项目&#34;&gt;外卖电商平台类项目 （&lt;em&gt;SpringMVC, html&lt;/em&gt;  团队项目）
+&lt;/h5&gt;&lt;p&gt;2024 年 4 月&lt;/p&gt;
+&lt;p&gt;包含客户微信小程序端与商家网页端，实现了外卖相关的功能。&lt;/p&gt;
+&lt;p&gt;• 工程式的整体开发流程&lt;/p&gt;
+&lt;p&gt;• 设计使用 redis 缓存菜品信息用于查询&lt;/p&gt;
+&lt;p&gt;• 前后端分离设计开发&lt;/p&gt;
+&lt;h5 id=&#34;个人博客搭建-hugo-github-个人项目&#34;&gt;个人博客搭建 （&lt;em&gt;Hugo, github&lt;/em&gt; 个人项目）
+&lt;/h5&gt;&lt;p&gt;2024 年 9 月&lt;/p&gt;
+&lt;p&gt;通过 Hugo 搭建个人博客，并将其部署至 github，即当前页面。&lt;/p&gt;
+&lt;p&gt;• 个人笔记的持续更新&lt;/p&gt;
+&lt;p&gt;• 网站的持续开发&lt;/p&gt;
+&lt;p&gt;• 对于 Hugo 的合理运用&lt;/p&gt;
+&lt;h4 id=&#34;it-技能&#34;&gt;IT 技能
+&lt;/h4&gt;&lt;p&gt;• 编程语言: Java &amp;gt; C++ &amp;gt;Python&lt;/p&gt;
+&lt;p&gt;• 平台: Windows,Linux&lt;/p&gt;
+&lt;p&gt;• 开发: SpringBoot,Vue 等&lt;/p&gt;
+&lt;h4 id=&#34;其他&#34;&gt;其他
+&lt;/h4&gt;&lt;p&gt;• 技术博客: &lt;a class=&#34;link&#34; href=&#34;https://shanymxc.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://shanymxc.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;• GitHub: &lt;a class=&#34;link&#34; href=&#34;https://github.com/shanymxc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/shanymxc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;• 语言: 英语 - 了解 (CET-4)&lt;/p&gt;
 </description>
         </item>
         <item>
