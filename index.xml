@@ -7,7 +7,361 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Fri, 18 Oct 2024 16:39:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 19 Oct 2024 23:01:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MySQL安装文档</title>
+        <link>http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</link>
+        <pubDate>Sat, 19 Oct 2024 23:01:26 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</guid>
+        <description>&lt;img src="http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7.png" alt="Featured image of post MySQL安装文档" /&gt;&lt;h2 id=&#34;一下载&#34;&gt;一、下载
+&lt;/h2&gt;&lt;p&gt;点开下面的链接：https://dev.mysql.com/downloads/mysql/&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873.png&#34;
+	width=&#34;1554&#34;
+	height=&#34;850&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu8989546307641288751.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu1767376917828680749.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20221020012302873&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;182&#34;
+		data-flex-basis=&#34;438px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击Download 就可以下载对应的安装包了, 安装包如下: &lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839.png&#34;
+	width=&#34;255&#34;
+	height=&#34;43&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu8724359947886035426.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu3732298114588479781.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20221020012428839&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;593&#34;
+		data-flex-basis=&#34;1423px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二解压&#34;&gt;二、解压
+&lt;/h2&gt;&lt;p&gt;下载完成后我们得到的是一个压缩包，将其解压，我们就可以得到MySQL 8.0.31 的软件本体了(就是一个文件夹)，我们可以把它放在你想安装的位置 。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737.png&#34;
+	width=&#34;1285&#34;
+	height=&#34;309&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu1609331971787285068.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu7215492349333465798.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20221020013011737&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;415&#34;
+		data-flex-basis=&#34;998px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三配置&#34;&gt;三、配置
+&lt;/h2&gt;&lt;h3 id=&#34;1-添加环境变量&#34;&gt;1. 添加环境变量
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;环境变量里面有很多选项，这里我们只用到&lt;code&gt;Path&lt;/code&gt;这个参数。为什么在初始化的开始要添加环境变量呢？&lt;/p&gt;
+&lt;p&gt;在黑框(即CMD)中输入一个可执行程序的名字，Windows会先在环境变量中的&lt;code&gt;Path&lt;/code&gt;所指的路径中寻找一遍，如果找到了就直接执行，没找到就在当前工作目录找，如果还没找到，就报错。我们添加环境变量的目的就是能够在任意一个黑框直接调用MySQL中的相关程序而不用总是修改工作目录，大大简化了操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;右键&lt;code&gt;此电脑&lt;/code&gt;→&lt;code&gt;属性&lt;/code&gt;，点击&lt;code&gt;高级系统设置&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778.png&#34;
+	width=&#34;275&#34;
+	height=&#34;239&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu7167827031769024765.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu11187263335304820342.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;115&#34;
+		data-flex-basis=&#34;276px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;环境变量&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950.png&#34;
+	width=&#34;472&#34;
+	height=&#34;586&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu8249412808084621328.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu12289240095344466522.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;193px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;系统变量&lt;/code&gt;中新建MYSQL_HOME&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323.png&#34;
+	width=&#34;833&#34;
+	height=&#34;214&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu4277178484239611663.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu11751059414997883993.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20221020013128323&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;389&#34;
+		data-flex-basis=&#34;934px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;系统变量&lt;/code&gt;中找到并&lt;strong&gt;双击&lt;/strong&gt;&lt;code&gt;Path&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872.png&#34;
+	width=&#34;607&#34;
+	height=&#34;646&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu13058212966697072413.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu7163125879145758590.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;93&#34;
+		data-flex-basis=&#34;225px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;新建&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104.png&#34;
+	width=&#34;510&#34;
+	height=&#34;413&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu7988004988747255490.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu3598740407767309626.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20201109135248104&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;123&#34;
+		data-flex-basis=&#34;296px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最后点击确定。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如何验证是否添加成功？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;右键开始菜单(就是屏幕左下角)，选择&lt;code&gt;命令提示符(管理员)&lt;/code&gt;，打开黑框，敲入&lt;code&gt;mysql&lt;/code&gt;，回车。&lt;/p&gt;
+&lt;img src=&#34;index.assets/image-20221020013302450.png&#34; alt=&#34;image-20221020013302450&#34; style=&#34;zoom:67%;&#34; /&gt; 
+&lt;p&gt;如果提示&lt;code&gt;Can&#39;t connect to MySQL server on &#39;localhost&#39;&lt;/code&gt;则证明添加成功；&lt;/p&gt;
+ &lt;img src=&#34;index.assets/image-20221020013335596.png&#34; alt=&#34;image-20221020013335596&#34; style=&#34;zoom:80%;&#34; /&gt; 
+&lt;p&gt;如果提示&lt;code&gt;mysql不是内部或外部命令，也不是可运行的程序或批处理文件&lt;/code&gt;则表示添加添加失败，请重新检查步骤并重试。&lt;/p&gt;
+&lt;h3 id=&#34;2-初始化mysql&#34;&gt;2. 初始化MySQL
+&lt;/h3&gt;&lt;p&gt;==以管理员身份，运行命令行窗口：==&lt;/p&gt;
+&lt;img src=&#34;index.assets/image-20220518172922780.png&#34; alt=&#34;image-20220518172922780&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;p&gt;在刚才的命令行中，输入如下的指令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqld --initialize-insecure
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772.png&#34;
+	width=&#34;491&#34;
+	height=&#34;197&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu3233498164077775792.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu13316001561248084544.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20201109140955772&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;249&#34;
+		data-flex-basis=&#34;598px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;稍微等待一会，如果出现没有出现报错信息，则证明data目录初始化没有问题，此时再查看MySQL目录下已经有data目录生成。&lt;/p&gt;
+&lt;p&gt;tips：如果出现如下错误&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054.png&#34;
+	width=&#34;959&#34;
+	height=&#34;95&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu14538963807183927052.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu15905033679618084960.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20201109135848054&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1009&#34;
+		data-flex-basis=&#34;2422px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;是由于权限不足导致的，以管理员方式运行 cmd&lt;/p&gt;
+&lt;img src=&#34;index.assets/image-20220518172922780.png&#34; alt=&#34;image-20220518172922780&#34; style=&#34;zoom: 80%;&#34; /&gt; 
+&lt;h3 id=&#34;3-注册mysql服务&#34;&gt;3. 注册MySQL服务
+&lt;/h3&gt;&lt;p&gt;命令行（注意必须以管理员身份启动）中，输入如下的指令，回车执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqld -install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810.png&#34;
+	width=&#34;441&#34;
+	height=&#34;93&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu15288266157448647005.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu2636343872062946848.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20201109141325810&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;474&#34;
+		data-flex-basis=&#34;1138px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现在你的计算机上已经安装好了MySQL服务了。&lt;/p&gt;
+&lt;h3 id=&#34;4-启动mysql服务&#34;&gt;4. 启动MySQL服务
+&lt;/h3&gt;&lt;p&gt;在黑框里敲入&lt;code&gt;net start mysql&lt;/code&gt;，回车。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;net&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;start&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 启动mysql服务&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;net&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stop&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 停止mysql服务&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072.png&#34;
+	width=&#34;1226&#34;
+	height=&#34;397&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu14306094432900882206.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu9160235824962013627.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20220518183747072&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;308&#34;
+		data-flex-basis=&#34;741px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-修改默认账户密码&#34;&gt;5. 修改默认账户密码
+&lt;/h3&gt;&lt;p&gt;在黑框里敲入&lt;code&gt;mysqladmin -u root password 1234&lt;/code&gt;，这里的&lt;code&gt;1234&lt;/code&gt;就是指默认管理员(即root账户)的密码，可以自行修改成你喜欢的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqladmin -u root password 1234
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425.png&#34;
+	width=&#34;726&#34;
+	height=&#34;75&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu17869084740784555045.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu8069453827838188513.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;968&#34;
+		data-flex-basis=&#34;2323px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;四登录mysql&#34;&gt;四、登录MySQL
+&lt;/h2&gt;&lt;p&gt;右键开始菜单，选择&lt;code&gt;命令提示符&lt;/code&gt;，打开黑框。
+在黑框中输入，&lt;code&gt;mysql -uroot -p1234&lt;/code&gt;，回车，出现下图且左下角为&lt;code&gt;mysql&amp;gt;&lt;/code&gt;，则登录成功。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysql -uroot -p1234
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;index.assets/image-20221020013540957.png&#34; alt=&#34;image-20221020013540957&#34; style=&#34;zoom:80%;&#34; /&gt;  
+&lt;p&gt;&lt;strong&gt;到这里你就可以开始你的MySQL之旅了！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;退出mysql：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;exit
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;quit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;登陆参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysql -u用户名 -p密码 -h要连接的mysql服务器的ip地址(默认127.0.0.1) -P端口号(默认3306)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;五卸载mysql&#34;&gt;五、卸载MySQL
+&lt;/h2&gt;&lt;p&gt;如果你想卸载MySQL，也很简单。&lt;/p&gt;
+&lt;p&gt;点击开始菜单，输入cmd，选择 &amp;ldquo;命令提示符&amp;rdquo;，选择右侧的 &amp;ldquo;以管理员身份运行&amp;rdquo;。&lt;/p&gt;
+&lt;img src=&#34;index.assets/image-20220611083741275.png&#34; alt=&#34;image-20220611083741275&#34; style=&#34;zoom:80%;&#34; /&gt; 
+&lt;ol&gt;
+&lt;li&gt;敲入&lt;code&gt;net stop mysql&lt;/code&gt;，回车。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net stop mysql
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848.png&#34;
+	width=&#34;366&#34;
+	height=&#34;192&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu580926220441788251.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu8168575141686937249.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34; &#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;190&#34;
+		data-flex-basis=&#34;457px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;再敲入&lt;code&gt;mysqld -remove mysql&lt;/code&gt;，回车。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqld -remove mysql
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464.png&#34;
+	width=&#34;336&#34;
+	height=&#34;99&#34;
+	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu5867472083432168745.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu16541672353436024904.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;339&#34;
+		data-flex-basis=&#34;814px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;最后删除MySQL目录及相关的环境变量。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;至此，MySQL卸载完成！&lt;/strong&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>SpringBootWeb请求响应</title>
         <link>http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/</link>
         <pubDate>Fri, 18 Oct 2024 16:39:20 +0800</pubDate>

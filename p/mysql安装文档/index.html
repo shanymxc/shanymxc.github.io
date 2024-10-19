@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一、下载 点开下面的链接：https://dev.mysql.com/downloads/mysql/\n点击Download 就可以下载对应的安装包了, 安装包如下: ">
+<title>MySQL安装文档</title>
+
+<link rel='canonical' href='http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="MySQL安装文档">
+<meta property='og:description' content="一、下载 点开下面的链接：https://dev.mysql.com/downloads/mysql/\n点击Download 就可以下载对应的安装包了, 安装包如下: ">
+<meta property='og:url' content='http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/'>
+<meta property='og:site_name' content='山有木兮'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='后端' /><meta property='article:tag' content='MySQL' /><meta property='article:tag' content='安装文档' /><meta property='article:published_time' content='2024-10-19T23:01:26&#43;08:00'/><meta property='article:modified_time' content='2024-10-19T23:01:26&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7.png' />
+<meta name="twitter:title" content="MySQL安装文档">
+<meta name="twitter:description" content="一、下载 点开下面的链接：https://dev.mysql.com/downloads/mysql/\n点击Download 就可以下载对应的安装包了, 安装包如下: "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12487634835597679327.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">山有木兮</a></h1>
+            <h2 class="site-description">知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1338856997'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/shanymxc/shanymxc.github.io'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#一下载">一、下载</a></li>
+    <li><a href="#二解压">二、解压</a></li>
+    <li><a href="#三配置">三、配置</a>
+      <ol>
+        <li><a href="#1-添加环境变量">1. 添加环境变量</a></li>
+        <li><a href="#2-初始化mysql">2. 初始化MySQL</a></li>
+        <li><a href="#3-注册mysql服务">3. 注册MySQL服务</a></li>
+        <li><a href="#4-启动mysql服务">4. 启动MySQL服务</a></li>
+        <li><a href="#5-修改默认账户密码">5. 修改默认账户密码</a></li>
+      </ol>
+    </li>
+    <li><a href="#四登录mysql">四、登录MySQL</a></li>
+    <li><a href="#五卸载mysql">五、卸载MySQL</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">
+                <img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7_hu17123055295434930134.png"
+                        srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7_hu17123055295434930134.png 800w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7_hu10475546943203760129.png 1600w"
+                        width="800" 
+                        height="608" 
+                        loading="lazy"
+                        alt="Featured image of post MySQL安装文档" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%90%8E%E7%AB%AF/" >
+                后端
+            </a>
+        
+            <a href="/categories/mysql/" >
+                MySQL
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">MySQL安装文档</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 19, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="一下载">一、下载
+</h2><p>点开下面的链接：https://dev.mysql.com/downloads/mysql/</p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873.png"
+	width="1554"
+	height="850"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu8989546307641288751.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu1767376917828680749.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221020012302873"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="182"
+		data-flex-basis="438px"
+	
+></p>
+<p>点击Download 就可以下载对应的安装包了, 安装包如下: <img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839.png"
+	width="255"
+	height="43"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu8724359947886035426.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu3732298114588479781.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221020012428839"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="593"
+		data-flex-basis="1423px"
+	
+></p>
+<h2 id="二解压">二、解压
+</h2><p>下载完成后我们得到的是一个压缩包，将其解压，我们就可以得到MySQL 8.0.31 的软件本体了(就是一个文件夹)，我们可以把它放在你想安装的位置 。</p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737.png"
+	width="1285"
+	height="309"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu1609331971787285068.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu7215492349333465798.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221020013011737"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="415"
+		data-flex-basis="998px"
+	
+></p>
+<h2 id="三配置">三、配置
+</h2><h3 id="1-添加环境变量">1. 添加环境变量
+</h3><blockquote>
+<p>环境变量里面有很多选项，这里我们只用到<code>Path</code>这个参数。为什么在初始化的开始要添加环境变量呢？</p>
+<p>在黑框(即CMD)中输入一个可执行程序的名字，Windows会先在环境变量中的<code>Path</code>所指的路径中寻找一遍，如果找到了就直接执行，没找到就在当前工作目录找，如果还没找到，就报错。我们添加环境变量的目的就是能够在任意一个黑框直接调用MySQL中的相关程序而不用总是修改工作目录，大大简化了操作。</p>
+</blockquote>
+<p>右键<code>此电脑</code>→<code>属性</code>，点击<code>高级系统设置</code></p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778.png"
+	width="275"
+	height="239"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu7167827031769024765.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu11187263335304820342.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="115"
+		data-flex-basis="276px"
+	
+></p>
+<p>点击<code>环境变量</code></p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950.png"
+	width="472"
+	height="586"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu8249412808084621328.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu12289240095344466522.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="80"
+		data-flex-basis="193px"
+	
+></p>
+<p>在<code>系统变量</code>中新建MYSQL_HOME</p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323.png"
+	width="833"
+	height="214"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu4277178484239611663.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu11751059414997883993.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221020013128323"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="389"
+		data-flex-basis="934px"
+	
+></p>
+<p>在<code>系统变量</code>中找到并<strong>双击</strong><code>Path</code></p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872.png"
+	width="607"
+	height="646"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu13058212966697072413.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu7163125879145758590.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="93"
+		data-flex-basis="225px"
+	
+></p>
+<p>点击<code>新建</code></p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104.png"
+	width="510"
+	height="413"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu7988004988747255490.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu3598740407767309626.png 1024w"
+	loading="lazy"
+	
+		alt="image-20201109135248104"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="123"
+		data-flex-basis="296px"
+	
+></p>
+<p>最后点击确定。</p>
+<p><strong>如何验证是否添加成功？</strong></p>
+<p>右键开始菜单(就是屏幕左下角)，选择<code>命令提示符(管理员)</code>，打开黑框，敲入<code>mysql</code>，回车。</p>
+<img src="index.assets/image-20221020013302450.png" alt="image-20221020013302450" style="zoom:67%;" /> 
+<p>如果提示<code>Can't connect to MySQL server on 'localhost'</code>则证明添加成功；</p>
+ <img src="index.assets/image-20221020013335596.png" alt="image-20221020013335596" style="zoom:80%;" /> 
+<p>如果提示<code>mysql不是内部或外部命令，也不是可运行的程序或批处理文件</code>则表示添加添加失败，请重新检查步骤并重试。</p>
+<h3 id="2-初始化mysql">2. 初始化MySQL
+</h3><p>==以管理员身份，运行命令行窗口：==</p>
+<img src="index.assets/image-20220518172922780.png" alt="image-20220518172922780" style="zoom: 80%;" />
+<p>在刚才的命令行中，输入如下的指令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysqld --initialize-insecure
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772.png"
+	width="491"
+	height="197"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu3233498164077775792.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu13316001561248084544.png 1024w"
+	loading="lazy"
+	
+		alt="image-20201109140955772"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="249"
+		data-flex-basis="598px"
+	
+></p>
+<p>稍微等待一会，如果出现没有出现报错信息，则证明data目录初始化没有问题，此时再查看MySQL目录下已经有data目录生成。</p>
+<p>tips：如果出现如下错误</p>
+<p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054.png"
+	width="959"
+	height="95"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu14538963807183927052.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu15905033679618084960.png 1024w"
+	loading="lazy"
+	
+		alt="image-20201109135848054"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1009"
+		data-flex-basis="2422px"
+	
+></p>
+<p>是由于权限不足导致的，以管理员方式运行 cmd</p>
+<img src="index.assets/image-20220518172922780.png" alt="image-20220518172922780" style="zoom: 80%;" /> 
+<h3 id="3-注册mysql服务">3. 注册MySQL服务
+</h3><p>命令行（注意必须以管理员身份启动）中，输入如下的指令，回车执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysqld -install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810.png"
+	width="441"
+	height="93"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu15288266157448647005.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu2636343872062946848.png 1024w"
+	loading="lazy"
+	
+		alt="image-20201109141325810"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="474"
+		data-flex-basis="1138px"
+	
+></p>
+<p>现在你的计算机上已经安装好了MySQL服务了。</p>
+<h3 id="4-启动mysql服务">4. 启动MySQL服务
+</h3><p>在黑框里敲入<code>net start mysql</code>，回车。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">net</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="n">mysql</span><span class="w">  </span><span class="c1">// 启动mysql服务</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">net</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="n">mysql</span><span class="w">  </span><span class="c1">// 停止mysql服务</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072.png"
+	width="1226"
+	height="397"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu14306094432900882206.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu9160235824962013627.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220518183747072"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="308"
+		data-flex-basis="741px"
+	
+></p>
+<h3 id="5-修改默认账户密码">5. 修改默认账户密码
+</h3><p>在黑框里敲入<code>mysqladmin -u root password 1234</code>，这里的<code>1234</code>就是指默认管理员(即root账户)的密码，可以自行修改成你喜欢的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysqladmin -u root password 1234
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425.png"
+	width="726"
+	height="75"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu17869084740784555045.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu8069453827838188513.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="968"
+		data-flex-basis="2323px"
+	
+></p>
+<h2 id="四登录mysql">四、登录MySQL
+</h2><p>右键开始菜单，选择<code>命令提示符</code>，打开黑框。
+在黑框中输入，<code>mysql -uroot -p1234</code>，回车，出现下图且左下角为<code>mysql&gt;</code>，则登录成功。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysql -uroot -p1234
+</span></span></code></pre></td></tr></table>
+</div>
+</div><img src="index.assets/image-20221020013540957.png" alt="image-20221020013540957" style="zoom:80%;" />  
+<p><strong>到这里你就可以开始你的MySQL之旅了！</strong></p>
+<p>退出mysql：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">exit
+</span></span><span class="line"><span class="cl">quit
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>登陆参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysql -u用户名 -p密码 -h要连接的mysql服务器的ip地址(默认127.0.0.1) -P端口号(默认3306)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="五卸载mysql">五、卸载MySQL
+</h2><p>如果你想卸载MySQL，也很简单。</p>
+<p>点击开始菜单，输入cmd，选择 &ldquo;命令提示符&rdquo;，选择右侧的 &ldquo;以管理员身份运行&rdquo;。</p>
+<img src="index.assets/image-20220611083741275.png" alt="image-20220611083741275" style="zoom:80%;" /> 
+<ol>
+<li>敲入<code>net stop mysql</code>，回车。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">net stop mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848.png"
+	width="366"
+	height="192"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu580926220441788251.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu8168575141686937249.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="457px"
+	
+></p>
+<ol start="2">
+<li>再敲入<code>mysqld -remove mysql</code>，回车。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysqld -remove mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464.png"
+	width="336"
+	height="99"
+	srcset="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu5867472083432168745.png 480w, /p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu16541672353436024904.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="339"
+		data-flex-basis="814px"
+	
+></p>
+<ol start="3">
+<li>最后删除MySQL目录及相关的环境变量。</li>
+</ol>
+<p><strong>至此，MySQL卸载完成！</strong></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+        
+            <a href="/tags/mysql/">MySQL</a>
+        
+            <a href="/tags/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">安装文档</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
+        
+        
+            <div class="article-image">
+                <img src="/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/cmdbackground.90a0bb784b6e4246c7e507d799c39c14_hu3065358561119518277.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post SpringBootWeb请求响应"
+                        
+                        data-hash="md5-kKC7eEtuQkbH5QfXmcOcFA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringBootWeb请求响应</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 山有木兮
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
