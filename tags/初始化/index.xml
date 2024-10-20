@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>初始化 on 山有木兮</title>
+        <link>http://localhost:1313/tags/%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+        <description>Recent content in 初始化 on 山有木兮</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>山有木兮</copyright>
+        <lastBuildDate>Mon, 14 Oct 2024 16:54:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%88%9D%E5%A7%8B%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Vue3项目初始化</title>
+        <link>http://localhost:1313/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+        <pubDate>Mon, 14 Oct 2024 16:54:12 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+        <description>&lt;img src="http://localhost:1313/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/3fe47a7c26bbc6f54eb9fde1fad99cc9.png" alt="Featured image of post Vue3项目初始化" /&gt;&lt;h1 id=&#34;vue项目初始化&#34;&gt;vue项目初始化
+&lt;/h1&gt;&lt;h2 id=&#34;1执行命令npm-init-vuelatest&#34;&gt;1.执行命令：npm init vue@latest
+&lt;/h2&gt;&lt;img src=&#34;index.assets/49117038bd3f4384c4aa103d6f1715d5.png&#34; alt=&#34;49117038bd3f4384c4aa103d6f1715d5&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;依次执行：cd projectname; npm install；&lt;/p&gt;
+&lt;p&gt;使用VScode打开创建的项目(也可以在控制台输入 code . )&lt;/p&gt;
+&lt;h2 id=&#34;2vue项目的基本结构&#34;&gt;2.vue项目的基本结构
+&lt;/h2&gt;&lt;img src=&#34;index.assets/image-20241005165352633.png&#34; alt=&#34;image-20241005165352633&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;h2 id=&#34;3启动vue项目&#34;&gt;3.启动vue项目
+&lt;/h2&gt;&lt;p&gt;1.新建一个终端或使用文件目录下的cmd终端：&lt;/p&gt;
+&lt;img src=&#34;index.assets/b1ee0aeacd8a2c1b63e124495470ff3d.png&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;2.在控制台中输入： npm run dev&lt;/p&gt;
+&lt;p&gt;3.在运行结束后的页面中找到Local所指的网址，在浏览器中访问：&lt;/p&gt;
+&lt;img src=&#34;index.assets/813a4aa32551933ffe97cf4066b41a5f.png&#34; style=&#34;zoom: 40%;&#34; /&gt;
+&lt;p&gt;出现该界面表示vue初始项目运行成功。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

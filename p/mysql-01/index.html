@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="数据库开发-MySQL 前言 在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。\n">
+<title>MySQL 01</title>
+
+<link rel='canonical' href='http://localhost:1313/p/mysql-01/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="MySQL 01">
+<meta property='og:description' content="数据库开发-MySQL 前言 在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。\n">
+<meta property='og:url' content='http://localhost:1313/p/mysql-01/'>
+<meta property='og:site_name' content='山有木兮'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='后端' /><meta property='article:tag' content='MySQL' /><meta property='article:tag' content='安装文档' /><meta property='article:published_time' content='2024-10-20T16:28:42&#43;08:00'/><meta property='article:modified_time' content='2024-10-20T16:28:42&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/mysql-01/a81b153922d228b263e3a78d8fe7cab7.png' />
+<meta name="twitter:title" content="MySQL 01">
+<meta name="twitter:description" content="数据库开发-MySQL 前言 在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/p/mysql-01/a81b153922d228b263e3a78d8fe7cab7.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12487634835597679327.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">山有木兮</a></h1>
+            <h2 class="site-description">知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1338856997'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/shanymxc/shanymxc.github.io'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#1-mysql概述">1. MySQL概述</a>
+      <ol>
+        <li><a href="#11-安装">1.1 安装</a>
+          <ol>
+            <li><a href="#111-版本">1.1.1 版本</a></li>
+            <li><a href="#112-安装">1.1.2 安装</a></li>
+            <li><a href="#113-连接">1.1.3 连接</a></li>
+            <li><a href="#114-企业使用方式了解">1.1.4 企业使用方式(了解)</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-数据模型">1.2 数据模型</a></li>
+        <li><a href="#13-sql简介">1.3 SQL简介</a>
+          <ol>
+            <li><a href="#131-sql通用语法">1.3.1 SQL通用语法</a></li>
+            <li><a href="#132-分类">1.3.2 分类</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#2-数据库设计-ddl">2. 数据库设计-DDL</a>
+      <ol>
+        <li><a href="#21-项目开发流程">2.1 项目开发流程</a></li>
+        <li><a href="#22-数据库操作">2.2 数据库操作</a>
+          <ol>
+            <li><a href="#221-查询数据库">2.2.1 查询数据库</a></li>
+            <li><a href="#222-创建数据库">2.2.2 创建数据库</a></li>
+            <li><a href="#223-使用数据库">2.2.3 使用数据库</a></li>
+            <li><a href="#224-删除数据库">2.2.4 删除数据库</a></li>
+          </ol>
+        </li>
+        <li><a href="#23-图形化工具">2.3 图形化工具</a>
+          <ol>
+            <li><a href="#231-介绍">2.3.1 介绍</a></li>
+            <li><a href="#232-安装">2.3.2 安装</a></li>
+            <li><a href="#233-使用">2.3.3 使用</a></li>
+          </ol>
+        </li>
+        <li><a href="#23-表操作">2.3 表操作</a>
+          <ol>
+            <li><a href="#231-创建">2.3.1 创建</a></li>
+            <li><a href="#232-查询">2.3.2 查询</a></li>
+            <li><a href="#233-修改">2.3.3 修改</a></li>
+            <li><a href="#234-删除">2.3.4 删除</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#3-数据库操作-dml">3. 数据库操作-DML</a>
+      <ol>
+        <li><a href="#31-增加insert">3.1 增加(insert)</a></li>
+        <li><a href="#32-修改update">3.2 修改(update)</a></li>
+        <li><a href="#33-删除delete">3.3 删除(delete)</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/mysql-01/">
+                <img src="/p/mysql-01/a81b153922d228b263e3a78d8fe7cab7_hu17123055295434930134.png"
+                        srcset="/p/mysql-01/a81b153922d228b263e3a78d8fe7cab7_hu17123055295434930134.png 800w, /p/mysql-01/a81b153922d228b263e3a78d8fe7cab7_hu10475546943203760129.png 1600w"
+                        width="800" 
+                        height="608" 
+                        loading="lazy"
+                        alt="Featured image of post MySQL 01" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%90%8E%E7%AB%AF/" >
+                后端
+            </a>
+        
+            <a href="/categories/mysql/" >
+                MySQL
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/mysql-01/">MySQL 01</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 20, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="数据库开发-mysql">数据库开发-MySQL
+</h1><h2 id="前言">前言
+</h2><p>在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。</p>
+<p>之前我们的案例中，是这样子的请求流程：浏览器发起请求，先请求Controller；Controller接收到请求之后，调用Service进行业务逻辑处理；Service再调用Dao，Dao再解析user.xml中所存储的数据。</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205001241294.png"
+	width="1160"
+	height="248"
+	srcset="/p/mysql-01/index.assets/image-20221205001241294_hu7560493176788463293.png 480w, /p/mysql-01/index.assets/image-20221205001241294_hu10166119329825626751.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205001241294"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="467"
+		data-flex-basis="1122px"
+	
+></p>
+<p>xml文件中可以存储数据，但是在企业项目开发中不会使用xml文件存储数据，因为不便管理维护，操作难度大。 在真实的企业开发中呢，都会采用数据库来存储和管理数据，那此时，web开发调用流程图如下所示：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205001346266.png"
+	width="1220"
+	height="258"
+	srcset="/p/mysql-01/index.assets/image-20221205001346266_hu9631259327907031264.png 480w, /p/mysql-01/index.assets/image-20221205001346266_hu13181702294346858632.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205001346266"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="472"
+		data-flex-basis="1134px"
+	
+></p>
+<p>首先来了解一下什么是数据库。</p>
+<ul>
+<li>数据库：英文为 DataBase，简称DB，它是存储和管理数据的仓库。</li>
+</ul>
+<p>像我们日常访问的电商网站京东，企业内部的管理系统OA、ERP、CRM这类的系统，以及大家每天都会刷的头条、抖音类的app，那这些大家所看到的数据，其实都是存储在数据库中的。最终这些数据，只是在浏览器或app中展示出来而已，最终数据的存储和管理都是数据库负责的。</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205001501275.png"
+	width="1175"
+	height="525"
+	srcset="/p/mysql-01/index.assets/image-20221205001501275_hu3433697919968020966.png 480w, /p/mysql-01/index.assets/image-20221205001501275_hu4714489822033765268.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205001501275"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="223"
+		data-flex-basis="537px"
+	
+></p>
+<p>数据是存储在数据库中的，那我们要如何来操作数据库以及数据库中所存放的数据呢？</p>
+<p>那这里呢，会涉及到一个软件：数据库管理系统（<strong>D</strong>ata<strong>B</strong>ase <strong>M</strong>anagement <strong>S</strong>ystem，简称DBMS）</p>
+<ul>
+<li>DBMS是操作和管理数据库的大型软件。将来我们只需要操作这个软件，就可以通过这个软件来操纵和管理数据库了。</li>
+</ul>
+<p>此时又出现一个问题：DBMS这个软件怎么知道要操作的是哪个数据库、哪个数据呢？是对数据做修改还是查询呢？</p>
+<ul>
+<li>需要给DBMS软件发送一条指令，告诉这个软件我们要执行的是什么样的操作，要对哪个数据进行操作。而这个指令就是SQL语句</li>
+</ul>
+<p>SQL（<strong>S</strong>tructured <strong>Q</strong>uery <strong>L</strong>anguage，简称SQL）：结构化查询语言，它是操作关系型数据库的编程语言，定义了一套操作关系型数据库的统一标准。我们学习数据库开发，最为重要的就是学习SQL语句 。</p>
+<blockquote>
+<p>关系型数据库：我们后面会详细讲解，现在大家只需要知道我们学习的数据库属于关系型数据库即可。</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221205095039939.png"
+	width="1225"
+	height="344"
+	srcset="/p/mysql-01/index.assets/image-20221205095039939_hu13884389034121026844.png 480w, /p/mysql-01/index.assets/image-20221205095039939_hu7883030715687410545.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205095039939"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="356"
+		data-flex-basis="854px"
+	
+></p>
+<p>结论：程序员给数据库管理系统(DBMS)发送SQL语句，再由数据库管理系统操作数据库当中的数据。</p>
+<p>了解了数据库的一些简单概念之后，接下来我们再来介绍下目前主流的数据库，这里截取了排名前十的数据库：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205120408757.png"
+	width="662"
+	height="248"
+	srcset="/p/mysql-01/index.assets/image-20221205120408757_hu3280494717600821959.png 480w, /p/mysql-01/index.assets/image-20221205120408757_hu1600778644566284151.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205120408757"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="266"
+		data-flex-basis="640px"
+	
+></p>
+<ul>
+<li>Oracle：大型的收费数据库，Oracle公司产品，价格昂贵。（通常是不差钱的公司会选择使用这个数据库）</li>
+<li>MySQL：开源免费的中小型数据库，后来Sun公司收购了MySQL，而Oracle又收购了Sun公司。目前Oracle推出两个版本的Mysql：社区版(开源免费)、商业版(收费)。</li>
+<li>SQL Server：Microsoft 公司推出的收费的中型数据库，C#、.net等语言常用。</li>
+<li>PostgreSQL：开源免费的中小型数据库。</li>
+<li>DB2：IBM公司的大型收费数据库产品。</li>
+<li>SQLLite：嵌入式的微型数据库。Android内置的数据库采用的就是该数据库。</li>
+<li>MariaDB：开源免费的中小型数据库。是MySQL数据库的另外一个分支、另外一个衍生产品，与MySQL数据库有很好的兼容性。</li>
+</ul>
+<p>那这么多数据库，我们全部都需要学习吗，其实并不用，我们只需要学习其中的一个就可以了，我们此次课程中学习的数据库是现在互联网公司开发使用最为流行的MySQL数据库。</p>
+<p>此时大家可能会有一个疑问，我们现在学习的是Mysql数据库，我们以后去公司做开发，如果用到的是Oracle数据库或SQL Server数据库该怎么办？其实大家完全不用担心这个问题，因为这些数据库都是属于关系型数据库，要操作关系型数据库都是通过 SQL语句来实现的，而SQL语句又是操作关系型数据库的统一标准。</p>
+<blockquote>
+<p>结论：只要我们学会了SQL语句，就可以通过SQL语句来操作Mysql，也可以通过SQL语句来操作Oracle或SQL Server</p>
+</blockquote>
+<p>课程内容安排：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205122731402.png"
+	width="1070"
+	height="537"
+	srcset="/p/mysql-01/index.assets/image-20221205122731402_hu8620499983273103693.png 480w, /p/mysql-01/index.assets/image-20221205122731402_hu11327518077684192542.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205122731402"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="199"
+		data-flex-basis="478px"
+	
+></p>
+<p>以上课程内容拆解为3部分知识点：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205122937131.png"
+	width="1215"
+	height="431"
+	srcset="/p/mysql-01/index.assets/image-20221205122937131_hu56693958279289156.png 480w, /p/mysql-01/index.assets/image-20221205122937131_hu12616719676427891331.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205122937131"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="281"
+		data-flex-basis="676px"
+	
+></p>
+<p>接下来我们就先进入到第一天的Mysql概述学习。</p>
+<h2 id="1-mysql概述">1. MySQL概述
+</h2><p><img src="/p/mysql-01/index.assets/image-20220610191829748.png"
+	width="247"
+	height="134"
+	srcset="/p/mysql-01/index.assets/image-20220610191829748_hu3179323355200120532.png 480w, /p/mysql-01/index.assets/image-20220610191829748_hu995871388060509911.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220610191829748"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="442px"
+	
+></p>
+<p>官网：https://dev.mysql.com/</p>
+<h3 id="11-安装">1.1 安装
+</h3><h4 id="111-版本">1.1.1 版本
+</h4><p>MySQL官方提供了两个版本：</p>
+<ul>
+<li>
+<p>商业版本（MySQL Enterprise Edition）</p>
+<ul>
+<li>该版本是收费的，我们可以使用30天。 官方会提供对应的技术支持。</li>
+</ul>
+</li>
+<li>
+<p>社区版本（MySQL Community Server）</p>
+<ul>
+<li>该版本是免费的，但是MySQL不会提供任何的技术支持。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>本课程，采用的是MySQL的社区版本（8.0.31）</p>
+</blockquote>
+<h4 id="112-安装">1.1.2 安装
+</h4><p>官网下载地址：https://downloads.mysql.com/archives/community/</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205140643412.png"
+	width="1727"
+	height="658"
+	srcset="/p/mysql-01/index.assets/image-20221205140643412_hu9731600455171035518.png 480w, /p/mysql-01/index.assets/image-20221205140643412_hu13364079425357243497.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205140643412"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="262"
+		data-flex-basis="629px"
+	
+></p>
+<blockquote>
+<p>安装MySQL具体的步骤，参考《MySQL安装文档》 ，进行软件的安装即可。</p>
+</blockquote>
+<h4 id="113-连接">1.1.3 连接
+</h4><p>MySQL服务器启动完毕后，然后再使用如下指令，来连接MySQL服务器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>-h  参数不加，默认连接的是本地 127.0.0.1 的MySQL服务器</p>
+<p>-P  参数不加，默认连接的端口号是 3306</p>
+</blockquote>
+<p><strong>上述指令，可以有两种形式：</strong></p>
+<ul>
+<li>密码直接在-p参数之后直接指定 （这种方式不安全，密码直接以明文形式出现在命令行）</li>
+</ul>
+<p><img src="/p/mysql-01/index.assets/image-20221205143139656.png"
+	width="1178"
+	height="362"
+	srcset="/p/mysql-01/index.assets/image-20221205143139656_hu15074802027666168784.png 480w, /p/mysql-01/index.assets/image-20221205143139656_hu5356805973673241169.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205143139656"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="325"
+		data-flex-basis="780px"
+	
+></p>
+<ul>
+<li>密码在-p回车之后，在命令行中输入密码，然后回车</li>
+</ul>
+<p><img src="/p/mysql-01/index.assets/image-20221205143418632.png"
+	width="1110"
+	height="440"
+	srcset="/p/mysql-01/index.assets/image-20221205143418632_hu2718082546672389430.png 480w, /p/mysql-01/index.assets/image-20221205143418632_hu5341788205092221875.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205143418632"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="605px"
+	
+></p>
+<h4 id="114-企业使用方式了解">1.1.4 企业使用方式(了解)
+</h4><p>上述的MySQL服务器我们是安装在本地的，这个仅仅是在我们学习阶段，在真实的企业开发中，MySQL数据库服务器是不会在我们本地安装的，是在公司的服务器上安装的，而服务器还需要放置在专门的IDC机房中的，IDC机房呢，就需要保证恒温、恒湿、恒压，而且还要保证网络、电源的可靠性(备用电源及网络)。</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829110618240.png"
+	width="1579"
+	height="372"
+	srcset="/p/mysql-01/index.assets/image-20220829110618240_hu9879678088167296138.png 480w, /p/mysql-01/index.assets/image-20220829110618240_hu14632865596219088247.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829110618240"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="424"
+		data-flex-basis="1018px"
+	
+></p>
+<p>那我们要想使用服务器上的这台MySQL服务器，就需要在我们的电脑上去远程连接这台MySQL。 而服务器上安装的MySQL数据库呢，并不是你一个人在访问，我们项目组的其他开发人员也是需要访问这台MySQL的。</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829110723526.png"
+	width="1581"
+	height="374"
+	srcset="/p/mysql-01/index.assets/image-20220829110723526_hu15735780660896185158.png 480w, /p/mysql-01/index.assets/image-20220829110723526_hu684842897866222306.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829110723526"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="422"
+		data-flex-basis="1014px"
+	
+></p>
+<p>我们在学习阶段，如果想提前体验一下企业中数据库的使用方式，可以借助于VMware虚拟机来实现。我们可以在我们的电脑上安装一个VMware，然后在Vmware虚拟机上在安装一个服务器操作系统Linux，然后再在Linux服务器上安装各种企业级软件。</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829111237340.png"
+	width="1971"
+	height="439"
+	srcset="/p/mysql-01/index.assets/image-20220829111237340_hu8028861945674901132.png 480w, /p/mysql-01/index.assets/image-20220829111237340_hu15417816044814974068.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829111237340"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="448"
+		data-flex-basis="1077px"
+	
+></p>
+<p>接下来，就来演示一下，通过MySQL的客户端命令行，如何来连接服务器上部署的MySQL ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql-01/index.assets/image-20220829111522126.png"
+	width="1505"
+	height="594"
+	srcset="/p/mysql-01/index.assets/image-20220829111522126_hu6581925109470458276.png 480w, /p/mysql-01/index.assets/image-20220829111522126_hu16877708855759308117.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829111522126"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="253"
+		data-flex-basis="608px"
+	
+></p>
+<h3 id="12-数据模型">1.2 数据模型
+</h3><p>介绍完了Mysql数据库的安装配置之后，接下来我们再来聊一聊Mysql当中的数据模型。学完了这一小节之后，我们就能够知道在Mysql数据库当中到底是如何来存储和管理数据的。</p>
+<p>在介绍 Mysql的数据模型之前，需要先了解一个概念：关系型数据库。</p>
+<p><strong>关系型数据库（RDBMS）</strong></p>
+<p>概念：建立在关系模型基础上，由多张相互连接的<strong>二维表</strong>组成的数据库。</p>
+<p>而所谓二维表，指的是由行和列组成的表，如下图：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205145028667.png"
+	width="710"
+	height="228"
+	srcset="/p/mysql-01/index.assets/image-20221205145028667_hu14488364106015374429.png 480w, /p/mysql-01/index.assets/image-20221205145028667_hu12745927588360511126.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205145028667"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="311"
+		data-flex-basis="747px"
+	
+></p>
+<p>二维表的优点：</p>
+<ul>
+<li>
+<p>使用表存储数据，格式统一，便于维护</p>
+</li>
+<li>
+<p>使用SQL语言操作，标准统一，使用方便，可用于复杂查询</p>
+</li>
+</ul>
+<blockquote>
+<p>我们之前提到的MySQL、Oracle、DB2、SQLServer这些都是属于关系型数据库，里面都是基于二维表存储数据的。</p>
+<p>结论：基于二维表存储数据的数据库就成为关系型数据库，不是基于二维表存储数据的数据库，就是非关系型数据库（比如大家后面要学习的Redis，就属于非关系型数据库）。</p>
+</blockquote>
+<p><strong>2). 数据模型</strong></p>
+<p>介绍完了关系型数据库之后，接下来我们再来看一看在Mysql数据库当中到底是如何来存储数据的，也就是Mysql 的数据模型。</p>
+<p>MySQL是关系型数据库，是基于二维表进行数据存储的，具体的结构图下:</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829111741419.png"
+	width="1603"
+	height="597"
+	srcset="/p/mysql-01/index.assets/image-20220829111741419_hu16259095621546733537.png 480w, /p/mysql-01/index.assets/image-20220829111741419_hu7479184335245860182.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829111741419"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="268"
+		data-flex-basis="644px"
+	
+></p>
+<ul>
+<li>通过MySQL客户端连接数据库管理系统DBMS，然后通过DBMS操作数据库</li>
+<li>使用MySQL客户端，向数据库管理系统发送一条SQL语句，由数据库管理系统根据SQL语句指令去操作数据库中的表结构及数据</li>
+<li>一个数据库服务器中可以创建多个数据库，一个数据库中也可以包含多张表，而一张表中又可以包含多行记录。</li>
+</ul>
+<blockquote>
+<p>在Mysql数据库服务器当中存储数据，你需要：</p>
+<ol>
+<li>先去创建数据库（可以创建多个数据库，之间是相互独立的）</li>
+<li>在数据库下再去创建数据表（一个数据库下可以创建多张表）</li>
+<li>再将数据存放在数据表中（一张表可以存储多行数据）</li>
+</ol>
+</blockquote>
+<h3 id="13-sql简介">1.3 SQL简介
+</h3><p>SQL：结构化查询语言。一门操作关系型数据库的编程语言，定义操作所有关系型数据库的统一标准。</p>
+<p>在学习具体的SQL语句之前，先来了解一下SQL语言的语法。</p>
+<h4 id="131-sql通用语法">1.3.1 SQL通用语法
+</h4><p>1、SQL语句可以单行或多行书写，以分号结尾。</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205151656214.png"
+	width="930"
+	height="203"
+	srcset="/p/mysql-01/index.assets/image-20221205151656214_hu6372481812162587678.png 480w, /p/mysql-01/index.assets/image-20221205151656214_hu11713055180171865862.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205151656214"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="458"
+		data-flex-basis="1099px"
+	
+></p>
+<p>2、SQL语句可以使用空格/缩进来增强语句的可读性。</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205151953441.png"
+	width="927"
+	height="246"
+	srcset="/p/mysql-01/index.assets/image-20221205151953441_hu10730286245012512435.png 480w, /p/mysql-01/index.assets/image-20221205151953441_hu295031423142733593.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205151953441"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="376"
+		data-flex-basis="904px"
+	
+></p>
+<p>3、MySQL数据库的SQL语句不区分大小写。</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205152112070.png"
+	width="929"
+	height="243"
+	srcset="/p/mysql-01/index.assets/image-20221205152112070_hu13995149313935511745.png 480w, /p/mysql-01/index.assets/image-20221205152112070_hu3076236987003985196.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205152112070"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="382"
+		data-flex-basis="917px"
+	
+></p>
+<p>4、注释：</p>
+<ul>
+<li>单行注释：&ndash; 注释内容   或   # 注释内容(MySQL特有)</li>
+<li>多行注释： /* 注释内容 */</li>
+</ul>
+<blockquote>
+<p>以上就是SQL语句的通用语法，这些通用语法大家目前先有一个直观的认识，我们后面在讲解每一类SQL语句的时候，还会再来强调通用语法。</p>
+</blockquote>
+<h4 id="132-分类">1.3.2 分类
+</h4><p>SQL语句根据其功能被分为四大类：DDL、DML、DQL、DCL</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>分类</strong></th>
+          <th style="text-align: left"><strong>全称</strong></th>
+          <th style="text-align: left"><strong>说明</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">DDL</td>
+          <td style="text-align: left">Data Definition  Language</td>
+          <td style="text-align: left">数据定义语言，用来定义数据库对象(数据库，表，字段)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DML</td>
+          <td style="text-align: left">Data Manipulation  Language</td>
+          <td style="text-align: left">数据操作语言，用来对数据库表中的数据进行增删改</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DQL</td>
+          <td style="text-align: left">Data Query Language</td>
+          <td style="text-align: left">数据查询语言，用来查询数据库中表的记录</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DCL</td>
+          <td style="text-align: left">Data Control  Language</td>
+          <td style="text-align: left">数据控制语言，用来创建数据库用户、控制数据库的访问权限</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><img src="/p/mysql-01/index.assets/image-20221205152804250.png"
+	width="1057"
+	height="305"
+	srcset="/p/mysql-01/index.assets/image-20221205152804250_hu12527018429949772913.png 480w, /p/mysql-01/index.assets/image-20221205152804250_hu8251562934281065764.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205152804250"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="346"
+		data-flex-basis="831px"
+	
+></p>
+<h2 id="2-数据库设计-ddl">2. 数据库设计-DDL
+</h2><p>下面我们就正式的进入到SQL语句的学习，在学习之前先给大家介绍一下我们要开发一个项目，整个开发流程是什么样的，以及在流程当中哪些环节会涉及到数据库。</p>
+<h3 id="21-项目开发流程">2.1 项目开发流程
+</h3><p><img src="/p/mysql-01/index.assets/image-20220829112953742.png"
+	width="1604"
+	height="689"
+	srcset="/p/mysql-01/index.assets/image-20220829112953742_hu1556667874273720160.png 480w, /p/mysql-01/index.assets/image-20220829112953742_hu11235804148970246693.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829112953742"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="232"
+		data-flex-basis="558px"
+	
+></p>
+<p>需求文档：</p>
+<ul>
+<li>在我们开发一个项目或者项目当中的某个模块之前，会先会拿到产品经理给我们提供的页面原型及需求文档。</li>
+</ul>
+<p><img src="/p/mysql-01/index.assets/image-20221205154101142.png"
+	width="1500"
+	height="442"
+	srcset="/p/mysql-01/index.assets/image-20221205154101142_hu18384949420326636277.png 480w, /p/mysql-01/index.assets/image-20221205154101142_hu3957901390125322974.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205154101142"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="339"
+		data-flex-basis="814px"
+	
+></p>
+<p>设计：</p>
+<ul>
+<li>拿到产品原型和需求文档之后，我们首先要做的不是编码，而是要先进行项目的设计，其中就包括概要设计、详细设计、接口设计、数据库设计等等。</li>
+<li>数据库设计根据产品原型以及需求文档，要分析各个模块涉及到的表结构以及表结构之间的关系，以及表结构的详细信息。最终我们需要将数据库以及数据库当中的表结构设计创建出来。</li>
+</ul>
+<p>开发/测试：</p>
+<ul>
+<li>参照页面原型和需求进行编码，实现业务功能。在这个过程当中，我们就需要来操作设计出来的数据库表结构，来完成业务的增删改查操作等。</li>
+</ul>
+<p>部署上线：</p>
+<ul>
+<li>在项目的功能开发测试完成之后，项目就可以上线运行了，后期如果项目遇到性能瓶颈，还需要对项目进行优化。优化很重要的一个部分就是数据库的优化，包括数据库当中索引的建立、SQL 的优化、分库分表等操作。</li>
+</ul>
+<p>在上述的流程当中，针对于数据库来说，主要包括三个阶段：</p>
+<ol>
+<li>数据库设计阶段
+<ul>
+<li>参照页面原型以及需求文档设计数据库表结构</li>
+</ul>
+</li>
+<li>数据库操作阶段
+<ul>
+<li>根据业务功能的实现，编写SQL语句对数据表中的数据进行增删改查操作</li>
+</ul>
+</li>
+<li>数据库优化阶段
+<ul>
+<li>通过数据库的优化来提高数据库的访问性能。优化手段：索引、SQL优化、分库分表等</li>
+</ul>
+</li>
+</ol>
+<p>接下来我们就先来学习第一部分数据库的设计，而数据库的设计就是来定义数据库，定义表结构以及表中的字段。</p>
+<h3 id="22-数据库操作">2.2 数据库操作
+</h3><p>我们在进行数据库设计，需要使用到刚才所介绍SQL分类中的DDL语句。</p>
+<p>DDL英文全称是Data Definition Language(数据定义语言)，用来定义数据库对象(数据库、表)。</p>
+<p>DDL中数据库的常见操作：查询、创建、使用、删除。</p>
+<h4 id="221-查询数据库">2.2.1 查询数据库
+</h4><p><strong>查询所有数据库：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="k">databases</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令行中执行效果如下：</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829124104154.png"
+	width="1200"
+	height="267"
+	srcset="/p/mysql-01/index.assets/image-20220829124104154_hu8433470343993628788.png 480w, /p/mysql-01/index.assets/image-20220829124104154_hu14667831687617122271.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829124104154"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="449"
+		data-flex-basis="1078px"
+	
+></p>
+<p><strong>查询当前数据库：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="k">database</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令行中执行效果如果：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205174615074.png"
+	width="927"
+	height="342"
+	srcset="/p/mysql-01/index.assets/image-20221205174615074_hu9482805381993093858.png 480w, /p/mysql-01/index.assets/image-20221205174615074_hu15861643908047122458.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205174615074"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="271"
+		data-flex-basis="650px"
+	
+></p>
+<blockquote>
+<p>我们要操作某一个数据库，必须要切换到对应的数据库中。</p>
+<p>通过指令：select  database() ，就可以查询到当前所处的数据库</p>
+</blockquote>
+<h4 id="222-创建数据库">2.2.2 创建数据库
+</h4><p><strong>语法：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="err">数据库名</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例： 创建一个itcast数据库。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">itcast</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令行执行效果如下：</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829124219427.png"
+	width="1199"
+	height="148"
+	srcset="/p/mysql-01/index.assets/image-20220829124219427_hu12895494597784373889.png 480w, /p/mysql-01/index.assets/image-20220829124219427_hu12776836685659521534.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829124219427"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="810"
+		data-flex-basis="1944px"
+	
+></p>
+<p>==注意：在同一个数据库服务器中，不能创建两个名称相同的数据库，否则将会报错。==</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829124250514.png"
+	width="1200"
+	height="161"
+	srcset="/p/mysql-01/index.assets/image-20220829124250514_hu13777948626188458806.png 480w, /p/mysql-01/index.assets/image-20220829124250514_hu12167681951753485518.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829124250514"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="745"
+		data-flex-basis="1788px"
+	
+></p>
+<ul>
+<li>可以使用if not exists来避免这个问题</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 数据库不存在,则创建该数据库；如果存在则不创建
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">extists</span><span class="w"> </span><span class="n">itcast</span><span class="p">;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令行执行效果如下： <img src="/p/mysql-01/index.assets/image-20220829124326741.png"
+	width="1201"
+	height="108"
+	srcset="/p/mysql-01/index.assets/image-20220829124326741_hu5173299275741241216.png 480w, /p/mysql-01/index.assets/image-20220829124326741_hu4817368197199947139.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829124326741"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1112"
+		data-flex-basis="2668px"
+	
+></p>
+<h4 id="223-使用数据库">2.2.3 使用数据库
+</h4><p><strong>语法：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="err">数据库名</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>我们要操作某一个数据库下的表时，就需要通过该指令，切换到对应的数据库下，否则不能操作。</p>
+</blockquote>
+<p>案例：切换到itcast数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">itcast</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令执行效果如下：</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829124929708.png"
+	width="1199"
+	height="265"
+	srcset="/p/mysql-01/index.assets/image-20220829124929708_hu12284304709209406351.png 480w, /p/mysql-01/index.assets/image-20220829124929708_hu16016620511548763407.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829124929708"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="452"
+		data-flex-basis="1085px"
+	
+></p>
+<h4 id="224-删除数据库">2.2.4 删除数据库
+</h4><p><strong>语法：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="err">数据库名</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果删除一个不存在的数据库，将会报错。</p>
+<p>可以加上参数 if exists ，如果数据库存在，再执行删除，否则不执行删除。</p>
+</blockquote>
+<p>案例：删除itcast数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">drop</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">itcast</span><span class="p">;</span><span class="w"> </span><span class="c1">-- itcast数据库存在时删除
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令执行效果如下：</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829125006142.png"
+	width="1199"
+	height="231"
+	srcset="/p/mysql-01/index.assets/image-20220829125006142_hu14431618479429951603.png 480w, /p/mysql-01/index.assets/image-20220829125006142_hu1819200823327408960.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829125006142"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="519"
+		data-flex-basis="1245px"
+	
+></p>
+<blockquote>
+<p>说明：上述语法中的database，也可以替换成 schema</p>
+<ul>
+<li>如：create schema db01;</li>
+<li>如：show schemas;</li>
+</ul>
+<p><img src="/p/mysql-01/index.assets/image-20221205180608004.png"
+	width="923"
+	height="221"
+	srcset="/p/mysql-01/index.assets/image-20221205180608004_hu2845988248449236127.png 480w, /p/mysql-01/index.assets/image-20221205180608004_hu4929020407392292177.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205180608004"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="417"
+		data-flex-basis="1002px"
+	
+></p>
+</blockquote>
+<h3 id="23-图形化工具">2.3 图形化工具
+</h3><h4 id="231-介绍">2.3.1 介绍
+</h4><p>前面我们讲解了DDL中关于数据库操作的SQL语句，在我们编写这些SQL时，都是在命令行当中完成的。大家在练习的时候应该也感受到了，在命令行当中来敲这些SQL语句很不方便，主要的原因有以下 3 点：</p>
+<ol>
+<li>没有任何代码提示。（全靠记忆，容易敲错字母造成执行报错）</li>
+<li>操作繁琐，影响开发效率。（所有的功能操作都是通过SQL语句来完成的）</li>
+<li>编写过的SQL代码无法保存。</li>
+</ol>
+<p>在项目开发当中，通常为了提高开发效率，都会借助于现成的图形化管理工具来操作数据库。</p>
+<p>目前MySQL主流的图形化界面工具有以下几种：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205184802646.png"
+	width="1144"
+	height="164"
+	srcset="/p/mysql-01/index.assets/image-20221205184802646_hu526764415428755935.png 480w, /p/mysql-01/index.assets/image-20221205184802646_hu2036035692312068613.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205184802646"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="697"
+		data-flex-basis="1674px"
+	
+></p>
+<p>DataGrip是JetBrains旗下的一款数据库管理工具，是管理和开发MySQL、Oracle、PostgreSQL的理想解决方案。</p>
+<p>官网： <a class="link" href="https://www.jetbrains.com/zh-cn/datagrip/"  target="_blank" rel="noopener"
+    >https://www.jetbrains.com/zh-cn/datagrip/</a></p>
+<h4 id="232-安装">2.3.2 安装
+</h4><p>安装： 参考《DataGrip安装手册》</p>
+<blockquote>
+<p>说明：DataGrip这款工具可以不用安装，因为Jetbrains公司已经将DataGrip这款工具的功能已经集成到了 IDEA当中，所以我们就可以使用IDEA来作为一款图形化界面工具来操作Mysql数据库。</p>
+</blockquote>
+<h4 id="233-使用">2.3.3 使用
+</h4><h5 id="2231-连接数据库">2.2.3.1 连接数据库
+</h5><p>1、打开IDEA自带的Database</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205190929756.png"
+	width="1448"
+	height="510"
+	srcset="/p/mysql-01/index.assets/image-20221205190929756_hu7307477618485986571.png 480w, /p/mysql-01/index.assets/image-20221205190929756_hu9521140734333345166.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205190929756"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="283"
+		data-flex-basis="681px"
+	
+></p>
+<p>2、配置MySQL</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205191143072.png"
+	width="1318"
+	height="769"
+	srcset="/p/mysql-01/index.assets/image-20221205191143072_hu10719582293557558489.png 480w, /p/mysql-01/index.assets/image-20221205191143072_hu7364267432781160191.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205191143072"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="171"
+		data-flex-basis="411px"
+	
+></p>
+<p>3、输入相关信息</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205192606038.png"
+	width="1241"
+	height="792"
+	srcset="/p/mysql-01/index.assets/image-20221205192606038_hu8492440260656694020.png 480w, /p/mysql-01/index.assets/image-20221205192606038_hu15859921096194646793.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205192606038"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="376px"
+	
+></p>
+<p>4、下载MySQL连接驱动</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205192847190.png"
+	width="1241"
+	height="792"
+	srcset="/p/mysql-01/index.assets/image-20221205192847190_hu4777411518743276509.png 480w, /p/mysql-01/index.assets/image-20221205192847190_hu9747128819943075454.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205192847190"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="376px"
+	
+></p>
+<p>5、测试数据库连接</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205193304124.png"
+	width="1241"
+	height="792"
+	srcset="/p/mysql-01/index.assets/image-20221205193304124_hu16708037630860744282.png 480w, /p/mysql-01/index.assets/image-20221205193304124_hu7183510564673130332.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205193304124"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="376px"
+	
+></p>
+<p>6、保存配置</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205193409856.png"
+	width="1241"
+	height="792"
+	srcset="/p/mysql-01/index.assets/image-20221205193409856_hu16046591693819191361.png 480w, /p/mysql-01/index.assets/image-20221205193409856_hu13347475235568233473.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205193409856"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="156"
+		data-flex-basis="376px"
+	
+></p>
+<p>默认情况下，连接上了MySQL数据库之后， 数据库并没有全部展示出来。 需要选择要展示哪些数据库。具体操作如下：</p>
+<p><img src="/p/mysql-01/index.assets/8.gif"
+	width="878"
+	height="622"
+	srcset="/p/mysql-01/index.assets/8_hu16470815587205706047.gif 480w, /p/mysql-01/index.assets/8_hu10626756518718299237.gif 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="338px"
+	
+></p>
+<h5 id="2232-操作数据库">2.2.3.2 操作数据库
+</h5><p><strong>创建数据库：</strong></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205195346655.png"
+	width="1165"
+	height="458"
+	srcset="/p/mysql-01/index.assets/image-20221205195346655_hu4765854779038025576.png 480w, /p/mysql-01/index.assets/image-20221205195346655_hu13029483860987644021.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205195346655"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="254"
+		data-flex-basis="610px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205195510716.png"
+	width="1125"
+	height="604"
+	srcset="/p/mysql-01/index.assets/image-20221205195510716_hu3265312770501905198.png 480w, /p/mysql-01/index.assets/image-20221205195510716_hu459710351176490273.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205195510716"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="186"
+		data-flex-basis="447px"
+	
+></p>
+<blockquote>
+<p>有了图形化界面工具后，就可以方便的使用图形化工具：创建数据库，创建表、修改表等DDL操作。</p>
+<p>其实工具底层也是通过DDL语句操作的数据库，只不过这些SQL语句是图形化界面工具帮我们自动完成的。</p>
+</blockquote>
+<p><strong>查看所有数据库：</strong></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205195128343.png"
+	width="1399"
+	height="225"
+	srcset="/p/mysql-01/index.assets/image-20221205195128343_hu12302502236435750719.png 480w, /p/mysql-01/index.assets/image-20221205195128343_hu12744656631390182213.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205195128343"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="621"
+		data-flex-basis="1492px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205195833439.png"
+	width="1161"
+	height="663"
+	srcset="/p/mysql-01/index.assets/image-20221205195833439_hu1452594499504796917.png 480w, /p/mysql-01/index.assets/image-20221205195833439_hu1093265351219469409.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205195833439"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="175"
+		data-flex-basis="420px"
+	
+></p>
+<h3 id="23-表操作">2.3 表操作
+</h3><p>学习完了DDL语句当中关于数据库的操作之后，接下来我们继续学习DDL语句当中关于表结构的操作。</p>
+<p>关于表结构的操作也是包含四个部分：创建表、查询表、修改表、删除表。</p>
+<h4 id="231-创建">2.3.1 创建
+</h4><h5 id="2311-语法">2.3.1.1 语法
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w">  </span><span class="err">表名</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">字段</span><span class="mi">1</span><span class="w">  </span><span class="err">字段</span><span class="mi">1</span><span class="err">类型</span><span class="w"> </span><span class="p">[</span><span class="err">约束</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="n">comment</span><span class="w">  </span><span class="err">字段</span><span class="mi">1</span><span class="err">注释</span><span class="w"> </span><span class="p">],</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">字段</span><span class="mi">2</span><span class="w">  </span><span class="err">字段</span><span class="mi">2</span><span class="err">类型</span><span class="w"> </span><span class="p">[</span><span class="err">约束</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="n">comment</span><span class="w">  </span><span class="err">字段</span><span class="mi">2</span><span class="err">注释</span><span class="w"> </span><span class="p">],</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">......</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">字段</span><span class="n">n</span><span class="w">  </span><span class="err">字段</span><span class="n">n类型</span><span class="w"> </span><span class="p">[</span><span class="err">约束</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="n">comment</span><span class="w">  </span><span class="err">字段</span><span class="n">n注释</span><span class="w"> </span><span class="p">]</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="n">comment</span><span class="w">  </span><span class="err">表注释</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意： [ ] 中的内容为可选参数； 最后一个字段后面没有逗号</p>
+</blockquote>
+<p>案例：创建tb_user表</p>
+<ul>
+<li>对应的结构如下：</li>
+</ul>
+<p><img src="/p/mysql-01/index.assets/image-20220829143005524.png"
+	width="619"
+	height="186"
+	srcset="/p/mysql-01/index.assets/image-20220829143005524_hu14257297805380213667.png 480w, /p/mysql-01/index.assets/image-20220829143005524_hu4096720701413626968.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829143005524"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="332"
+		data-flex-basis="798px"
+	
+></p>
+<ul>
+<li>建表语句：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">tb_user</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;ID,唯一标识&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1"># id是一行数据的唯一标识（不能重复）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;姓名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;年龄&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">gender</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;性别&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>数据表创建完成，接下来我们还需要测试一下是否可以往这张表结构当中来存储数据。</p>
+</blockquote>
+<p>双击打开tb_user表结构，大家会发现里面没有数据：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205211008929.png"
+	width="1134"
+	height="246"
+	srcset="/p/mysql-01/index.assets/image-20221205211008929_hu117362698695401272.png 480w, /p/mysql-01/index.assets/image-20221205211008929_hu15178555380494002440.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205211008929"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="460"
+		data-flex-basis="1106px"
+	
+></p>
+<p>添加数据：</p>
+<p><img src="/p/mysql-01/index.assets/9.gif"
+	width="783"
+	height="196"
+	srcset="/p/mysql-01/index.assets/9_hu9207914244194304422.gif 480w, /p/mysql-01/index.assets/9_hu881732425201415070.gif 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="399"
+		data-flex-basis="958px"
+	
+></p>
+<p>此时我们再插入一条数据：</p>
+<p><img src="/p/mysql-01/index.assets/image-20221205214447060.png"
+	width="1062"
+	height="106"
+	srcset="/p/mysql-01/index.assets/image-20221205214447060_hu13373872174144316865.png 480w, /p/mysql-01/index.assets/image-20221205214447060_hu772596606771668254.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205214447060"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="1001"
+		data-flex-basis="2404px"
+	
+></p>
+<p>我们之前提到过：id字段是一行数据的唯一标识，不能有重复值。但是现在数据表中有两个相同的id值，这是为什么呢？</p>
+<ul>
+<li>其实我们现在创建表结构的时候， id这个字段我们只加了一个备注信息说明它是一个唯一标识，但是在数据库层面呢，并没有去限制字段存储的数据。所以id这个字段没有起到唯一标识的作用。</li>
+</ul>
+<blockquote>
+<p>想要限制字段所存储的数据，就需要用到数据库中的约束。</p>
+</blockquote>
+<h5 id="2312-约束">2.3.1.2 约束
+</h5><p>概念：所谓约束就是作用在表中字段上的规则，用于限制存储在表中的数据。</p>
+<p>作用：就是来保证数据库当中数据的正确性、有效性和完整性。（后面的学习会验证这些）</p>
+<p>在MySQL数据库当中，提供了以下5种约束：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>约束</strong></th>
+          <th style="text-align: left"><strong>描述</strong></th>
+          <th style="text-align: left"><strong>关键字</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">非空约束</td>
+          <td style="text-align: left">限制该字段值不能为null</td>
+          <td style="text-align: left">not null</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">唯一约束</td>
+          <td style="text-align: left">保证字段的所有数据都是唯一、不重复的</td>
+          <td style="text-align: left">unique</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">主键约束</td>
+          <td style="text-align: left">主键是一行数据的唯一标识，要求非空且唯一</td>
+          <td style="text-align: left">primary key</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">默认约束</td>
+          <td style="text-align: left">保存数据时，如果未指定该字段值，则采用默认值</td>
+          <td style="text-align: left">default</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">外键约束</td>
+          <td style="text-align: left">让两张表的数据建立连接，保证数据的一致性和完整性</td>
+          <td style="text-align: left">foreign key</td>
+      </tr>
+  </tbody>
+</table></div>
+<blockquote>
+<p>注意：约束是作用于表中字段上的，可以在创建表/修改表的时候添加约束。</p>
+</blockquote>
+<p>案例：创建tb_user表</p>
+<ul>
+<li>对应的结构如下：</li>
+</ul>
+<p><img src="/p/mysql-01/index.assets/image-20220829143005524.png"
+	width="619"
+	height="186"
+	srcset="/p/mysql-01/index.assets/image-20220829143005524_hu14257297805380213667.png 480w, /p/mysql-01/index.assets/image-20220829143005524_hu4096720701413626968.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829143005524"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="332"
+		data-flex-basis="798px"
+	
+></p>
+<blockquote>
+<p>在上述的表结构中:</p>
+<ul>
+<li>
+<p>id 是一行数据的唯一标识</p>
+</li>
+<li>
+<p>username 用户名字段是非空且唯一的</p>
+</li>
+<li>
+<p>name 姓名字段是不允许存储空值的</p>
+</li>
+<li>
+<p>gender 性别字段是有默认值，默认为男</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>建表语句：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">tb_user</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;ID,唯一标识&#39;</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;姓名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;年龄&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">gender</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;性别&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>数据表创建完成，接下来测试一下表中字段上的约束是否生效</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221205215309011.png"
+	width="1150"
+	height="480"
+	srcset="/p/mysql-01/index.assets/image-20221205215309011_hu6451070393562870971.png 480w, /p/mysql-01/index.assets/image-20221205215309011_hu5719480842711463379.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205215309011"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="239"
+		data-flex-basis="575px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205215632599.png"
+	width="1150"
+	height="480"
+	srcset="/p/mysql-01/index.assets/image-20221205215632599_hu4275229783581975358.png 480w, /p/mysql-01/index.assets/image-20221205215632599_hu7643493532115665332.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205215632599"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="239"
+		data-flex-basis="575px"
+	
+></p>
+<p>大家有没有发现一个问题：id字段下存储的值，如果由我们自己来维护会比较麻烦(必须保证值的唯一性)。MySQL数据库为了解决这个问题，给我们提供了一个关键字：auto_increment（自动增长）</p>
+<blockquote>
+<p>主键自增：auto_increment</p>
+<ul>
+<li>每次插入新的行记录时，数据库自动生成id字段(主键)下的值</li>
+<li>具有auto_increment的数据列是一个正数序列开始增长(从1开始自增)</li>
+</ul>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="nf">tb_user</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="kp">auto_increment</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;ID,唯一标识&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">#主键自动增长
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;姓名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;年龄&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">gender</span><span class="w"> </span><span class="kt">char</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;男&#39;</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;性别&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>测试：主键自增</p>
+<p><img src="/p/mysql-01/index.assets/10.gif"
+	width="1247"
+	height="373"
+	srcset="/p/mysql-01/index.assets/10_hu17253740875020239283.gif 480w, /p/mysql-01/index.assets/10_hu834605694290898265.gif 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="334"
+		data-flex-basis="802px"
+	
+></p>
+<h5 id="2313-数据类型">2.3.1.3 数据类型
+</h5><p>在上面建表语句中，我们在指定字段的数据类型时，用到了int 、varchar、char，那么在MySQL中除了以上的数据类型，还有哪些常见的数据类型呢？ 接下来,我们就来详细介绍一下MySQL的数据类型。</p>
+<p>MySQL中的数据类型有很多，主要分为三类：数值类型、字符串类型、日期时间类型。</p>
+<p><strong>数值类型</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">类型</th>
+          <th style="text-align: left">大小</th>
+          <th style="text-align: left">有符号(SIGNED)范围</th>
+          <th style="text-align: left">无符号(UNSIGNED)范围</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">TINYINT</td>
+          <td style="text-align: left">1byte</td>
+          <td style="text-align: left">(-128，127)</td>
+          <td style="text-align: left">(0，255)</td>
+          <td style="text-align: left">小整数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">SMALLINT</td>
+          <td style="text-align: left">2bytes</td>
+          <td style="text-align: left">(-32768，32767)</td>
+          <td style="text-align: left">(0，65535)</td>
+          <td style="text-align: left">大整数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MEDIUMINT</td>
+          <td style="text-align: left">3bytes</td>
+          <td style="text-align: left">(-8388608，8388607)</td>
+          <td style="text-align: left">(0，16777215)</td>
+          <td style="text-align: left">大整数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">INT/INTEGER</td>
+          <td style="text-align: left">4bytes</td>
+          <td style="text-align: left">(-2147483648，2147483647)</td>
+          <td style="text-align: left">(0，4294967295)</td>
+          <td style="text-align: left">大整数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">BIGINT</td>
+          <td style="text-align: left">8bytes</td>
+          <td style="text-align: left">(-2^63，2^63-1)</td>
+          <td style="text-align: left">(0，2^64-1)</td>
+          <td style="text-align: left">极大整数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">FLOAT</td>
+          <td style="text-align: left">4bytes</td>
+          <td style="text-align: left">(-3.402823466 E+38，3.402823466351 E+38)</td>
+          <td style="text-align: left">0 和 (1.175494351  E-38，3.402823466 E+38)</td>
+          <td style="text-align: left">单精度浮点数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DOUBLE</td>
+          <td style="text-align: left">8bytes</td>
+          <td style="text-align: left">(-1.7976931348623157 E+308，1.7976931348623157 E+308)</td>
+          <td style="text-align: left">0 和  (2.2250738585072014 E-308，1.7976931348623157 E+308)</td>
+          <td style="text-align: left">双精度浮点数值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DECIMAL</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">依赖于M(精度)和D(标度)的值</td>
+          <td style="text-align: left">依赖于M(精度)和D(标度)的值</td>
+          <td style="text-align: left">小数值(精确定点数)</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">示例</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">年龄字段</span><span class="w"> </span><span class="c1">---不会出现负数, 而且人的年龄不会太大
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">age</span><span class="w"> </span><span class="n">tinyint</span><span class="w"> </span><span class="n">unsigned</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">分数</span><span class="w"> </span><span class="c1">---总分100分, 最多出现一位小数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">score</span><span class="w"> </span><span class="n">double</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>字符串类型</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">类型</th>
+          <th style="text-align: left">大小</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">CHAR</td>
+          <td style="text-align: left">0-255 bytes</td>
+          <td style="text-align: left">定长字符串(需要指定长度)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">VARCHAR</td>
+          <td style="text-align: left">0-65535 bytes</td>
+          <td style="text-align: left">变长字符串(需要指定长度)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">TINYBLOB</td>
+          <td style="text-align: left">0-255 bytes</td>
+          <td style="text-align: left">不超过255个字符的二进制数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">TINYTEXT</td>
+          <td style="text-align: left">0-255 bytes</td>
+          <td style="text-align: left">短文本字符串</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">BLOB</td>
+          <td style="text-align: left">0-65 535 bytes</td>
+          <td style="text-align: left">二进制形式的长文本数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">TEXT</td>
+          <td style="text-align: left">0-65 535 bytes</td>
+          <td style="text-align: left">长文本数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MEDIUMBLOB</td>
+          <td style="text-align: left">0-16 777 215 bytes</td>
+          <td style="text-align: left">二进制形式的中等长度文本数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">MEDIUMTEXT</td>
+          <td style="text-align: left">0-16 777 215 bytes</td>
+          <td style="text-align: left">中等长度文本数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">LONGBLOB</td>
+          <td style="text-align: left">0-4 294 967 295 bytes</td>
+          <td style="text-align: left">二进制形式的极大文本数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">LONGTEXT</td>
+          <td style="text-align: left">0-4 294 967 295 bytes</td>
+          <td style="text-align: left">极大文本数据</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>char 与 varchar 都可以描述字符串，char是定长字符串，指定长度多长，就占用多少个字符，和字段值的长度无关 。而varchar是变长字符串，指定的长度为最大占用长度 。相对来说，char的性能会更高些。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">示例：</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="err">用户名</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="c1">---长度不定, 最长不会超过50
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">username</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">手机号</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="c1">---固定长度为11
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">phone</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>日期时间类型</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">类型</th>
+          <th style="text-align: left">大小</th>
+          <th style="text-align: left">范围</th>
+          <th style="text-align: left">格式</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">DATE</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">1000-01-01 至  9999-12-31</td>
+          <td style="text-align: left">YYYY-MM-DD</td>
+          <td style="text-align: left">日期值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">TIME</td>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">-838:59:59 至  838:59:59</td>
+          <td style="text-align: left">HH:MM:SS</td>
+          <td style="text-align: left">时间值或持续时间</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">YEAR</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">1901 至 2155</td>
+          <td style="text-align: left">YYYY</td>
+          <td style="text-align: left">年份值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DATETIME</td>
+          <td style="text-align: left">8</td>
+          <td style="text-align: left">1000-01-01 00:00:00 至 9999-12-31 23:59:59</td>
+          <td style="text-align: left">YYYY-MM-DD HH:MM:SS</td>
+          <td style="text-align: left">混合日期和时间值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">TIMESTAMP</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">1970-01-01 00:00:01 至 2038-01-19 03:14:07</td>
+          <td style="text-align: left">YYYY-MM-DD HH:MM:SS</td>
+          <td style="text-align: left">混合日期和时间值，时间戳</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="err">示例</span><span class="p">:</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">生日字段</span><span class="w">  </span><span class="n">birthday</span><span class="w"> </span><span class="c1">---生日只需要年月日  
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">birthday</span><span class="w"> </span><span class="nb">date</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">创建时间</span><span class="w"> </span><span class="n">createtime</span><span class="w"> </span><span class="c1">--- 需要精确到时分秒
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">	</span><span class="n">createtime</span><span class="w">  </span><span class="n">datetime</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2314-案例">2.3.1.4 案例
+</h5><p>需求：根据产品原型/需求创建表((设计合理的数据类型、长度、约束)</p>
+<blockquote>
+<p>参考资料中提供的《黑马-tlias智能学习辅助系统》页面原型，设计员工管理模块的表结构</p>
+<p>暂不考虑所属部门字段</p>
+</blockquote>
+<p>产品原型及需求如下：</p>
+<p><img src="/p/mysql-01/index.assets/image-20220829151032029.png"
+	width="1531"
+	height="843"
+	srcset="/p/mysql-01/index.assets/image-20220829151032029_hu16523458649705659317.png 480w, /p/mysql-01/index.assets/image-20220829151032029_hu4963556279059942598.png 1024w"
+	loading="lazy"
+	
+		alt="image-20220829151032029"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20220829151228102.png"
+	width="645"
+	height="590"
+	srcset="/p/mysql-01/index.assets/image-20220829151228102_hu10557158957551670452.png 480w, /p/mysql-01/index.assets/image-20220829151228102_hu12173766175048327691.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="262px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20220829151245450.png"
+	width="1073"
+	height="828"
+	srcset="/p/mysql-01/index.assets/image-20220829151245450_hu926820398460126976.png 480w, /p/mysql-01/index.assets/image-20220829151245450_hu3815031530052573986.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="129"
+		data-flex-basis="311px"
+	
+></p>
+<p><strong>步骤：</strong></p>
+<ol>
+<li>
+<p>阅读产品原型及需求文档，看看里面涉及到哪些字段。</p>
+</li>
+<li>
+<p>查看需求文档说明，确认各个字段的类型以及字段存储数据的长度限制。</p>
+</li>
+<li>
+<p>在页面原型中描述的基础字段的基础上，再增加额外的基础字段。</p>
+</li>
+</ol>
+<p>使用SQL创建表：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">emp</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;ID&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">username</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;用户名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">password</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;123456&#39;</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;密码&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;姓名&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">gender</span><span class="w"> </span><span class="n">tinyint</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;性别, 说明: 1 男, 2 女&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">image</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;图像&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">job</span><span class="w"> </span><span class="n">tinyint</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;职位, 说明: 1 班主任,2 讲师, 3 学工主管, 4 教研主管&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">entrydate</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;入职时间&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">create_time</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;创建时间&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">update_time</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;修改时间&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;员工表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>除了使用SQL语句创建表外，我们还可以借助于图形化界面来创建表结构，这种创建方式会更加直观、更加方便。</p>
+<p>操作步骤如下：</p>
+<ol>
+<li>在指定操作的数据库上，右键New ==&gt; Table</li>
+</ol>
+<p><img src="/p/mysql-01/index.assets/image-20221205230447721.png"
+	width="825"
+	height="482"
+	srcset="/p/mysql-01/index.assets/image-20221205230447721_hu4686851433080602540.png 480w, /p/mysql-01/index.assets/image-20221205230447721_hu11950066925668448543.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205230447721"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="171"
+		data-flex-basis="410px"
+	
+></p>
+<ol start="2">
+<li>编辑表结构的相关信息</li>
+</ol>
+<p><img src="/p/mysql-01/index.assets/image-20221205231846161.png"
+	width="846"
+	height="771"
+	srcset="/p/mysql-01/index.assets/image-20221205231846161_hu8037568856920614842.png 480w, /p/mysql-01/index.assets/image-20221205231846161_hu14898615796423962434.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205231846161"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="263px"
+	
+></p>
+<h5 id="2315-设计表流程">2.3.1.5 设计表流程
+</h5><p>通过上面的案例，我们明白了，设计一张表，基本的流程如下：</p>
+<ol>
+<li>
+<p>阅读页面原型及需求文档</p>
+</li>
+<li>
+<p>基于页面原则和需求文档，确定原型字段(类型、长度限制、约束)</p>
+</li>
+<li>
+<p>再增加表设计所需要的业务基础字段(id主键、插入时间、修改时间)</p>
+</li>
+</ol>
+<p><img src="/p/mysql-01/index.assets/image-20221205232253088.png"
+	width="1259"
+	height="434"
+	srcset="/p/mysql-01/index.assets/image-20221205232253088_hu14642232862772492465.png 480w, /p/mysql-01/index.assets/image-20221205232253088_hu8616544697739203040.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205232253088"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="290"
+		data-flex-basis="696px"
+	
+></p>
+<blockquote>
+<p>说明：</p>
+<ul>
+<li>
+<p>create_time：记录的是当前这条数据插入的时间。</p>
+</li>
+<li>
+<p>update_time：记录当前这条数据最后更新的时间。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="232-查询">2.3.2 查询
+</h4><blockquote>
+<p>关于表结构的查询操作，工作中一般都是直接基于<strong>图形化界面操作</strong>。</p>
+</blockquote>
+<p><strong>查询当前数据库所有表</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="kp">tables</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql-01/index.assets/image-20221205233746548.png"
+	width="1209"
+	height="220"
+	srcset="/p/mysql-01/index.assets/image-20221205233746548_hu10483030312048262875.png 480w, /p/mysql-01/index.assets/image-20221205233746548_hu9751270227564837401.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205233746548"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="549"
+		data-flex-basis="1318px"
+	
+></p>
+<p><strong>查看指定表结构</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">desc</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">;</span><span class="c1">#可以查看指定表的字段、字段的类型、是否可以为NULL、是否存在默认值等信息
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql-01/index.assets/image-20221205234114053.png"
+	width="1751"
+	height="903"
+	srcset="/p/mysql-01/index.assets/image-20221205234114053_hu14991664860203935700.png 480w, /p/mysql-01/index.assets/image-20221205234114053_hu7585359101546108862.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205234114053"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="193"
+		data-flex-basis="465px"
+	
+></p>
+<p><strong>查询指定表的建表语句</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">show</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql-01/index.assets/image-20221205234334696.png"
+	width="1156"
+	height="461"
+	srcset="/p/mysql-01/index.assets/image-20221205234334696_hu10373023091522993124.png 480w, /p/mysql-01/index.assets/image-20221205234334696_hu7209726669983350117.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205234334696"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="250"
+		data-flex-basis="601px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205234444906.png"
+	width="1618"
+	height="671"
+	srcset="/p/mysql-01/index.assets/image-20221205234444906_hu16616202130313941114.png 480w, /p/mysql-01/index.assets/image-20221205234444906_hu17380212294398270163.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205234444906"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="241"
+		data-flex-basis="578px"
+	
+></p>
+<h4 id="233-修改">2.3.3 修改
+</h4><blockquote>
+<p>关于表结构的修改操作，工作中一般都是直接基于<strong>图形化界面操作</strong>。</p>
+</blockquote>
+<p><strong>添加字段</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">add</span><span class="w">  </span><span class="err">字段名</span><span class="w">  </span><span class="err">类型</span><span class="p">(</span><span class="err">长度</span><span class="p">)</span><span class="w">  </span><span class="p">[</span><span class="k">comment</span><span class="w"> </span><span class="err">注释</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="err">约束</span><span class="p">];</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例： 为tb_emp表添加字段qq，字段类型为 varchar(11)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">add</span><span class="w">  </span><span class="n">qq</span><span class="w">  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;QQ号码&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>图形化操作：添加字段</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221205235542272.png"
+	width="1500"
+	height="541"
+	srcset="/p/mysql-01/index.assets/image-20221205235542272_hu14036316613661469183.png 480w, /p/mysql-01/index.assets/image-20221205235542272_hu18174532265405263084.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205235542272"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="277"
+		data-flex-basis="665px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20221205235657807.png"
+	width="846"
+	height="771"
+	srcset="/p/mysql-01/index.assets/image-20221205235657807_hu10854504510359497799.png 480w, /p/mysql-01/index.assets/image-20221205235657807_hu11784550106977896263.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205235657807"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="263px"
+	
+></p>
+<p><strong>修改数据类型</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="n">modify</span><span class="w">  </span><span class="err">字段名</span><span class="w">  </span><span class="err">新数据类型</span><span class="p">(</span><span class="err">长度</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="n">change</span><span class="w">  </span><span class="err">旧字段名</span><span class="w">  </span><span class="err">新字段名</span><span class="w">  </span><span class="err">类型</span><span class="p">(</span><span class="err">长度</span><span class="p">)</span><span class="w">  </span><span class="p">[</span><span class="k">comment</span><span class="w"> </span><span class="err">注释</span><span class="p">]</span><span class="w">  </span><span class="p">[</span><span class="err">约束</span><span class="p">];</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例：修改qq字段的字段类型，将其长度由11修改为13</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">modify</span><span class="w"> </span><span class="n">qq</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;QQ号码&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例：修改qq字段名为 qq_num，字段类型varchar(13)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">qq</span><span class="w"> </span><span class="n">qq_num</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;QQ号码&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>图形化操作：修改数据类型和字段名</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221205235950010.png"
+	width="846"
+	height="771"
+	srcset="/p/mysql-01/index.assets/image-20221205235950010_hu2817946163712207478.png 480w, /p/mysql-01/index.assets/image-20221205235950010_hu2536073884462631417.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221205235950010"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="263px"
+	
+></p>
+<p><img src="/p/mysql-01/index.assets/image-20221206000030734.png"
+	width="846"
+	height="771"
+	srcset="/p/mysql-01/index.assets/image-20221206000030734_hu14614678451625407592.png 480w, /p/mysql-01/index.assets/image-20221206000030734_hu1631694185810663047.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221206000030734"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="263px"
+	
+></p>
+<p><strong>删除字段</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="err">字段名</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例：删除tb_emp表中的qq_num字段</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">alter</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">drop</span><span class="w"> </span><span class="n">qq_num</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>图形化操作：删除字段</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221206000159237.png"
+	width="846"
+	height="771"
+	srcset="/p/mysql-01/index.assets/image-20221206000159237_hu3410039378504596696.png 480w, /p/mysql-01/index.assets/image-20221206000159237_hu6603247532803677228.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221206000159237"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="109"
+		data-flex-basis="263px"
+	
+></p>
+<p><strong>修改表名</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">rename</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">to</span><span class="w">  </span><span class="err">新表名</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例：将当前的tb_emp表的表名修改为emp</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">rename</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">emp</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>图形化操作：修改表名</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221206000636659.png"
+	width="1295"
+	height="481"
+	srcset="/p/mysql-01/index.assets/image-20221206000636659_hu8511977995910506520.png 480w, /p/mysql-01/index.assets/image-20221206000636659_hu4740586096081663715.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221206000636659"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="269"
+		data-flex-basis="646px"
+	
+></p>
+<h4 id="234-删除">2.3.4 删除
+</h4><blockquote>
+<p>关于表结构的删除操作，工作中一般都是直接基于<strong>图形化界面操作</strong>。</p>
+</blockquote>
+<p>删除表语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">drop</span><span class="w">  </span><span class="k">table</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">]</span><span class="w">  </span><span class="err">表名</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>if exists ：只有表名存在时才会删除该表，表名不存在，则不执行删除操作(如果不加该参数项，删除一张不存在的表，执行将会报错)。</p>
+</blockquote>
+<p>案例：如果tb_emp表存在，则删除tb_emp表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="n">tb_emp</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 在删除表时，表中的全部数据也会被删除。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>图形化操作：删除表</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221206001026916.png"
+	width="733"
+	height="525"
+	srcset="/p/mysql-01/index.assets/image-20221206001026916_hu17625923796336149711.png 480w, /p/mysql-01/index.assets/image-20221206001026916_hu4749691239723209006.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221206001026916"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="139"
+		data-flex-basis="335px"
+	
+></p>
+<h2 id="3-数据库操作-dml">3. 数据库操作-DML
+</h2><p>DML英文全称是Data Manipulation Language(数据操作语言)，用来对数据库中表的数据记录进行增、删、改操作。</p>
+<ul>
+<li>添加数据（INSERT）</li>
+<li>修改数据（UPDATE）</li>
+<li>删除数据（DELETE）</li>
+</ul>
+<h3 id="31-增加insert">3.1 增加(insert)
+</h3><p>insert语法：</p>
+<ul>
+<li>
+<p>向指定字段添加数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">(</span><span class="err">字段名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">字段名</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>全部字段添加数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>批量添加数据（指定字段）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="p">(</span><span class="err">字段名</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">字段名</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>批量添加数据（全部字段）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...),</span><span class="w"> </span><span class="p">(</span><span class="err">值</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>案例1：向tb_emp表的username、name、gender字段插入数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1">-- 因为设计表时create_time, update_time两个字段不能为NULL，所以也做为要插入的字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="nf">tb_emp</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">create_time</span><span class="p">,</span><span class="w"> </span><span class="n">update_time</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;wuji&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张无忌&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nf">now</span><span class="p">(),</span><span class="w"> </span><span class="nf">now</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例2：向tb_emp表的所有字段插入数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="nf">tb_emp</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">job</span><span class="p">,</span><span class="w"> </span><span class="n">entrydate</span><span class="p">,</span><span class="w"> </span><span class="n">create_time</span><span class="p">,</span><span class="w"> </span><span class="n">update_time</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="no">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;zhirou&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;123&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;周芷若&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1.jpg&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="nf">now</span><span class="p">(),</span><span class="w"> </span><span class="nf">now</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例3：批量向tb_emp表的username、name、gender字段插入数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="nf">tb_emp</span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">gender</span><span class="p">,</span><span class="w"> </span><span class="n">create_time</span><span class="p">,</span><span class="w"> </span><span class="n">update_time</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;weifuwang&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;韦一笑&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nf">now</span><span class="p">(),</span><span class="w"> </span><span class="nf">now</span><span class="p">()),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="p">(</span><span class="s1">&#39;fengzi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张三疯&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nf">now</span><span class="p">(),</span><span class="w"> </span><span class="nf">now</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>图形化操作：双击tb_emp表查看数据</p>
+</blockquote>
+<p><img src="/p/mysql-01/index.assets/image-20221206002807531.png"
+	width="1206"
+	height="290"
+	srcset="/p/mysql-01/index.assets/image-20221206002807531_hu10839464497004214495.png 480w, /p/mysql-01/index.assets/image-20221206002807531_hu9388756967757679224.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221206002807531"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="415"
+		data-flex-basis="998px"
+	
+></p>
+<p>Insert操作的注意事项：</p>
+<ol>
+<li>
+<p>插入数据时，指定的字段顺序需要与值的顺序是一一对应的。</p>
+</li>
+<li>
+<p>字符串和日期型数据应该包含在引号中。</p>
+</li>
+<li>
+<p>插入的数据大小，应该在字段的规定范围内。</p>
+</li>
+</ol>
+<h3 id="32-修改update">3.2 修改(update)
+</h3><p>update语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">update</span><span class="w"> </span><span class="err">表名</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="err">字段名</span><span class="mi">1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">值</span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="err">字段名</span><span class="mi">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">值</span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="p">....</span><span class="w"> </span><span class="p">[</span><span class="k">where</span><span class="w"> </span><span class="err">条件</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例1：将tb_emp表中id为1的员工，姓名name字段更新为&rsquo;张三'</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">update</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;张三&#39;</span><span class="p">,</span><span class="n">update_time</span><span class="o">=</span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例2：将tb_emp表的所有员工入职日期更新为'2010-01-01'</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">update</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">entrydate</span><span class="o">=</span><span class="s1">&#39;2010-01-01&#39;</span><span class="p">,</span><span class="n">update_time</span><span class="o">=</span><span class="n">now</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/mysql-01/index.assets/image-20221206004425527.png"
+	width="1006"
+	height="237"
+	srcset="/p/mysql-01/index.assets/image-20221206004425527_hu12226004316003552558.png 480w, /p/mysql-01/index.assets/image-20221206004425527_hu17203061563155575090.png 1024w"
+	loading="lazy"
+	
+		alt="image-20221206004425527"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="424"
+		data-flex-basis="1018px"
+	
+></p>
+<blockquote>
+<p>注意事项:</p>
+<ol>
+<li>
+<p>修改语句的条件可以有，也可以没有，如果没有条件，则会修改整张表的所有数据。</p>
+</li>
+<li>
+<p>在修改数据时，一般需要同时修改公共字段update_time，将其修改为当前操作时间。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="33-删除delete">3.3 删除(delete)
+</h3><p>delete语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="err">表名</span><span class="w">  </span><span class="p">[</span><span class="k">where</span><span class="w">  </span><span class="err">条件</span><span class="p">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例1：删除tb_emp表中id为1的员工</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tb_emp</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>案例2：删除tb_emp表中所有员工</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">delete</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">tb_emp</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意事项:</p>
+<p>​	• DELETE 语句的条件可以有，也可以没有，如果没有条件，则会删除整张表的所有数据。</p>
+<p>​	• DELETE 语句不能删除某一个字段的值(可以使用UPDATE，将该字段值置为NULL即可)。</p>
+<p>​	• 当进行删除全部数据操作时，会提示询问是否确认删除所有数据，直接点击Execute即可。</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+        
+            <a href="/tags/mysql/">MySQL</a>
+        
+            <a href="/tags/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">安装文档</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/">
+        
+        
+            <div class="article-image">
+                <img src="/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7.a81b153922d228b263e3a78d8fe7cab7_hu14384727275710045237.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post MySQL安装文档"
+                        
+                        data-hash="md5-qBsVOSLSKLJj46eNj&#43;fKtw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySQL安装文档</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
+        
+        
+            <div class="article-image">
+                <img src="/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/cmdbackground.90a0bb784b6e4246c7e507d799c39c14_hu3065358561119518277.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post SpringBootWeb请求响应"
+                        
+                        data-hash="md5-kKC7eEtuQkbH5QfXmcOcFA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SpringBootWeb请求响应</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 山有木兮
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
