@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Linux环境搭建 1.准备Linux环境 1.1 安装VMware VMware是业界最好用的虚拟机软件之一。\nwindows版本的网站如下：\nVMware by Broadcom - Cloud Computing for the Enterprise\n如果自己电脑上已经有了低版本的VMware，则需要先卸载，再重新安装。卸载过程比较麻烦。\n">
+<title>Linux环境搭建</title>
+
+<link rel='canonical' href='http://localhost:1313/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux环境搭建">
+<meta property='og:description' content="Linux环境搭建 1.准备Linux环境 1.1 安装VMware VMware是业界最好用的虚拟机软件之一。\nwindows版本的网站如下：\nVMware by Broadcom - Cloud Computing for the Enterprise\n如果自己电脑上已经有了低版本的VMware，则需要先卸载，再重新安装。卸载过程比较麻烦。\n">
+<meta property='og:url' content='http://localhost:1313/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
+<meta property='og:site_name' content='山有木兮'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-26T23:58:01&#43;08:00'/><meta property='article:modified_time' content='2024-10-26T23:58:01&#43;08:00'/>
+<meta name="twitter:title" content="Linux环境搭建">
+<meta name="twitter:description" content="Linux环境搭建 1.准备Linux环境 1.1 安装VMware VMware是业界最好用的虚拟机软件之一。\nwindows版本的网站如下：\nVMware by Broadcom - Cloud Computing for the Enterprise\n如果自己电脑上已经有了低版本的VMware，则需要先卸载，再重新安装。卸载过程比较麻烦。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12487634835597679327.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">山有木兮</a></h1>
+            <h2 class="site-description">知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1338856997'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/shanymxc/shanymxc.github.io'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1准备linux环境">1.准备Linux环境</a>
+      <ol>
+        <li><a href="#11-安装vmware">1.1 安装VMware</a>
+          <ol>
+            <li><a href="#111-卸载旧版vmware可选">1.1.1 卸载旧版VMware（可选）</a></li>
+            <li><a href="#112-安装vmware">1.1.2 安装VMware</a></li>
+            <li><a href="#113-常见错误">1.1.3 常见错误</a></li>
+          </ol>
+        </li>
+        <li><a href="#12-创建虚拟机">1.2 创建虚拟机</a></li>
+        <li><a href="#13-安装centos7">1.3 安装Centos7</a></li>
+        <li><a href="#14设置虚拟机快照">1.4.设置虚拟机快照</a></li>
+      </ol>
+    </li>
+    <li><a href="#2ssh客户端">2.SSH客户端</a>
+      <ol>
+        <li><a href="#21安装mobarxterm">2.1.安装MobarXterm</a></li>
+        <li><a href="#22配置默认编辑器">2.2.配置默认编辑器</a></li>
+        <li><a href="#23配置右键粘贴">2.3.配置右键粘贴</a></li>
+        <li><a href="#24ssh配置">2.4.SSH配置</a></li>
+        <li><a href="#25关闭x-server服务">2.5.关闭X-Server服务</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+            <a href="/categories/vmware/" >
+                VMware
+            </a>
+        
+            <a href="/categories/ssh/" >
+                SSH
+            </a>
+        
+            <a href="/categories/centos7/" >
+                Centos7
+            </a>
+        
+            <a href="/categories/mobarxterm/" >
+                MobarXterm
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Linux环境搭建</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 26, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="linux环境搭建">Linux环境搭建
+</h1><h2 id="1准备linux环境">1.准备Linux环境
+</h2><h3 id="11-安装vmware">1.1 安装VMware
+</h3><p>VMware是业界最好用的虚拟机软件之一。</p>
+<p>windows版本的网站如下：</p>
+<p><a class="link" href="https://www.vmware.com/"  target="_blank" rel="noopener"
+    >VMware by Broadcom - Cloud Computing for the Enterprise</a></p>
+<p>如果自己电脑上已经有了低版本的VMware，则需要先卸载，再重新安装。卸载过程比较麻烦。</p>
+<h4 id="111-卸载旧版vmware可选">1.1.1 卸载旧版VMware（可选）
+</h4><p>首先，在控制面板找到程序和功能选项，找到VMware，进行卸载操作：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193319750.png"
+	width="1007"
+	height="676"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193319750_hu14732572246849882341.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193319750_hu5992466524020833397.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193319750"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="148"
+		data-flex-basis="357px"
+	
+></p>
+<p>弹出确认框, 点击&quot;下一步&quot;:</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193459251.png"
+	width="633"
+	height="499"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193459251_hu971736571875738974.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193459251_hu3331335259936704294.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193459251"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="126"
+		data-flex-basis="304px"
+	
+></p>
+<p>下一步之后, 选择删除:</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193527191.png"
+	width="512"
+	height="362"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193527191_hu7182951094637717628.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193527191_hu7052568283045099526.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193527191"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="339px"
+	
+></p>
+<p>接下来，按照提示完成卸载操作即可。</p>
+<p>卸载完成后，还需要看看VMware的安装目录是否有旧数据，一并清理掉。</p>
+<p>比如安装在<strong>C盘的Program Files(x86)</strong>：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193655937.png"
+	width="1027"
+	height="314"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193655937_hu8459977831359988836.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193655937_hu3471752987770552567.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193655937"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="327"
+		data-flex-basis="784px"
+	
+></p>
+<p>则需要直接删除整个VMware目录：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193733761.png"
+	width="607"
+	height="262"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193733761_hu15167943893771167668.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193733761_hu4738419162108618017.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193733761"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="231"
+		data-flex-basis="556px"
+	
+></p>
+<p>接下来要清理注册表：</p>
+<p>首先，按住Windows + R , 在弹出框中输入 &ldquo;regedit&rdquo; 调出注册表：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193819499.png"
+	width="590"
+	height="317"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193819499_hu306897526898467576.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193819499_hu14589879714799899024.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193819499"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="186"
+		data-flex-basis="446px"
+	
+></p>
+<p>进入注册表编辑器，如图：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193839234.png"
+	width="699"
+	height="218"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193839234_hu8275811722118035942.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193839234_hu16084025222174225789.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193839234"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="320"
+		data-flex-basis="769px"
+	
+></p>
+<p>打开**<code>HKEY_CURRENT_USER</code><strong>文件夹，找到</strong><code>Software</code>**文件夹并打开</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193905031.png"
+	width="988"
+	height="430"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193905031_hu16143412503848008874.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026193905031_hu11373213708924657109.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026193905031"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="229"
+		data-flex-basis="551px"
+	
+></p>
+<p>找到“VMware.Inc”，右键删除：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194012548.png"
+	width="431"
+	height="167"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194012548_hu13482744834289524675.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194012548_hu13061359216112128591.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026194012548"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="258"
+		data-flex-basis="619px"
+	
+></p>
+<h4 id="112-安装vmware">1.1.2 安装VMware
+</h4><p>启动后的界面如图所示：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194111646.png"
+	width="701"
+	height="499"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194111646_hu4135356395083803454.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194111646_hu8968269912419467195.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026194111646"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="140"
+		data-flex-basis="337px"
+	
+></p>
+<h4 id="113-常见错误">1.1.3 常见错误
+</h4><p>如果VMware虚拟机运行报错，例如：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194212352.png"
+	width="710"
+	height="348"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194212352_hu14466676231924940480.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194212352_hu15545386755426567971.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026194212352"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="204"
+		data-flex-basis="489px"
+	
+></p>
+<p>这个是由于英特尔的虚拟化技术, 没有开启, 需要进入系统的BIOS界面 , 开启英特尔的虚拟化技术 ; 不同的电脑型号 , 进入BIOS界面的方式不同, 需要百度查询一下自己电脑的型号 , 如何进BIOS ;</p>
+<p>windows10系统可以参考: <a class="link" href="https://blog.csdn.net/biu_code/article/details/107504627"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/biu_code/article/details/107504627</a></p>
+<p>以ThinkPad为例，如图：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194232173.png"
+	width="817"
+	height="339"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194232173_hu15135048453680099418.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026194232173_hu15431140602675318032.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026194232173"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="241"
+		data-flex-basis="578px"
+	
+></p>
+<h3 id="12-创建虚拟机">1.2 创建虚拟机
+</h3><p>此处使用的虚拟机为Centos7，接下来演示为Centos7虚拟机：</p>
+<p>首先要下载一个Centos7的iso文件，在VMware《主页》界面中点击《创建新的虚拟机》按钮：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234109074.png"
+	width="881"
+	height="625"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234109074_hu12206848099741109102.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234109074_hu5793092109547236272.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234109074"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="140"
+		data-flex-basis="338px"
+	
+></p>
+<p>然后会弹出一个窗口，我们直接点击下一步：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234129041.png"
+	width="645"
+	height="628"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234129041_hu13516925406335530913.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234129041_hu11230191058814386885.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234129041"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="102"
+		data-flex-basis="246px"
+	
+></p>
+<p>然后页面中选择你准备好的ISO文件，继续点击下一步：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234150329.png"
+	width="651"
+	height="628"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234150329_hu17056997502784524371.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234150329_hu2154434514009368406.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234150329"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="103"
+		data-flex-basis="248px"
+	
+></p>
+<p>然后填写<code>虚拟机的名称</code>以及虚拟机将来<code>保存的位置</code>：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234212419.png"
+	width="648"
+	height="625"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234212419_hu12146490435159515000.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234212419_hu16195787543121587084.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234212419"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="103"
+		data-flex-basis="248px"
+	
+></p>
+<p>再次下一步，填写虚拟机磁盘大小。这里建议给大一点，否则将来不够用调整起来麻烦。而且这里设置大小并不是立刻占用这么多，而是设置一个上限：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234234414.png"
+	width="650"
+	height="630"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234234414_hu14718390269632980317.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234234414_hu9436725200461943429.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234234414"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="103"
+		data-flex-basis="247px"
+	
+></p>
+<p>继续下一步，然后选择虚拟机硬件设置：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234301185.png"
+	width="645"
+	height="630"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234301185_hu17737820967827530558.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234301185_hu6196506927441089779.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234301185"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="102"
+		data-flex-basis="245px"
+	
+></p>
+<p>在弹出的窗口中设置虚拟机硬件，建议CPU给到4核，内存给到8G：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234320582.png"
+	width="552"
+	height="628"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234320582_hu14236198488710329774.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234320582_hu4482280003283549219.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234320582"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="87"
+		data-flex-basis="210px"
+	
+></p>
+<p>配置完成后，点击<code>关闭</code>，回到上一页面，继续点击<code>完成</code>：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234340120.png"
+	width="645"
+	height="630"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234340120_hu14832632556096888468.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234340120_hu11997175890275984004.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234340120"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="102"
+		data-flex-basis="245px"
+	
+></p>
+<p>虚拟机就创建完毕了：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234358328.png"
+	width="881"
+	height="624"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234358328_hu5992659778471107211.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234358328_hu17901295533339809345.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234358328"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="338px"
+	
+></p>
+<h3 id="13-安装centos7">1.3 安装Centos7
+</h3><p>接下来，我们启动刚刚创建的虚拟机，开始安装Centos7系统：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234528047.png"
+	width="902"
+	height="629"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234528047_hu15659214560331580881.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234528047_hu1060183308319135535.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234528047"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="143"
+		data-flex-basis="344px"
+	
+></p>
+<p>启动后需要选择安装菜单，将鼠标移入黑窗口中后，将无法再使用鼠标，需要按上下键选择菜单。选中Install Centos 7 后按下回车</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234547402.png"
+	width="737"
+	height="554"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234547402_hu2016618274980192931.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234547402_hu8991801472638297487.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234547402"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="319px"
+	
+></p>
+<p>然后会提示我们按下enter键继续;</p>
+<p>过一会儿后，会进入语言选择菜单，这里可以使用鼠标选择。选择中文-简体中文，然后继续：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234613562.png"
+	width="816"
+	height="627"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234613562_hu3975061173836353662.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234613562_hu228164212523071086.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234613562"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="130"
+		data-flex-basis="312px"
+	
+></p>
+<p>接下来，会进入安装配置页面：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234631663.png"
+	width="820"
+	height="615"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234631663_hu15035230135614384352.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234631663_hu12856240370250313824.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234631663"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+></p>
+<p>鼠标向下滚动后，找到系统-安装位置配置，点击：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234645363.png"
+	width="806"
+	height="579"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234645363_hu13082734231758193067.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234645363_hu570403404434973428.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234645363"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="139"
+		data-flex-basis="334px"
+	
+></p>
+<p>选择刚刚添加的磁盘，并点击完成：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234659520.png"
+	width="804"
+	height="562"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234659520_hu4161751115691772542.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234659520_hu8797153455210021302.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234659520"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="143"
+		data-flex-basis="343px"
+	
+></p>
+<p>然后回到配置页面，这次点击《网络和主机名》：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234711119.png"
+	width="814"
+	height="577"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234711119_hu5574261810492307476.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234711119_hu15915209800554362429.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234711119"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="338px"
+	
+></p>
+<p>在网络页面做下面的几件事情：</p>
+<ol>
+<li>修改主机名为自己喜欢的主机名，不要出现中文和特殊字符，建议用localhost</li>
+<li>点击应用</li>
+<li>将网络连接打开</li>
+<li>点击配置，设置详细网络信息</li>
+</ol>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234732180.png"
+	width="814"
+	height="576"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234732180_hu9574154311499989149.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234732180_hu14861848587976968690.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234732180"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="141"
+		data-flex-basis="339px"
+	
+></p>
+<p>最好用一个截图软件，记住上图中的网络详细信息;</p>
+<p>点击配置按钮后，我们需要把网卡地址改为静态IP，这样可以避免每次启动虚拟机IP都变化。所有配置照搬你自己截图的网络信息填写，不要照抄我的：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234814848.png"
+	width="816"
+	height="625"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234814848_hu3853014486314018855.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234814848_hu6967234251409927802.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234814848"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="130"
+		data-flex-basis="313px"
+	
+></p>
+<p>最后，点击完成按钮;</p>
+<p>回到配置界面后，点击<code>开始安装</code>;</p>
+<p>接下来需要设置root密码：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234852943.png"
+	width="821"
+	height="573"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234852943_hu4563399457221993901.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234852943_hu957760616689499874.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234852943"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="143"
+		data-flex-basis="343px"
+	
+></p>
+<p>填写你要使用的root密码，然后点击完成：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234906737.png"
+	width="926"
+	height="543"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234906737_hu15095986052954730032.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234906737_hu9502709092068260016.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234906737"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="170"
+		data-flex-basis="409px"
+	
+></p>
+<p>接下来，耐心等待安装即可。</p>
+<p>等待安装完成后，点击<strong>重启</strong>。</p>
+<p>耐心等待一段时间，不要做任何操作，虚拟机即可启动完毕：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234941374.png"
+	width="982"
+	height="625"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234941374_hu4007489569002483549.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026234941374_hu1411112381664650824.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026234941374"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="157"
+		data-flex-basis="377px"
+	
+></p>
+<p>输入用户名root，然后点击回车，会要求你输入密码；</p>
+<p>此时你要输入密码，不过需要注意的是密码是<strong>隐藏</strong>的，输入了也看不见。所以放心输入，完成后回车即可：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235004269.png"
+	width="680"
+	height="218"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235004269_hu15641921511058973898.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235004269_hu5290647684510861680.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235004269"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="311"
+		data-flex-basis="748px"
+	
+></p>
+<p>只要密码输入正确，就可以正常登录。此时可以用命令测试虚拟机网络是否畅通：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ping www.baidu.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果看到这样的结果代表网络畅通：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235039216.png"
+	width="900"
+	height="262"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235039216_hu17295661974569942815.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235039216_hu10432730206311587099.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235039216"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="343"
+		data-flex-basis="824px"
+	
+></p>
+<p>默认ping命令会持续执行，按下<code>CTRL </code>+ <code>C</code>后命令即可停止。</p>
+<h3 id="14设置虚拟机快照">1.4.设置虚拟机快照
+</h3><p>在虚拟机安装完成后，最好立刻设置一个快照，这样一旦将来虚拟机出现问题，可以快速恢复。</p>
+<p>我们先停止虚拟机，点击VMware顶部菜单中的<code>暂停</code><strong><code>下拉选框</code></strong>，选择<code>关闭客户机</code>：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235113704.png"
+	width="1231"
+	height="587"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235113704_hu8841740634891008896.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235113704_hu9879254472601361016.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235113704"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="209"
+		data-flex-basis="503px"
+	
+></p>
+<p>接着，点击VMware菜单中的🔧按钮:</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235126042.png"
+	width="931"
+	height="278"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235126042_hu3756413885540166055.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235126042_hu10708744067617014979.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235126042"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="334"
+		data-flex-basis="803px"
+	
+></p>
+<p>然后在弹出的快照管理窗口中，点击<strong>拍摄快照</strong>，填写新的快照信息：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235138444.png"
+	width="776"
+	height="584"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235138444_hu13784475170256525405.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235138444_hu9327523624390473611.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235138444"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="318px"
+	
+></p>
+<p>快照拍摄完成了！而且我们可以在不同阶段拍摄多个不同快照作为备份，方便后期恢复数据。</p>
+<h2 id="2ssh客户端">2.SSH客户端
+</h2><p>在VMware界面中操作虚拟机非常不友好，所以一般推荐使用专门的SSH客户端。市面上常见的有：</p>
+<ul>
+<li>Xshell：个人免费，商业收费，之前爆出过有隐藏后门。不推荐</li>
+<li>Finshell：基础功能免费，高级功能收费，基于Java，内存占用较高（在1个G左右）。不推荐</li>
+<li>MobarXterm：基础功能免费、高级功能收费。开源、功能强大、内存占用低（只有10m左右），但是界面不太漂亮。推荐使用</li>
+</ul>
+<h3 id="21安装mobarxterm">2.1.安装MobarXterm
+</h3><p>这里我们会选择内存占用较低的MobarXterm作为SSH客户端，其官网地址：</p>
+<p><a class="link" href="https://mobaxterm.mobatek.net/"  target="_blank" rel="noopener"
+    >MobaXterm free Xserver and tabbed SSH client for Windows</a></p>
+<p>安装完成后界面如图所示：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235255144.png"
+	width="1061"
+	height="585"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235255144_hu1916700771725490039.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235255144_hu14140084777968294082.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235255144"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
+></p>
+<p>点击session按钮，进入会话管理：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235308683.png"
+	width="955"
+	height="270"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235308683_hu5960923258882443672.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235308683_hu17814252782652538737.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235308683"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="353"
+		data-flex-basis="848px"
+	
+></p>
+<p>在弹出的session管理页面中，按照下图填写信息并保存：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235325232.png"
+	width="915"
+	height="617"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235325232_hu965373025573430036.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235325232_hu12723540388758292366.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235325232"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="148"
+		data-flex-basis="355px"
+	
+></p>
+<p>点击OK后会提示你是第一次连接，询问你是信任连接的服务：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235339910.png"
+	width="971"
+	height="571"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235339910_hu13095749501247883018.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235339910_hu10157834225971581494.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235339910"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="170"
+		data-flex-basis="408px"
+	
+></p>
+<p>选择accept之后，会询问你是否要记住密码，选择yes;</p>
+<p>紧接着需要你设置一个MobarXterm的全局密码用于做密码管理;</p>
+<p>输入密码：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235416195.png"
+	width="1001"
+	height="581"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235416195_hu15042759755766537552.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235416195_hu1883948666236397569.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235416195"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="172"
+		data-flex-basis="413px"
+	
+></p>
+<p>输入成功后，就会连接成功，并进入操作界面了：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235433972.png"
+	width="1038"
+	height="581"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235433972_hu13775053982927641080.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235433972_hu16221675993780757935.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235433972"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="178"
+		data-flex-basis="428px"
+	
+></p>
+<p>这里需要做一些基础的配置：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235445561.png"
+	width="921"
+	height="145"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235445561_hu18220627132000986185.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235445561_hu10077973160313478145.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235445561"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="635"
+		data-flex-basis="1524px"
+	
+></p>
+<h3 id="22配置默认编辑器">2.2.配置默认编辑器
+</h3><p>首先建议设置一下默认编辑器，这样我们通过MobarXterm的FTP工具打开文件时会以指定的编辑器打开，方便修改。我这里配置的是vscode：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235511720.png"
+	width="851"
+	height="582"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235511720_hu10573664519342828001.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235511720_hu12151834156455117489.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235511720"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="350px"
+	
+></p>
+<h3 id="23配置右键粘贴">2.3.配置右键粘贴
+</h3><p>复制粘贴是很常用的配置，MobarXterm默认左键选中即<strong>复制</strong>，但是需要配置右键点击为<strong>粘贴：</strong></p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235532903.png"
+	width="894"
+	height="585"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235532903_hu12749899369361516651.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235532903_hu1462310245504845235.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235532903"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="152"
+		data-flex-basis="366px"
+	
+></p>
+<p>这样，复制和粘贴可以全部通过鼠标操作，无需按键。</p>
+<h3 id="24ssh配置">2.4.SSH配置
+</h3><p>接下来还有几个ssh配置:</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235559245.png"
+	width="883"
+	height="597"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235559245_hu999537216494972599.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235559245_hu14984555090248073703.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235559245"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="354px"
+	
+></p>
+<p>分别是：</p>
+<ul>
+<li>默认的登录用户</li>
+<li>ssh保持连接</li>
+<li>取消连接成功后的欢迎banner</li>
+</ul>
+<h3 id="25关闭x-server服务">2.5.关闭X-Server服务
+</h3><p>大多数情况下，我们没有x-server的需求，因此可以选择不要自启动：</p>
+<p><img src="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235915132.png"
+	width="879"
+	height="584"
+	srcset="/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235915132_hu1796216927020790890.png 480w, /p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.assets/image-20241026235915132_hu12921197087280250697.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241026235915132"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="150"
+		data-flex-basis="361px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 山有木兮
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

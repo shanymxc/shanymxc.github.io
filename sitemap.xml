@@ -3,21 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-26T23:24:19+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/arraylist/</loc>
-    <lastmod>2024-10-26T23:24:19+08:00</lastmod>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/centos7/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/linux/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/mobarxterm/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/ssh/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/vmware/</loc>
+    <lastmod>2024-10-26T23:58:01+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/arraylist/</loc>
     <lastmod>2024-10-26T23:24:19+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/java/</loc>
     <lastmod>2024-10-26T23:24:19+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/java-arraylist/</loc>
-    <lastmod>2024-10-26T23:24:19+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/</loc>
     <lastmod>2024-10-26T23:24:19+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/api/</loc>
