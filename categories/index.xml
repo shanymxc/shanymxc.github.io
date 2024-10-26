@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Sat, 26 Oct 2024 23:19:17 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Oct 2024 23:24:19 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ArrayList</title>
+        <link>http://localhost:1313/categories/arraylist/</link>
+        <pubDate>Sat, 26 Oct 2024 23:24:19 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/arraylist/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Java</title>
+        <link>http://localhost:1313/categories/java/</link>
+        <pubDate>Sat, 26 Oct 2024 23:24:19 +0800</pubDate>
+        
+        <guid>http://localhost:1313/categories/java/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>API</title>
         <link>http://localhost:1313/categories/api/</link>
         <pubDate>Sat, 26 Oct 2024 23:19:17 +0800</pubDate>
@@ -117,14 +133,6 @@
         <pubDate>Thu, 24 Oct 2024 15:30:54 +0800</pubDate>
         
         <guid>http://localhost:1313/categories/%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Java</title>
-        <link>http://localhost:1313/categories/java/</link>
-        <pubDate>Thu, 24 Oct 2024 09:59:59 +0800</pubDate>
-        
-        <guid>http://localhost:1313/categories/java/</guid>
         <description></description>
         </item>
         <item>
