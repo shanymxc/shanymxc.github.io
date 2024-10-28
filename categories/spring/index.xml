@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Spring on 山有木兮</title>
+        <link>http://localhost:1313/categories/spring/</link>
+        <description>Recent content in Spring on 山有木兮</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>山有木兮</copyright>
+        <lastBuildDate>Mon, 28 Oct 2024 21:31:53 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/spring/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>微服务 认识微服务</title>
+        <link>http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/</link>
+        <pubDate>Mon, 28 Oct 2024 21:31:53 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/</guid>
+        <description>&lt;h1 id=&#34;认识微服务&#34;&gt;认识微服务
+&lt;/h1&gt;&lt;h2 id=&#34;11单体架构&#34;&gt;1.1.单体架构
+&lt;/h2&gt;&lt;p&gt;单体架构（monolithic structure）：顾名思义，整个项目中所有功能模块都在一个工程中开发；项目部署时需要对所有模块一起编译、打包；项目的架构设计、开发模式都非常简单。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213304073.png&#34;
+	width=&#34;1614&#34;
+	height=&#34;468&#34;
+	srcset=&#34;http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213304073_hu15192686181262286639.png 480w, http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213304073_hu16350915124682352391.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241028213304073&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;344&#34;
+		data-flex-basis=&#34;827px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;当项目规模较小时，这种模式上手快，部署、运维也都很方便，因此早期很多小型项目都采用这种模式。&lt;/p&gt;
+&lt;p&gt;但随着项目的业务规模越来越大，团队开发人员也不断增加，单体架构就呈现出越来越多的问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;团队协作成本高&lt;/strong&gt;：试想一下，你们团队数十个人同时协作开发同一个项目，由于所有模块都在一个项目中，不同模块的代码之间物理边界越来越模糊。最终要把功能合并到一个分支，你绝对会陷入到解决冲突的泥潭之中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统发布效率低&lt;/strong&gt;：任何模块变更都需要发布整个系统，而系统发布过程中需要多个模块之间制约较多，需要对比各种文件，任何一处出现问题都会导致发布失败，往往一次发布需要数十分钟甚至数小时。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;系统可用性差&lt;/strong&gt;：单体架构各个功能模块是作为一个服务部署，相互之间会互相影响，一些热点功能会耗尽系统资源，导致其它服务低可用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12微服务&#34;&gt;1.2.微服务
+&lt;/h2&gt;&lt;p&gt;微服务架构，首先是服务化，就是将单体架构中的功能模块从单体应用中拆分出来，独立部署为多个服务。同时要满足下面的一些特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;单一职责&lt;/strong&gt;：一个微服务负责一部分业务功能，并且其核心数据不依赖于其它模块。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;团队自治&lt;/strong&gt;：每个微服务都有自己独立的开发、测试、发布、运维人员，团队人员规模不超过10人（2张披萨能喂饱）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;服务自治&lt;/strong&gt;：每个微服务都独立打包部署，访问自己独立的数据库。并且要做好服务隔离，避免对其它服务产生影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，黑马商城项目，我们就可以把商品、用户、购物车、交易等模块拆分，交给不同的团队去开发，并独立部署：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213441631.png&#34;
+	width=&#34;1233&#34;
+	height=&#34;838&#34;
+	srcset=&#34;http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213441631_hu11308912742153782532.png 480w, http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213441631_hu5182341131900865783.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241028213441631&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;353px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;那么，单体架构存在的问题有没有解决呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;团队协作成本高？
+&lt;ul&gt;
+&lt;li&gt;由于服务拆分，每个服务代码量大大减少，参与开发的后台人员在1~3名，协作成本大大降低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;系统发布效率低？
+&lt;ul&gt;
+&lt;li&gt;每个服务都是独立部署，当有某个服务有代码变更时，只需要打包部署该服务即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;系统可用性差？
+&lt;ul&gt;
+&lt;li&gt;每个服务独立部署，并且做好服务隔离，使用自己的服务器资源，不会影响到其它服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;综上所述，微服务架构解决了单体架构存在的问题，特别适合大型互联网项目的开发，因此被各大互联网公司普遍采用。大家以前可能听说过分布式架构，分布式就是服务拆分的过程，其实微服务架构正式分布式架构的一种最佳实践的方案。&lt;/p&gt;
+&lt;h2 id=&#34;13springcloud&#34;&gt;1.3.SpringCloud
+&lt;/h2&gt;&lt;p&gt;微服务拆分以后碰到的各种问题都有对应的解决方案和微服务组件，而SpringCloud框架可以说是目前Java领域最全面的微服务组件的集合了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213536778.png&#34;
+	width=&#34;1370&#34;
+	height=&#34;539&#34;
+	srcset=&#34;http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213536778_hu6203458407042795189.png 480w, http://localhost:1313/p/%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E8%AE%A4%E8%AF%86%E5%BE%AE%E6%9C%8D%E5%8A%A1/index.assets/image-20241028213536778_hu8266091671217214653.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241028213536778&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;254&#34;
+		data-flex-basis=&#34;610px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;而且SpringCloud（&lt;a class=&#34;link&#34; href=&#34;https://spring.io/projects/spring-cloud/#overview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Spring Cloud&lt;/a&gt;）依托于SpringBoot的自动装配能力，大大降低了其项目搭建、组件使用的成本。对于没有自研微服务组件能力的中小型企业，使用SpringCloud全家桶来实现微服务开发可以说是最合适的选择了！&lt;/p&gt;
+&lt;p&gt;另外，Alibaba的微服务产品SpringCloudAlibaba目前也成为了SpringCloud组件中的一员，我们课堂中也会使用其中的部分组件。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
