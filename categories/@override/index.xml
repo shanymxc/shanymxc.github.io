@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>@Override on 山有木兮</title>
-        <link>http://localhost:1313/categories/@override/</link>
+        <link>https://shanymxc.github.io/categories/@override/</link>
         <description>Recent content in @Override on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Mon, 28 Oct 2024 21:46:41 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/@override/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 28 Oct 2024 21:46:41 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/@override/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>面向对象进阶 Static与继承</title>
-        <link>http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/</link>
+        <link>https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/</link>
         <pubDate>Mon, 28 Oct 2024 21:46:41 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/</guid>
+        <guid>https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/</guid>
         <description>&lt;h1 id=&#34;static关键字&#34;&gt;static关键字
 &lt;/h1&gt;&lt;h2 id=&#34;11-概述&#34;&gt;1.1 概述
 &lt;/h2&gt;&lt;p&gt;以前我们定义过如下类：&lt;/p&gt;
@@ -242,10 +242,10 @@
 &lt;/ol&gt;
 &lt;p&gt;如果我们定义了这三个类去开发一个系统，那么这三个类中就存在大量重复的信息（属性:姓名，年龄。行为：吃饭，睡觉）。这样就导致了相同代码大量重复，代码显得很臃肿和冗余，那么如何解决呢？&lt;/p&gt;
 &lt;p&gt;假如多个类中存在相同属性和行为时，我们可以将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要&lt;strong&gt;继承&lt;/strong&gt;那一个类即可。如图所示：
-&lt;img src=&#34;http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/1.jpg&#34;
+&lt;img src=&#34;https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/1.jpg&#34;
 	width=&#34;514&#34;
 	height=&#34;343&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/1_hu15532308382469484856.jpg 480w, http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/1_hu14171312288306519066.jpg 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/1_hu15532308382469484856.jpg 480w, https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/1_hu14171312288306519066.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -303,10 +303,10 @@
 &lt;h3 id=&#34;232-案例图解分析&#34;&gt;2.3.2 案例图解分析
 &lt;/h3&gt;&lt;p&gt;老师类，学生类，还有班主任类，实际上都是属于人类的，我们可以定义一个人类，把他们相同的属性和行为都定义在人类中，然后继承人类即可，子类特有的属性和行为就定义在子类中了。&lt;/p&gt;
 &lt;p&gt;如下图所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/360%E6%88%AA%E5%9B%BE20181202211331250.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/360%E6%88%AA%E5%9B%BE20181202211331250.jpg&#34;
 	width=&#34;968&#34;
 	height=&#34;351&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/360%E6%88%AA%E5%9B%BE20181202211331250_hu6646196299313500026.jpg 480w, http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/360%E6%88%AA%E5%9B%BE20181202211331250_hu13836851791760510922.jpg 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/360%E6%88%AA%E5%9B%BE20181202211331250_hu6646196299313500026.jpg 480w, https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/360%E6%88%AA%E5%9B%BE20181202211331250_hu13836851791760510922.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1357,10 +1357,10 @@
 &lt;h3 id=&#34;294-super案例图解&#34;&gt;2.9.4 super(&amp;hellip;)案例图解
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;父类空间优先于子类对象产生&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在每次创建子类对象时，先初始化父类空间，再创建其子类对象本身。目的在于子类对象中包含了其对应的父类空间，便可以包含其父类的成员，如果父类成员非private修饰，则子类可以随意使用父类成员。代码体现在子类的构造七调用时，一定先调用父类的构造方法。理解图解如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/2.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/2.jpg&#34;
 	width=&#34;735&#34;
 	height=&#34;496&#34;
-	srcset=&#34;http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/2_hu17198914212557012806.jpg 480w, http://localhost:1313/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/2_hu7972939485668429629.jpg 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/2_hu17198914212557012806.jpg 480w, https://shanymxc.github.io/p/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6-static%E4%B8%8E%E7%BB%A7%E6%89%BF/index.assets/2_hu7972939485668429629.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

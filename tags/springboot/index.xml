@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>SpringBoot on 山有木兮</title>
-        <link>http://localhost:1313/tags/springboot/</link>
+        <link>https://shanymxc.github.io/tags/springboot/</link>
         <description>Recent content in SpringBoot on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Fri, 18 Oct 2024 16:39:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/springboot/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Oct 2024 16:39:20 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>SpringBootWeb请求响应</title>
-        <link>http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/</link>
+        <link>https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/</link>
         <pubDate>Fri, 18 Oct 2024 16:39:20 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/</guid>
-        <description>&lt;img src="http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/cmdbackground.jpg" alt="Featured image of post SpringBootWeb请求响应" /&gt;&lt;h1 id=&#34;springbootweb请求响应&#34;&gt;SpringBootWeb请求响应
+        <guid>https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/cmdbackground.jpg" alt="Featured image of post SpringBootWeb请求响应" /&gt;&lt;h1 id=&#34;springbootweb请求响应&#34;&gt;SpringBootWeb请求响应
 &lt;/h1&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前，我们基于SpringBoot的方式开发一个web应用，浏览器发起请求 /hello 后 ，给浏览器返回字符串 “Hello World ~”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826161735076.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826161735076.png&#34;
 	width=&#34;1219&#34;
 	height=&#34;424&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826161735076_hu1712670673728481089.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826161735076_hu6214791788108715353.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826161735076_hu1712670673728481089.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826161735076_hu6214791788108715353.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826161735076&#34;
@@ -33,10 +33,10 @@
 &lt;p&gt;实际上是我们在浏览器发起请求，请求了我们的后端web服务器(也就是内置的Tomcat)。而我们在开发web程序时呢，定义了一个控制器类Controller，请求会被部署在Tomcat中的Controller接收，然后Controller再给浏览器一个响应，响应一个字符串 “Hello World”。 而在请求响应的过程中是遵循HTTP协议的。&lt;/p&gt;
 &lt;p&gt;在Tomcat这类Web服务器中，是不识别我们自己定义的Controller的。但是我们前面讲到过Tomcat是一个Servlet容器，是支持Serlvet规范的。所以，在tomcat中是可以识别 Servlet程序的。&lt;/p&gt;
 &lt;p&gt;在SpringBoot进行web程序开发时，它内置了一个核心的Servlet程序 DispatcherServlet，称之为 核心控制器。 DispatcherServlet 负责接收页面发送的请求，然后根据执行的规则，将请求再转发给后面的请求处理器Controller，请求处理器处理完请求之后，最终再由DispatcherServlet给浏览器响应数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826165340157.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826165340157.png&#34;
 	width=&#34;1527&#34;
 	height=&#34;470&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826165340157_hu3901686565753284012.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826165340157_hu14297539549561339484.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826165340157_hu3901686565753284012.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826165340157_hu14297539549561339484.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826165340157&#34;
@@ -48,10 +48,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;将来浏览器发送请求，会携带请求数据，包括：请求行、请求头；请求到达tomcat之后，tomcat会负责解析这些请求数据，然后将解析后的请求数据会传递给Servlet程序的HttpServletRequest对象，也就意味着 HttpServletRequest 对象就可以获取到请求数据。 而Tomcat，还给Servlet程序传递了一个参数 HttpServletResponse，通过这个对象，我们就可以给浏览器设置响应数据 。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171407354.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171407354.png&#34;
 	width=&#34;1490&#34;
 	height=&#34;338&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171407354_hu7519408254193637106.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171407354_hu13713331575607655975.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171407354_hu7519408254193637106.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171407354_hu13713331575607655975.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826171407354&#34;
@@ -63,10 +63,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;上述所描述的这种浏览器/服务器的架构模式，我们称之为：BS架构。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171454775.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171454775.png&#34;
 	width=&#34;1623&#34;
 	height=&#34;470&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171454775_hu14206274454253021645.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171454775_hu12025161872871717128.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171454775_hu14206274454253021645.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826171454775_hu12025161872871717128.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826171454775&#34;
@@ -89,10 +89,10 @@
 &lt;h2 id=&#34;1-请求&#34;&gt;1. 请求
 &lt;/h2&gt;&lt;p&gt;该部分主要讲解如何接收页面传递过来的请求数据。&lt;/p&gt;
 &lt;h3 id=&#34;11-postman&#34;&gt;1.1 Postman
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203095553048.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203095553048.png&#34;
 	width=&#34;1135&#34;
 	height=&#34;503&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203095553048_hu17687130360449280452.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203095553048_hu8437197591264463958.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203095553048_hu17687130360449280452.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203095553048_hu8437197591264463958.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203095553048&#34;
@@ -115,10 +115,10 @@
 &lt;/ul&gt;
 &lt;p&gt;方式2：使用专业的接口测试工具（如Postman等）&lt;/p&gt;
 &lt;h4 id=&#34;111-介绍&#34;&gt;1.1.1 介绍
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173003949.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173003949.png&#34;
 	width=&#34;145&#34;
 	height=&#34;116&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173003949_hu12363975007823777311.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173003949_hu6535369962092556192.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173003949_hu12363975007823777311.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173003949_hu6535369962092556192.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826173003949&#34;
@@ -153,10 +153,10 @@
 &lt;h4 id=&#34;112-安装&#34;&gt;1.1.2 安装
 &lt;/h4&gt;&lt;p&gt;Postman官网：&lt;a class=&#34;link&#34; href=&#34;https://www.postman.com/downloads/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Download Postman | Get Started for Free&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173919556.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173919556.png&#34;
 	width=&#34;334&#34;
 	height=&#34;29&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173919556_hu5712316020317829732.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173919556_hu15269333617066764147.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173919556_hu5712316020317829732.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826173919556_hu15269333617066764147.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826173919556&#34;
@@ -168,10 +168,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在官网中注册下载完成后即可安装&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174601266.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174601266.png&#34;
 	width=&#34;567&#34;
 	height=&#34;318&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174601266_hu7753326490644182153.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174601266_hu405041543321511962.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174601266_hu7753326490644182153.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174601266_hu405041543321511962.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826174601266&#34;
@@ -183,10 +183,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;安装完成之后，进入页面中会提示有新版本可以升级（无需升级）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174900779.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174900779.png&#34;
 	width=&#34;1425&#34;
 	height=&#34;769&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174900779_hu260583676399083521.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174900779_hu1254089999014877979.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174900779_hu260583676399083521.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826174900779_hu1254089999014877979.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826174900779&#34;
@@ -197,10 +197,10 @@
 		data-flex-basis=&#34;444px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112117979.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112117979.png&#34;
 	width=&#34;1400&#34;
 	height=&#34;805&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112117979_hu5475052341194577900.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112117979_hu7167519970163493589.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112117979_hu5475052341194577900.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112117979_hu7167519970163493589.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203112117979&#34;
@@ -212,10 +212,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;界面介绍:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826175306141.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826175306141.png&#34;
 	width=&#34;1460&#34;
 	height=&#34;628&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826175306141_hu375430554402639758.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826175306141_hu4934975713006064127.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826175306141_hu375430554402639758.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826175306141_hu4934975713006064127.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826175306141&#34;
@@ -227,10 +227,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;如果我们需要将测试的请求信息保存下来，就需要创建一个postman的账号，然后登录之后才可以。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203103623435.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203103623435.png&#34;
 	width=&#34;1122&#34;
 	height=&#34;658&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203103623435_hu14271111209466519707.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203103623435_hu8821553229775706070.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203103623435_hu14271111209466519707.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203103623435_hu8821553229775706070.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203103623435&#34;
@@ -241,10 +241,10 @@
 		data-flex-basis=&#34;409px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112252985.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112252985.png&#34;
 	width=&#34;678&#34;
 	height=&#34;543&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112252985_hu6030023381593116292.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112252985_hu14738263096302452841.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112252985_hu6030023381593116292.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112252985_hu14738263096302452841.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203112252985&#34;
@@ -255,10 +255,10 @@
 		data-flex-basis=&#34;299px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112320687.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112320687.png&#34;
 	width=&#34;417&#34;
 	height=&#34;607&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112320687_hu13737582240757974204.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112320687_hu16962591014203046157.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112320687_hu13737582240757974204.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203112320687_hu16962591014203046157.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203112320687&#34;
@@ -270,10 +270,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;登录完成之后，可以创建工作空间：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113552785.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113552785.png&#34;
 	width=&#34;1410&#34;
 	height=&#34;820&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113552785_hu17784784596645587944.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113552785_hu17355001121345863985.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113552785_hu17784784596645587944.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113552785_hu17355001121345863985.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203113552785&#34;
@@ -284,10 +284,10 @@
 		data-flex-basis=&#34;412px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113925733.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113925733.png&#34;
 	width=&#34;1417&#34;
 	height=&#34;385&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113925733_hu1351439485680010095.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113925733_hu11427989136571684790.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113925733_hu1351439485680010095.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113925733_hu11427989136571684790.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203113925733&#34;
@@ -298,10 +298,10 @@
 		data-flex-basis=&#34;883px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113847126.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113847126.png&#34;
 	width=&#34;1417&#34;
 	height=&#34;828&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113847126_hu17207308334975656041.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113847126_hu5727898070979835743.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113847126_hu17207308334975656041.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203113847126_hu5727898070979835743.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203113847126&#34;
@@ -313,10 +313,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;创建请求：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114031824.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114031824.png&#34;
 	width=&#34;1417&#34;
 	height=&#34;609&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114031824_hu4028887027126782651.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114031824_hu14913572852353836136.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114031824_hu4028887027126782651.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114031824_hu14913572852353836136.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203114031824&#34;
@@ -328,10 +328,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&amp;quot;Save&amp;quot;，保存当前请求&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114231572.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114231572.png&#34;
 	width=&#34;1439&#34;
 	height=&#34;670&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114231572_hu12933352191131201975.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114231572_hu798939676830393067.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114231572_hu12933352191131201975.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114231572_hu798939676830393067.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203114231572&#34;
@@ -342,10 +342,10 @@
 		data-flex-basis=&#34;515px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114806665.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114806665.png&#34;
 	width=&#34;1441&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114806665_hu14142296140773236563.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114806665_hu15819677796933617317.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114806665_hu14142296140773236563.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114806665_hu15819677796933617317.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203114806665&#34;
@@ -356,10 +356,10 @@
 		data-flex-basis=&#34;514px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114852752.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114852752.png&#34;
 	width=&#34;1441&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114852752_hu14184878443412013188.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114852752_hu8488571813637154963.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114852752_hu14184878443412013188.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203114852752_hu8488571813637154963.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203114852752&#34;
@@ -370,10 +370,10 @@
 		data-flex-basis=&#34;514px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115001098.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115001098.png&#34;
 	width=&#34;1441&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115001098_hu11230638339453359358.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115001098_hu6858330976185547803.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115001098_hu11230638339453359358.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115001098_hu6858330976185547803.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203115001098&#34;
@@ -384,10 +384,10 @@
 		data-flex-basis=&#34;514px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115041949.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115041949.png&#34;
 	width=&#34;1441&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115041949_hu10760301614722993566.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115041949_hu11276480055892683403.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115041949_hu10760301614722993566.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115041949_hu11276480055892683403.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203115041949&#34;
@@ -398,10 +398,10 @@
 		data-flex-basis=&#34;514px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115110440.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115110440.png&#34;
 	width=&#34;1441&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115110440_hu6833875060332192360.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115110440_hu6236897674851978158.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115110440_hu6833875060332192360.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203115110440_hu6236897674851978158.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203115110440&#34;
@@ -414,10 +414,10 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;12-简单参数&#34;&gt;1.2 简单参数
 &lt;/h3&gt;&lt;p&gt;简单参数：在向服务器发起请求时，向服务器传递的是一些普通的请求数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826180550583.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826180550583.png&#34;
 	width=&#34;970&#34;
 	height=&#34;356&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826180550583_hu2435703838556089193.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826180550583_hu3151273105239987295.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826180550583_hu2435703838556089193.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826180550583_hu3151273105239987295.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826180550583&#34;
@@ -530,10 +530,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;postman测试( GET 请求)：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203122405075.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203122405075.png&#34;
 	width=&#34;1067&#34;
 	height=&#34;546&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203122405075_hu18338737550826487792.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203122405075_hu9103596842782295338.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203122405075_hu18338737550826487792.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203122405075_hu9103596842782295338.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203122405075&#34;
@@ -545,10 +545,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;postman测试( POST请求 )：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826181117898.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826181117898.png&#34;
 	width=&#34;1220&#34;
 	height=&#34;358&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826181117898_hu17602591868192554057.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826181117898_hu4317923252103501023.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826181117898_hu17602591868192554057.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826181117898_hu4317923252103501023.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826181117898&#34;
@@ -634,10 +634,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意事项：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;@RequestParam中的required属性默认为true（默认值也是true），代表该请求参数必须传递，如果不传递将报错&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203130726310.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203130726310.png&#34;
 	width=&#34;1065&#34;
 	height=&#34;618&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203130726310_hu9526918484099456415.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203130726310_hu8328212662357596841.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203130726310_hu9526918484099456415.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203130726310_hu8328212662357596841.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203130726310&#34;
@@ -669,10 +669,10 @@
 &lt;h3 id=&#34;13-实体参数&#34;&gt;1.3 实体参数
 &lt;/h3&gt;&lt;p&gt;在使用简单参数做为数据传递方式时，前端传递了多少个请求参数，后端controller方法中的形参就要书写多少个。如果请求参数比较多，通过上述的方式一个参数一个参数的接收，会比较繁琐。&lt;/p&gt;
 &lt;p&gt;此时，我们可以考虑将请求参数封装到一个实体类对象中。 要想完成数据封装，需要遵守如下规则：&lt;strong&gt;请求参数名与实体类的属性名相同&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203131954932.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203131954932.png&#34;
 	width=&#34;1021&#34;
 	height=&#34;434&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203131954932_hu10657634196908067284.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203131954932_hu17266006205800142613.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203131954932_hu10657634196908067284.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203131954932_hu17266006205800142613.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203131954932&#34;
@@ -776,10 +776,10 @@
 &lt;ul&gt;
 &lt;li&gt;参数名和实体类属性名一致时&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161246168.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161246168.png&#34;
 	width=&#34;1237&#34;
 	height=&#34;694&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161246168_hu4466220906735075115.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161246168_hu11324975560600630824.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161246168_hu4466220906735075115.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161246168_hu11324975560600630824.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203161246168&#34;
@@ -793,10 +793,10 @@
 &lt;ul&gt;
 &lt;li&gt;参数名和实体类属性名不一致时&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161004349.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161004349.png&#34;
 	width=&#34;1236&#34;
 	height=&#34;692&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161004349_hu5170716482789897644.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161004349_hu10127518481319275435.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161004349_hu5170716482789897644.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203161004349_hu10127518481319275435.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203161004349&#34;
@@ -813,10 +813,10 @@
 &lt;ul&gt;
 &lt;li&gt;User类中有一个Address类型的属性（Address是一个实体类）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203160447953.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203160447953.png&#34;
 	width=&#34;1578&#34;
 	height=&#34;671&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203160447953_hu7927569044330087504.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203160447953_hu3428675647394179107.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203160447953_hu7927569044330087504.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203160447953_hu3428675647394179107.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203160447953&#34;
@@ -1008,10 +1008,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Postman测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203162706175.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203162706175.png&#34;
 	width=&#34;1239&#34;
 	height=&#34;691&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203162706175_hu150897564526032562.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203162706175_hu4410325174894974006.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203162706175_hu150897564526032562.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203162706175_hu4410325174894974006.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203162706175&#34;
@@ -1024,10 +1024,10 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;14-数组集合参数&#34;&gt;1.4 数组集合参数
 &lt;/h3&gt;&lt;p&gt;数组集合参数的使用场景：在HTML的表单中，有一个表单项是支持多选的(复选框)，可以提交选择的多个值。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164114083.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164114083.png&#34;
 	width=&#34;660&#34;
 	height=&#34;692&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164114083_hu9096274685596013225.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164114083_hu7497675889324686887.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164114083_hu9096274685596013225.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164114083_hu7497675889324686887.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203164114083&#34;
@@ -1039,10 +1039,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;多个值是怎么提交的呢？其实多个值也是一个一个的提交。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164944144.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164944144.png&#34;
 	width=&#34;970&#34;
 	height=&#34;241&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164944144_hu10588558974904031070.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164944144_hu4248584145780010899.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164944144_hu10588558974904031070.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203164944144_hu4248584145780010899.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203164944144&#34;
@@ -1060,10 +1060,10 @@
 &lt;/ol&gt;
 &lt;h4 id=&#34;141-数组&#34;&gt;1.4.1 数组
 &lt;/h4&gt;&lt;p&gt;数组参数：&lt;strong&gt;请求参数名与形参数组名称相同且请求参数为多个，定义数组类型形参即可接收参数&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203190218468.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203190218468.png&#34;
 	width=&#34;1054&#34;
 	height=&#34;461&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203190218468_hu6048599815250250659.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203190218468_hu8641300822379978942.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203190218468_hu6048599815250250659.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203190218468_hu8641300822379978942.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203190218468&#34;
@@ -1102,10 +1102,10 @@
 &lt;/div&gt;&lt;p&gt;Postman测试：&lt;/p&gt;
 &lt;p&gt;在前端请求时，有两种传递形式：&lt;/p&gt;
 &lt;p&gt;方式一： xxxxxxxxxx?hobby=game&amp;amp;hobby=java&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191732601.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191732601.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;568&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191732601_hu15556815395643735793.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191732601_hu16992835346056017208.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191732601_hu15556815395643735793.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191732601_hu16992835346056017208.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203191732601&#34;
@@ -1117,10 +1117,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;方式二：xxxxxxxxxxxxx?hobby=game,java&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191822996.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191822996.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;569&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191822996_hu16714170322705465937.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191822996_hu16406092337256561530.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191822996_hu16714170322705465937.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203191822996_hu16406092337256561530.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203191822996&#34;
@@ -1136,10 +1136,10 @@
 &lt;blockquote&gt;
 &lt;p&gt;默认情况下，请求中参数名相同的多个值，是封装到数组。如果要封装到集合，要使用@RequestParam绑定参数关系&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203211640646.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203211640646.png&#34;
 	width=&#34;1052&#34;
 	height=&#34;458&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203211640646_hu2535653763680595371.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203211640646_hu9014873784719671930.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203211640646_hu2535653763680595371.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203211640646_hu9014873784719671930.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203211640646&#34;
@@ -1177,10 +1177,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Postman测试：&lt;/p&gt;
 &lt;p&gt;方式一： xxxxxxxxxx?hobby=game&amp;amp;hobby=java&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212221939.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212221939.png&#34;
 	width=&#34;1237&#34;
 	height=&#34;511&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212221939_hu729883026456977562.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212221939_hu1446773950986451911.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212221939_hu729883026456977562.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212221939_hu1446773950986451911.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203212221939&#34;
@@ -1192,10 +1192,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;方式二：xxxxxxxxxxxxx?hobby=game,java&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212024679.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212024679.png&#34;
 	width=&#34;1240&#34;
 	height=&#34;508&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212024679_hu13321143569425196156.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212024679_hu14267384525662689705.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212024679_hu13321143569425196156.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203212024679_hu14267384525662689705.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203212024679&#34;
@@ -1208,10 +1208,10 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;15-日期参数&#34;&gt;1.5 日期参数
 &lt;/h3&gt;&lt;p&gt;上述演示的都是一些普通的参数，在一些特殊的需求中，可能会涉及到日期类型数据的封装。比如，如下需求：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826194159343.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826194159343.png&#34;
 	width=&#34;1574&#34;
 	height=&#34;133&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826194159343_hu10818832208108389376.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826194159343_hu8361121447756874762.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826194159343_hu10818832208108389376.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220826194159343_hu8361121447756874762.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220826194159343&#34;
@@ -1223,10 +1223,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;因为日期的格式多种多样（如：2022-12-12 10:05:45 、2022/12/12 10:05:45），那么对于日期类型的参数在进行封装的时候，需要通过@DateTimeFormat注解，以及其pattern属性来设置日期的格式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203213120692.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203213120692.png&#34;
 	width=&#34;1634&#34;
 	height=&#34;623&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203213120692_hu15063859313938940436.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203213120692_hu3941769107471534075.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203213120692_hu15063859313938940436.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203213120692_hu3941769107471534075.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203213120692&#34;
@@ -1267,10 +1267,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Postman测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203214600716.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203214600716.png&#34;
 	width=&#34;1243&#34;
 	height=&#34;508&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203214600716_hu10496751382436113944.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203214600716_hu12996812466651405747.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203214600716_hu10496751382436113944.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203214600716_hu12996812466651405747.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203214600716&#34;
@@ -1289,10 +1289,10 @@
 &lt;li&gt;在服务端的controller方法中，如何接收json格式的请求参数&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Postman发送JSON格式数据：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203225623337.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203225623337.png&#34;
 	width=&#34;1247&#34;
 	height=&#34;383&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203225623337_hu10004649010215190722.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203225623337_hu3021509428757425045.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203225623337_hu10004649010215190722.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203225623337_hu3021509428757425045.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203225623337&#34;
@@ -1308,10 +1308,10 @@
 &lt;li&gt;传递json格式的参数，在Controller中会使用实体类进行封装。&lt;/li&gt;
 &lt;li&gt;封装规则：&lt;strong&gt;JSON数据键名与形参对象属性名相同，定义POJO类型形参即可接收参数。需要使用 @RequestBody标识。&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203230457901.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203230457901.png&#34;
 	width=&#34;1055&#34;
 	height=&#34;523&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203230457901_hu6467833807071671651.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203230457901_hu7362901477311019202.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203230457901_hu6467833807071671651.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203230457901_hu7362901477311019202.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203230457901&#34;
@@ -1391,10 +1391,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Postman测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203231803000.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203231803000.png&#34;
 	width=&#34;1251&#34;
 	height=&#34;757&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203231803000_hu10564239269525251528.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203231803000_hu4697636168449413509.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203231803000_hu10564239269525251528.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203231803000_hu4697636168449413509.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203231803000&#34;
@@ -1407,10 +1407,10 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;17-路径参数&#34;&gt;1.7 路径参数
 &lt;/h3&gt;&lt;p&gt;传统的开发中请求参数是放在请求体(POST请求)传递或跟在URL后面通过?key=value的形式传递(GET请求)。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203235715804.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203235715804.png&#34;
 	width=&#34;1432&#34;
 	height=&#34;485&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203235715804_hu3457116022544599314.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203235715804_hu1820824774749820679.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203235715804_hu3457116022544599314.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221203235715804_hu1820824774749820679.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221203235715804&#34;
@@ -1439,10 +1439,10 @@
 &lt;li&gt;前端：通过请求URL直接传递参数&lt;/li&gt;
 &lt;li&gt;后端：使用{…}来标识该路径参数，需要使用@PathVariable获取路径参数&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204001520756.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204001520756.png&#34;
 	width=&#34;1467&#34;
 	height=&#34;450&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204001520756_hu7250308913826573001.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204001520756_hu17806111281828444129.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204001520756_hu7250308913826573001.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204001520756_hu17806111281828444129.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204001520756&#34;
@@ -1479,10 +1479,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Postman测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002040184.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002040184.png&#34;
 	width=&#34;1251&#34;
 	height=&#34;364&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002040184_hu1523337730068081638.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002040184_hu7825167351643559419.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002040184_hu1523337730068081638.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002040184_hu7825167351643559419.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204002040184&#34;
@@ -1495,10 +1495,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;传递多个路径参数：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Postman：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002306288.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002306288.png&#34;
 	width=&#34;1251&#34;
 	height=&#34;237&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002306288_hu16338150227285209780.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002306288_hu8736222823226548387.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002306288_hu16338150227285209780.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204002306288_hu8736222823226548387.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204002306288&#34;
@@ -1539,10 +1539,10 @@
 &lt;p&gt;那么Controller程序呢，除了接收请求外，还可以进行响应。&lt;/p&gt;
 &lt;h3 id=&#34;21-responsebody&#34;&gt;2.1 @ResponseBody
 &lt;/h3&gt;&lt;p&gt;在我们前面所编写的controller方法中，都已经设置了响应数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204100656376.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204100656376.png&#34;
 	width=&#34;1209&#34;
 	height=&#34;192&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204100656376_hu5277195258242850689.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204100656376_hu14243793507706950760.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204100656376_hu5277195258242850689.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204100656376_hu14243793507706950760.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204100656376&#34;
@@ -1705,10 +1705,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在服务端响应了一个对象或者集合，那私前端获取到的数据是什么样子的呢？我们使用postman发送请求来测试下。测试效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172339375.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172339375.png&#34;
 	width=&#34;1248&#34;
 	height=&#34;492&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172339375_hu15348363948014404486.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172339375_hu3526056907235910075.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172339375_hu15348363948014404486.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172339375_hu3526056907235910075.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204172339375&#34;
@@ -1719,10 +1719,10 @@
 		data-flex-basis=&#34;608px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172705426.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172705426.png&#34;
 	width=&#34;1248&#34;
 	height=&#34;574&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172705426_hu17459474367552460347.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172705426_hu8537058681170385986.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172705426_hu17459474367552460347.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204172705426_hu8537058681170385986.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204172705426&#34;
@@ -1735,10 +1735,10 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;22-统一响应结果&#34;&gt;2.2 统一响应结果
 &lt;/h3&gt;&lt;p&gt;大家有没有发现一个问题，我们在前面所编写的这些Controller方法中，返回值各种各样，没有任何的规范。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174052622.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174052622.png&#34;
 	width=&#34;1178&#34;
 	height=&#34;661&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174052622_hu17788132920553910282.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174052622_hu5867054656692524709.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174052622_hu17788132920553910282.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174052622_hu5867054656692524709.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204174052622&#34;
@@ -1751,10 +1751,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;如果我们开发一个大型项目，项目中controller方法将成千上万，使用上述方式将造成整个项目难以维护。那在真实的项目开发中是什么样子的呢？&lt;/p&gt;
 &lt;p&gt;在真实的项目开发中，无论是哪种方法，我们都会定义一个统一的返回结果。方案如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174537686.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174537686.png&#34;
 	width=&#34;1200&#34;
 	height=&#34;583&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174537686_hu18052462573823704224.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174537686_hu10169035565130258846.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174537686_hu18052462573823704224.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204174537686_hu10169035565130258846.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204174537686&#34;
@@ -1967,10 +1967,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;使用Postman测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180946963.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180946963.png&#34;
 	width=&#34;1383&#34;
 	height=&#34;542&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180946963_hu17410675142638999439.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180946963_hu3347931823301844404.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180946963_hu17410675142638999439.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180946963_hu3347931823301844404.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204180946963&#34;
@@ -1981,10 +1981,10 @@
 		data-flex-basis=&#34;612px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180744084.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180744084.png&#34;
 	width=&#34;1385&#34;
 	height=&#34;776&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180744084_hu17047999976714567325.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180744084_hu5229831023963696488.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180744084_hu17047999976714567325.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204180744084_hu5229831023963696488.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204180744084&#34;
@@ -1999,10 +1999,10 @@
 &lt;/h3&gt;&lt;p&gt;下面我们通过一个案例，来加强对请求响应的学习。&lt;/p&gt;
 &lt;h4 id=&#34;231-需求说明&#34;&gt;2.3.1 需求说明
 &lt;/h4&gt;&lt;p&gt;需求：加载并解析xml文件中的数据，完成数据处理，并在页面展示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185928260.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185928260.png&#34;
 	width=&#34;1574&#34;
 	height=&#34;403&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185928260_hu5763791842005792324.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185928260_hu7179742822932387086.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185928260_hu5763791842005792324.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185928260_hu7179742822932387086.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204185928260&#34;
@@ -2076,10 +2076,10 @@
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;引入资料中提供的：解析XML的工具类XMLParserUtils、实体类Emp、XML文件emp.xml&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204182828547.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204182828547.png&#34;
 	width=&#34;345&#34;
 	height=&#34;303&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204182828547_hu4777221494388454966.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204182828547_hu2459702998076142162.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204182828547_hu4777221494388454966.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204182828547_hu2459702998076142162.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204182828547&#34;
@@ -2093,10 +2093,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;引入资料中提供的静态页面文件，放在resources下的static目录下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204183044848.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204183044848.png&#34;
 	width=&#34;325&#34;
 	height=&#34;339&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204183044848_hu15541896366208483721.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204183044848_hu6739938213957312115.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204183044848_hu15541896366208483721.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204183044848_hu6739938213957312115.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204183044848&#34;
@@ -2110,10 +2110,10 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;创建EmpController类，编写Controller程序，处理请求，响应数据&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204184313822.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204184313822.png&#34;
 	width=&#34;423&#34;
 	height=&#34;422&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204184313822_hu9512053781067591523.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204184313822_hu7050507245882694878.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204184313822_hu9512053781067591523.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204184313822_hu7050507245882694878.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204184313822&#34;
@@ -2290,10 +2290,10 @@
 &lt;/div&gt;&lt;h4 id=&#34;235-测试&#34;&gt;2.3.5 测试
 &lt;/h4&gt;&lt;p&gt;代码编写完毕之后，我们就可以运行引导类，启动服务进行测试了。&lt;/p&gt;
 &lt;p&gt;使用Postman测试：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190341389.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190341389.png&#34;
 	width=&#34;1387&#34;
 	height=&#34;832&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190341389_hu5997909736192851914.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190341389_hu6183793632932463898.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190341389_hu5997909736192851914.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190341389_hu6183793632932463898.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204190341389&#34;
@@ -2305,10 +2305,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;打开浏览器，在浏览器地址栏输入： http://localhost:8080/emp.html&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556.png&#34;
 	width=&#34;1380&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu15000606813704343102.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu14606608346625526572.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu15000606813704343102.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu14606608346625526572.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204185455556&#34;
@@ -2321,10 +2321,10 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;236-问题分析&#34;&gt;2.3.6 问题分析
 &lt;/h4&gt;&lt;p&gt;上述案例的功能，我们虽然已经实现，但是呢，我们会发现案例中：解析XML数据，获取数据的代码，处理数据的逻辑的代码，给页面响应的代码全部都堆积在一起了，全部都写在controller方法中了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190712411.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190712411.png&#34;
 	width=&#34;987&#34;
 	height=&#34;918&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190712411_hu6981832650305146455.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190712411_hu12901645808542728952.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190712411_hu6981832650305146455.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204190712411_hu12901645808542728952.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204190712411&#34;
@@ -2357,10 +2357,10 @@
 &lt;p&gt;这样就可以让类、接口、方法的复杂度更低，可读性更强，扩展性更好，也更利用后期的维护。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我们之前开发的程序呢，并不满足单一职责原则。下面我们来分析下之前的程序：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204191650390.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204191650390.png&#34;
 	width=&#34;1303&#34;
 	height=&#34;919&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204191650390_hu15568952155995629194.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204191650390_hu14250306391832858428.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204191650390_hu15568952155995629194.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204191650390_hu14250306391832858428.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204191650390&#34;
@@ -2378,10 +2378,10 @@
 &lt;li&gt;请求处理、响应数据：负责，接收页面的请求，给页面响应数据。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;按照上述的三个组成部分，在我们项目开发中呢，可以将代码分为三层：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204193837678.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204193837678.png&#34;
 	width=&#34;1149&#34;
 	height=&#34;359&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204193837678_hu586309033415081581.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204193837678_hu17705019169892444471.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204193837678_hu586309033415081581.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204193837678_hu17705019169892444471.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204193837678&#34;
@@ -2398,10 +2398,10 @@
 &lt;li&gt;Dao：数据访问层(Data Access Object)，也称为持久层。负责数据访问操作，包括数据的增、删、改、查。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;基于三层架构的程序执行流程：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204194207812.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204194207812.png&#34;
 	width=&#34;1659&#34;
 	height=&#34;358&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204194207812_hu11289334871160232610.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204194207812_hu4394112901931499160.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204194207812_hu11289334871160232610.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204194207812_hu4394112901931499160.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204194207812&#34;
@@ -2429,10 +2429,10 @@
 &lt;li&gt;业务逻辑层包名：xxxx.service&lt;/li&gt;
 &lt;li&gt;数据访问层包名：xxxx.dao&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204195812200.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204195812200.png&#34;
 	width=&#34;1292&#34;
 	height=&#34;571&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204195812200_hu12461723198032469163.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204195812200_hu7031269031198463070.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204195812200_hu12461723198032469163.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204195812200_hu7031269031198463070.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204195812200&#34;
@@ -2624,10 +2624,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204201342490.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204201342490.png&#34;
 	width=&#34;1210&#34;
 	height=&#34;569&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204201342490_hu2800831667968250688.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204201342490_hu11504034929247830544.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204201342490_hu2800831667968250688.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204201342490_hu11504034929247830544.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204201342490&#34;
@@ -2666,10 +2666,10 @@
 &lt;ul&gt;
 &lt;li&gt;EmpServiceA类中只编写了和员工相关的逻辑处理代码&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204202531571.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204202531571.png&#34;
 	width=&#34;507&#34;
 	height=&#34;565&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204202531571_hu8504588059654854688.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204202531571_hu9660800294120115291.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204202531571_hu8504588059654854688.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204202531571_hu9660800294120115291.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204202531571&#34;
@@ -2684,10 +2684,10 @@
 &lt;ul&gt;
 &lt;li&gt;把业务类变为EmpServiceB时，需要修改controller层中的代码&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204203904900.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204203904900.png&#34;
 	width=&#34;1719&#34;
 	height=&#34;636&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204203904900_hu8558128713940442407.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204203904900_hu12259117458461570508.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204203904900_hu8558128713940442407.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204203904900_hu12259117458461570508.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204203904900&#34;
@@ -2699,10 +2699,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;高内聚、低耦合的目的是使程序模块的可重用性、移植性大大增强。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220828215549593.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220828215549593.png&#34;
 	width=&#34;1246&#34;
 	height=&#34;507&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220828215549593_hu10733396466849886346.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220828215549593_hu2128703369133401571.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220828215549593_hu10733396466849886346.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20220828215549593_hu2128703369133401571.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2713,10 +2713,10 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;322--解耦思路&#34;&gt;3.2.2  解耦思路
 &lt;/h4&gt;&lt;p&gt;之前我们在编写代码时，需要什么对象，就直接new一个就可以了。 这种做法呢，层与层之间代码就耦合了，当service层的实现变了之后， 我们还需要修改controller层的代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204204916033.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204204916033.png&#34;
 	width=&#34;1270&#34;
 	height=&#34;458&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204204916033_hu13508269675770424425.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204204916033_hu17138210810618825447.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204204916033_hu13508269675770424425.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204204916033_hu17138210810618825447.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204204916033&#34;
@@ -2731,10 +2731,10 @@
 &lt;ul&gt;
 &lt;li&gt;首先不能在EmpController中使用new对象。代码如下：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204205328069.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204205328069.png&#34;
 	width=&#34;813&#34;
 	height=&#34;451&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204205328069_hu13901883709429421490.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204205328069_hu17127052379398074084.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204205328069_hu13901883709429421490.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204205328069_hu17127052379398074084.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204205328069&#34;
@@ -2793,10 +2793,10 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;第1步：删除Controller层、Service层中new对象的代码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204212807207.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204212807207.png&#34;
 	width=&#34;1591&#34;
 	height=&#34;281&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204212807207_hu7104685421507951762.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204212807207_hu13770413647455275248.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204212807207_hu7104685421507951762.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204212807207_hu13770413647455275248.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204212807207&#34;
@@ -2811,10 +2811,10 @@
 &lt;ul&gt;
 &lt;li&gt;使用Spring提供的注解：@Component ，就可以实现类交给IOC容器管理&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213328034.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213328034.png&#34;
 	width=&#34;1070&#34;
 	height=&#34;325&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213328034_hu13060104307412212221.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213328034_hu8878613737911502183.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213328034_hu13060104307412212221.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213328034_hu8878613737911502183.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204213328034&#34;
@@ -2829,10 +2829,10 @@
 &lt;ul&gt;
 &lt;li&gt;使用Spring提供的注解：@Autowired ，就可以实现程序运行时IOC容器自动注入需要的依赖对象&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213859112.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213859112.png&#34;
 	width=&#34;1600&#34;
 	height=&#34;313&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213859112_hu5039153739202249482.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213859112_hu7024437301439388921.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213859112_hu5039153739202249482.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204213859112_hu7024437301439388921.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204213859112&#34;
@@ -2993,10 +2993,10 @@
 &lt;ul&gt;
 &lt;li&gt;启动SpringBoot引导类，打开浏览器，输入：http://localhost:8080/emp.html&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556.png&#34;
 	width=&#34;1380&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu15000606813704343102.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu14606608346625526572.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu15000606813704343102.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204185455556_hu14606608346625526572.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204185455556&#34;
@@ -3197,10 +3197,10 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;查看源码：&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204221320230.png&#34;
+&lt;p&gt;查看源码：&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204221320230.png&#34;
 	width=&#34;966&#34;
 	height=&#34;336&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204221320230_hu16449785013757418772.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204221320230_hu7101263800118997766.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204221320230_hu16449785013757418772.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204221320230_hu7101263800118997766.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204221320230&#34;
@@ -3213,10 +3213,10 @@
 &gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在IOC容器中，每一个Bean都有一个属于自己的名字，可以通过注解的value属性指定bean的名字。如果没有指定，默认为类名首字母小写。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204222650873.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204222650873.png&#34;
 	width=&#34;956&#34;
 	height=&#34;650&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204222650873_hu7496326435046219915.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204222650873_hu9919680852793923902.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204222650873_hu7496326435046219915.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204222650873_hu9919680852793923902.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204222650873&#34;
@@ -3238,10 +3238,10 @@
 &lt;/h5&gt;&lt;p&gt;问题：使用前面学习的四个注解声明的bean，一定会生效吗？&lt;/p&gt;
 &lt;p&gt;答案：不一定。（原因：bean想要生效，还需要被组件扫描）&lt;/p&gt;
 &lt;p&gt;下面我们通过修改项目工程的目录结构，来测试bean对象是否生效：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223602694.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223602694.png&#34;
 	width=&#34;1140&#34;
 	height=&#34;347&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223602694_hu693746980552736244.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223602694_hu12213444505564201759.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223602694_hu693746980552736244.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223602694_hu12213444505564201759.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204223602694&#34;
@@ -3253,10 +3253,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;运行程序后，报错：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223815554.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223815554.png&#34;
 	width=&#34;1426&#34;
 	height=&#34;402&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223815554_hu6235847359314220607.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223815554_hu3370381533212808028.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223815554_hu6235847359314220607.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204223815554_hu3370381533212808028.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204223815554&#34;
@@ -3273,10 +3273,10 @@
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;@ComponentScan注解虽然没有显式配置，但是实际上已经包含在了引导类声明注解 @SpringBootApplication 中，==&lt;strong&gt;默认扫描的范围是SpringBoot启动类所在包及其子包&lt;/strong&gt;==。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204224643683.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204224643683.png&#34;
 	width=&#34;626&#34;
 	height=&#34;631&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204224643683_hu5697832073449313638.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204224643683_hu9683563515172297079.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204224643683_hu5697832073449313638.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204224643683_hu9683563515172297079.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204224643683&#34;
@@ -3291,10 +3291,10 @@
 &lt;ul&gt;
 &lt;li&gt;解决方案：手动添加@ComponentScan注解，指定要扫描的包   （==仅做了解，不推荐==）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225437297.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225437297.png&#34;
 	width=&#34;1327&#34;
 	height=&#34;398&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225437297_hu3835145434717168526.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225437297_hu14895039348422120263.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225437297_hu3835145434717168526.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225437297_hu14895039348422120263.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204225437297&#34;
@@ -3309,10 +3309,10 @@
 &lt;ul&gt;
 &lt;li&gt;将我们定义的controller，service，dao这些包呢，都放在引导类所在包com.itheima的子包下，这样我们定义的bean就会被自动的扫描到&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225815624.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225815624.png&#34;
 	width=&#34;970&#34;
 	height=&#34;436&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225815624_hu6123121066814204458.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225815624_hu7899444506328884089.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225815624_hu6123121066814204458.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204225815624_hu7899444506328884089.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204225815624&#34;
@@ -3332,10 +3332,10 @@
 &lt;p&gt;入门程序举例：在EmpController运行的时候，就要到IOC容器当中去查找EmpService这个类型的对象，而我们的IOC容器中刚好有一个EmpService这个类型的对象，所以就找到了这个类型的对象完成注入操作。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;那如果在IOC容器中，存在多个相同类型的bean对象，会出现什么情况呢？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232154445.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232154445.png&#34;
 	width=&#34;1022&#34;
 	height=&#34;397&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232154445_hu10303631980084172786.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232154445_hu9583708382690247527.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232154445_hu10303631980084172786.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232154445_hu9583708382690247527.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204232154445&#34;
@@ -3349,10 +3349,10 @@
 &lt;ul&gt;
 &lt;li&gt;程序运行会报错&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204231616724.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204231616724.png&#34;
 	width=&#34;1176&#34;
 	height=&#34;172&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204231616724_hu3108968351200732082.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204231616724_hu15257207954244751734.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204231616724_hu3108968351200732082.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204231616724_hu15257207954244751734.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204231616724&#34;
@@ -3376,10 +3376,10 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;使用@Primary注解：当存在多个相同类型的Bean注入时，加上@Primary注解，来确定默认的实现。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232501679.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232501679.png&#34;
 	width=&#34;444&#34;
 	height=&#34;137&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232501679_hu12237154803959265376.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232501679_hu9451983458219281876.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232501679_hu12237154803959265376.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204232501679_hu9451983458219281876.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204232501679&#34;
@@ -3394,10 +3394,10 @@
 &lt;ul&gt;
 &lt;li&gt;@Qualifier注解不能单独使用，必须配合@Autowired使用&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233333606.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233333606.png&#34;
 	width=&#34;1218&#34;
 	height=&#34;179&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233333606_hu7848825107443791618.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233333606_hu12011674055207247331.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233333606_hu7848825107443791618.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233333606_hu12011674055207247331.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204233333606&#34;
@@ -3409,10 +3409,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;使用@Resource注解：是按照bean的名称进行注入。通过name属性指定要注入的bean的名称。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233637735.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233637735.png&#34;
 	width=&#34;914&#34;
 	height=&#34;142&#34;
-	srcset=&#34;http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233637735_hu5665329109609783533.png 480w, http://localhost:1313/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233637735_hu10542055428020491021.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233637735_hu5665329109609783533.png 480w, https://shanymxc.github.io/p/springbootweb%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/index.assets/image-20221204233637735_hu10542055428020491021.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221204233637735&#34;

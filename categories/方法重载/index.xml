@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>方法重载 on 山有木兮</title>
-        <link>http://localhost:1313/categories/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/</link>
+        <link>https://shanymxc.github.io/categories/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/</link>
         <description>Recent content in 方法重载 on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 15:46:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Oct 2024 15:46:20 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Java 方法</title>
-        <link>http://localhost:1313/p/java-%E6%96%B9%E6%B3%95/</link>
+        <link>https://shanymxc.github.io/p/java-%E6%96%B9%E6%B3%95/</link>
         <pubDate>Thu, 24 Oct 2024 15:46:20 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/java-%E6%96%B9%E6%B3%95/</guid>
+        <guid>https://shanymxc.github.io/p/java-%E6%96%B9%E6%B3%95/</guid>
         <description>&lt;h2 id=&#34;1-方法概述&#34;&gt;1. 方法概述
 &lt;/h2&gt;&lt;h3 id=&#34;11-方法的概念&#34;&gt;1.1 方法的概念
 &lt;/h3&gt;&lt;p&gt;​	方法（method）是程序中最小的执行单元&lt;/p&gt;

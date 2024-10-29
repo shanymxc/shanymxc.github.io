@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>初始化 on 山有木兮</title>
-        <link>http://localhost:1313/tags/%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+        <link>https://shanymxc.github.io/tags/%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
         <description>Recent content in 初始化 on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Mon, 14 Oct 2024 16:54:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%88%9D%E5%A7%8B%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Oct 2024 16:54:12 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/tags/%E5%88%9D%E5%A7%8B%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Vue3项目初始化</title>
-        <link>http://localhost:1313/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+        <link>https://shanymxc.github.io/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
         <pubDate>Mon, 14 Oct 2024 16:54:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
-        <description>&lt;img src="http://localhost:1313/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/3fe47a7c26bbc6f54eb9fde1fad99cc9.png" alt="Featured image of post Vue3项目初始化" /&gt;&lt;h1 id=&#34;vue项目初始化&#34;&gt;vue项目初始化
+        <guid>https://shanymxc.github.io/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/vue3%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/3fe47a7c26bbc6f54eb9fde1fad99cc9.png" alt="Featured image of post Vue3项目初始化" /&gt;&lt;h1 id=&#34;vue项目初始化&#34;&gt;vue项目初始化
 &lt;/h1&gt;&lt;h2 id=&#34;1执行命令npm-init-vuelatest&#34;&gt;1.执行命令：npm init vue@latest
 &lt;/h2&gt;&lt;img src=&#34;index.assets/49117038bd3f4384c4aa103d6f1715d5.png&#34; alt=&#34;49117038bd3f4384c4aa103d6f1715d5&#34; style=&#34;zoom: 67%;&#34; /&gt;
 &lt;p&gt;依次执行：cd projectname; npm install；&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Docker on 山有木兮</title>
-        <link>http://localhost:1313/categories/docker/</link>
+        <link>https://shanymxc.github.io/categories/docker/</link>
         <description>Recent content in Docker on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Sun, 27 Oct 2024 22:49:04 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 27 Oct 2024 22:49:04 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Docker</title>
-        <link>http://localhost:1313/p/docker/</link>
+        <link>https://shanymxc.github.io/p/docker/</link>
         <pubDate>Sun, 27 Oct 2024 22:49:04 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/docker/</guid>
+        <guid>https://shanymxc.github.io/p/docker/</guid>
         <description>&lt;h1 id=&#34;1快速入门&#34;&gt;1.快速入门
 &lt;/h1&gt;&lt;p&gt;安装方式参考文档：《安装Docker》&lt;/p&gt;
 &lt;h2 id=&#34;11部署mysql&#34;&gt;1.1.部署MySQL
@@ -44,10 +44,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行效果如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322288-19.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322288-19.png&#34;
 	width=&#34;1402&#34;
 	height=&#34;773&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322288-19_hu4156128190472949119.png 480w, http://localhost:1313/p/docker/index.assets/1730037322288-19_hu13289779976988870988.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322288-19_hu4156128190472949119.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322288-19_hu13289779976988870988.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -85,10 +85,10 @@
 &lt;p&gt;&lt;strong&gt;总结一下&lt;/strong&gt;：&lt;/p&gt;
 &lt;p&gt;Docker本身包含一个后台服务，我们可以利用Docker命令告诉Docker服务，帮助我们快速部署指定的应用。Docker服务部署应用时，首先要去搜索并下载应用对应的镜像，然后根据镜像创建并允许容器，应用就部署完成了。&lt;/p&gt;
 &lt;p&gt;用一幅图标示如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/image-20241027220008962.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/image-20241027220008962.png&#34;
 	width=&#34;1049&#34;
 	height=&#34;542&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/image-20241027220008962_hu1040642128816058936.png 480w, http://localhost:1313/p/docker/index.assets/image-20241027220008962_hu1832591974980217698.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/image-20241027220008962_hu1040642128816058936.png 480w, https://shanymxc.github.io/p/docker/index.assets/image-20241027220008962_hu1832591974980217698.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20241027220008962&#34;
@@ -258,10 +258,10 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;用一副图来表示这些命令的关系：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/image-20241027221603686.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/image-20241027221603686.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;640&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/image-20241027221603686_hu3136787507989583316.png 480w, http://localhost:1313/p/docker/index.assets/image-20241027221603686_hu1834670989737118501.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/image-20241027221603686_hu3136787507989583316.png 480w, https://shanymxc.github.io/p/docker/index.assets/image-20241027221603686_hu1834670989737118501.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20241027221603686&#34;
@@ -459,10 +459,10 @@
 &lt;/ul&gt;
 &lt;p&gt;如果我们要让Nginx代理我们的静态资源，最好是放到&lt;code&gt;html&lt;/code&gt;目录；如果我们要修改Nginx的配置，最好是找到&lt;code&gt;conf&lt;/code&gt;下的&lt;code&gt;nginx.conf&lt;/code&gt;文件。&lt;/p&gt;
 &lt;p&gt;但遗憾的是，容器运行的Nginx所有的文件都在容器内部。所以我们必须利用数据卷将两个目录与宿主机目录关联，方便我们操作。如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/image-20241027223032945.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/image-20241027223032945.png&#34;
 	width=&#34;1068&#34;
 	height=&#34;601&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/image-20241027223032945_hu10917529326170727184.png 480w, http://localhost:1313/p/docker/index.assets/image-20241027223032945_hu6375804987036851062.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/image-20241027223032945_hu10917529326170727184.png 480w, https://shanymxc.github.io/p/docker/index.assets/image-20241027223032945_hu6375804987036851062.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20241027223032945&#34;
@@ -739,10 +739,10 @@
 &lt;li&gt;挂载&lt;code&gt;/root/mysql/conf&lt;/code&gt;到容器内的&lt;code&gt;/etc/mysql/conf.d&lt;/code&gt;目录（这个是MySQL配置文件目录）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;在课前资料中已经准备好了mysql的&lt;code&gt;init&lt;/code&gt;目录和&lt;code&gt;conf&lt;/code&gt;目录：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-1.png&#34;
 	width=&#34;796&#34;
 	height=&#34;197&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-1_hu15473708453066838699.png 480w, http://localhost:1313/p/docker/index.assets/1730037322219-1_hu10084375413212330200.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-1_hu15473708453066838699.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322219-1_hu10084375413212330200.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -754,10 +754,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以及对应的初始化SQL脚本和配置文件：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-2.png&#34;
 	width=&#34;856&#34;
 	height=&#34;153&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-2_hu16568818183535286767.png 480w, http://localhost:1313/p/docker/index.assets/1730037322219-2_hu2911035405739901059.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-2_hu16568818183535286767.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322219-2_hu2911035405739901059.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -768,10 +768,10 @@
 		data-flex-basis=&#34;1342px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-3.png&#34;
 	width=&#34;859&#34;
 	height=&#34;155&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-3_hu9616950273106813062.png 480w, http://localhost:1313/p/docker/index.assets/1730037322219-3_hu7863467402747969863.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-3_hu9616950273106813062.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322219-3_hu7863467402747969863.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -808,10 +808,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;hmall.sql就是正常的sql生成脚本文件；&lt;/p&gt;
 &lt;p&gt;我们直接将整个mysql目录上传至虚拟机的&lt;code&gt;/root&lt;/code&gt;目录下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-4.png&#34;
 	width=&#34;1299&#34;
 	height=&#34;279&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322219-4_hu16622330992845519428.png 480w, http://localhost:1313/p/docker/index.assets/1730037322219-4_hu2441658873133155637.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322219-4_hu16622330992845519428.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322219-4_hu2441658873133155637.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1028,10 +1028,10 @@
 &lt;p&gt;上述步骤中的每一次操作其实都是在生产一些文件（系统运行环境、函数库、配置最终都是磁盘文件），所以&lt;strong&gt;镜像就是一堆文件的集合&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;但需要注意的是，镜像文件不是随意堆放的，而是按照操作的步骤分层叠加而成，每一层形成的文件都会单独打包并标记一个唯一id，称为&lt;strong&gt;Layer&lt;/strong&gt;（&lt;strong&gt;层&lt;/strong&gt;）。这样，如果我们构建时用到的某些层其他人已经制作过，就可以直接拷贝使用这些层，而不用重复制作。&lt;/p&gt;
 &lt;p&gt;例如，第一步中需要的Linux运行环境，通用性就很强，所以Docker官方就制作了这样的只包含Linux运行环境的镜像。我们在制作java镜像时，就无需重复制作，直接使用Docker官方提供的CentOS或Ubuntu镜像作为基础镜像。然后再搭建其它层即可，这样逐层搭建，最终整个Java项目的镜像结构如图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-5.png&#34;
 	width=&#34;1757&#34;
 	height=&#34;969&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-5_hu3215441499305620774.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-5_hu6421601027677443767.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-5_hu3215441499305620774.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-5_hu6421601027677443767.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1168,10 +1168,10 @@
 &lt;h3 id=&#34;233构建镜像&#34;&gt;2.3.3.构建镜像
 &lt;/h3&gt;&lt;p&gt;当Dockerfile文件写好以后，就可以利用命令来构建镜像了。&lt;/p&gt;
 &lt;p&gt;我们以一个demo项目及对应的Dockerfile为例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-6.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-6.png&#34;
 	width=&#34;857&#34;
 	height=&#34;191&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-6_hu12782283986673327640.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-6_hu17135067581094393239.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-6_hu12782283986673327640.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-6_hu17135067581094393239.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1183,10 +1183,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;首先，我们将课前资料提供的&lt;code&gt;docker-demo.jar&lt;/code&gt;包以及&lt;code&gt;Dockerfile&lt;/code&gt;拷贝到虚拟机的&lt;code&gt;/root/demo&lt;/code&gt;目录：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-7.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-7.png&#34;
 	width=&#34;938&#34;
 	height=&#34;201&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-7_hu1663257751543333128.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-7_hu12050662067706806218.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-7_hu1663257751543333128.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-7_hu12050662067706806218.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1239,10 +1239,10 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-8.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-8.png&#34;
 	width=&#34;1567&#34;
 	height=&#34;485&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-8_hu14960568520055044195.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-8_hu6270939174356132742.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-8_hu14960568520055044195.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-8_hu6270939174356132742.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1550,10 +1550,10 @@
 &lt;/div&gt;&lt;p&gt;mysql容器中已经准备好了商城的数据，所以就不再删除了。&lt;/p&gt;
 &lt;h2 id=&#34;31部署java项目&#34;&gt;3.1.部署Java项目
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;hmall&lt;/code&gt;项目是一个maven聚合项目，使用IDEA打开&lt;code&gt;hmall&lt;/code&gt;项目，查看项目结构如图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-9.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-9.png&#34;
 	width=&#34;864&#34;
 	height=&#34;253&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-9_hu9212594737598764543.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-9_hu3398694958625929847.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-9_hu9212594737598764543.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-9_hu3398694958625929847.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1565,10 +1565,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们要部署的就是其中的&lt;code&gt;hm-service&lt;/code&gt;，其中的配置文件采用了多环境的方式：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-10.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-10.png&#34;
 	width=&#34;898&#34;
 	height=&#34;594&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-10_hu9662913129872763336.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-10_hu4202911727220856183.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-10_hu9662913129872763336.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-10_hu4202911727220856183.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1581,10 +1581,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;其中的&lt;code&gt;application-dev.yaml&lt;/code&gt;是部署到开发环境的配置，&lt;code&gt;application-local.yaml&lt;/code&gt;是本地运行时的配置。&lt;/p&gt;
 &lt;p&gt;查看application.yaml，你会发现其中的JDBC地址并未写死，而是读取变量：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-11.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-11.png&#34;
 	width=&#34;1405&#34;
 	height=&#34;502&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322220-11_hu8983752709468449636.png 480w, http://localhost:1313/p/docker/index.assets/1730037322220-11_hu14271679199291478221.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322220-11_hu8983752709468449636.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322220-11_hu14271679199291478221.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1596,10 +1596,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;这两个变量在&lt;code&gt;application-dev.yaml&lt;/code&gt;和&lt;code&gt;application-local.yaml&lt;/code&gt;中并不相同：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-12.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-12.png&#34;
 	width=&#34;1049&#34;
 	height=&#34;233&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-12_hu11570604789131082763.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-12_hu8215795458970682988.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-12_hu11570604789131082763.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-12_hu8215795458970682988.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1612,10 +1612,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;在dev开发环境（也就是Docker部署时）采用了mysql作为地址，刚好是我们的mysql容器名，只要两者在一个网络，就一定能互相访问。&lt;/p&gt;
 &lt;p&gt;我们将项目打包：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-13.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-13.png&#34;
 	width=&#34;924&#34;
 	height=&#34;528&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-13_hu8850855292708874006.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-13_hu14183877539786384656.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-13_hu8850855292708874006.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-13_hu14183877539786384656.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1627,10 +1627,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-14.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-14.png&#34;
 	width=&#34;797&#34;
 	height=&#34;503&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-14_hu17528296959151332082.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-14_hu3662520803956665612.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-14_hu17528296959151332082.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-14_hu3662520803956665612.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1642,10 +1642,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;将&lt;code&gt;hm-service&lt;/code&gt;目录下的&lt;code&gt;Dockerfile&lt;/code&gt;和&lt;code&gt;hm-service/target&lt;/code&gt;目录下的&lt;code&gt;hm-service.jar&lt;/code&gt;一起上传到虚拟机的&lt;code&gt;root&lt;/code&gt;目录：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-15.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-15.png&#34;
 	width=&#34;1016&#34;
 	height=&#34;367&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-15_hu12848600239615027808.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-15_hu11078394097358219164.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-15_hu12848600239615027808.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-15_hu11078394097358219164.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1694,10 +1694,10 @@
 &lt;/div&gt;&lt;p&gt;测试，通过浏览器访问：http://你的虚拟机地址:8080/search/list&lt;/p&gt;
 &lt;h2 id=&#34;32部署前端&#34;&gt;3.2.部署前端
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;hmall-portal&lt;/code&gt;和&lt;code&gt;hmall-admin&lt;/code&gt;是前端代码，需要基于nginx部署。在课前资料中已经给大家提供了nginx的部署目录：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-16.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-16.png&#34;
 	width=&#34;868&#34;
 	height=&#34;211&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-16_hu10000051034613181074.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-16_hu6492062496809249695.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-16_hu10000051034613181074.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-16_hu6492062496809249695.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1714,10 +1714,10 @@
 &lt;li&gt;&lt;code&gt;nginx.conf&lt;/code&gt;是nginx的配置文件，主要是完成对&lt;code&gt;html&lt;/code&gt;下的两个静态资源目录做代理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;我们现在要做的就是把整个nginx目录上传到虚拟机的&lt;code&gt;/root&lt;/code&gt;目录下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-17.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-17.png&#34;
 	width=&#34;989&#34;
 	height=&#34;252&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-17_hu4263198930768507826.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-17_hu2089905586728060960.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-17_hu4263198930768507826.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-17_hu2089905586728060960.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -1762,10 +1762,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试，通过浏览器访问：http://你的虚拟机ip:18080&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-18.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-18.png&#34;
 	width=&#34;1695&#34;
 	height=&#34;842&#34;
-	srcset=&#34;http://localhost:1313/p/docker/index.assets/1730037322221-18_hu2890539564322605556.png 480w, http://localhost:1313/p/docker/index.assets/1730037322221-18_hu16566112720268061803.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/docker/index.assets/1730037322221-18_hu2890539564322605556.png 480w, https://shanymxc.github.io/p/docker/index.assets/1730037322221-18_hu16566112720268061803.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -2189,10 +2189,10 @@
         </item>
         <item>
         <title>安装Docker</title>
-        <link>http://localhost:1313/p/%E5%AE%89%E8%A3%85docker/</link>
+        <link>https://shanymxc.github.io/p/%E5%AE%89%E8%A3%85docker/</link>
         <pubDate>Sun, 27 Oct 2024 21:37:36 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%AE%89%E8%A3%85docker/</guid>
+        <guid>https://shanymxc.github.io/p/%E5%AE%89%E8%A3%85docker/</guid>
         <description>&lt;h1 id=&#34;安装docker&#34;&gt;安装Docker
 &lt;/h1&gt;&lt;p&gt;Docker安装官方文档如下：&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/install/centos/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

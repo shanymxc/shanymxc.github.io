@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>SQL注入 on 山有木兮</title>
-        <link>http://localhost:1313/categories/sql%E6%B3%A8%E5%85%A5/</link>
+        <link>https://shanymxc.github.io/categories/sql%E6%B3%A8%E5%85%A5/</link>
         <description>Recent content in SQL注入 on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Sun, 20 Oct 2024 17:52:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/sql%E6%B3%A8%E5%85%A5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Oct 2024 17:52:32 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/sql%E6%B3%A8%E5%85%A5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mybatis详解</title>
-        <link>http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/</link>
+        <link>https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/</link>
         <pubDate>Sun, 20 Oct 2024 17:52:32 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/</guid>
-        <description>&lt;img src="http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/0b127bdc60f93c4dbbd0276606f58e5c.png" alt="Featured image of post Mybatis详解" /&gt;&lt;h1 id=&#34;1-mybatis基础操作&#34;&gt;1. Mybatis基础操作
+        <guid>https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/0b127bdc60f93c4dbbd0276606f58e5c.png" alt="Featured image of post Mybatis详解" /&gt;&lt;h1 id=&#34;1-mybatis基础操作&#34;&gt;1. Mybatis基础操作
 &lt;/h1&gt;&lt;p&gt;学习完mybatis入门后，我们继续学习mybatis基础操作。&lt;/p&gt;
 &lt;h2 id=&#34;11-需求&#34;&gt;1.1 需求
 &lt;/h2&gt;&lt;p&gt;需求说明：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;根据资料中提供的《tlias智能学习辅助系统》页面原型及需求，完成员工管理的需求开发。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180155700.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180155700.png&#34;
 	width=&#34;1437&#34;
 	height=&#34;861&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180155700_hu8975767741921551484.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180155700_hu8283459818752481227.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180155700_hu8975767741921551484.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180155700_hu8283459818752481227.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210180155700&#34;
@@ -34,10 +34,10 @@
 		data-flex-basis=&#34;400px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180343288.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180343288.png&#34;
 	width=&#34;1468&#34;
 	height=&#34;651&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180343288_hu17370143269872850085.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180343288_hu12804117999504678199.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180343288_hu17370143269872850085.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180343288_hu12804117999504678199.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210180343288&#34;
@@ -48,10 +48,10 @@
 		data-flex-basis=&#34;541px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180515206.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180515206.png&#34;
 	width=&#34;1273&#34;
 	height=&#34;304&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180515206_hu5720315907969608387.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180515206_hu7938506361425273766.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180515206_hu5720315907969608387.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210180515206_hu7938506361425273766.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210180515206&#34;
@@ -206,10 +206,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;创建一个新的springboot工程，选择引入对应的起步依赖（mybatis、mysql驱动、lombok）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182008131.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182008131.png&#34;
 	width=&#34;1322&#34;
 	height=&#34;586&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182008131_hu15210151066409960167.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182008131_hu34941178696305521.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182008131_hu15210151066409960167.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182008131_hu34941178696305521.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210182008131&#34;
@@ -307,10 +307,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;完成以上操作后，项目工程结构目录如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182500817.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182500817.png&#34;
 	width=&#34;1286&#34;
 	height=&#34;444&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182500817_hu5301429843746845664.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182500817_hu13234672688818697975.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182500817_hu5301429843746845664.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210182500817_hu13234672688818697975.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210182500817&#34;
@@ -324,10 +324,10 @@
 &lt;h2 id=&#34;13-删除&#34;&gt;1.3 删除
 &lt;/h2&gt;&lt;h3 id=&#34;131-功能实现&#34;&gt;1.3.1 功能实现
 &lt;/h3&gt;&lt;p&gt;页面原型：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210183336095.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210183336095.png&#34;
 	width=&#34;1618&#34;
 	height=&#34;225&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210183336095_hu12805722105297354333.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210183336095_hu199690004253243762.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210183336095_hu12805722105297354333.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210183336095_hu199690004253243762.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210183336095&#34;
@@ -465,10 +465,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;开启日志之后，我们再次运行单元测试，可以看到在控制台中，输出了以下的SQL语句信息：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901164225644.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901164225644.png&#34;
 	width=&#34;1739&#34;
 	height=&#34;285&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901164225644_hu2241110925527232599.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901164225644_hu2904589953493595772.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901164225644_hu2241110925527232599.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901164225644_hu2904589953493595772.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901164225644&#34;
@@ -489,10 +489,10 @@
 &lt;li&gt;性能更高&lt;/li&gt;
 &lt;li&gt;更安全(防止SQL注入)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210202222206.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210202222206.png&#34;
 	width=&#34;1368&#34;
 	height=&#34;349&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210202222206_hu15239052699419971047.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210202222206_hu7312657624143333834.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210202222206_hu15239052699419971047.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210202222206_hu7312657624143333834.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210202222206&#34;
@@ -513,10 +513,10 @@
 &lt;p&gt;由于没有对用户输入进行充分检查，而SQL又是拼接而成，在用户输入参数时，在参数中添加一些SQL关键字，达到改变SQL运行结果的目的，也可以完成恶意攻击。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;测试1：使用资料中提供的程序，来验证SQL注入问题&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210205419634.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210205419634.png&#34;
 	width=&#34;1249&#34;
 	height=&#34;54&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210205419634_hu6912183229687435383.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210205419634_hu1348772102624258230.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210205419634_hu6912183229687435383.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210205419634_hu1348772102624258230.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210205419634&#34;
@@ -528,10 +528,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;第1步：进入到DOS&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124744203.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124744203.png&#34;
 	width=&#34;1808&#34;
 	height=&#34;350&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124744203_hu15689855501247776884.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124744203_hu3901520292199345582.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124744203_hu15689855501247776884.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124744203_hu3901520292199345582.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211124744203&#34;
@@ -542,10 +542,10 @@
 		data-flex-basis=&#34;1239px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124840720.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124840720.png&#34;
 	width=&#34;930&#34;
 	height=&#34;291&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124840720_hu5837810474088493848.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124840720_hu12828081142051460232.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124840720_hu5837810474088493848.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211124840720_hu12828081142051460232.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211124840720&#34;
@@ -567,10 +567,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;java&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-jar&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sql_Injection_demo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-SNAPSHOT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;jar&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210211605231.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210211605231.png&#34;
 	width=&#34;1702&#34;
 	height=&#34;564&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210211605231_hu17914760866667460342.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210211605231_hu14405808436177917718.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210211605231_hu17914760866667460342.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210211605231_hu14405808436177917718.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210211605231&#34;
@@ -582,10 +582,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;第3步：打开浏览器输入&lt;code&gt;http://localhost:9090/login.html&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527.png&#34;
 	width=&#34;1390&#34;
 	height=&#34;764&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu16752526013165415005.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu12123740356927500389.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu16752526013165415005.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu12123740356927500389.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210212406527&#34;
@@ -597,10 +597,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;发现竟然能够登录成功：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212511915.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212511915.png&#34;
 	width=&#34;1207&#34;
 	height=&#34;575&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212511915_hu12692240216348019170.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212511915_hu17242388165061060976.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212511915_hu12692240216348019170.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212511915_hu17242388165061060976.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210212511915&#34;
@@ -615,10 +615,10 @@
 &lt;ul&gt;
 &lt;li&gt;由于没有对用户输入内容进行充分检查，而SQL又是字符串拼接方式而成，在用户输入参数时，在参数中添加一些SQL关键字，达到改变SQL运行结果的目的，从而完成恶意攻击。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210213311518.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210213311518.png&#34;
 	width=&#34;1200&#34;
 	height=&#34;421&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210213311518_hu10022656526496464756.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210213311518_hu1575895771801030763.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210213311518_hu10022656526496464756.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210213311518_hu1575895771801030763.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210213311518&#34;
@@ -630,10 +630,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210214431228.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210214431228.png&#34;
 	width=&#34;1313&#34;
 	height=&#34;119&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210214431228_hu93692325845818104.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210214431228_hu1791851116289265985.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210214431228_hu93692325845818104.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210214431228_hu1791851116289265985.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210214431228&#34;
@@ -660,10 +660,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;第3步：打开浏览器输入&lt;code&gt;http://localhost:9090/login.html&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527.png&#34;
 	width=&#34;1390&#34;
 	height=&#34;764&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu16752526013165415005.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu12123740356927500389.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu16752526013165415005.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221210212406527_hu12123740356927500389.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210212406527&#34;
@@ -675,10 +675,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;发现无法登录：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211125751981.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211125751981.png&#34;
 	width=&#34;1494&#34;
 	height=&#34;672&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211125751981_hu13263811495741940333.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211125751981_hu734089742630159687.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211125751981_hu13263811495741940333.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211125751981_hu734089742630159687.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211125751981&#34;
@@ -690,10 +690,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以上操作SQL语句的执行：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211130011973.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211130011973.png&#34;
 	width=&#34;1031&#34;
 	height=&#34;101&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211130011973_hu10553707715446364114.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211130011973_hu4175899565114816287.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211130011973_hu10553707715446364114.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211130011973_hu4175899565114816287.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211130011973&#34;
@@ -730,10 +730,10 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;14-新增&#34;&gt;1.4 新增
 &lt;/h2&gt;&lt;p&gt;功能：新增员工信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134239610.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134239610.png&#34;
 	width=&#34;1367&#34;
 	height=&#34;511&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134239610_hu9744749184057214577.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134239610_hu229694100942319428.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134239610_hu9744749184057214577.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134239610_hu229694100942319428.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211134239610&#34;
@@ -746,10 +746,10 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;141-基本新增&#34;&gt;1.4.1 基本新增
 &lt;/h3&gt;&lt;p&gt;员工表结构：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134746319.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134746319.png&#34;
 	width=&#34;818&#34;
 	height=&#34;445&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134746319_hu14950086395534117415.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134746319_hu6772675288741555535.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134746319_hu14950086395534117415.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211134746319_hu6772675288741555535.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211134746319&#34;
@@ -862,10 +862,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;日志输出：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211140222240.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211140222240.png&#34;
 	width=&#34;1777&#34;
 	height=&#34;92&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211140222240_hu10592633948131453792.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211140222240_hu6572092020289335151.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211140222240_hu10592633948131453792.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211140222240_hu6572092020289335151.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211140222240&#34;
@@ -881,10 +881,10 @@
 &lt;/h3&gt;&lt;p&gt;概念：在数据添加成功后，需要获取插入数据库数据的主键。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如：添加套餐数据时，还需要维护套餐菜品关系表数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211150353385.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211150353385.png&#34;
 	width=&#34;1290&#34;
 	height=&#34;656&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211150353385_hu15924113139536304362.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211150353385_hu2647143256711192420.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211150353385_hu15924113139536304362.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221211150353385_hu2647143256711192420.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221211150353385&#34;
@@ -896,10 +896,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;业务场景：在前面讲解到的苍穹外卖菜品与套餐模块的表结构，菜品与套餐是多对多的关系，一个套餐对应多个菜品。既然是多对多的关系，是不是有一张套餐菜品中间表来维护它们之间的关系。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212093655389.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212093655389.png&#34;
 	width=&#34;1254&#34;
 	height=&#34;690&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212093655389_hu6318489906556679534.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212093655389_hu2154591562681435867.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212093655389_hu6318489906556679534.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212093655389_hu2154591562681435867.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212093655389&#34;
@@ -998,10 +998,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;15-更新&#34;&gt;1.5 更新
 &lt;/h2&gt;&lt;p&gt;功能：修改员工信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212095605863.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212095605863.png&#34;
 	width=&#34;1305&#34;
 	height=&#34;638&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212095605863_hu12678712139365454906.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212095605863_hu3915118236543096281.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212095605863_hu12678712139365454906.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212095605863_hu3915118236543096281.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212095605863&#34;
@@ -1112,10 +1112,10 @@
 &lt;/div&gt;&lt;h2 id=&#34;16-查询&#34;&gt;1.6 查询
 &lt;/h2&gt;&lt;h3 id=&#34;161-根据id查询&#34;&gt;1.6.1 根据ID查询
 &lt;/h3&gt;&lt;p&gt;在员工管理的页面中，当我们进行更新数据时，会点击 “编辑” 按钮，然后此时会发送一个请求到服务端，会根据Id查询该员工信息，并将员工数据回显在页面上。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212101331292.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212101331292.png&#34;
 	width=&#34;1206&#34;
 	height=&#34;612&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212101331292_hu7751693056027550517.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212101331292_hu6393823031746685035.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212101331292_hu7751693056027550517.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212101331292_hu6393823031746685035.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212101331292&#34;
@@ -1183,10 +1183,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;执行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103004961.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103004961.png&#34;
 	width=&#34;1768&#34;
 	height=&#34;66&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103004961_hu18050520593915320203.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103004961_hu10082548706442805136.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103004961_hu18050520593915320203.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103004961_hu10082548706442805136.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212103004961&#34;
@@ -1201,10 +1201,10 @@
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;162-数据封装&#34;&gt;1.6.2 数据封装
 &lt;/h3&gt;&lt;p&gt;我们看到查询返回的结果中大部分字段是有值的，但是deptId，createTime，updateTime这几个字段是没有值的，而数据库中是有对应的字段值的，这是为什么呢？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103124490.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103124490.png&#34;
 	width=&#34;1246&#34;
 	height=&#34;488&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103124490_hu5204456039124069681.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103124490_hu6943940614416966651.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103124490_hu5204456039124069681.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212103124490_hu6943940614416966651.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212103124490&#34;
@@ -1245,10 +1245,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;再次执行测试类：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212111027396.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212111027396.png&#34;
 	width=&#34;1672&#34;
 	height=&#34;216&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212111027396_hu9592183771305969312.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212111027396_hu14446812233191450093.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212111027396_hu9592183771305969312.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212111027396_hu14446812233191450093.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212111027396&#34;
@@ -1374,10 +1374,10 @@
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;163-条件查询&#34;&gt;1.6.3 条件查询
 &lt;/h3&gt;&lt;p&gt;在员工管理的列表页面中，我们需要根据条件查询员工信息，查询条件包括：姓名、性别、入职时间。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212113422924.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212113422924.png&#34;
 	width=&#34;1277&#34;
 	height=&#34;635&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212113422924_hu13923022935359852250.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212113422924_hu7322227248736303332.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212113422924_hu13923022935359852250.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212113422924_hu7322227248736303332.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212113422924&#34;
@@ -1443,10 +1443,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212115149151.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212115149151.png&#34;
 	width=&#34;1342&#34;
 	height=&#34;140&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212115149151_hu10574633221551447775.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212115149151_hu16114645705889565178.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212115149151_hu10574633221551447775.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212115149151_hu16114645705889565178.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212115149151&#34;
@@ -1504,10 +1504,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;执行结果：生成的SQL都是预编译的SQL语句（性能高、安全）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212120006242.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212120006242.png&#34;
 	width=&#34;1694&#34;
 	height=&#34;261&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212120006242_hu3431481694532202308.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212120006242_hu10752577302606043923.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212120006242_hu3431481694532202308.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212120006242_hu10752577302606043923.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212120006242&#34;
@@ -1523,10 +1523,10 @@
 &lt;/h3&gt;&lt;p&gt;在上面我们所编写的条件查询功能中，我们需要保证接口中方法的形参名和SQL语句中的参数占位符名相同。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;当方法中的形参名和SQL语句中的占位符参数名不相同时，就会出现以下问题：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212150611796.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212150611796.png&#34;
 	width=&#34;1669&#34;
 	height=&#34;559&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212150611796_hu14252445516103226348.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212150611796_hu13115510519107915967.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212150611796_hu14252445516103226348.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212150611796_hu13115510519107915967.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212150611796&#34;
@@ -1542,10 +1542,10 @@
 &lt;ul&gt;
 &lt;li&gt;在springBoot的2.x版本（保证参数名一致）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151156273.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151156273.png&#34;
 	width=&#34;1073&#34;
 	height=&#34;116&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151156273_hu17219657216241570461.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151156273_hu1186286319735126432.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151156273_hu17219657216241570461.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151156273_hu1186286319735126432.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212151156273&#34;
@@ -1558,10 +1558,10 @@
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;springBoot的父工程对compiler编译插件进行了默认的参数parameters配置，使得在编译时，会在生成的字节码文件中保留原方法形参的名称，所以#{…}里面可以直接通过形参名获取对应的值&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151411154.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151411154.png&#34;
 	width=&#34;1090&#34;
 	height=&#34;79&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151411154_hu4805435748609238366.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151411154_hu10345551345902033168.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151411154_hu4805435748609238366.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151411154_hu10345551345902033168.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212151411154&#34;
@@ -1576,10 +1576,10 @@
 &lt;ul&gt;
 &lt;li&gt;在springBoot的1.x版本/单独使用mybatis（使用@Param注解来指定SQL语句中的参数名）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151628715.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151628715.png&#34;
 	width=&#34;1085&#34;
 	height=&#34;160&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151628715_hu9351247197876072795.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151628715_hu18347719836658523942.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151628715_hu9351247197876072795.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151628715_hu18347719836658523942.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212151628715&#34;
@@ -1592,10 +1592,10 @@
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在编译时，生成的字节码文件当中，不会保留Mapper接口中方法的形参名称，而是使用var1、var2、&amp;hellip;这样的形参名字，此时要获取参数值时，就要通过@Param注解来指定SQL语句中的参数名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151736274.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151736274.png&#34;
 	width=&#34;1044&#34;
 	height=&#34;84&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151736274_hu8630390775757025806.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151736274_hu6196492382272509096.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151736274_hu8630390775757025806.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212151736274_hu6196492382272509096.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212151736274&#34;
@@ -1627,10 +1627,10 @@
 &lt;p&gt;XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212153529732.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212153529732.png&#34;
 	width=&#34;1671&#34;
 	height=&#34;494&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212153529732_hu4145297395856841020.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212153529732_hu17465403426941131470.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212153529732_hu4145297395856841020.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212153529732_hu17465403426941131470.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212153529732&#34;
@@ -1649,10 +1649,10 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;22-xml配置文件实现&#34;&gt;2.2 XML配置文件实现
 &lt;/h2&gt;&lt;p&gt;第1步：创建XML映射文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212154908306.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212154908306.png&#34;
 	width=&#34;1408&#34;
 	height=&#34;480&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212154908306_hu4056184612422801384.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212154908306_hu12003144601973027115.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212154908306_hu4056184612422801384.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212154908306_hu12003144601973027115.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212154908306&#34;
@@ -1663,10 +1663,10 @@
 		data-flex-basis=&#34;704px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155304635.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155304635.png&#34;
 	width=&#34;1558&#34;
 	height=&#34;428&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155304635_hu7954586310716831862.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155304635_hu14155587108052601567.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155304635_hu7954586310716831862.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155304635_hu14155587108052601567.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212155304635&#34;
@@ -1677,10 +1677,10 @@
 		data-flex-basis=&#34;873px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155544404.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155544404.png&#34;
 	width=&#34;1311&#34;
 	height=&#34;445&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155544404_hu6434131305119885865.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155544404_hu17243369644149136510.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155544404_hu6434131305119885865.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212155544404_hu17243369644149136510.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212155544404&#34;
@@ -1716,10 +1716,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;配置：XML映射文件的namespace属性为Mapper接口全限定名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212160316644.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212160316644.png&#34;
 	width=&#34;1344&#34;
 	height=&#34;466&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212160316644_hu16215781788153342553.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212160316644_hu6498808978843035119.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212160316644_hu16215781788153342553.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212160316644_hu6498808978843035119.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212160316644&#34;
@@ -1751,10 +1751,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;配置：XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163528787.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163528787.png&#34;
 	width=&#34;1592&#34;
 	height=&#34;767&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163528787_hu16639086405260169410.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163528787_hu15230645950119723752.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163528787_hu16639086405260169410.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163528787_hu15230645950119723752.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212163528787&#34;
@@ -1803,10 +1803,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;运行测试类，执行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163719534.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163719534.png&#34;
 	width=&#34;1657&#34;
 	height=&#34;261&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163719534_hu16438247214570025620.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163719534_hu5335642810291724675.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163719534_hu16438247214570025620.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221212163719534_hu5335642810291724675.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221212163719534&#34;
@@ -1821,10 +1821,10 @@
 &lt;h2 id=&#34;23-mybatisx的使用&#34;&gt;2.3 MybatisX的使用
 &lt;/h2&gt;&lt;p&gt;MybatisX是一款基于IDEA的快速开发Mybatis的插件，为效率而生。&lt;/p&gt;
 &lt;p&gt;MybatisX的安装：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213120923252.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213120923252.png&#34;
 	width=&#34;899&#34;
 	height=&#34;283&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213120923252_hu11769056232855540634.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213120923252_hu12959862634167056837.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213120923252_hu11769056232855540634.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213120923252_hu12959862634167056837.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213120923252&#34;
@@ -1836,10 +1836,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以通过MybatisX快速定位：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213121521406.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213121521406.png&#34;
 	width=&#34;1709&#34;
 	height=&#34;682&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213121521406_hu4127791337420629665.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213121521406_hu18193861915522732814.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213121521406_hu4127791337420629665.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213121521406_hu18193861915522732814.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213121521406&#34;
@@ -1856,10 +1856,10 @@
 &lt;p&gt;学习了Mybatis中XML配置文件的开发方式了，大家可能会存在一个疑问：到底是使用注解方式开发还是使用XML方式开发？&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;官方说明：https://mybatis.net.cn/getting-started.html&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173948645.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173948645.png&#34;
 	width=&#34;1494&#34;
 	height=&#34;309&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173948645_hu363674951329411523.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173948645_hu15210943608891906843.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173948645_hu363674951329411523.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173948645_hu15210943608891906843.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901173948645&#34;
@@ -1875,10 +1875,10 @@
 &lt;h1 id=&#34;3-mybatis动态sql&#34;&gt;3. Mybatis动态SQL
 &lt;/h1&gt;&lt;h2 id=&#34;31-什么是动态sql&#34;&gt;3.1 什么是动态SQL
 &lt;/h2&gt;&lt;p&gt;在页面原型中，列表上方的条件是动态的，是可以不传递的，也可以只传递其中的1个或者2个或者全部。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901172933012.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901172933012.png&#34;
 	width=&#34;1230&#34;
 	height=&#34;598&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901172933012_hu10323485227786000900.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901172933012_hu10233165361986366038.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901172933012_hu10323485227786000900.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901172933012_hu10233165361986366038.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1887,10 +1887,10 @@
 		data-flex-basis=&#34;493px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173203491.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173203491.png&#34;
 	width=&#34;1803&#34;
 	height=&#34;95&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173203491_hu11221559210455562959.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173203491_hu5537490611690836106.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173203491_hu11221559210455562959.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173203491_hu5537490611690836106.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901173203491&#34;
@@ -1903,10 +1903,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;而在我们刚才编写的SQL语句中，我们会看到，我们将三个条件直接写死了。 如果页面只传递了参数姓名name 字段，其他两个字段 性别 和 入职时间没有传递，那么这两个参数的值就是null。&lt;/p&gt;
 &lt;p&gt;此时，执行的SQL语句为：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173431554.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173431554.png&#34;
 	width=&#34;1676&#34;
 	height=&#34;170&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173431554_hu9865968481414743512.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173431554_hu8860445572276339181.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173431554_hu9865968481414743512.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901173431554_hu8860445572276339181.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901173431554&#34;
@@ -1937,10 +1937,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;SQL语句会随着用户的输入或外部条件的变化而变化，我们称为：&lt;strong&gt;动态SQL&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213122623278.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213122623278.png&#34;
 	width=&#34;1170&#34;
 	height=&#34;378&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213122623278_hu7139679721880738640.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213122623278_hu5739825100771116376.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213122623278_hu7139679721880738640.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213122623278_hu5739825100771116376.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213122623278&#34;
@@ -2058,10 +2058,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213140353285.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213140353285.png&#34;
 	width=&#34;1345&#34;
 	height=&#34;125&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213140353285_hu10326607293234106543.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213140353285_hu10503064616984733798.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213140353285_hu10326607293234106543.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213140353285_hu10503064616984733798.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213140353285&#34;
@@ -2097,10 +2097,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;执行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141139015.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141139015.png&#34;
 	width=&#34;1799&#34;
 	height=&#34;360&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141139015_hu4570997133843062221.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141139015_hu10973175023384145898.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141139015_hu4570997133843062221.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141139015_hu10973175023384145898.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213141139015&#34;
@@ -2111,10 +2111,10 @@
 		data-flex-basis=&#34;1199px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141253355.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141253355.png&#34;
 	width=&#34;1798&#34;
 	height=&#34;169&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141253355_hu7998111986259480651.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141253355_hu7152142964969830482.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141253355_hu7998111986259480651.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141253355_hu7152142964969830482.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213141253355&#34;
@@ -2149,10 +2149,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213143854434.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213143854434.png&#34;
 	width=&#34;1798&#34;
 	height=&#34;168&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213143854434_hu14878597891490433935.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213143854434_hu14668512863776084490.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213143854434_hu14878597891490433935.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213143854434_hu14668512863776084490.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213143854434&#34;
@@ -2230,10 +2230,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141909455.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141909455.png&#34;
 	width=&#34;1569&#34;
 	height=&#34;128&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141909455_hu9750364147502441529.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141909455_hu2207578590462749816.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141909455_hu9750364147502441529.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213141909455_hu2207578590462749816.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213141909455&#34;
@@ -2388,10 +2388,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152533851.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152533851.png&#34;
 	width=&#34;1265&#34;
 	height=&#34;126&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152533851_hu9725931447768453822.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152533851_hu16729606649496736309.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152533851_hu9725931447768453822.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152533851_hu16729606649496736309.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213152533851&#34;
@@ -2432,10 +2432,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152850322.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152850322.png&#34;
 	width=&#34;1796&#34;
 	height=&#34;398&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152850322_hu10874310210420781106.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152850322_hu16522976796292542977.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152850322_hu10874310210420781106.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213152850322_hu16522976796292542977.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213152850322&#34;
@@ -2537,10 +2537,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;再次执行测试方法，执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213153329553.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213153329553.png&#34;
 	width=&#34;1194&#34;
 	height=&#34;124&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213153329553_hu6766238618391330237.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213153329553_hu1542742163211817575.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213153329553_hu6766238618391330237.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213153329553_hu1542742163211817575.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213153329553&#34;
@@ -2588,10 +2588,10 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;33-动态sql-foreach&#34;&gt;3.3 动态SQL-foreach
 &lt;/h2&gt;&lt;p&gt;案例：员工删除功能（既支持删除单条记录，又支持批量删除）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901181751004.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901181751004.png&#34;
 	width=&#34;847&#34;
 	height=&#34;497&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901181751004_hu14251752143378487771.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901181751004_hu7786195728277992831.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901181751004_hu14251752143378487771.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901181751004_hu7786195728277992831.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901181751004&#34;
@@ -2677,10 +2677,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213165710141.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213165710141.png&#34;
 	width=&#34;879&#34;
 	height=&#34;190&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213165710141_hu9540650787919692047.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213165710141_hu8975389861013980674.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213165710141_hu9540650787919692047.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213165710141_hu8975389861013980674.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213165710141&#34;
@@ -2694,10 +2694,10 @@
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;执行的SQL语句：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213164957636.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213164957636.png&#34;
 	width=&#34;1214&#34;
 	height=&#34;124&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213164957636_hu15195267135335704497.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213164957636_hu16723766100493735885.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213164957636_hu15195267135335704497.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213164957636_hu16723766100493735885.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213164957636&#34;
@@ -2714,10 +2714,10 @@
 &lt;ul&gt;
 &lt;li&gt;在xml映射文件中配置的SQL，有时可能会存在很多重复的片段，此时就会存在很多冗余的代码&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182204358.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182204358.png&#34;
 	width=&#34;1179&#34;
 	height=&#34;570&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182204358_hu15926855831440584027.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182204358_hu9612443738294050819.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182204358_hu15926855831440584027.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182204358_hu9612443738294050819.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2726,10 +2726,10 @@
 		data-flex-basis=&#34;496px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182249421.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182249421.png&#34;
 	width=&#34;1180&#34;
 	height=&#34;192&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182249421_hu11910698981342402451.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182249421_hu17571570567826936216.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182249421_hu11910698981342402451.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20220901182249421_hu17571570567826936216.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2747,10 +2747,10 @@
 &lt;p&gt;&lt;code&gt;&amp;lt;include&amp;gt;&lt;/code&gt;：通过属性refid，指定包含的SQL片段&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213171244796.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213171244796.png&#34;
 	width=&#34;1168&#34;
 	height=&#34;478&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213171244796_hu9180535751776296429.png 480w, http://localhost:1313/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213171244796_hu1064770117460749078.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213171244796_hu9180535751776296429.png 480w, https://shanymxc.github.io/p/mybatis%E8%AF%A6%E8%A7%A3/index.assets/image-20221213171244796_hu1064770117460749078.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221213171244796&#34;

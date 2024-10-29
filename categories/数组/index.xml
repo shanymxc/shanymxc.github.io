@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>数组 on 山有木兮</title>
-        <link>http://localhost:1313/categories/%E6%95%B0%E7%BB%84/</link>
+        <link>https://shanymxc.github.io/categories/%E6%95%B0%E7%BB%84/</link>
         <description>Recent content in 数组 on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 09:59:59 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Oct 2024 09:59:59 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Java 数组</title>
-        <link>http://localhost:1313/p/java-%E6%95%B0%E7%BB%84/</link>
+        <link>https://shanymxc.github.io/p/java-%E6%95%B0%E7%BB%84/</link>
         <pubDate>Thu, 24 Oct 2024 09:59:59 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/java-%E6%95%B0%E7%BB%84/</guid>
+        <guid>https://shanymxc.github.io/p/java-%E6%95%B0%E7%BB%84/</guid>
         <description>&lt;h1 id=&#34;1数组&#34;&gt;1.数组
 &lt;/h1&gt;&lt;h3 id=&#34;概念&#34;&gt;概念：
 &lt;/h3&gt;&lt;p&gt;​	指的是一种容器，可以同来存储同种数据类型的多个值。&lt;/p&gt;

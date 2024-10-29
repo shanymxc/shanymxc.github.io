@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>AliOSS on 山有木兮</title>
-        <link>http://localhost:1313/categories/alioss/</link>
+        <link>https://shanymxc.github.io/categories/alioss/</link>
         <description>Recent content in AliOSS on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Mon, 21 Oct 2024 22:49:41 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/alioss/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 21 Oct 2024 22:49:41 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/alioss/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AliOSS</title>
-        <link>http://localhost:1313/p/alioss/</link>
+        <link>https://shanymxc.github.io/p/alioss/</link>
         <pubDate>Mon, 21 Oct 2024 22:49:41 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/alioss/</guid>
-        <description>&lt;img src="http://localhost:1313/p/alioss/c11fc7aaae0eb5c747f810a5a94bad7d.png" alt="Featured image of post AliOSS" /&gt;&lt;h2 id=&#34;云存储解决方案-阿里云oss&#34;&gt;云存储解决方案-阿里云OSS
+        <guid>https://shanymxc.github.io/p/alioss/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/alioss/c11fc7aaae0eb5c747f810a5a94bad7d.png" alt="Featured image of post AliOSS" /&gt;&lt;h2 id=&#34;云存储解决方案-阿里云oss&#34;&gt;云存储解决方案-阿里云OSS
 &lt;/h2&gt;&lt;h3 id=&#34;1-阿里云oss简介&#34;&gt;1. 阿里云OSS简介
 &lt;/h3&gt;&lt;p&gt;​	阿里云对象存储服务（Object Storage Service，简称OSS）为您提供基于网络的数据存取服务。使用OSS，您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种非结构化数据文件。
 阿里云OSS将数据文件以对象（object）的形式上传到存储空间（bucket）中。&lt;/p&gt;
@@ -27,10 +27,10 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-oss开通&#34;&gt;2. OSS开通
 &lt;/h3&gt;&lt;p&gt;（1）打开https://www.aliyun.com/ ，申请阿里云账号并完成实名认证。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/alioss/index.assets/image-20221128012526497.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221128012526497.png&#34;
 	width=&#34;1523&#34;
 	height=&#34;526&#34;
-	srcset=&#34;http://localhost:1313/p/alioss/index.assets/image-20221128012526497_hu1620359937658428271.png 480w, http://localhost:1313/p/alioss/index.assets/image-20221128012526497_hu9077905313244716687.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221128012526497_hu1620359937658428271.png 480w, https://shanymxc.github.io/p/alioss/index.assets/image-20221128012526497_hu9077905313244716687.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221128012526497&#34;
@@ -44,10 +44,10 @@
 &lt;p&gt;（2）充值 (可以不用做)&lt;/p&gt;
 &lt;p&gt;（3）开通OSS&lt;/p&gt;
 &lt;p&gt;登录阿里云官网。 点击右上角的控制台。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/alioss/index.assets/image-20221129214250389.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221129214250389.png&#34;
 	width=&#34;1897&#34;
 	height=&#34;477&#34;
-	srcset=&#34;http://localhost:1313/p/alioss/index.assets/image-20221129214250389_hu15455841563112579770.png 480w, http://localhost:1313/p/alioss/index.assets/image-20221129214250389_hu1614703102490798713.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221129214250389_hu15455841563112579770.png 480w, https://shanymxc.github.io/p/alioss/index.assets/image-20221129214250389_hu1614703102490798713.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221129214250389&#34;
@@ -61,10 +61,10 @@
 &lt;p&gt;将鼠标移至产品，找到并单击对象存储OSS，打开OSS产品详情页面。在OSS产品详情页中的单击立即开通。&lt;/p&gt;
 &lt;img src=&#34;index.assets/image-20221129214332892.png&#34; alt=&#34;image-20221129214332892&#34; style=&#34;zoom:67%;&#34; /&gt; 
 &lt;img src=&#34;index.assets/image-20221129214403131.png&#34; alt=&#34;image-20221129214403131&#34; style=&#34;zoom:80%;&#34; /&gt; 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/alioss/index.assets/image-20221128012258544.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221128012258544.png&#34;
 	width=&#34;1274&#34;
 	height=&#34;168&#34;
-	srcset=&#34;http://localhost:1313/p/alioss/index.assets/image-20221128012258544_hu11688917713524212705.png 480w, http://localhost:1313/p/alioss/index.assets/image-20221128012258544_hu3546232882776920374.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221128012258544_hu11688917713524212705.png 480w, https://shanymxc.github.io/p/alioss/index.assets/image-20221128012258544_hu3546232882776920374.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221128012258544&#34;
@@ -77,10 +77,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;开通服务后，在OSS产品详情页面单击管理控制台直接进入OSS管理控制台界面。您也可以单击位于官网首页右上方菜单栏的控制台，进入阿里云管理控制台首页，然后单击左侧的对象存储OSS菜单进入&lt;a class=&#34;link&#34; href=&#34;https://oss.console.aliyun.com/overview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;OSS管理控制台界面&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/alioss/index.assets/image-20201126234535040.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20201126234535040.png&#34;
 	width=&#34;3124&#34;
 	height=&#34;1368&#34;
-	srcset=&#34;http://localhost:1313/p/alioss/index.assets/image-20201126234535040_hu5682921578761566105.png 480w, http://localhost:1313/p/alioss/index.assets/image-20201126234535040_hu3834313957590313610.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20201126234535040_hu5682921578761566105.png 480w, https://shanymxc.github.io/p/alioss/index.assets/image-20201126234535040_hu3834313957590313610.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20201126234535040&#34;
@@ -224,10 +224,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;4-获取accesskeyid&#34;&gt;4. 获取AccessKeyId
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/alioss/index.assets/image-20221128020105943.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221128020105943.png&#34;
 	width=&#34;1767&#34;
 	height=&#34;382&#34;
-	srcset=&#34;http://localhost:1313/p/alioss/index.assets/image-20221128020105943_hu14042140174622347705.png 480w, http://localhost:1313/p/alioss/index.assets/image-20221128020105943_hu12138020341157539423.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/alioss/index.assets/image-20221128020105943_hu14042140174622347705.png 480w, https://shanymxc.github.io/p/alioss/index.assets/image-20221128020105943_hu12138020341157539423.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221128020105943&#34;

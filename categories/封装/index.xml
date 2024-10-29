@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>封装 on 山有木兮</title>
-        <link>http://localhost:1313/categories/%E5%B0%81%E8%A3%85/</link>
+        <link>https://shanymxc.github.io/categories/%E5%B0%81%E8%A3%85/</link>
         <description>Recent content in 封装 on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 16:02:11 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B0%81%E8%A3%85/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Oct 2024 16:02:11 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/%E5%B0%81%E8%A3%85/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Java 面向对象</title>
-        <link>http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+        <link>https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
         <pubDate>Thu, 24 Oct 2024 16:02:11 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+        <guid>https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
         <description>&lt;h2 id=&#34;1-类和对象&#34;&gt;1. 类和对象
 &lt;/h2&gt;&lt;h3 id=&#34;11-类和对象的理解&#34;&gt;1.1 类和对象的理解
 &lt;/h3&gt;&lt;p&gt;客观存在的事物皆为对象 ，所以我们也常常说万物皆对象。&lt;/p&gt;
@@ -314,10 +314,10 @@
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;成员变量使用过程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/1.png&#34;
 	width=&#34;888&#34;
 	height=&#34;352&#34;
-	srcset=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/1_hu12438074141163443829.png 480w, http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/1_hu906850310967294921.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/1_hu12438074141163443829.png 480w, https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/1_hu906850310967294921.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -331,10 +331,10 @@
 &lt;ul&gt;
 &lt;li&gt;成员方法调用过程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/2.png&#34;
 	width=&#34;887&#34;
 	height=&#34;416&#34;
-	srcset=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/2_hu11940509942131127901.png 480w, http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/2_hu5298327539251268948.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/2_hu11940509942131127901.png 480w, https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/2_hu5298327539251268948.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2&#34;
@@ -349,10 +349,10 @@
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;成员变量使用过程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/3.png&#34;
 	width=&#34;882&#34;
 	height=&#34;350&#34;
-	srcset=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/3_hu15346338263197826391.png 480w, http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/3_hu9350688731367552074.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/3_hu15346338263197826391.png 480w, https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/3_hu9350688731367552074.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;3&#34;
@@ -366,10 +366,10 @@
 &lt;ul&gt;
 &lt;li&gt;成员方法调用过程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/4.png&#34;
 	width=&#34;889&#34;
 	height=&#34;355&#34;
-	srcset=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/4_hu17266980223503665699.png 480w, http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/4_hu11774698292569331330.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/4_hu17266980223503665699.png 480w, https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/4_hu11774698292569331330.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;4&#34;
@@ -1010,10 +1010,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;54-练习2&#34;&gt;5.4 练习2
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/111.jpg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/111.jpg&#34;
 	width=&#34;616&#34;
 	height=&#34;359&#34;
-	srcset=&#34;http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/111_hu136648262746866808.jpg 480w, http://localhost:1313/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/111_hu8145804985085982727.jpg 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/111_hu136648262746866808.jpg 480w, https://shanymxc.github.io/p/java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.assets/111_hu8145804985085982727.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;111&#34;

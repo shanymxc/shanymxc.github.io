@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>ArrayList on 山有木兮</title>
-        <link>http://localhost:1313/categories/arraylist/</link>
+        <link>https://shanymxc.github.io/categories/arraylist/</link>
         <description>Recent content in ArrayList on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Sat, 26 Oct 2024 23:24:19 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/arraylist/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 26 Oct 2024 23:24:19 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/arraylist/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Java ArrayList</title>
-        <link>http://localhost:1313/p/java-arraylist/</link>
+        <link>https://shanymxc.github.io/p/java-arraylist/</link>
         <pubDate>Sat, 26 Oct 2024 23:24:19 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/java-arraylist/</guid>
+        <guid>https://shanymxc.github.io/p/java-arraylist/</guid>
         <description>&lt;h2 id=&#34;arraylist&#34;&gt;ArrayList
 &lt;/h2&gt;&lt;h3 id=&#34;集合和数组的优势对比&#34;&gt;集合和数组的优势对比：
 &lt;/h3&gt;&lt;ol&gt;

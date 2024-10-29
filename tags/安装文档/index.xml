@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>安装文档 on 山有木兮</title>
-        <link>http://localhost:1313/tags/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</link>
+        <link>https://shanymxc.github.io/tags/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</link>
         <description>Recent content in 安装文档 on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Sun, 20 Oct 2024 16:28:42 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Oct 2024 16:28:42 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/tags/%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>MySQL 01</title>
-        <link>http://localhost:1313/p/mysql-01/</link>
+        <link>https://shanymxc.github.io/p/mysql-01/</link>
         <pubDate>Sun, 20 Oct 2024 16:28:42 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/mysql-01/</guid>
-        <description>&lt;img src="http://localhost:1313/p/mysql-01/a81b153922d228b263e3a78d8fe7cab7.png" alt="Featured image of post MySQL 01" /&gt;&lt;h1 id=&#34;数据库开发-mysql&#34;&gt;数据库开发-MySQL
+        <guid>https://shanymxc.github.io/p/mysql-01/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/mysql-01/a81b153922d228b263e3a78d8fe7cab7.png" alt="Featured image of post MySQL 01" /&gt;&lt;h1 id=&#34;数据库开发-mysql&#34;&gt;数据库开发-MySQL
 &lt;/h1&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;在我们讲解SpringBootWeb基础知识(请求响应案例)的时候，我们讲到在web开发中，为了应用程序职责单一，方便维护，我们一般将web应用程序分为三层，即：Controller、Service、Dao 。&lt;/p&gt;
 &lt;p&gt;之前我们的案例中，是这样子的请求流程：浏览器发起请求，先请求Controller；Controller接收到请求之后，调用Service进行业务逻辑处理；Service再调用Dao，Dao再解析user.xml中所存储的数据。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205001241294.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001241294.png&#34;
 	width=&#34;1160&#34;
 	height=&#34;248&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205001241294_hu7560493176788463293.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205001241294_hu10166119329825626751.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001241294_hu7560493176788463293.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001241294_hu10166119329825626751.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205001241294&#34;
@@ -32,10 +32,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;xml文件中可以存储数据，但是在企业项目开发中不会使用xml文件存储数据，因为不便管理维护，操作难度大。 在真实的企业开发中呢，都会采用数据库来存储和管理数据，那此时，web开发调用流程图如下所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205001346266.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001346266.png&#34;
 	width=&#34;1220&#34;
 	height=&#34;258&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205001346266_hu9631259327907031264.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205001346266_hu13181702294346858632.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001346266_hu9631259327907031264.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001346266_hu13181702294346858632.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205001346266&#34;
@@ -51,10 +51,10 @@
 &lt;li&gt;数据库：英文为 DataBase，简称DB，它是存储和管理数据的仓库。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;像我们日常访问的电商网站京东，企业内部的管理系统OA、ERP、CRM这类的系统，以及大家每天都会刷的头条、抖音类的app，那这些大家所看到的数据，其实都是存储在数据库中的。最终这些数据，只是在浏览器或app中展示出来而已，最终数据的存储和管理都是数据库负责的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205001501275.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001501275.png&#34;
 	width=&#34;1175&#34;
 	height=&#34;525&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205001501275_hu3433697919968020966.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205001501275_hu4714489822033765268.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001501275_hu3433697919968020966.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205001501275_hu4714489822033765268.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205001501275&#34;
@@ -78,10 +78,10 @@
 &lt;blockquote&gt;
 &lt;p&gt;关系型数据库：我们后面会详细讲解，现在大家只需要知道我们学习的数据库属于关系型数据库即可。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205095039939.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205095039939.png&#34;
 	width=&#34;1225&#34;
 	height=&#34;344&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205095039939_hu13884389034121026844.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205095039939_hu7883030715687410545.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205095039939_hu13884389034121026844.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205095039939_hu7883030715687410545.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205095039939&#34;
@@ -94,10 +94,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;结论：程序员给数据库管理系统(DBMS)发送SQL语句，再由数据库管理系统操作数据库当中的数据。&lt;/p&gt;
 &lt;p&gt;了解了数据库的一些简单概念之后，接下来我们再来介绍下目前主流的数据库，这里截取了排名前十的数据库：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205120408757.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205120408757.png&#34;
 	width=&#34;662&#34;
 	height=&#34;248&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205120408757_hu3280494717600821959.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205120408757_hu1600778644566284151.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205120408757_hu3280494717600821959.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205120408757_hu1600778644566284151.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205120408757&#34;
@@ -123,10 +123,10 @@
 &lt;p&gt;结论：只要我们学会了SQL语句，就可以通过SQL语句来操作Mysql，也可以通过SQL语句来操作Oracle或SQL Server&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;课程内容安排：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205122731402.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205122731402.png&#34;
 	width=&#34;1070&#34;
 	height=&#34;537&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205122731402_hu8620499983273103693.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205122731402_hu11327518077684192542.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205122731402_hu8620499983273103693.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205122731402_hu11327518077684192542.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205122731402&#34;
@@ -138,10 +138,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以上课程内容拆解为3部分知识点：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205122937131.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205122937131.png&#34;
 	width=&#34;1215&#34;
 	height=&#34;431&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205122937131_hu56693958279289156.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205122937131_hu12616719676427891331.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205122937131_hu56693958279289156.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205122937131_hu12616719676427891331.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205122937131&#34;
@@ -154,10 +154,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;接下来我们就先进入到第一天的Mysql概述学习。&lt;/p&gt;
 &lt;h2 id=&#34;1-mysql概述&#34;&gt;1. MySQL概述
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220610191829748.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220610191829748.png&#34;
 	width=&#34;247&#34;
 	height=&#34;134&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220610191829748_hu3179323355200120532.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220610191829748_hu995871388060509911.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220610191829748_hu3179323355200120532.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220610191829748_hu995871388060509911.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220610191829748&#34;
@@ -191,10 +191,10 @@
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;112-安装&#34;&gt;1.1.2 安装
 &lt;/h4&gt;&lt;p&gt;官网下载地址：https://downloads.mysql.com/archives/community/&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205140643412.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205140643412.png&#34;
 	width=&#34;1727&#34;
 	height=&#34;658&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205140643412_hu9731600455171035518.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205140643412_hu13364079425357243497.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205140643412_hu9731600455171035518.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205140643412_hu13364079425357243497.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205140643412&#34;
@@ -226,10 +226,10 @@
 &lt;ul&gt;
 &lt;li&gt;密码直接在-p参数之后直接指定 （这种方式不安全，密码直接以明文形式出现在命令行）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205143139656.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205143139656.png&#34;
 	width=&#34;1178&#34;
 	height=&#34;362&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205143139656_hu15074802027666168784.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205143139656_hu5356805973673241169.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205143139656_hu15074802027666168784.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205143139656_hu5356805973673241169.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205143139656&#34;
@@ -243,10 +243,10 @@
 &lt;ul&gt;
 &lt;li&gt;密码在-p回车之后，在命令行中输入密码，然后回车&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205143418632.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205143418632.png&#34;
 	width=&#34;1110&#34;
 	height=&#34;440&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205143418632_hu2718082546672389430.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205143418632_hu5341788205092221875.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205143418632_hu2718082546672389430.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205143418632_hu5341788205092221875.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205143418632&#34;
@@ -259,10 +259,10 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;114-企业使用方式了解&#34;&gt;1.1.4 企业使用方式(了解)
 &lt;/h4&gt;&lt;p&gt;上述的MySQL服务器我们是安装在本地的，这个仅仅是在我们学习阶段，在真实的企业开发中，MySQL数据库服务器是不会在我们本地安装的，是在公司的服务器上安装的，而服务器还需要放置在专门的IDC机房中的，IDC机房呢，就需要保证恒温、恒湿、恒压，而且还要保证网络、电源的可靠性(备用电源及网络)。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829110618240.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829110618240.png&#34;
 	width=&#34;1579&#34;
 	height=&#34;372&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829110618240_hu9879678088167296138.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829110618240_hu14632865596219088247.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829110618240_hu9879678088167296138.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829110618240_hu14632865596219088247.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829110618240&#34;
@@ -274,10 +274,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;那我们要想使用服务器上的这台MySQL服务器，就需要在我们的电脑上去远程连接这台MySQL。 而服务器上安装的MySQL数据库呢，并不是你一个人在访问，我们项目组的其他开发人员也是需要访问这台MySQL的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829110723526.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829110723526.png&#34;
 	width=&#34;1581&#34;
 	height=&#34;374&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829110723526_hu15735780660896185158.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829110723526_hu684842897866222306.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829110723526_hu15735780660896185158.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829110723526_hu684842897866222306.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829110723526&#34;
@@ -289,10 +289,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;我们在学习阶段，如果想提前体验一下企业中数据库的使用方式，可以借助于VMware虚拟机来实现。我们可以在我们的电脑上安装一个VMware，然后在Vmware虚拟机上在安装一个服务器操作系统Linux，然后再在Linux服务器上安装各种企业级软件。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829111237340.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111237340.png&#34;
 	width=&#34;1971&#34;
 	height=&#34;439&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829111237340_hu8028861945674901132.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829111237340_hu15417816044814974068.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111237340_hu8028861945674901132.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111237340_hu15417816044814974068.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829111237340&#34;
@@ -312,10 +312,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysql -u用户名 -p密码 [-h数据库服务器的IP地址 -P端口号]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829111522126.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111522126.png&#34;
 	width=&#34;1505&#34;
 	height=&#34;594&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829111522126_hu6581925109470458276.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829111522126_hu16877708855759308117.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111522126_hu6581925109470458276.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111522126_hu16877708855759308117.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829111522126&#34;
@@ -332,10 +332,10 @@
 &lt;p&gt;&lt;strong&gt;关系型数据库（RDBMS）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;概念：建立在关系模型基础上，由多张相互连接的&lt;strong&gt;二维表&lt;/strong&gt;组成的数据库。&lt;/p&gt;
 &lt;p&gt;而所谓二维表，指的是由行和列组成的表，如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205145028667.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205145028667.png&#34;
 	width=&#34;710&#34;
 	height=&#34;228&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205145028667_hu14488364106015374429.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205145028667_hu12745927588360511126.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205145028667_hu14488364106015374429.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205145028667_hu12745927588360511126.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205145028667&#34;
@@ -362,10 +362,10 @@
 &lt;p&gt;&lt;strong&gt;2). 数据模型&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;介绍完了关系型数据库之后，接下来我们再来看一看在Mysql数据库当中到底是如何来存储数据的，也就是Mysql 的数据模型。&lt;/p&gt;
 &lt;p&gt;MySQL是关系型数据库，是基于二维表进行数据存储的，具体的结构图下:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829111741419.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111741419.png&#34;
 	width=&#34;1603&#34;
 	height=&#34;597&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829111741419_hu16259095621546733537.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829111741419_hu7479184335245860182.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111741419_hu16259095621546733537.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829111741419_hu7479184335245860182.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829111741419&#34;
@@ -394,10 +394,10 @@
 &lt;p&gt;在学习具体的SQL语句之前，先来了解一下SQL语言的语法。&lt;/p&gt;
 &lt;h4 id=&#34;131-sql通用语法&#34;&gt;1.3.1 SQL通用语法
 &lt;/h4&gt;&lt;p&gt;1、SQL语句可以单行或多行书写，以分号结尾。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205151656214.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205151656214.png&#34;
 	width=&#34;930&#34;
 	height=&#34;203&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205151656214_hu6372481812162587678.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205151656214_hu11713055180171865862.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205151656214_hu6372481812162587678.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205151656214_hu11713055180171865862.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205151656214&#34;
@@ -409,10 +409,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2、SQL语句可以使用空格/缩进来增强语句的可读性。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205151953441.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205151953441.png&#34;
 	width=&#34;927&#34;
 	height=&#34;246&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205151953441_hu10730286245012512435.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205151953441_hu295031423142733593.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205151953441_hu10730286245012512435.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205151953441_hu295031423142733593.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205151953441&#34;
@@ -424,10 +424,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3、MySQL数据库的SQL语句不区分大小写。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205152112070.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205152112070.png&#34;
 	width=&#34;929&#34;
 	height=&#34;243&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205152112070_hu13995149313935511745.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205152112070_hu3076236987003985196.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205152112070_hu13995149313935511745.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205152112070_hu3076236987003985196.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205152112070&#34;
@@ -479,10 +479,10 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205152804250.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205152804250.png&#34;
 	width=&#34;1057&#34;
 	height=&#34;305&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205152804250_hu12527018429949772913.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205152804250_hu8251562934281065764.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205152804250_hu12527018429949772913.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205152804250_hu8251562934281065764.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205152804250&#34;
@@ -496,10 +496,10 @@
 &lt;h2 id=&#34;2-数据库设计-ddl&#34;&gt;2. 数据库设计-DDL
 &lt;/h2&gt;&lt;p&gt;下面我们就正式的进入到SQL语句的学习，在学习之前先给大家介绍一下我们要开发一个项目，整个开发流程是什么样的，以及在流程当中哪些环节会涉及到数据库。&lt;/p&gt;
 &lt;h3 id=&#34;21-项目开发流程&#34;&gt;2.1 项目开发流程
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829112953742.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829112953742.png&#34;
 	width=&#34;1604&#34;
 	height=&#34;689&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829112953742_hu1556667874273720160.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829112953742_hu11235804148970246693.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829112953742_hu1556667874273720160.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829112953742_hu11235804148970246693.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829112953742&#34;
@@ -514,10 +514,10 @@
 &lt;ul&gt;
 &lt;li&gt;在我们开发一个项目或者项目当中的某个模块之前，会先会拿到产品经理给我们提供的页面原型及需求文档。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205154101142.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205154101142.png&#34;
 	width=&#34;1500&#34;
 	height=&#34;442&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205154101142_hu18384949420326636277.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205154101142_hu3957901390125322974.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205154101142_hu18384949420326636277.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205154101142_hu3957901390125322974.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205154101142&#34;
@@ -575,10 +575,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令行中执行效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124104154.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124104154.png&#34;
 	width=&#34;1200&#34;
 	height=&#34;267&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124104154_hu8433470343993628788.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829124104154_hu14667831687617122271.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124104154_hu8433470343993628788.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124104154_hu14667831687617122271.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829124104154&#34;
@@ -599,10 +599,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令行中执行效果如果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205174615074.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205174615074.png&#34;
 	width=&#34;927&#34;
 	height=&#34;342&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205174615074_hu9482805381993093858.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205174615074_hu15861643908047122458.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205174615074_hu9482805381993093858.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205174615074_hu15861643908047122458.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205174615074&#34;
@@ -637,10 +637,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令行执行效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124219427.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124219427.png&#34;
 	width=&#34;1199&#34;
 	height=&#34;148&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124219427_hu12895494597784373889.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829124219427_hu12776836685659521534.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124219427_hu12895494597784373889.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124219427_hu12776836685659521534.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829124219427&#34;
@@ -652,10 +652,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;==注意：在同一个数据库服务器中，不能创建两个名称相同的数据库，否则将会报错。==&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124250514.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124250514.png&#34;
 	width=&#34;1200&#34;
 	height=&#34;161&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124250514_hu13777948626188458806.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829124250514_hu12167681951753485518.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124250514_hu13777948626188458806.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124250514_hu12167681951753485518.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829124250514&#34;
@@ -679,10 +679,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;database&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;not&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;extists&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;itcast&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;命令行执行效果如下： &lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124326741.png&#34;
+&lt;/div&gt;&lt;p&gt;命令行执行效果如下： &lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124326741.png&#34;
 	width=&#34;1201&#34;
 	height=&#34;108&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124326741_hu5173299275741241216.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829124326741_hu4817368197199947139.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124326741_hu5173299275741241216.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124326741_hu4817368197199947139.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829124326741&#34;
@@ -716,10 +716,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令执行效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124929708.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124929708.png&#34;
 	width=&#34;1199&#34;
 	height=&#34;265&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829124929708_hu12284304709209406351.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829124929708_hu16016620511548763407.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124929708_hu12284304709209406351.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829124929708_hu16016620511548763407.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829124929708&#34;
@@ -754,10 +754,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令执行效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829125006142.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829125006142.png&#34;
 	width=&#34;1199&#34;
 	height=&#34;231&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829125006142_hu14431618479429951603.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829125006142_hu1819200823327408960.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829125006142_hu14431618479429951603.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829125006142_hu1819200823327408960.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829125006142&#34;
@@ -774,10 +774,10 @@
 &lt;li&gt;如：create schema db01;&lt;/li&gt;
 &lt;li&gt;如：show schemas;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205180608004.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205180608004.png&#34;
 	width=&#34;923&#34;
 	height=&#34;221&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205180608004_hu2845988248449236127.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205180608004_hu4929020407392292177.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205180608004_hu2845988248449236127.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205180608004_hu4929020407392292177.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205180608004&#34;
@@ -799,10 +799,10 @@
 &lt;/ol&gt;
 &lt;p&gt;在项目开发当中，通常为了提高开发效率，都会借助于现成的图形化管理工具来操作数据库。&lt;/p&gt;
 &lt;p&gt;目前MySQL主流的图形化界面工具有以下几种：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205184802646.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205184802646.png&#34;
 	width=&#34;1144&#34;
 	height=&#34;164&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205184802646_hu526764415428755935.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205184802646_hu2036035692312068613.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205184802646_hu526764415428755935.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205184802646_hu2036035692312068613.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205184802646&#34;
@@ -824,10 +824,10 @@
 &lt;h4 id=&#34;233-使用&#34;&gt;2.3.3 使用
 &lt;/h4&gt;&lt;h5 id=&#34;2231-连接数据库&#34;&gt;2.2.3.1 连接数据库
 &lt;/h5&gt;&lt;p&gt;1、打开IDEA自带的Database&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205190929756.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205190929756.png&#34;
 	width=&#34;1448&#34;
 	height=&#34;510&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205190929756_hu7307477618485986571.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205190929756_hu9521140734333345166.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205190929756_hu7307477618485986571.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205190929756_hu9521140734333345166.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205190929756&#34;
@@ -839,10 +839,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2、配置MySQL&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205191143072.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205191143072.png&#34;
 	width=&#34;1318&#34;
 	height=&#34;769&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205191143072_hu10719582293557558489.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205191143072_hu7364267432781160191.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205191143072_hu10719582293557558489.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205191143072_hu7364267432781160191.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205191143072&#34;
@@ -854,10 +854,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;3、输入相关信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205192606038.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205192606038.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;792&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205192606038_hu8492440260656694020.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205192606038_hu15859921096194646793.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205192606038_hu8492440260656694020.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205192606038_hu15859921096194646793.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205192606038&#34;
@@ -869,10 +869,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;4、下载MySQL连接驱动&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205192847190.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205192847190.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;792&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205192847190_hu4777411518743276509.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205192847190_hu9747128819943075454.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205192847190_hu4777411518743276509.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205192847190_hu9747128819943075454.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205192847190&#34;
@@ -884,10 +884,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;5、测试数据库连接&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205193304124.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205193304124.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;792&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205193304124_hu16708037630860744282.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205193304124_hu7183510564673130332.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205193304124_hu16708037630860744282.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205193304124_hu7183510564673130332.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205193304124&#34;
@@ -899,10 +899,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;6、保存配置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205193409856.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205193409856.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;792&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205193409856_hu16046591693819191361.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205193409856_hu13347475235568233473.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205193409856_hu16046591693819191361.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205193409856_hu13347475235568233473.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205193409856&#34;
@@ -914,10 +914,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;默认情况下，连接上了MySQL数据库之后， 数据库并没有全部展示出来。 需要选择要展示哪些数据库。具体操作如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/8.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/8.gif&#34;
 	width=&#34;878&#34;
 	height=&#34;622&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/8_hu16470815587205706047.gif 480w, http://localhost:1313/p/mysql-01/index.assets/8_hu10626756518718299237.gif 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/8_hu16470815587205706047.gif 480w, https://shanymxc.github.io/p/mysql-01/index.assets/8_hu10626756518718299237.gif 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -928,10 +928,10 @@
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;2232-操作数据库&#34;&gt;2.2.3.2 操作数据库
 &lt;/h5&gt;&lt;p&gt;&lt;strong&gt;创建数据库：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195346655.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195346655.png&#34;
 	width=&#34;1165&#34;
 	height=&#34;458&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195346655_hu4765854779038025576.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205195346655_hu13029483860987644021.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195346655_hu4765854779038025576.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195346655_hu13029483860987644021.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205195346655&#34;
@@ -942,10 +942,10 @@
 		data-flex-basis=&#34;610px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195510716.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195510716.png&#34;
 	width=&#34;1125&#34;
 	height=&#34;604&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195510716_hu3265312770501905198.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205195510716_hu459710351176490273.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195510716_hu3265312770501905198.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195510716_hu459710351176490273.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205195510716&#34;
@@ -961,10 +961,10 @@
 &lt;p&gt;其实工具底层也是通过DDL语句操作的数据库，只不过这些SQL语句是图形化界面工具帮我们自动完成的。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;查看所有数据库：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195128343.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195128343.png&#34;
 	width=&#34;1399&#34;
 	height=&#34;225&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195128343_hu12302502236435750719.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205195128343_hu12744656631390182213.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195128343_hu12302502236435750719.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195128343_hu12744656631390182213.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205195128343&#34;
@@ -975,10 +975,10 @@
 		data-flex-basis=&#34;1492px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195833439.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195833439.png&#34;
 	width=&#34;1161&#34;
 	height=&#34;663&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205195833439_hu1452594499504796917.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205195833439_hu1093265351219469409.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195833439_hu1452594499504796917.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205195833439_hu1093265351219469409.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205195833439&#34;
@@ -1019,10 +1019,10 @@
 &lt;ul&gt;
 &lt;li&gt;对应的结构如下：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829143005524.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829143005524.png&#34;
 	width=&#34;619&#34;
 	height=&#34;186&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829143005524_hu14257297805380213667.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829143005524_hu4096720701413626968.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829143005524_hu14257297805380213667.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829143005524_hu4096720701413626968.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829143005524&#34;
@@ -1060,10 +1060,10 @@
 &lt;p&gt;数据表创建完成，接下来我们还需要测试一下是否可以往这张表结构当中来存储数据。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;双击打开tb_user表结构，大家会发现里面没有数据：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205211008929.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205211008929.png&#34;
 	width=&#34;1134&#34;
 	height=&#34;246&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205211008929_hu117362698695401272.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205211008929_hu15178555380494002440.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205211008929_hu117362698695401272.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205211008929_hu15178555380494002440.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205211008929&#34;
@@ -1075,10 +1075,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;添加数据：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/9.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/9.gif&#34;
 	width=&#34;783&#34;
 	height=&#34;196&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/9_hu9207914244194304422.gif 480w, http://localhost:1313/p/mysql-01/index.assets/9_hu881732425201415070.gif 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/9_hu9207914244194304422.gif 480w, https://shanymxc.github.io/p/mysql-01/index.assets/9_hu881732425201415070.gif 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1088,10 +1088,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;此时我们再插入一条数据：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205214447060.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205214447060.png&#34;
 	width=&#34;1062&#34;
 	height=&#34;106&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205214447060_hu13373872174144316865.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205214447060_hu772596606771668254.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205214447060_hu13373872174144316865.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205214447060_hu772596606771668254.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205214447060&#34;
@@ -1156,10 +1156,10 @@
 &lt;ul&gt;
 &lt;li&gt;对应的结构如下：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829143005524.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829143005524.png&#34;
 	width=&#34;619&#34;
 	height=&#34;186&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829143005524_hu14257297805380213667.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829143005524_hu4096720701413626968.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829143005524_hu14257297805380213667.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829143005524_hu4096720701413626968.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829143005524&#34;
@@ -1213,10 +1213,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;数据表创建完成，接下来测试一下表中字段上的约束是否生效&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205215309011.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205215309011.png&#34;
 	width=&#34;1150&#34;
 	height=&#34;480&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205215309011_hu6451070393562870971.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205215309011_hu5719480842711463379.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205215309011_hu6451070393562870971.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205215309011_hu5719480842711463379.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205215309011&#34;
@@ -1227,10 +1227,10 @@
 		data-flex-basis=&#34;575px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205215632599.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205215632599.png&#34;
 	width=&#34;1150&#34;
 	height=&#34;480&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205215632599_hu4275229783581975358.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205215632599_hu7643493532115665332.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205215632599_hu4275229783581975358.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205215632599_hu7643493532115665332.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205215632599&#34;
@@ -1270,10 +1270,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;测试：主键自增&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/10.gif&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/10.gif&#34;
 	width=&#34;1247&#34;
 	height=&#34;373&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/10_hu17253740875020239283.gif 480w, http://localhost:1313/p/mysql-01/index.assets/10_hu834605694290898265.gif 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/10_hu17253740875020239283.gif 480w, https://shanymxc.github.io/p/mysql-01/index.assets/10_hu834605694290898265.gif 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1528,10 +1528,10 @@
 &lt;p&gt;暂不考虑所属部门字段&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;产品原型及需求如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829151032029.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151032029.png&#34;
 	width=&#34;1531&#34;
 	height=&#34;843&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829151032029_hu16523458649705659317.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829151032029_hu4963556279059942598.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151032029_hu16523458649705659317.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151032029_hu4963556279059942598.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220829151032029&#34;
@@ -1542,10 +1542,10 @@
 		data-flex-basis=&#34;435px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829151228102.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151228102.png&#34;
 	width=&#34;645&#34;
 	height=&#34;590&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829151228102_hu10557158957551670452.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829151228102_hu12173766175048327691.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151228102_hu10557158957551670452.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151228102_hu12173766175048327691.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1554,10 +1554,10 @@
 		data-flex-basis=&#34;262px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829151245450.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151245450.png&#34;
 	width=&#34;1073&#34;
 	height=&#34;828&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20220829151245450_hu926820398460126976.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20220829151245450_hu3815031530052573986.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151245450_hu926820398460126976.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20220829151245450_hu3815031530052573986.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1614,10 +1614,10 @@
 &lt;ol&gt;
 &lt;li&gt;在指定操作的数据库上，右键New ==&amp;gt; Table&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205230447721.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205230447721.png&#34;
 	width=&#34;825&#34;
 	height=&#34;482&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205230447721_hu4686851433080602540.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205230447721_hu11950066925668448543.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205230447721_hu4686851433080602540.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205230447721_hu11950066925668448543.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205230447721&#34;
@@ -1631,10 +1631,10 @@
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;编辑表结构的相关信息&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205231846161.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205231846161.png&#34;
 	width=&#34;846&#34;
 	height=&#34;771&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205231846161_hu8037568856920614842.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205231846161_hu14898615796423962434.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205231846161_hu8037568856920614842.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205231846161_hu14898615796423962434.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205231846161&#34;
@@ -1658,10 +1658,10 @@
 &lt;p&gt;再增加表设计所需要的业务基础字段(id主键、插入时间、修改时间)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205232253088.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205232253088.png&#34;
 	width=&#34;1259&#34;
 	height=&#34;434&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205232253088_hu14642232862772492465.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205232253088_hu8616544697739203040.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205232253088_hu14642232862772492465.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205232253088_hu8616544697739203040.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205232253088&#34;
@@ -1696,10 +1696,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kp&#34;&gt;tables&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205233746548.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205233746548.png&#34;
 	width=&#34;1209&#34;
 	height=&#34;220&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205233746548_hu10483030312048262875.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205233746548_hu9751270227564837401.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205233746548_hu10483030312048262875.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205233746548_hu9751270227564837401.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205233746548&#34;
@@ -1719,10 +1719,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;#可以查看指定表的字段、字段的类型、是否可以为NULL、是否存在默认值等信息
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205234114053.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234114053.png&#34;
 	width=&#34;1751&#34;
 	height=&#34;903&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205234114053_hu14991664860203935700.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205234114053_hu7585359101546108862.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234114053_hu14991664860203935700.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234114053_hu7585359101546108862.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205234114053&#34;
@@ -1742,10 +1742,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-mysql&#34; data-lang=&#34;mysql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;table&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;表名&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205234334696.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234334696.png&#34;
 	width=&#34;1156&#34;
 	height=&#34;461&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205234334696_hu10373023091522993124.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205234334696_hu7209726669983350117.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234334696_hu10373023091522993124.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234334696_hu7209726669983350117.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205234334696&#34;
@@ -1756,10 +1756,10 @@
 		data-flex-basis=&#34;601px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205234444906.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234444906.png&#34;
 	width=&#34;1618&#34;
 	height=&#34;671&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205234444906_hu16616202130313941114.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205234444906_hu17380212294398270163.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234444906_hu16616202130313941114.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205234444906_hu17380212294398270163.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205234444906&#34;
@@ -1795,10 +1795,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;图形化操作：添加字段&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205235542272.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235542272.png&#34;
 	width=&#34;1500&#34;
 	height=&#34;541&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205235542272_hu14036316613661469183.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205235542272_hu18174532265405263084.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235542272_hu14036316613661469183.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235542272_hu18174532265405263084.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205235542272&#34;
@@ -1809,10 +1809,10 @@
 		data-flex-basis=&#34;665px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205235657807.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235657807.png&#34;
 	width=&#34;846&#34;
 	height=&#34;771&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205235657807_hu10854504510359497799.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205235657807_hu11784550106977896263.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235657807_hu10854504510359497799.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235657807_hu11784550106977896263.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205235657807&#34;
@@ -1861,10 +1861,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;图形化操作：修改数据类型和字段名&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205235950010.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235950010.png&#34;
 	width=&#34;846&#34;
 	height=&#34;771&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221205235950010_hu2817946163712207478.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221205235950010_hu2536073884462631417.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235950010_hu2817946163712207478.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221205235950010_hu2536073884462631417.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221205235950010&#34;
@@ -1875,10 +1875,10 @@
 		data-flex-basis=&#34;263px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206000030734.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000030734.png&#34;
 	width=&#34;846&#34;
 	height=&#34;771&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206000030734_hu14614678451625407592.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221206000030734_hu1631694185810663047.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000030734_hu14614678451625407592.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000030734_hu1631694185810663047.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221206000030734&#34;
@@ -1910,10 +1910,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;图形化操作：删除字段&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206000159237.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000159237.png&#34;
 	width=&#34;846&#34;
 	height=&#34;771&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206000159237_hu3410039378504596696.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221206000159237_hu6603247532803677228.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000159237_hu3410039378504596696.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000159237_hu6603247532803677228.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221206000159237&#34;
@@ -1945,10 +1945,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;图形化操作：修改表名&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206000636659.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000636659.png&#34;
 	width=&#34;1295&#34;
 	height=&#34;481&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206000636659_hu8511977995910506520.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221206000636659_hu4740586096081663715.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000636659_hu8511977995910506520.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206000636659_hu4740586096081663715.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221206000636659&#34;
@@ -1987,10 +1987,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;图形化操作：删除表&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206001026916.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206001026916.png&#34;
 	width=&#34;733&#34;
 	height=&#34;525&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206001026916_hu17625923796336149711.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221206001026916_hu4749691239723209006.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206001026916_hu17625923796336149711.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206001026916_hu4749691239723209006.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221206001026916&#34;
@@ -2096,10 +2096,10 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;图形化操作：双击tb_emp表查看数据&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206002807531.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206002807531.png&#34;
 	width=&#34;1206&#34;
 	height=&#34;290&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206002807531_hu10839464497004214495.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221206002807531_hu9388756967757679224.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206002807531_hu10839464497004214495.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206002807531_hu9388756967757679224.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221206002807531&#34;
@@ -2150,10 +2150,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_emp&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;entrydate&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;2010-01-01&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;update_time&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;now&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206004425527.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206004425527.png&#34;
 	width=&#34;1006&#34;
 	height=&#34;237&#34;
-	srcset=&#34;http://localhost:1313/p/mysql-01/index.assets/image-20221206004425527_hu12226004316003552558.png 480w, http://localhost:1313/p/mysql-01/index.assets/image-20221206004425527_hu17203061563155575090.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206004425527_hu12226004316003552558.png 480w, https://shanymxc.github.io/p/mysql-01/index.assets/image-20221206004425527_hu17203061563155575090.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221206004425527&#34;
@@ -2213,16 +2213,16 @@
         </item>
         <item>
         <title>MySQL安装文档</title>
-        <link>http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</link>
+        <link>https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</link>
         <pubDate>Sat, 19 Oct 2024 23:01:26 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</guid>
-        <description>&lt;img src="http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7.png" alt="Featured image of post MySQL安装文档" /&gt;&lt;h2 id=&#34;一下载&#34;&gt;一、下载
+        <guid>https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/a81b153922d228b263e3a78d8fe7cab7.png" alt="Featured image of post MySQL安装文档" /&gt;&lt;h2 id=&#34;一下载&#34;&gt;一、下载
 &lt;/h2&gt;&lt;p&gt;点开下面的链接：https://dev.mysql.com/downloads/mysql/&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873.png&#34;
 	width=&#34;1554&#34;
 	height=&#34;850&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu8989546307641288751.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu1767376917828680749.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu8989546307641288751.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012302873_hu1767376917828680749.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221020012302873&#34;
@@ -2233,10 +2233,10 @@
 		data-flex-basis=&#34;438px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;点击Download 就可以下载对应的安装包了, 安装包如下: &lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839.png&#34;
+&lt;p&gt;点击Download 就可以下载对应的安装包了, 安装包如下: &lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839.png&#34;
 	width=&#34;255&#34;
 	height=&#34;43&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu8724359947886035426.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu3732298114588479781.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu8724359947886035426.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020012428839_hu3732298114588479781.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221020012428839&#34;
@@ -2249,10 +2249,10 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;二解压&#34;&gt;二、解压
 &lt;/h2&gt;&lt;p&gt;下载完成后我们得到的是一个压缩包，将其解压，我们就可以得到MySQL 8.0.31 的软件本体了(就是一个文件夹)，我们可以把它放在你想安装的位置 。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737.png&#34;
 	width=&#34;1285&#34;
 	height=&#34;309&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu1609331971787285068.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu7215492349333465798.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu1609331971787285068.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013011737_hu7215492349333465798.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221020013011737&#34;
@@ -2270,10 +2270,10 @@
 &lt;p&gt;在黑框(即CMD)中输入一个可执行程序的名字，Windows会先在环境变量中的&lt;code&gt;Path&lt;/code&gt;所指的路径中寻找一遍，如果找到了就直接执行，没找到就在当前工作目录找，如果还没找到，就报错。我们添加环境变量的目的就是能够在任意一个黑框直接调用MySQL中的相关程序而不用总是修改工作目录，大大简化了操作。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;右键&lt;code&gt;此电脑&lt;/code&gt;→&lt;code&gt;属性&lt;/code&gt;，点击&lt;code&gt;高级系统设置&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778.png&#34;
 	width=&#34;275&#34;
 	height=&#34;239&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu7167827031769024765.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu11187263335304820342.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu7167827031769024765.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220242472-524708778_hu11187263335304820342.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -2285,10 +2285,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;环境变量&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950.png&#34;
 	width=&#34;472&#34;
 	height=&#34;586&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu8249412808084621328.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu12289240095344466522.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu8249412808084621328.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220359609-736422950_hu12289240095344466522.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -2300,10 +2300,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;系统变量&lt;/code&gt;中新建MYSQL_HOME&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323.png&#34;
 	width=&#34;833&#34;
 	height=&#34;214&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu4277178484239611663.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu11751059414997883993.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu4277178484239611663.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20221020013128323_hu11751059414997883993.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221020013128323&#34;
@@ -2315,10 +2315,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;系统变量&lt;/code&gt;中找到并&lt;strong&gt;双击&lt;/strong&gt;&lt;code&gt;Path&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872.png&#34;
 	width=&#34;607&#34;
 	height=&#34;646&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu13058212966697072413.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu7163125879145758590.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu13058212966697072413.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220220551145-1198958872_hu7163125879145758590.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -2330,10 +2330,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;新建&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104.png&#34;
 	width=&#34;510&#34;
 	height=&#34;413&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu7988004988747255490.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu3598740407767309626.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu7988004988747255490.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135248104_hu3598740407767309626.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20201109135248104&#34;
@@ -2363,10 +2363,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqld --initialize-insecure
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772.png&#34;
 	width=&#34;491&#34;
 	height=&#34;197&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu3233498164077775792.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu13316001561248084544.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu3233498164077775792.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109140955772_hu13316001561248084544.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20201109140955772&#34;
@@ -2379,10 +2379,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;稍微等待一会，如果出现没有出现报错信息，则证明data目录初始化没有问题，此时再查看MySQL目录下已经有data目录生成。&lt;/p&gt;
 &lt;p&gt;tips：如果出现如下错误&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054.png&#34;
 	width=&#34;959&#34;
 	height=&#34;95&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu14538963807183927052.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu15905033679618084960.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu14538963807183927052.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109135848054_hu15905033679618084960.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20201109135848054&#34;
@@ -2405,10 +2405,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqld -install
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810.png&#34;
 	width=&#34;441&#34;
 	height=&#34;93&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu15288266157448647005.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu2636343872062946848.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu15288266157448647005.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20201109141325810_hu2636343872062946848.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20201109141325810&#34;
@@ -2434,10 +2434,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;net&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stop&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// 停止mysql服务&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072.png&#34;
 	width=&#34;1226&#34;
 	height=&#34;397&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu14306094432900882206.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu9160235824962013627.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu14306094432900882206.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/image-20220518183747072_hu9160235824962013627.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220518183747072&#34;
@@ -2458,10 +2458,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqladmin -u root password 1234
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425.png&#34;
 	width=&#34;726&#34;
 	height=&#34;75&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu17869084740784555045.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu8069453827838188513.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu17869084740784555045.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181221093251250-819416425_hu8069453827838188513.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
@@ -2520,10 +2520,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net stop mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848.png&#34;
 	width=&#34;366&#34;
 	height=&#34;192&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu580926220441788251.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu8168575141686937249.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu580926220441788251.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220222924783-57600848_hu8168575141686937249.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34; &#34;
@@ -2545,10 +2545,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mysqld -remove mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464.png&#34;
 	width=&#34;336&#34;
 	height=&#34;99&#34;
-	srcset=&#34;http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu5867472083432168745.png 480w, http://localhost:1313/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu16541672353436024904.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu5867472083432168745.png 480w, https://shanymxc.github.io/p/mysql%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3/index.assets/1556823-20181220223025128-587235464_hu16541672353436024904.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Cmd on 山有木兮</title>
-        <link>http://localhost:1313/categories/cmd/</link>
+        <link>https://shanymxc.github.io/categories/cmd/</link>
         <description>Recent content in Cmd on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 09:12:03 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/cmd/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Oct 2024 09:12:03 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/categories/cmd/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Java基础语法</title>
-        <link>http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+        <link>https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
         <pubDate>Thu, 24 Oct 2024 09:12:03 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
-        <description>&lt;img src="http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/09b0cbc0f71e5f1cc11fdec19fd81733.png" alt="Featured image of post Java基础语法" /&gt;&lt;h1 id=&#34;day01---java基础语法&#34;&gt;day01 - Java基础语法
+        <guid>https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/09b0cbc0f71e5f1cc11fdec19fd81733.png" alt="Featured image of post Java基础语法" /&gt;&lt;h1 id=&#34;day01---java基础语法&#34;&gt;day01 - Java基础语法
 &lt;/h1&gt;&lt;h2 id=&#34;1-人机交互&#34;&gt;1. 人机交互
 &lt;/h2&gt;&lt;h3 id=&#34;11-什么是cmd&#34;&gt;1.1 什么是cmd？
 &lt;/h3&gt;&lt;p&gt;就是在windows操作系统中，利用命令行的方式去操作计算机。&lt;/p&gt;
@@ -33,10 +33,10 @@
 &lt;/ol&gt;
 &lt;p&gt;解惑：&lt;/p&gt;
 &lt;p&gt;​	cmd默认操作C盘下的users文件夹下的XXX文件夹。（XXX就是计算机名）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/cmd.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/cmd.png&#34;
 	width=&#34;529&#34;
 	height=&#34;165&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/cmd_hu2672427867258579897.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/cmd_hu5701879474218491343.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/cmd_hu2672427867258579897.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/cmd_hu5701879474218491343.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -130,10 +130,10 @@
 &lt;p&gt;图解示例如下：&lt;/p&gt;
 &lt;p&gt;第一步：右键点击我的电脑并选择属性。&lt;/p&gt;
 &lt;p&gt;（如果无法出现第二步界面，可以打开我的电脑之后右键点击空白处）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/1.png&#34;
 	width=&#34;1289&#34;
 	height=&#34;984&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/1_hu17001189577043602952.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/1_hu14412479710663175878.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/1_hu17001189577043602952.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/1_hu14412479710663175878.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -145,10 +145,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;第二步：点击高级系统设置。&lt;/p&gt;
-&lt;p&gt;​	 &lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/2.png&#34;
+&lt;p&gt;​	 &lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/2.png&#34;
 	width=&#34;1128&#34;
 	height=&#34;880&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/2_hu859642734928515812.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/2_hu3761905266304133930.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/2_hu859642734928515812.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/2_hu3761905266304133930.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -160,10 +160,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;第三步：选择高级，再点击下面的环境变量。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/3.png&#34;
 	width=&#34;477&#34;
 	height=&#34;594&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/3_hu16583724878216496772.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/3_hu2157017562293986995.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/3_hu16583724878216496772.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/3_hu2157017562293986995.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -175,10 +175,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;第四步：找系统变量里面的PATH&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/4.png&#34;
 	width=&#34;559&#34;
 	height=&#34;594&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/4_hu10413521866733295672.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/4_hu412860296350964251.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/4_hu10413521866733295672.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/4_hu412860296350964251.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -192,10 +192,10 @@
 &lt;p&gt;第五步：点击新建，把软件的完整路径，配置到PATH当中，再点击确定即可。&lt;/p&gt;
 &lt;p&gt;第六步：（可做可不做）点击上移，把当前配置的路径移动到最上面。&lt;/p&gt;
 &lt;p&gt;移动的好处：在CMD中打开软件时，会先找当前路径，再找环境变量，在环境变量中是从上往下依次查找的，如果路径放在最上面查找的速度比较快。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/5.png&#34;
 	width=&#34;358&#34;
 	height=&#34;382&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/5_hu5636964367883601115.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/5_hu250123469207554602.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/5_hu5636964367883601115.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/5_hu250123469207554602.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -416,10 +416,10 @@
 &lt;/h4&gt;&lt;p&gt;​	开发Java程序，需要使用JDK提供的开发工具（比如javac.exe、java.exe等命令），而这些工具在JDK的安装目录的bin目录下，如果不配置环境变量，那么这些命令只可以在bin目录下使用，而我们想要在任意目录下都能使用，所以就要配置环境变量。&lt;/p&gt;
 &lt;p&gt;注意：现在最新从官网上下载的JDK安装时会自动配置javac、java命令的路径到Path环境变量中去 ，所以javac、java可以直接使用。&lt;/p&gt;
 &lt;h4 id=&#34;152配置方式&#34;&gt;1.5.2配置方式
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091654365.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091654365.png&#34;
 	width=&#34;971&#34;
 	height=&#34;279&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091654365_hu6192795182942419061.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091654365_hu6923685123916198806.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091654365_hu6192795182942419061.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091654365_hu6923685123916198806.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091654365&#34;
@@ -432,10 +432,10 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;以前下载的老版本的JDK是没有自动配置的，而且自动配置的也只包含了4个工具而已，所以我们需要删掉已经配置完毕的，再次重新配置Path环境变量。&lt;/p&gt;
 &lt;p&gt;①&lt;strong&gt;JAVA_HOME&lt;/strong&gt;：告诉操作系统JDK安装在了哪个位置（未来其他技术要通过这个找JDK）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091710450.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091710450.png&#34;
 	width=&#34;533&#34;
 	height=&#34;62&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091710450_hu6796537676434922463.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091710450_hu17136140882430568874.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091710450_hu6796537676434922463.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091710450_hu17136140882430568874.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091710450&#34;
@@ -447,10 +447,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;②&lt;strong&gt;Path&lt;/strong&gt;：告诉操作系统JDK提供的javac(编译)、java(执行)命令安装到了哪个位置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091721035.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091721035.png&#34;
 	width=&#34;520&#34;
 	height=&#34;159&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091721035_hu689937152771938409.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091721035_hu3081989114873655132.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091721035_hu689937152771938409.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091721035_hu3081989114873655132.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091721035&#34;
@@ -529,10 +529,10 @@
 &lt;li&gt;但是针对于不同的操作系统，Java提供了不同的虚拟机。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;虚拟机会把Java语言翻译成操作系统能看得懂的语言。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091350952.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091350952.png&#34;
 	width=&#34;1402&#34;
 	height=&#34;566&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091350952_hu4290937723746031812.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091350952_hu11563018225950985378.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091350952_hu4290937723746031812.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091350952_hu11563018225950985378.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091350952&#34;
@@ -544,10 +544,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;110-jre和jdk&#34;&gt;1.10 JRE和JDK
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091544110.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091544110.png&#34;
 	width=&#34;1398&#34;
 	height=&#34;307&#34;
-	srcset=&#34;http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091544110_hu232686385653534784.png 480w, http://localhost:1313/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091544110_hu7604295931169195960.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091544110_hu232686385653534784.png 480w, https://shanymxc.github.io/p/java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.assets/image-20210923091544110_hu7604295931169195960.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20210923091544110&#34;

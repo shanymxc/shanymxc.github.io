@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>JDBC on 山有木兮</title>
-        <link>http://localhost:1313/tags/jdbc/</link>
+        <link>https://shanymxc.github.io/tags/jdbc/</link>
         <description>Recent content in JDBC on 山有木兮</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>山有木兮</copyright>
-        <lastBuildDate>Sun, 20 Oct 2024 17:39:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/jdbc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Oct 2024 17:39:12 +0800</lastBuildDate><atom:link href="https://shanymxc.github.io/tags/jdbc/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mybatis入门</title>
-        <link>http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/</link>
+        <link>https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/</link>
         <pubDate>Sun, 20 Oct 2024 17:39:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/</guid>
-        <description>&lt;img src="http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/0b127bdc60f93c4dbbd0276606f58e5c.png" alt="Featured image of post Mybatis入门" /&gt;&lt;h1 id=&#34;mybatis入门&#34;&gt;Mybatis入门
+        <guid>https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/</guid>
+        <description>&lt;img src="https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/0b127bdc60f93c4dbbd0276606f58e5c.png" alt="Featured image of post Mybatis入门" /&gt;&lt;h1 id=&#34;mybatis入门&#34;&gt;Mybatis入门
 &lt;/h1&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;在前面我们学习MySQL数据库时，都是利用图形化客户端工具(如：idea、datagrip)，来操作数据库的。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -38,10 +38,10 @@
 &lt;ul&gt;
 &lt;li&gt;持久层：指的是就是数据访问层(dao)，是用来操作数据库的。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901114951631.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901114951631.png&#34;
 	width=&#34;680&#34;
 	height=&#34;220&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901114951631_hu4133728316117113039.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901114951631_hu14515564210110357344.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901114951631_hu4133728316117113039.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901114951631_hu14515564210110357344.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901114951631&#34;
@@ -72,10 +72,10 @@
 &lt;/h2&gt;&lt;p&gt;需求：使用Mybatis查询所有用户数据。&lt;/p&gt;
 &lt;h3 id=&#34;11-入门程序分析&#34;&gt;1.1 入门程序分析
 &lt;/h3&gt;&lt;p&gt;以前我们是在图形化客户端工具中编写SQL查询代码，发送给数据库执行，数据库执行后返回操作结果。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155704203.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155704203.png&#34;
 	width=&#34;1100&#34;
 	height=&#34;392&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155704203_hu8566789828446389624.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155704203_hu6706391449256800184.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155704203_hu8566789828446389624.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155704203_hu6706391449256800184.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209155704203&#34;
@@ -87,10 +87,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;图形化工具会把数据库执行的查询结果，使用表格的形式展现出来&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813.png&#34;
 	width=&#34;665&#34;
 	height=&#34;222&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu2624462507336471759.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu4612810317616891177.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu2624462507336471759.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu4612810317616891177.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901121116813&#34;
@@ -102,10 +102,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;现在使用Mybatis操作数据库，就是在Mybatis中编写SQL查询代码，发送给数据库执行，数据库执行后返回结果。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155904370.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155904370.png&#34;
 	width=&#34;929&#34;
 	height=&#34;273&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155904370_hu12016657510683156976.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155904370_hu6652799651894766901.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155904370_hu12016657510683156976.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209155904370_hu6652799651894766901.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209155904370&#34;
@@ -117,10 +117,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;Mybatis会把数据库执行的查询结果，使用实体类封装起来（一行记录对应一个实体类对象）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209161623051.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209161623051.png&#34;
 	width=&#34;746&#34;
 	height=&#34;150&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209161623051_hu9549904072137594458.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209161623051_hu3864686061165383332.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209161623051_hu9549904072137594458.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209161623051_hu3864686061165383332.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209161623051&#34;
@@ -147,10 +147,10 @@
 &lt;/h3&gt;&lt;h4 id=&#34;121-准备工作&#34;&gt;1.2.1 准备工作
 &lt;/h4&gt;&lt;h5 id=&#34;1211-创建springboot工程&#34;&gt;1.2.1.1 创建springboot工程
 &lt;/h5&gt;&lt;p&gt;创建springboot工程，并导入 mybatis的起步依赖、mysql的驱动包。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209162827242.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209162827242.png&#34;
 	width=&#34;913&#34;
 	height=&#34;781&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209162827242_hu13057923144650768290.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209162827242_hu16622773074390027309.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209162827242_hu13057923144650768290.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209162827242_hu16622773074390027309.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209162827242&#34;
@@ -161,10 +161,10 @@
 		data-flex-basis=&#34;280px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209163123443.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209163123443.png&#34;
 	width=&#34;913&#34;
 	height=&#34;781&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209163123443_hu10723877553506519995.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209163123443_hu15649869884017082233.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209163123443_hu10723877553506519995.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209163123443_hu15649869884017082233.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209163123443&#34;
@@ -273,10 +273,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;insert&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;into&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;age&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;gender&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;VALUES&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;光明右使&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;48&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;18800000005&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813.png&#34;
 	width=&#34;665&#34;
 	height=&#34;222&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu2624462507336471759.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu4612810317616891177.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu2624462507336471759.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901121116813_hu4612810317616891177.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901121116813&#34;
@@ -319,10 +319,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209170354143.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209170354143.png&#34;
 	width=&#34;1291&#34;
 	height=&#34;370&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209170354143_hu5694111391302799564.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209170354143_hu3330494584828440138.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209170354143_hu5694111391302799564.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209170354143_hu3330494584828440138.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209170354143&#34;
@@ -336,10 +336,10 @@
 &lt;h4 id=&#34;122-配置mybatis&#34;&gt;1.2.2 配置Mybatis
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;在之前使用图形化客户端工具，连接MySQL数据库时，需要配置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209172527630.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209172527630.png&#34;
 	width=&#34;1241&#34;
 	height=&#34;792&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209172527630_hu17604570745590144970.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209172527630_hu6946907868243153581.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209172527630_hu17604570745590144970.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209172527630_hu6946907868243153581.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209172527630&#34;
@@ -391,10 +391,10 @@
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;123-编写sql语句&#34;&gt;1.2.3 编写SQL语句
 &lt;/h4&gt;&lt;p&gt;在创建出来的springboot工程中，在引导类所在包下，在创建一个包 mapper。在mapper包下创建一个接口 UserMapper ，这是一个持久层接口（Mybatis的持久层接口规范一般都叫 XxxMapper）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209175843651.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209175843651.png&#34;
 	width=&#34;1169&#34;
 	height=&#34;374&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209175843651_hu15830579054503814043.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209175843651_hu10133518977647354692.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209175843651_hu15830579054503814043.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221209175843651_hu10133518977647354692.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221209175843651&#34;
@@ -509,10 +509,10 @@
 &lt;h3 id=&#34;13-解决sql警告与提示&#34;&gt;1.3 解决SQL警告与提示
 &lt;/h3&gt;&lt;p&gt;默认我们在UserMapper接口上加的@Select注解中编写SQL语句是没有提示的。 如果想让idea给我们提示对应的SQL语句，我们需要在IDEA中配置与MySQL数据库的链接。&lt;/p&gt;
 &lt;p&gt;默认我们在UserMapper接口上的@Select注解中编写SQL语句是没有提示的。如果想让idea给出提示，可以做如下配置：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143348119.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143348119.png&#34;
 	width=&#34;1355&#34;
 	height=&#34;415&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143348119_hu7547368699414742414.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143348119_hu14988800222680521803.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143348119_hu7547368699414742414.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143348119_hu14988800222680521803.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210143348119&#34;
@@ -524,10 +524,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;配置完成之后，发现SQL语句中的关键字有提示了，但还存在不识别表名(列名)的情况：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143934318.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143934318.png&#34;
 	width=&#34;1169&#34;
 	height=&#34;155&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143934318_hu7670145489599112877.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143934318_hu15692683671631304433.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143934318_hu7670145489599112877.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210143934318_hu15692683671631304433.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210143934318&#34;
@@ -542,10 +542,10 @@
 &lt;p&gt;产生原因：Idea和数据库没有建立连接，不识别表信息&lt;/p&gt;
 &lt;p&gt;解决方案：在Idea中配置MySQL数据库连接&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144139792.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144139792.png&#34;
 	width=&#34;1709&#34;
 	height=&#34;434&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144139792_hu15551353761483130611.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144139792_hu11652205439830938038.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144139792_hu15551353761483130611.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144139792_hu11652205439830938038.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210144139792&#34;
@@ -567,10 +567,10 @@
 &lt;/blockquote&gt;
 &lt;p&gt;那到底什么是JDBC呢，接下来，我们就来介绍一下。&lt;/p&gt;
 &lt;p&gt;JDBC： ( Java DataBase Connectivity )，就是使用Java语言操作关系型数据库的一套API。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144811961.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144811961.png&#34;
 	width=&#34;1382&#34;
 	height=&#34;488&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144811961_hu6209956747827123850.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144811961_hu162431015333862742.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144811961_hu6209956747827123850.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210144811961_hu162431015333862742.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210144811961&#34;
@@ -750,10 +750,10 @@
 &lt;li&gt;查询结果的解析及封装非常繁琐&lt;/li&gt;
 &lt;li&gt;每一次查询数据库都需要获取连接,操作完毕后释放连接, 资源浪费, 性能降低&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210153407998.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210153407998.png&#34;
 	width=&#34;1197&#34;
 	height=&#34;894&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210153407998_hu7787047767888437212.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210153407998_hu2004133135839992510.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210153407998_hu7787047767888437212.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210153407998_hu2004133135839992510.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210153407998&#34;
@@ -777,10 +777,10 @@
 &lt;p&gt;在mybatis中使用了数据库连接池技术，从而避免了频繁的创建连接、销毁连接而带来的资源浪费。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210154324151.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210154324151.png&#34;
 	width=&#34;1394&#34;
 	height=&#34;680&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210154324151_hu1045201833817739125.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210154324151_hu556355654950182691.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210154324151_hu1045201833817739125.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210154324151_hu556355654950182691.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210154324151&#34;
@@ -845,10 +845,10 @@
 &lt;/h2&gt;&lt;p&gt;在前面我们所讲解的mybatis中，使用了数据库连接池技术，避免频繁的创建连接、销毁连接而带来的资源浪费。&lt;/p&gt;
 &lt;p&gt;下面我们就具体的了解下数据库连接池。&lt;/p&gt;
 &lt;h3 id=&#34;31-介绍&#34;&gt;3.1 介绍
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210160341852.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210160341852.png&#34;
 	width=&#34;1209&#34;
 	height=&#34;165&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210160341852_hu5086808159881126962.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210160341852_hu8364740956044154535.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210160341852_hu5086808159881126962.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210160341852_hu8364740956044154535.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210160341852&#34;
@@ -865,10 +865,10 @@
 &lt;li&gt;客户端执行SQL语句：要先创建一个新的连接对象，然后执行SQL语句，SQL语句执行后又需要关闭连接对象从而释放资源，每次执行SQL时都需要创建连接、销毁链接，这种频繁的重复创建销毁的过程是比较耗费计算机的性能。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210161016314.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210161016314.png&#34;
 	width=&#34;1297&#34;
 	height=&#34;354&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210161016314_hu1785269364166004724.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210161016314_hu2256353607441422351.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210161016314_hu1785269364166004724.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210161016314_hu2256353607441422351.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210161016314&#34;
@@ -931,10 +931,10 @@
 &lt;ul&gt;
 &lt;li&gt;Hikari（追光者） [默认的连接池]&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901144923251.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901144923251.png&#34;
 	width=&#34;1515&#34;
 	height=&#34;275&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901144923251_hu6062255270886897413.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901144923251_hu6899837709066278417.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901144923251_hu6062255270886897413.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20220901144923251_hu6899837709066278417.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20220901144923251&#34;
@@ -1020,10 +1020,10 @@
 &lt;/div&gt;&lt;h2 id=&#34;4-lombok&#34;&gt;4. lombok
 &lt;/h2&gt;&lt;h3 id=&#34;41-介绍&#34;&gt;4.1 介绍
 &lt;/h3&gt;&lt;p&gt;Lombok是一个实用的Java类库，可以通过简单的注解来简化和消除一些必须有但显得很臃肿的Java代码。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210164641266.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210164641266.png&#34;
 	width=&#34;1413&#34;
 	height=&#34;631&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210164641266_hu4783623019801873158.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210164641266_hu11754229688839465791.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210164641266_hu4783623019801873158.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210164641266_hu11754229688839465791.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210164641266&#34;
@@ -1118,10 +1118,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;在实体类上添加了@Data注解，那么这个类在编译时期，就会生成getter/setter、equals、hashcode、toString等方法。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210170733921.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210170733921.png&#34;
 	width=&#34;1394&#34;
 	height=&#34;665&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210170733921_hu2243414653575294227.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210170733921_hu1357954287579614096.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210170733921_hu2243414653575294227.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210170733921_hu1357954287579614096.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210170733921&#34;
@@ -1169,10 +1169,10 @@
 &lt;li&gt;Lombok会在编译时，会自动生成对应的java代码&lt;/li&gt;
 &lt;li&gt;在使用lombok时，还需要安装一个lombok的插件（新版本的IDEA中自带）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210165506359.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210165506359.png&#34;
 	width=&#34;1387&#34;
 	height=&#34;875&#34;
-	srcset=&#34;http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210165506359_hu2967369840531427810.png 480w, http://localhost:1313/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210165506359_hu14684005310504478437.png 1024w&#34;
+	srcset=&#34;https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210165506359_hu2967369840531427810.png 480w, https://shanymxc.github.io/p/mybatis%E5%85%A5%E9%97%A8/index.assets/image-20221210165506359_hu14684005310504478437.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;image-20221210165506359&#34;
