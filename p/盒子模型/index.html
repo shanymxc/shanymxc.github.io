@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="盒子模型 01-选择器 结构伪类选择器 基本使用 作用：根据元素的结构关系查找元素。\n1 2 3 li:first-child { background-color: green; } :nth-child(公式) 提示：公式中的n取值从 0 开始。\n伪元素选择器 作用：创建虚拟元素（伪元素），用来摆放装饰性的内容。\n">
+<title>盒子模型</title>
+
+<link rel='canonical' href='https://shanymxc.github.io/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="盒子模型">
+<meta property='og:description' content="盒子模型 01-选择器 结构伪类选择器 基本使用 作用：根据元素的结构关系查找元素。\n1 2 3 li:first-child { background-color: green; } :nth-child(公式) 提示：公式中的n取值从 0 开始。\n伪元素选择器 作用：创建虚拟元素（伪元素），用来摆放装饰性的内容。\n">
+<meta property='og:url' content='https://shanymxc.github.io/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/'>
+<meta property='og:site_name' content='山有木兮'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-09T15:14:45&#43;08:00'/><meta property='article:modified_time' content='2024-11-09T15:14:45&#43;08:00'/>
+<meta name="twitter:title" content="盒子模型">
+<meta name="twitter:description" content="盒子模型 01-选择器 结构伪类选择器 基本使用 作用：根据元素的结构关系查找元素。\n1 2 3 li:first-child { background-color: green; } :nth-child(公式) 提示：公式中的n取值从 0 开始。\n伪元素选择器 作用：创建虚拟元素（伪元素），用来摆放装饰性的内容。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12487634835597679327.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">山有木兮</a></h1>
+            <h2 class="site-description">知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1338856997'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/shanymxc/shanymxc.github.io'
+                        target="_blank"
+                        title="Github"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#01-选择器">01-选择器</a>
+      <ol>
+        <li><a href="#结构伪类选择器">结构伪类选择器</a></li>
+        <li><a href="#基本使用">基本使用</a></li>
+        <li><a href="#nth-child公式">:nth-child(公式)</a></li>
+        <li><a href="#伪元素选择器">伪元素选择器</a></li>
+      </ol>
+    </li>
+    <li><a href="#02-pxcook">02-PxCook</a></li>
+    <li><a href="#03-盒子模型">03-盒子模型</a>
+      <ol>
+        <li><a href="#盒子模型-组成">盒子模型-组成</a></li>
+        <li><a href="#边框线">边框线</a>
+          <ol>
+            <li><a href="#四个方向">四个方向</a></li>
+            <li><a href="#单方向边框线">单方向边框线</a></li>
+          </ol>
+        </li>
+        <li><a href="#内边距">内边距</a></li>
+        <li><a href="#尺寸计算">尺寸计算</a></li>
+        <li><a href="#外边距">外边距</a></li>
+        <li><a href="#版心居中">版心居中</a></li>
+        <li><a href="#清除默认样式">清除默认样式</a></li>
+        <li><a href="#元素溢出">元素溢出</a></li>
+        <li><a href="#外边距问题">外边距问题</a>
+          <ol>
+            <li><a href="#合并现象">合并现象</a></li>
+            <li><a href="#外边距塌陷">外边距塌陷</a></li>
+          </ol>
+        </li>
+        <li><a href="#行内元素--内外边距问题">行内元素 – 内外边距问题</a></li>
+        <li><a href="#圆角">圆角</a></li>
+        <li><a href="#盒子阴影拓展">盒子阴影（拓展）</a></li>
+      </ol>
+    </li>
+    <li><a href="#04-综合案例-产品卡片">04-综合案例-产品卡片</a>
+      <ol>
+        <li><a href="#html标签">HTML标签</a></li>
+        <li><a href="#css样式">CSS样式</a></li>
+      </ol>
+    </li>
+    <li><a href="#05-综合案例二--新闻列表">05-综合案例二 – 新闻列表</a>
+      <ol>
+        <li><a href="#整体布局">整体布局</a></li>
+        <li><a href="#标题区域">标题区域</a></li>
+        <li><a href="#内容区域">内容区域</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E9%80%89%E6%8B%A9%E5%99%A8/" >
+                选择器
+            </a>
+        
+            <a href="/categories/pxcook/" >
+                PxCook
+            </a>
+        
+            <a href="/categories/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" >
+                盒子模型
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">盒子模型</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 09, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="盒子模型">盒子模型
+</h1><h2 id="01-选择器">01-选择器
+</h2><h3 id="结构伪类选择器">结构伪类选择器
+</h3><h3 id="基本使用">基本使用
+</h3><p>作用：根据元素的<strong>结构关系</strong>查找元素。</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321408957.png"
+	width="508"
+	height="164"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321408957_hu7880163086987118813.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321408957_hu11571429346394656107.png 1024w"
+	loading="lazy"
+	
+		alt="1680321408957"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="309"
+		data-flex-basis="743px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">li</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="nth-child公式">:nth-child(公式)
+</h3><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321448162.png"
+	width="353"
+	height="223"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321448162_hu1952892682756759208.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321448162_hu9044528118021785294.png 1024w"
+	loading="lazy"
+	
+		alt="1680321448162"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="158"
+		data-flex-basis="379px"
+	
+></p>
+<blockquote>
+<p>提示：公式中的n取值从 <strong>0</strong> 开始。</p>
+</blockquote>
+<h3 id="伪元素选择器">伪元素选择器
+</h3><p>作用：创建<strong>虚拟元素</strong>（伪元素），用来<strong>摆放装饰性的内容</strong>。</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321533901.png"
+	width="290"
+	height="198"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321533901_hu14627430281488091537.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321533901_hu14156818718743292274.png 1024w"
+	loading="lazy"
+	
+		alt="1680321533901"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
+></p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321544646.png"
+	width="392"
+	height="118"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321544646_hu7067409319416286729.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321544646_hu3561556900453232271.png 1024w"
+	loading="lazy"
+	
+		alt="1680321544646"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="332"
+		data-flex-basis="797px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;before 伪元素&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nt">div</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;after 伪元素&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意点：</p>
+<ul>
+<li>必须设置 <strong>content: ””属性</strong>，用来 设置伪元素的内容，如果没有内容，则<strong>引号留空</strong>即可</li>
+<li>伪元素默认是<strong>行内</strong>显示模式</li>
+<li><strong>权重和标签选择器相同</strong></li>
+</ul>
+<h2 id="02-pxcook">02-PxCook
+</h2><p>PxCook（像素大厨） 是一款切图设计工具软件。支持PSD文件的文字、颜色、距离自动智能识别。</p>
+<ul>
+<li>开发面板（自动智能识别）</li>
+<li>设计面板（手动测量尺寸和颜色）</li>
+</ul>
+<p>使用方法：创建项目 → 输入 项目名称、项目类型 Web → 单击按钮【创建项目】 → 单击按钮【添加】，导入设计稿</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321681695.png"
+	width="451"
+	height="325"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321681695_hu8449304407351090369.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680321681695_hu17819490557158949874.png 1024w"
+	loading="lazy"
+	
+		alt="1680321681695"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="138"
+		data-flex-basis="333px"
+	
+></p>
+<h2 id="03-盒子模型">03-盒子模型
+</h2><p>作用：布局网页，摆放盒子和内容。</p>
+<h3 id="盒子模型-组成">盒子模型-组成
+</h3><ul>
+<li>内容区域 – width &amp; height</li>
+<li>内边距 – padding（出现在内容与盒子边缘之间）</li>
+<li>边框线 – border</li>
+<li>外边距 – margin（出现在盒子外面）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">brown</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330928735.png"
+	width="246"
+	height="243"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330928735_hu9153817479770507494.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330928735_hu4610839172732620389.png 1024w"
+	loading="lazy"
+	
+		alt="1680330928735"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="242px"
+	
+></p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330935635.png"
+	width="306"
+	height="243"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330935635_hu7881907267242792316.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330935635_hu8172053553428390968.png 1024w"
+	loading="lazy"
+	
+		alt="1680330935635"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="302px"
+	
+></p>
+<h3 id="边框线">边框线
+</h3><h4 id="四个方向">四个方向
+</h4><p>属性名：<strong>border</strong>（bd）</p>
+<p>属性值：边框线粗细  线条样式  颜色（不区分顺序）</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330976390.png"
+	width="227"
+	height="157"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330976390_hu4740388281303563291.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680330976390_hu6296845260624460754.png 1024w"
+	loading="lazy"
+	
+		alt="1680330976390"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">brown</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="单方向边框线">单方向边框线
+</h4><p>属性名：<strong>border-方位名词</strong>（bd+方位名词首字母，例如，bdl）</p>
+<p>属性值：边框线粗细  线条样式  颜色（不区分顺序）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-top</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-right</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span> <span class="kc">dashed</span> <span class="kc">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span> <span class="kc">dotted</span> <span class="kc">blue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-left</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="内边距">内边距
+</h3><p>作用：设置 内容 与 盒子边缘 之间的距离。</p>
+<ul>
+<li>属性名：padding / padding-方位名词</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 四个方向 内边距相同 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 单独设置一个方向内边距 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-top</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-bottom</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-left</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>提示：添加 padding 会撑大盒子。</p>
+</blockquote>
+<ul>
+<li>padding 多值写法</li>
+</ul>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331118330.png"
+	width="627"
+	height="169"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331118330_hu16743302856803822941.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331118330_hu17027806809280261860.png 1024w"
+	loading="lazy"
+	
+		alt="1680331118330"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="371"
+		data-flex-basis="890px"
+	
+></p>
+<blockquote>
+<p>技巧：从<strong>上</strong>开始<strong>顺时针</strong>赋值，当前方向没有数值则与<strong>对面取值相同</strong>。</p>
+</blockquote>
+<h3 id="尺寸计算">尺寸计算
+</h3><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331322935.png"
+	width="253"
+	height="214"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331322935_hu2200783846550041493.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331322935_hu13716135499408059877.png 1024w"
+	loading="lazy"
+	
+		alt="1680331322935"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="118"
+		data-flex-basis="283px"
+	
+></p>
+<p>默认情况：盒子尺寸 = 内容尺寸（ width &amp; height） + border 尺寸 + 内边距尺寸（padding）</p>
+<p>结论：给盒子加 border / padding 会撑大盒子</p>
+<p>解决：</p>
+<ul>
+<li>手动做减法，减掉 border / padding 的尺寸</li>
+<li>內减模式：<strong>box-sizing: border-box</strong></li>
+</ul>
+<h3 id="外边距">外边距
+</h3><p>作用：拉开两个盒子之间的距离</p>
+<p>属性名：<strong>margin</strong></p>
+<p>提示：与 padding 属性值写法、含义相同</p>
+<h3 id="版心居中">版心居中
+</h3><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331503466.png"
+	width="894"
+	height="482"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331503466_hu13415992553986149720.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331503466_hu1376504439120495488.png 1024w"
+	loading="lazy"
+	
+		alt="1680331503466"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="185"
+		data-flex-basis="445px"
+	
+></p>
+<p>左右 margin 值 为 auto（盒子要有宽度）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">1000</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="清除默认样式">清除默认样式
+</h3><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331558304.png"
+	width="692"
+	height="195"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331558304_hu16061291435089911552.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331558304_hu5565532907215496203.png 1024w"
+	loading="lazy"
+	
+		alt="1680331558304"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="354"
+		data-flex-basis="851px"
+	
+></p>
+<p>清除标签默认的样式，比如：默认的内外边距。</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331580746.png"
+	width="781"
+	height="174"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331580746_hu4200460975411121315.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331580746_hu13576445114122988316.png 1024w"
+	loading="lazy"
+	
+		alt="1680331580746"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="448"
+		data-flex-basis="1077px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* 清除默认内外边距 */</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c">/* 清除列表项目符号 */</span>
+</span></span><span class="line"><span class="cl"><span class="nt">li</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="元素溢出">元素溢出
+</h3><p>作用：控制溢出元素的内容的显示方式。</p>
+<p>属性名：<strong>overflow</strong></p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331623305.png"
+	width="439"
+	height="148"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331623305_hu9986390455357812005.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331623305_hu17298706724632677404.png 1024w"
+	loading="lazy"
+	
+		alt="1680331623305"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="296"
+		data-flex-basis="711px"
+	
+></p>
+<p><strong>hidden效果：</strong></p>
+<p><strong><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109153740339.png"
+	width="1060"
+	height="539"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109153740339_hu7349302342613385421.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109153740339_hu4298823970450083386.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241109153740339"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="196"
+		data-flex-basis="471px"
+	
+></strong></p>
+<p><strong>scroll效果:</strong></p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109153823794.png"
+	width="939"
+	height="718"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109153823794_hu3848303754690279049.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109153823794_hu8714230998200198345.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241109153823794"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="130"
+		data-flex-basis="313px"
+	
+></p>
+<h3 id="外边距问题">外边距问题
+</h3><h4 id="合并现象">合并现象
+</h4><p>场景：<strong>垂直</strong>排列的兄弟元素，上下 <strong>margin</strong> 会<strong>合并</strong></p>
+<p>现象：取两个 margin 中的<strong>较大值生效</strong>，下例中上下两个盒子之间的距离为50px.</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331672628.png"
+	width="173"
+	height="325"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331672628_hu8397676249565626201.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680331672628_hu12152742829656832865.png 1024w"
+	loading="lazy"
+	
+		alt="1680331672628"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="53"
+		data-flex-basis="127px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">one</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">two</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="外边距塌陷">外边距塌陷
+</h4><p>场景：父子级的标签，子级的添加 <strong>上外边距</strong> 会产生<strong>塌陷</strong>问题</p>
+<p>现象：<strong>导致父级一起向下移动</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">son</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680333860271.png"
+	width="267"
+	height="300"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680333860271_hu6297659953101867973.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680333860271_hu8635945562007096048.png 1024w"
+	loading="lazy"
+	
+		alt="1680333860271"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="89"
+		data-flex-basis="213px"
+	
+></p>
+<p>解决方法：</p>
+<ul>
+<li>取消子级margin，父级设置padding</li>
+<li>父级设置 overflow: hidden（这个实际上是让浏览器找到了father盒子的正确边缘，对其进行调整）</li>
+<li>父级设置 border-top（这个属性的解决方法和上一个类似，这个是添加边框线的那个属性）</li>
+</ul>
+<h3 id="行内元素--内外边距问题">行内元素 – 内外边距问题
+</h3><p>场景：行内元素添加 margin 和 padding，无法改变元素垂直位置</p>
+<p>解决方法：给行内元素添加 <strong>line-height</strong> 可以改变垂直位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">span</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* margin 和 padding 属性，无法改变垂直位置 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* 行高可以改变垂直位置 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="圆角">圆角
+</h3><p>作用：设置元素的外边框为圆角。</p>
+<p>属性名：<strong>border-radius</strong></p>
+<p>属性值：数字+px / 百分比</p>
+<p>提示：属性值是圆角半径</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334014390.png"
+	width="194"
+	height="154"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334014390_hu16445176481417246399.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334014390_hu14447370665734856929.png 1024w"
+	loading="lazy"
+	
+		alt="1680334014390"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="302px"
+	
+></p>
+<ul>
+<li>多值写法</li>
+</ul>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334027657.png"
+	width="984"
+	height="201"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334027657_hu6836522044793765995.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334027657_hu4739087850832328223.png 1024w"
+	loading="lazy"
+	
+		alt="1680334027657"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="489"
+		data-flex-basis="1174px"
+	
+></p>
+<blockquote>
+<p>技巧：从左上角开始顺时针赋值，当前角没有数值则与对角取值相同。</p>
+</blockquote>
+<ul>
+<li>正圆形状：给正方形盒子设置圆角属性值为 <strong>宽高的一半 / 50%</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">img</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334083567.png"
+	width="218"
+	height="217"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334083567_hu9986270542735995465.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334083567_hu14419656233071978434.png 1024w"
+	loading="lazy"
+	
+		alt="1680334083567"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="241px"
+	
+></p>
+<ul>
+<li>胶囊形状：给长方形盒子设置圆角属性值为 盒子高度的一半</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334136242.png"
+	width="280"
+	height="147"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334136242_hu17951470600908288729.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334136242_hu13614225973857750037.png 1024w"
+	loading="lazy"
+	
+		alt="1680334136242"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="457px"
+	
+></p>
+<h3 id="盒子阴影拓展">盒子阴影（拓展）
+</h3><p>作用：给元素设置阴影效果</p>
+<p>属性名：<strong>box-shadow</strong></p>
+<p>属性值：X 轴偏移量  Y 轴偏移量  模糊半径  扩散半径  颜色  内外阴影</p>
+<p>注意：</p>
+<ul>
+<li>X 轴偏移量 和 Y 轴偏移量 必须书写</li>
+<li>默认是外阴影，内阴影需要添加 inset</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="kc">inset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>阴影效果大致如图：</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109155103376.png"
+	width="1335"
+	height="775"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109155103376_hu18025407374503143480.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109155103376_hu3881613884653690782.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241109155103376"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="172"
+		data-flex-basis="413px"
+	
+></p>
+<p>阴影在里面的效果：</p>
+<p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109155159005.png"
+	width="959"
+	height="257"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109155159005_hu6182963663267624171.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/image-20241109155159005_hu4531020742333535113.png 1024w"
+	loading="lazy"
+	
+		alt="image-20241109155159005"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="373"
+		data-flex-basis="895px"
+	
+></p>
+<h2 id="04-综合案例-产品卡片">04-综合案例-产品卡片
+</h2><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334221212.png"
+	width="652"
+	height="232"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334221212_hu4367457669877996089.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334221212_hu7137311895928142347.png 1024w"
+	loading="lazy"
+	
+		alt="1680334221212"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="281"
+		data-flex-basis="674px"
+	
+></p>
+<p>CSS 书写顺序：</p>
+<ol>
+<li>盒子模型属性</li>
+<li>文字样式</li>
+<li>圆角、阴影等修饰属性</li>
+</ol>
+<h3 id="html标签">HTML标签
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;product&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;./images/liveSDK.svg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>抖音直播SDK<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>包含抖音直播看播功能<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="css样式">CSS样式
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f1f1f1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">product</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding-top</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">270</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">253</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">product</span> <span class="nt">h4</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="mi">400</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">product</span> <span class="nt">p</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="mh">#555</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="05-综合案例二--新闻列表">05-综合案例二 – 新闻列表
+</h2><p><img src="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334329887.png"
+	width="915"
+	height="264"
+	srcset="/p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334329887_hu14141494988937004941.png 480w, /p/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.assets/1680334329887_hu2906678237965856081.png 1024w"
+	loading="lazy"
+	
+		alt="1680334329887"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="346"
+		data-flex-basis="831px"
+	
+></p>
+<h3 id="整体布局">整体布局
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">li</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">360</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* background-color: pink; */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;news&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="标题区域">标题区域
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">.</span><span class="nc">hd</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">34</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#dbdee1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">.</span><span class="nc">hd</span> <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c">/* -1 盒子向上移动 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-top</span><span class="p">:</span> <span class="mi">-1</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-top</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ff8400</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-right</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#dbdee1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">48</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">34</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;hd&#34;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>新闻<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="内容区域">内容区域
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">.</span><span class="nc">bd</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">.</span><span class="nc">bd</span> <span class="nt">li</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-left</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span><span class="c">/*这个用内边距为背景图在左侧移出了一定的空间*/</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">./images/square.png</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-repeat</span><span class="p">:</span> <span class="kc">no-repeat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-position</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">.</span><span class="nc">bd</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-left</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">./images/img.gif</span><span class="p">)</span> <span class="kc">no-repeat</span> <span class="mi">0</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#666</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">line-height</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">news</span> <span class="p">.</span><span class="nc">bd</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#ff8400</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bd&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>点赞“新农人” 温暖的伸手<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>在希望的田野上...<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>“中国天眼”又有新发现 已在《自然》杂志发表<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>急！这个领域，缺人！月薪4万元还不好招！啥情况？<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>G9“带货”背后：亏损面持续扩大，竞争环境激烈<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>多地力推二手房“带押过户”，有什么好处？<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/css%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CSS基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 山有木兮
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.27.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
