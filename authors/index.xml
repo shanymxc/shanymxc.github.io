@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Blog homepage</title>
-    <link>http://localhost:1313/authors/</link>
+    <link>https://shanymxc.github.io/authors/</link>
     <description>Recent content in Authors on Blog homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>mvz09630521@126.com (山有木兮)</managingEditor>
     <webMaster>mvz09630521@126.com (山有木兮)</webMaster>
     <copyright>© 2025 山有木兮</copyright>
-    <atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://shanymxc.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
