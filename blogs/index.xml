@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Blowfish</title>
+    <title>Blogs on Blog homepage</title>
     <link>http://localhost:1313/blogs/</link>
-    <description>Recent content in Blogs on Blowfish</description>
+    <description>Recent content in Blogs on Blog homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2025 </copyright>
+    <managingEditor>mvz09630521@126.com (山有木兮)</managingEditor>
+    <webMaster>mvz09630521@126.com (山有木兮)</webMaster>
+    <copyright>© 2025 山有木兮</copyright>
     <lastBuildDate>Thu, 06 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/blogs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>new-article</title>
       <link>http://localhost:1313/blogs/1741229360050-new-article/</link>
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
-      
+      <author>mvz09630521@126.com (山有木兮)</author>
       <guid>http://localhost:1313/blogs/1741229360050-new-article/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/blogs/1741229360050-new-article/featured.png" />
