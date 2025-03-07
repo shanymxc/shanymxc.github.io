@@ -4,7 +4,79 @@
 
   <url>
     <loc>https://shanymxc.github.io/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323987049-java-static%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323825874-java-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741324029063-java-%E5%A4%9A%E6%80%81%E5%8C%85%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6final/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323961758-java-%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323895545-java-%E5%BE%AA%E7%8E%AF%E9%AB%98%E7%BA%A7/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741324059033-java-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E6%8E%A5%E5%8F%A3%E5%86%85%E9%83%A8%E7%B1%BB/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323931762-java-%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323804725-java-%E6%A6%82%E8%BF%B0/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323871069-java-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323849157-java-%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/1741323945921-java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shanymxc.github.io/posts/</loc>
+    <lastmod>2025-03-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -27,19 +99,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://shanymxc.github.io/posts/1741278579892-java-%E9%9B%86%E5%90%88/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://shanymxc.github.io/posts/1741229251595-new-article/</loc>
-    <lastmod>2025-03-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://shanymxc.github.io/posts/</loc>
     <lastmod>2025-03-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
