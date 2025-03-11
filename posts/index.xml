@@ -12,6 +12,66 @@
     <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://shanymxc.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>java List</title>
+      <link>https://shanymxc.github.io/posts/1741680503414-java-list/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680503414-java-list/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680503414-java-list/featured.png" />
+    </item>
+    
+    <item>
+      <title>java Map</title>
+      <link>https://shanymxc.github.io/posts/1741680552080-java-map/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680552080-java-map/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680552080-java-map/featured.png" />
+    </item>
+    
+    <item>
+      <title>java Queue</title>
+      <link>https://shanymxc.github.io/posts/1741680533990-java-queue/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680533990-java-queue/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680533990-java-queue/featured.png" />
+    </item>
+    
+    <item>
+      <title>java Set</title>
+      <link>https://shanymxc.github.io/posts/1741680519837-java-set/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680519837-java-set/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680519837-java-set/featured.png" />
+    </item>
+    
+    <item>
+      <title>java 集合使用注意事项</title>
+      <link>https://shanymxc.github.io/posts/1741680588759-java-%E9%9B%86%E5%90%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680588759-java-%E9%9B%86%E5%90%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680588759-java-%E9%9B%86%E5%90%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/featured.png" />
+    </item>
+    
+    <item>
+      <title>java 集合概述</title>
+      <link>https://shanymxc.github.io/posts/1741680487797-java-%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680487797-java-%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680487797-java-%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/featured.png" />
+    </item>
+    
+    <item>
       <title>常见API&amp;对象克隆</title>
       <link>https://shanymxc.github.io/posts/1741665094216-%E5%B8%B8%E8%A7%81api%E5%AF%B9%E8%B1%A1%E5%85%8B%E9%9A%86/</link>
       <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>

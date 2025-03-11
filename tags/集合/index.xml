@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>集合 on Blog homepage</title>
+    <link>https://shanymxc.github.io/tags/%E9%9B%86%E5%90%88/</link>
+    <description>Recent content in 集合 on Blog homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>mvz09630521@126.com (山有木兮)</managingEditor>
+    <webMaster>mvz09630521@126.com (山有木兮)</webMaster>
+    <copyright>© 2025 山有木兮</copyright>
+    <lastBuildDate>Tue, 11 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://shanymxc.github.io/tags/%E9%9B%86%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>java List</title>
+      <link>https://shanymxc.github.io/posts/1741680503414-java-list/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680503414-java-list/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680503414-java-list/featured.png" />
+    </item>
+    
+    <item>
+      <title>java Set</title>
+      <link>https://shanymxc.github.io/posts/1741680519837-java-set/</link>
+      <pubDate>Tue, 11 Mar 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1741680519837-java-set/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741680519837-java-set/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
