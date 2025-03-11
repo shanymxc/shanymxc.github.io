@@ -108,7 +108,7 @@
     "keywords": ["example","tag"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "41"
+    "wordCount": "251"
   }]
   </script>
 
@@ -485,7 +485,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-07T00:00:00&#43;00:00">7 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>41 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2025-03-07T00:00:00&#43;00:00">7 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>251 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
@@ -704,13 +704,33 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-is-a-subheading">This is a subheading</a>
+    <li><a href="#11-类和对象">1.1 类和对象</a>
       <ul>
-        <li><a href="#this-is-a-subsubheading">This is a subsubheading</a>
-          <ul>
-            <li><a href="#this-is-a-subsubsubheading">This is a subsubsubheading</a></li>
-          </ul>
-        </li>
+        <li><a href="#111-类的定义">1.1.1 类的定义</a></li>
+        <li><a href="#112-对象的使用">1.1.2 对象的使用</a></li>
+        <li><a href="#113-面向对象和面向过程的区别">1.1.3 面向对象和面向过程的区别</a></li>
+        <li><a href="#114-创建对象的几种额外方式">1.1.4 创建对象的几种额外方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-对象内存图">1.2 对象内存图</a>
+      <ul>
+        <li><a href="#121-单个对象内存图">1.2.1 单个对象内存图</a></li>
+        <li><a href="#122-多个对象内存图">1.2.2 多个对象内存图</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-成员变量和局部变量">1.3 成员变量和局部变量</a></li>
+    <li><a href="#14-封装">1.4 封装</a>
+      <ul>
+        <li><a href="#141-封装思想">1.4.1 封装思想</a></li>
+        <li><a href="#142-private关键字">1.4.2 private关键字</a></li>
+        <li><a href="#143-this关键字">1.4.3 this关键字</a></li>
+      </ul>
+    </li>
+    <li><a href="#15-构造方法">1.5 构造方法</a>
+      <ul>
+        <li><a href="#151-构造方法概述">1.5.1 构造方法概述</a></li>
+        <li><a href="#152-构造方法的注意事项">1.5.2 构造方法的注意事项</a></li>
+        <li><a href="#153-标准类制作">1.5.3 标准类制作</a></li>
       </ul>
     </li>
   </ul>
@@ -726,13 +746,33 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-is-a-subheading">This is a subheading</a>
+    <li><a href="#11-类和对象">1.1 类和对象</a>
       <ul>
-        <li><a href="#this-is-a-subsubheading">This is a subsubheading</a>
-          <ul>
-            <li><a href="#this-is-a-subsubsubheading">This is a subsubsubheading</a></li>
-          </ul>
-        </li>
+        <li><a href="#111-类的定义">1.1.1 类的定义</a></li>
+        <li><a href="#112-对象的使用">1.1.2 对象的使用</a></li>
+        <li><a href="#113-面向对象和面向过程的区别">1.1.3 面向对象和面向过程的区别</a></li>
+        <li><a href="#114-创建对象的几种额外方式">1.1.4 创建对象的几种额外方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-对象内存图">1.2 对象内存图</a>
+      <ul>
+        <li><a href="#121-单个对象内存图">1.2.1 单个对象内存图</a></li>
+        <li><a href="#122-多个对象内存图">1.2.2 多个对象内存图</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-成员变量和局部变量">1.3 成员变量和局部变量</a></li>
+    <li><a href="#14-封装">1.4 封装</a>
+      <ul>
+        <li><a href="#141-封装思想">1.4.1 封装思想</a></li>
+        <li><a href="#142-private关键字">1.4.2 private关键字</a></li>
+        <li><a href="#143-this关键字">1.4.3 this关键字</a></li>
+      </ul>
+    </li>
+    <li><a href="#15-构造方法">1.5 构造方法</a>
+      <ul>
+        <li><a href="#151-构造方法概述">1.5.1 构造方法概述</a></li>
+        <li><a href="#152-构造方法的注意事项">1.5.2 构造方法的注意事项</a></li>
+        <li><a href="#153-标准类制作">1.5.3 标准类制作</a></li>
       </ul>
     </li>
   </ul>
@@ -816,58 +856,452 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>an example to get you started</p>
+          
 
-
-<h1 class="relative group">This is a heading 
-    <div id="this-is-a-heading" class="anchor"></div>
+<h1 class="relative group">面向对象 
+    <div id="%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-heading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
 
 
-<h2 class="relative group">This is a subheading 
-    <div id="this-is-a-subheading" class="anchor"></div>
+<h2 class="relative group">1.1 类和对象 
+    <div id="11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#11-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>客观存在的事务皆为对象，所以我们也常常说万物皆对象。</p>
+<p><strong>类：</strong></p>
+<ul>
+<li>==<strong>类是对现实生活中一类具有共同属性和行为的事物的抽象</strong>==</li>
+<li>类是对象的数据类型，类是具有相同属性和行为的一组对象的集合</li>
+<li>简单理解：<strong>类就是对现实事物的一种描述</strong></li>
+</ul>
+<p><strong>类的组成：</strong></p>
+<ul>
+<li>属性：指事物的特征，例如：手机事物（品牌，价格，尺寸）</li>
+<li>行为：指事物能执行的操作，例如：手机事物（打电话，发短信）</li>
+</ul>
+<p><strong>类和对象的关系：</strong></p>
+<ul>
+<li>类：类是对现实生活中一类具有共同属性和行为的事物的抽象</li>
+<li>对象：是能够看得到摸的着的真实存在的实体</li>
+<li>简单理解：<strong>类是对事物的一种描述，对象则为具体存在的事物</strong></li>
+</ul>
+
+
+<h3 class="relative group">1.1.1 类的定义 
+    <div id="111-%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#111-%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>类的组成是由属性和行为两部分组成</p>
+<ul>
+<li>属性：在类中通过成员变量来体现（类中方法外的变量）</li>
+<li>行为：在类中通过成员方法来体现（和前面的方法相比去掉static关键字即可）</li>
+</ul>
+<p>类的定义步骤：</p>
+<p>①定义类</p>
+<p>②编写类的成员变量</p>
+<p>③编写类的成员方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">类名</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 成员变量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">变量1的数据类型</span><span class="w"> </span><span class="n">变量1</span><span class="err">；</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">变量2的数据类型</span><span class="w"> </span><span class="n">变量2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">…</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 成员方法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">方法1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">方法2</span><span class="p">;</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div>
+
+<h3 class="relative group">1.1.2 对象的使用 
+    <div id="112-%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%BF%E7%94%A8" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#112-%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%BF%E7%94%A8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>创建对象的格式：</strong></p>
+<p>​	类名 对象名 = new 类名();</p>
+<p>new 运算符，new 创建对象实例（对象实例在堆内存中），对象引用指向对象实例（对象引用存放在栈内存中）。</p>
+<ul>
+<li>一个对象引用可以指向 0 个或 1 个对象（一根绳子可以不系气球，也可以系一个气球）；</li>
+<li>一个对象可以有 n 个引用指向它（可以用 n 条绳子系住一个气球）。</li>
+</ul>
+<p><strong>对象的相等和引用相等的区别</strong></p>
+<ul>
+<li>对象的相等一般比较的是内存中存放的内容是否相等。</li>
+<li>引用相等一般比较的是他们指向的内存地址是否相等。</li>
+</ul>
+<p><strong>调用成员的格式：</strong></p>
+<p>​	对象名.成员变量</p>
+<p>​	对象名.成员方法();</p>
+
+
+<h3 class="relative group">1.1.3 面向对象和面向过程的区别 
+    <div id="113-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#113-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>面向过程编程（Procedural-Oriented Programming，POP）和面向对象编程（Object-Oriented Programming，OOP）是两种常见的编程范式，两者的主要区别在于解决问题的方式不同：</p>
+<ul>
+<li><strong>面向过程编程（POP）</strong>：面向过程把解决问题的过程拆成一个个方法，通过一个个方法的执行解决问题。</li>
+<li><strong>面向对象编程（OOP）</strong>：面向对象会先抽象出对象，然后用对象执行方法的方式解决问题。</li>
+</ul>
+<p>相比较于 POP，OOP 开发的程序一般具有下面这些优点：</p>
+<ul>
+<li><strong>易维护</strong>：由于良好的结构和封装性，OOP 程序通常更容易维护。</li>
+<li><strong>易复用</strong>：通过继承和多态，OOP 设计使得代码更具复用性，方便扩展功能。</li>
+<li><strong>易扩展</strong>：模块化设计使得系统扩展变得更加容易和灵活。</li>
+</ul>
+<p>POP 的编程方式通常更为简单和直接，适合处理一些较简单的任务。</p>
+<p>POP 和 OOP 的性能差异主要取决于它们的运行机制，而不仅仅是编程范式本身。</p>
+
+
+<h3 class="relative group">1.1.4 创建对象的几种额外方式 
+    <div id="114-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A2%9D%E5%A4%96%E6%96%B9%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#114-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A2%9D%E5%A4%96%E6%96%B9%E5%BC%8F" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>在Java中，有以下几种常见的方式来创建对象：</p>
+<ol>
+<li>
+<p><strong>使用new关键字</strong>：这是最常见的创建对象的方式。通过调用类的构造函数，使用new关键字可以在内存中分配一个新的对象。</p>
+</li>
+<li>
+<p><strong>使用反射</strong>：Java的反射机制允许在运行时动态地创建对象。通过获取类的Class对象，并调用其构造函数，可以实现对象的创建。</p>
+</li>
+<li>
+<p><strong>使用newInstance()方法</strong>：某些类提供了newInstance()方法来创建对象，这种方式只适用于具有默认无参构造函数的类。</p>
+</li>
+<li>
+<p><strong>使用clone()方法</strong>：如果类实现了Cloneable接口，就可以使用clone()方法创建对象的副本。</p>
+</li>
+<li>
+<p><strong>使用对象的反序列化</strong>：通过将对象序列化到一个字节流中，然后再进行反序列化，可以创建对象的副本。</p>
+</li>
+</ol>
+<p>其中，使用new关键字是最常见和推荐的创建对象的方式。其他方式通常在特定场景下使用，如需要动态创建对象或创建对象的副本等情况。</p>
+
+
+<h2 class="relative group">1.2 对象内存图 
+    <div id="12-%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#12-%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">This is a subsubheading 
-    <div id="this-is-a-subsubheading" class="anchor"></div>
+<h3 class="relative group">1.2.1 单个对象内存图 
+    <div id="121-%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subsubheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#121-%E5%8D%95%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<ul>
+<li>成员变量使用过程</li>
+</ul>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250308003305031.png" alt="image-20250308003305031" />
+      
+    </figure>
+</p>
+<ul>
+<li>成员方法调用过程</li>
+</ul>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250308003340537.png" alt="image-20250308003340537" />
+      
+    </figure>
+</p>
 
 
-<h4 class="relative group">This is a subsubsubheading 
-    <div id="this-is-a-subsubsubheading" class="anchor"></div>
+<h3 class="relative group">1.2.2 多个对象内存图 
+    <div id="122-%E5%A4%9A%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subsubsubheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#122-%E5%A4%9A%E4%B8%AA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<p>This is a paragraph with <strong>bold</strong> and <em>italic</em> text.
-Check more at <a href="https://blowfish.page/" target="_blank">Blowfish documentation</a>
-undefined</p>
+</h3>
+<ul>
+<li>成员变量使用过程</li>
+</ul>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250308003353203.png" alt="image-20250308003353203" />
+      
+    </figure>
+</p>
+<ul>
+<li>成员方法调用过程</li>
+</ul>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250308003407949.png" alt="image-20250308003407949" />
+      
+    </figure>
+</p>
+<ul>
+<li>
+<p>总结</p>
+<p>多个对象在堆内存中，都有不同的内存划分，成员变量存储在各自的内存区域中，成员方法多个对象共用的一份</p>
+</li>
+</ul>
+
+
+<h2 class="relative group">1.3 成员变量和局部变量 
+    <div id="13-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#13-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><strong>成员变量和局部变量的区别：</strong></p>
+<ul>
+<li><strong>语法形式不同</strong>：从语法形式上看，==<strong>成员变量是属于类的，而局部变量是在代码块或方法中定义的变量或是方法的参数</strong>==；成员变量可以被 <code>public</code>,<code>private</code>,<code>static</code> 等修饰符所修饰，而局部变量不能被访问控制修饰符及 <code>static</code> 所修饰；但是，成员变量和局部变量都能被 <code>final</code> 所修饰。</li>
+</ul>
+<ul>
+<li>
+<p><strong>存储方式不同</strong>：从变量在内存中的存储方式来看，如果成员变量是使用 <a href="#static">static</a> 修饰的，那么这个成员变量是属于类的，如果没有使用 <code>static</code> 修饰，这个成员变量是属于实例的。而==<strong>对象存在于堆内存，局部变量则存在于栈内存</strong>==。</p>
+</li>
+<li>
+<p><strong>生存时间不同</strong>：从变量在内存中的生存时间上看，==<strong>成员变量是对象的一部分，它随着对象的创建而存在，而局部变量随着方法的调用而自动生成，随着方法的调用结束而消亡</strong>==。</p>
+</li>
+<li>
+<p><strong>默认值不同</strong>：从变量是否有默认值来看，==<strong>成员变量如果没有被赋初始值，则会自动以类型的默认值而赋值</strong>==（一种情况例外:被 <code>final</code> 修饰的成员变量也必须显式地赋值）。而==<strong>局部变量则不会自动赋值，必须先定义，赋值才能使用</strong>==</p>
+</li>
+</ul>
+<p><strong>为什么成员变量有默认值？</strong></p>
+<ol>
+<li>先不考虑变量类型，如果没有默认值，变量存储的是内存地址对应的任意随机值，程序读取该值运行会出现意外。</li>
+<li>默认值有两种设置方式：手动和自动，根据第一点，没有手动赋值一定要自动赋值。成员变量在运行时可借助反射等方法手动赋值，而局部变量不行。</li>
+<li>对于编译器（javac）来说，局部变量没赋值很好判断，可以直接报错。而成员变量可能是运行时赋值，无法判断，误报“没默认值”又会影响用户体验，所以采用自动赋默认值。</li>
+</ol>
+
+
+<h2 class="relative group">1.4 封装 
+    <div id="14-%E5%B0%81%E8%A3%85" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#14-%E5%B0%81%E8%A3%85" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">1.4.1 封装思想 
+    <div id="141-%E5%B0%81%E8%A3%85%E6%80%9D%E6%83%B3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#141-%E5%B0%81%E8%A3%85%E6%80%9D%E6%83%B3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>封装概述</strong>
+是面向对象三大特征之一（封装，继承，多态）</p>
+<p><strong>==封装是指把一个对象的状态信息（也就是属性）隐藏在对象内部，不允许外部对象直接访问对象的内部信息。但是可以提供一些可以被外界访问的方法来操作属性。==</strong></p>
+<p>如果属性不想被外界访问，我们大可不必提供方法给外界访问。但是如果一个类没有提供给外界访问的方法，那么这个类也没有什么意义了。</p>
+<p><strong>封装代码实现</strong>
+将类的某些信息隐藏在类内部，不允许外部程序直接访问，而是通过该类提供的方法来实现对隐藏信息的操作和访问
+成员变量private，提供对应的getXxx()/setXxx()方法</p>
+
+
+<h3 class="relative group">1.4.2 private关键字 
+    <div id="142-private%E5%85%B3%E9%94%AE%E5%AD%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#142-private%E5%85%B3%E9%94%AE%E5%AD%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>private是一个修饰符，可以用来修饰成员（成员变量，成员方法）</p>
+<ul>
+<li>被private修饰的成员，只能在本类进行访问，针对private修饰的成员变量，如果需要被其他类使用，提供相应的操作
+<ul>
+<li>提供“get变量名()”方法，用于获取成员变量的值，方法用public修饰</li>
+<li>提供“set变量名(参数)”方法，用于设置成员变量的值，方法用public修饰</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 class="relative group">1.4.3 this关键字 
+    <div id="143-this%E5%85%B3%E9%94%AE%E5%AD%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#143-this%E5%85%B3%E9%94%AE%E5%AD%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>this修饰的变量用于指代成员变量，其主要作用是<strong>区分局部变量和成员变量的重名问题</strong>
+<ul>
+<li>方法的形参如果与成员变量同名，不带this修饰的变量指的是形参，而不是成员变量</li>
+<li>方法的形参没有与成员变量同名，不带this修饰的变量指的是成员变量</li>
+</ul>
+</li>
+</ul>
+<p>我们以实体类中的set方法为例，因为set方法的形参和成员变量同名，所以带this的是成员变量，idea自动生成的set方法如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setA</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>除此之外，在全参构造时，情况也与此类似</p>
+
+
+<h2 class="relative group">1.5 构造方法 
+    <div id="15-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#15-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">1.5.1 构造方法概述 
+    <div id="151-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#151-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>构造方法是一种特殊的方法</p>
+<ul>
+<li>
+<p>作用：创建对象   Student stu = <strong>new Student();</strong></p>
+</li>
+<li>
+<p>格式：</p>
+<p>public class 类名{</p>
+<p>​        修饰符 类名( 参数 ) {</p>
+<p>​        }</p>
+<p>}</p>
+</li>
+<li>
+<p>功能：主要是完成对象数据的初始化</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">1.5.2 构造方法的注意事项 
+    <div id="152-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#152-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>构造方法的创建</strong></li>
+</ul>
+<p><strong>如果没有定义构造方法，系统将给出一个默认的无参数构造方法</strong>
+<strong>如果定义了构造方法，系统将不再提供默认的构造方法</strong></p>
+<ul>
+<li><strong>构造方法的重载</strong></li>
+</ul>
+<p>如果自定义了带参构造方法，还要使用无参数构造方法，就必须再写一个无参数构造方法</p>
+<ul>
+<li><strong>推荐的使用方式</strong></li>
+</ul>
+<p>无论是否使用，都手工书写无参数构造方法</p>
+<ul>
+<li><strong>重要功能</strong></li>
+</ul>
+<p>可以使用带参构造，为成员变量进行初始化</p>
+<p><strong>如果一个类没有声明构造方法，该程序能正确执行吗？</strong></p>
+<p>构造方法是一种特殊的方法，主要作用是完成对象的初始化工作。</p>
+<p>如果一个类没有声明构造方法，也可以执行，因为一个类即使没有声明构造方法也会有默认的不带参数的构造方法。如果我们自己添加了类的构造方法（无论是否有参），Java 就不会添加默认的无参数的构造方法了。</p>
+<p>我们一直在不知不觉地使用构造方法，这也是为什么我们在创建对象的时候后面要加一个括号（因为要调用无参的构造方法）。如果我们重载了有参的构造方法，记得都要把无参的构造方法也写出来（无论是否用到）。</p>
+<p><strong>构造方法有哪些特点？是否可被<a href="#%e6%96%b9%e6%b3%95%e9%87%8d%e5%86%99">override</a>?</strong></p>
+<p>构造方法具有以下特点：</p>
+<ul>
+<li><strong>名称与类名相同</strong>：构造方法的名称必须与类名完全一致。</li>
+<li><strong>没有返回值</strong>：构造方法没有返回类型，且不能使用 <code>void</code> 声明。</li>
+<li><strong>自动执行</strong>：在生成类的对象时，构造方法会自动执行，无需显式调用。</li>
+</ul>
+<p>构造方法<strong>不能被重写（override）</strong>，但<strong>可以被重载（overload）</strong>。因此，一个类中可以有多个构造方法，这些构造方法可以具有不同的参数列表，以提供不同的对象初始化方式。</p>
+
+
+<h3 class="relative group">1.5.3 标准类制作 
+    <div id="153-%E6%A0%87%E5%87%86%E7%B1%BB%E5%88%B6%E4%BD%9C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#153-%E6%A0%87%E5%87%86%E7%B1%BB%E5%88%B6%E4%BD%9C" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>① <strong>类名需要见名知意</strong></p>
+<p>② <strong>成员变量使用private修饰</strong></p>
+<p>③ <strong>提供至少两个构造方法</strong></p>
+<ul>
+<li>无参构造方法</li>
+<li>带全部参数的构造方法</li>
+</ul>
+<p>④ <strong>get和set方法</strong></p>
+<p>​	提供每一个成员变量对应的setXxx()/getXxx()</p>
+<p>⑤ 如果还有其他行为，也需要写上</p>
 
           
           

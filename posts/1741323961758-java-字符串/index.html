@@ -108,7 +108,7 @@
     "keywords": ["example","tag"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "41"
+    "wordCount": "605"
   }]
   </script>
 
@@ -485,7 +485,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-07T00:00:00&#43;00:00">7 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>41 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2025-03-07T00:00:00&#43;00:00">7 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>605 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
@@ -704,15 +704,21 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-is-a-subheading">This is a subheading</a>
+    <li><a href="#11-string类">1.1 String类</a>
       <ul>
-        <li><a href="#this-is-a-subsubheading">This is a subsubheading</a>
-          <ul>
-            <li><a href="#this-is-a-subsubsubheading">This is a subsubsubheading</a></li>
-          </ul>
-        </li>
+        <li><a href="#111-string类的构造方法">1.1.1 String类的构造方法</a></li>
+        <li><a href="#112-字符串的比较">1.1.2 字符串的比较</a></li>
+        <li><a href="#113-字符串常量池的作用">1.1.3 字符串常量池的作用</a></li>
+        <li><a href="#114-string类能被继承吗">1.1.4 String类能被继承吗</a></li>
       </ul>
     </li>
+    <li><a href="#12-stringbuilder">1.2 StringBuilder</a></li>
+    <li><a href="#13-stringbuffer比较分析">1.3 StringBuffer（比较分析）</a></li>
+    <li><a href="#14-stringjoiner">1.4 <del>StringJoiner</del></a></li>
+    <li><a href="#15-关于字符串的扩展">1.5 关于字符串的扩展</a></li>
+    <li><a href="#16-stringintern方法了解">1.6 String#intern方法（了解）</a></li>
+    <li><a href="#17-string类型的变量和常量做--运算时发生了什么">1.7 String类型的变量和常量做“ + ”运算时发生了什么？</a></li>
+    <li><a href="#18-java中变量和常量的区别">1.8 Java中变量和常量的区别</a></li>
   </ul>
 </nav>
   </div>
@@ -726,15 +732,21 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-is-a-subheading">This is a subheading</a>
+    <li><a href="#11-string类">1.1 String类</a>
       <ul>
-        <li><a href="#this-is-a-subsubheading">This is a subsubheading</a>
-          <ul>
-            <li><a href="#this-is-a-subsubsubheading">This is a subsubsubheading</a></li>
-          </ul>
-        </li>
+        <li><a href="#111-string类的构造方法">1.1.1 String类的构造方法</a></li>
+        <li><a href="#112-字符串的比较">1.1.2 字符串的比较</a></li>
+        <li><a href="#113-字符串常量池的作用">1.1.3 字符串常量池的作用</a></li>
+        <li><a href="#114-string类能被继承吗">1.1.4 String类能被继承吗</a></li>
       </ul>
     </li>
+    <li><a href="#12-stringbuilder">1.2 StringBuilder</a></li>
+    <li><a href="#13-stringbuffer比较分析">1.3 StringBuffer（比较分析）</a></li>
+    <li><a href="#14-stringjoiner">1.4 <del>StringJoiner</del></a></li>
+    <li><a href="#15-关于字符串的扩展">1.5 关于字符串的扩展</a></li>
+    <li><a href="#16-stringintern方法了解">1.6 String#intern方法（了解）</a></li>
+    <li><a href="#17-string类型的变量和常量做--运算时发生了什么">1.7 String类型的变量和常量做“ + ”运算时发生了什么？</a></li>
+    <li><a href="#18-java中变量和常量的区别">1.8 Java中变量和常量的区别</a></li>
   </ul>
 </nav>
   </div>
@@ -816,58 +828,429 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>an example to get you started</p>
+          
 
-
-<h1 class="relative group">This is a heading 
-    <div id="this-is-a-heading" class="anchor"></div>
+<h1 class="relative group">字符串 
+    <div id="%E5%AD%97%E7%AC%A6%E4%B8%B2" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-heading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
 
 
-<h2 class="relative group">This is a subheading 
-    <div id="this-is-a-subheading" class="anchor"></div>
+<h2 class="relative group">1.1 String类 
+    <div id="11-string%E7%B1%BB" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#11-string%E7%B1%BB" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
+<p>String 类代表字符串，Java 程序中的所有字符串文字（例如“abc”）都被实现为此类的实例。也就是说，**Java 程序中所有的双引号字符串，都是 String 类的对象。**String 类在 java.lang 包下，所以使用的时候不需要导包！</p>
+<p><strong>String类的特点：</strong></p>
+<ul>
+<li>==<strong>字符串不可变</strong>==，它们的值在创建后不能被更改</li>
+<li>虽然 String 的值是不可变的，但是它们可以被共享</li>
+<li>字符串效果上相当于字符数组( char[] )，但是底层原理是字节数组( byte[] )</li>
+</ul>
+<p><strong>字符型常量和字符串常量的区别：</strong></p>
+<ul>
+<li>**形式：**字符常量是单引号引起的一个字符，字符串常量是双引号引起的0个或若干个字符。</li>
+<li>**含义：**字符常量相当于一个整型值（ASCII值），可以参加表达式运算；字符串常量代表一个地址值（该字符串在内存中存放的位置）。</li>
+<li>**占内存大小：**字符常量只占2个字节；字符串常量占若干个字节。</li>
+</ul>
+<p><strong>String为什么是不可变的？</strong></p>
+<p><code>String</code> 类中使用 <code>final</code> 关键字修饰字符数组来保存字符串，<del>所以<code>String</code> 对象是不可变的</del>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nc">String</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="p">,</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">CharSequence</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">value</span><span class="o">[]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">//...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>修正：我们知道被 <code>final</code> 关键字修饰的类不能被继承，修饰的方法不能被重写，修饰的变量是基本数据类型则值不能改变，修饰的变量是引用类型则不能再指向其他对象。因此，<code>final</code> 关键字修饰的数组保存字符串并不是 <code>String</code> 不可变的根本原因，因为这个数组保存的字符串是可变的（<code>final</code> 修饰引用类型变量的情况）。</p>
+<p><code>String</code> 真正不可变有下面几点原因：</p>
+<ol>
+<li><strong>保存字符串的数组被 <code>final</code> 修饰且为私有的，并且<code>String</code> 类没有提供/暴露修改这个字符串的方法。</strong></li>
+<li><strong><code>String</code> 类被 <code>final</code> 修饰导致其不能被继承，进而避免了子类破坏 <code>String</code> 不可变。</strong></li>
+</ol></blockquote>
+<blockquote>
+<p><strong>Java 9 为何要将 <code>String</code> 的底层实现由 <code>char[]</code> 改成了 <code>byte[]</code> ?</strong></p>
+<p>新版的 String 其实支持两个编码方案：Latin-1 和 UTF-16。如果字符串中包含的汉字没有超过 Latin-1 可表示范围内的字符，那就会使用 Latin-1 作为编码方案。Latin-1 编码方案下，<code>byte</code> 占一个字节(8 位)，<code>char</code> 占用 2 个字节（16），<code>byte</code> 相较 <code>char</code> 节省一半的内存空间。</p>
+<p>JDK 官方就说了绝大部分字符串对象只包含 Latin-1 可表示的字符。</p></blockquote>
 
 
-<h3 class="relative group">This is a subsubheading 
-    <div id="this-is-a-subsubheading" class="anchor"></div>
+<h3 class="relative group">1.1.1 String类的构造方法 
+    <div id="111-string%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subsubheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#111-string%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>常用的构造方法</p>
+<table>
+  <thead>
+      <tr>
+          <th>方法名</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>public   String()</td>
+          <td>创建一个空白字符串对象，不含有任何内容</td>
+      </tr>
+      <tr>
+          <td>public   String(char[] chs)</td>
+          <td>根据字符数组的内容，来创建字符串对象</td>
+      </tr>
+      <tr>
+          <td>public   String(byte[] bys)</td>
+          <td>根据字节数组的内容，来创建字符串对象</td>
+      </tr>
+      <tr>
+          <td>String s =   “abc”;</td>
+          <td>直接赋值的方式创建字符串对象，内容就是abc</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>创建字符串对象两种方式的区别：</strong></p>
+<p>Java中字符串可以通过两种方式创建：==<strong>使用字符串字面量直接赋值给变量或使用关键字new创建一个新的String对象。</strong>==它们之间有以下区别：</p>
+<ol>
+<li>使用字符串字面量赋值给变量时，Java会使用字符串常量池来管理字符串对象，可以提高性能和节省内存。而使用new String创建的字符串对象则在堆内存中独立分配内存空间，每次调用都会创建一个新的对象，因此内存消耗更大。</li>
+<li><del>使用字符串字面量赋值给变量的字符串是不可变的，即不能改变其内容。而使用new String创建的字符串对象是可变的，可以通过调用方法或者使用赋值运算符修改其内容。</del></li>
+<li>使用字符串字面量赋值给变量的字符串比较时，如果多个变量引用相同的字符串字面量，则它们实际上引用的是同一个对象，因此比较它们的引用时将返回true。而使用new String创建的字符串对象，即使内容相同，它们也是不同的对象，因此比较它们的引用时将返回false。</li>
+</ol>
 
 
-<h4 class="relative group">This is a subsubsubheading 
-    <div id="this-is-a-subsubsubheading" class="anchor"></div>
+<h3 class="relative group">1.1.2 字符串的比较 
+    <div id="112-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subsubsubheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#112-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%AF%94%E8%BE%83" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<p>This is a paragraph with <strong>bold</strong> and <em>italic</em> text.
-Check more at <a href="https://blowfish.page/" target="_blank">Blowfish documentation</a>
-undefined</p>
+</h3>
+<p><strong>==号的作用：</strong></p>
+<ul>
+<li>比较基本数据类型：比较的是具体的值</li>
+<li>比较引用数据类型：比较的是对象地址值</li>
+</ul>
+<p><strong>equals方法的作用：</strong></p>
+<p>方法介绍：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w">     </span><span class="n">比较两个字符串内容是否相同</span><span class="err">、</span><span class="n">区分大小写</span><span class="p">(</span><span class="n">不是地址值</span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></div><blockquote>
+<p>注：equals方法本身在比较引用数据类型时比较的也是对象地址值，但是String类重写了equals方法，所以我们用String类带的equals方法比较字符串时比较的是字符串内容。</p></blockquote>
+
+
+<h3 class="relative group">1.1.3 字符串常量池的作用 
+    <div id="113-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E4%BD%9C%E7%94%A8" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#113-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E4%BD%9C%E7%94%A8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>字符串常量池</strong> 是 JVM 为了提升性能和减少内存消耗针对字符串（String 类）专门开辟的一块区域，主要目的是为了避免字符串的重复创建。</p>
+<p>==<strong>String s1 = new String(&ldquo;abc&rdquo;);这句话创建了几个字符串对象？</strong>==</p>
+<p>先说答案：会创建 1 或 2 个字符串对象。</p>
+<ol>
+<li>字符串常量池中不存在 &ldquo;abc&rdquo;：会创建 2 个 字符串对象。一个在字符串常量池中，由 <code>ldc</code> 指令触发创建。一个在堆中，由 <code>new String()</code> 创建，并使用常量池中的 &ldquo;abc&rdquo; 进行初始化。</li>
+<li>字符串常量池中已存在 &ldquo;abc&rdquo;：会创建 1 个 字符串对象。该对象在堆中，由 <code>new String()</code> 创建，并使用常量池中的 &ldquo;abc&rdquo; 进行初始化。</li>
+</ol>
+
+
+<h3 class="relative group">1.1.4 String类能被继承吗 
+    <div id="114-string%E7%B1%BB%E8%83%BD%E8%A2%AB%E7%BB%A7%E6%89%BF%E5%90%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#114-string%E7%B1%BB%E8%83%BD%E8%A2%AB%E7%BB%A7%E6%89%BF%E5%90%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>在Java中，String类是被<strong>final关键字修饰</strong>的，即<strong>不可继承</strong>。final关键字表示一个类不允许被其他类继承，也就是说，String类不能被任何其他类继承。
+这是因为String类具有<strong>不可变性和安全性</strong>，这些特性可以防止一些潜在的问题，如字符串池中的重用和安全性漏洞。
+如果String类能被继承，子类有可能修改原字符串的值，这将破坏字符串对象的不可变性。此外，String类的方法和变量都被设计成private、final和static的，这说明它们不能被重写或隐藏。如果String类可以被继承，这些设计决策将被打破，可能产生更多的问题。
+因此，尽管我们不能从String类派生出新的子类，但我们可以使用String类提供的方法来操作和处理字符串。例如，我们可以使用String类的concat()方法连接两个字符串，或使用indexOf()方法查找子串在字符串中的位置等。String类已经包含了大量的方法，可以满足大多数字符串操作的需求。</p>
+
+
+<h2 class="relative group">1.2 StringBuilder 
+    <div id="12-stringbuilder" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#12-stringbuilder" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>StringBuilder 可以看成是一个容器，创建之后里面的内容是可变的。</p>
+<p>当我们在拼接字符串和反转字符串的时候会使用到</p>
+<p><strong>关于StringBuilder的添加、反转与打印：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StringBuilderDemo3</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//1.创建对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">sb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">(</span><span class="s">&#34;abc&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//2.添加元素</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="cm">/*sb.append(1);
+</span></span></span><span class="line"><span class="cl"><span class="cm">        sb.append(2.3);
+</span></span></span><span class="line"><span class="cl"><span class="cm">        sb.append(true);*/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//反转</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">sb</span><span class="p">.</span><span class="na">reverse</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//获取长度</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sb</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">len</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//打印</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//普及：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//因为StringBuilder是Java已经写好的类</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//java在底层对他做了一些特殊处理。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//打印对象不是地址值而是属性值。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sb</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>字符串拼接用 “ + ” 还是 StringBuilder ？</strong></p>
+<p>Java 语言本身并不支持运算符重载，“+”和“+=”是专门为 String 类重载过的运算符，也是 Java 中仅有的两个重载过的运算符。</p>
+<p>字符串对象通过“+”的字符串拼接方式，实际上是通过 <code>StringBuilder</code> 调用 <code>append()</code> 方法实现的，拼接完成之后调用 <code>toString()</code> 得到一个 <code>String</code> 对象 。</p>
+<p>不过，在循环内使用“+”进行字符串的拼接的话，存在比较明显的缺陷：<strong>编译器不会创建单个 <code>StringBuilder</code> 以复用，会导致创建过多的 <code>StringBuilder</code> 对象</strong>。</p>
+<p><code>StringBuilder</code> 对象是在循环内部被创建的，这意味着每循环一次就会创建一个 <code>StringBuilder</code> 对象。如果直接使用 <code>StringBuilder</code> 对象进行字符串拼接的话，就不会存在这个问题了。</p>
+<p>在 JDK 9 中，字符串相加“+”改为用动态方法 <code>makeConcatWithConstants()</code> 来实现，通过提前分配空间从而减少了部分临时对象的创建。然而这种优化主要针对简单的字符串拼接，如： <code>a+b+c</code> 。对于循环中的大量拼接操作，仍然会逐个动态分配内存（类似于两个两个 append 的概念），并不如手动使用 StringBuilder 来进行拼接效率高。</p>
+
+
+<h2 class="relative group">1.3 StringBuffer（比较分析） 
+    <div id="13-stringbuffer%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#13-stringbuffer%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><strong>可变性</strong></p>
+<p><code>StringBuilder</code> 与 <code>StringBuffer</code> 都继承自 <code>AbstractStringBuilder</code> 类，在 <code>AbstractStringBuilder</code> 中也是使用字符数组保存字符串，不过没有使用 <code>final</code> 和 <code>private</code> 关键字修饰，最关键的是这个 <code>AbstractStringBuilder</code> 类还提供了很多修改字符串的方法比如 <code>append</code> 方法。</p>
+<p><strong>线程安全性</strong></p>
+<p><code>String</code> 中的对象是不可变的，也就可以理解为常量，线程安全。<code>AbstractStringBuilder</code> 是 <code>StringBuilder</code> 与 <code>StringBuffer</code> 的公共父类，定义了一些字符串的基本操作，如 <code>expandCapacity</code>、<code>append</code>、<code>insert</code>、<code>indexOf</code> 等公共方法。<code>StringBuffer</code> 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。<code>StringBuilder</code> 并没有对方法进行加同步锁，所以是非线程安全的。</p>
+<p><strong>性能</strong></p>
+<p>每次对 <code>String</code> 类型进行改变的时候，都会生成一个新的 <code>String</code> 对象，然后将指针指向新的 <code>String</code> 对象。<code>StringBuffer</code> 每次都会对 <code>StringBuffer</code> 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 <code>StringBuilder</code> 相比使用 <code>StringBuffer</code> 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</p>
+<p><strong>对于三者使用的总结：</strong></p>
+<ul>
+<li>操作少量的数据: 适用 <code>String</code></li>
+<li>单线程操作字符串缓冲区下操作大量数据: 适用 <code>StringBuilder</code></li>
+<li>多线程操作字符串缓冲区下操作大量数据: 适用 <code>StringBuffer</code></li>
+</ul>
+
+
+<h2 class="relative group">1.4 <del>StringJoiner</del> 
+    <div id="14-stringjoiner" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#14-stringjoiner" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li>StringJoiner跟StringBuilder一样，也可以看成是一个容器，创建之后里面的内容是可变的。</li>
+<li>作用：提高字符串的操作效率，而且代码编写特别简洁，但是目前市场上很少有人用。</li>
+<li>JDK8出现的</li>
+</ul>
+<p>基本使用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//1.创建一个对象，并指定中间的间隔符号</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">StringJoiner</span><span class="w"> </span><span class="n">sj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringJoiner</span><span class="p">(</span><span class="s">&#34;---&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//2.添加元素</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;aaa&#34;</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;bbb&#34;</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;ccc&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//3.打印结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sj</span><span class="p">);</span><span class="c1">//aaa---bbb---ccc</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//1.创建对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">StringJoiner</span><span class="w"> </span><span class="n">sj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringJoiner</span><span class="p">(</span><span class="s">&#34;, &#34;</span><span class="p">,</span><span class="s">&#34;[&#34;</span><span class="p">,</span><span class="s">&#34;]&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//2.添加元素</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sj</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;aaa&#34;</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;bbb&#34;</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;ccc&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sj</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">len</span><span class="p">);</span><span class="c1">//15</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//3.打印</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sj</span><span class="p">);</span><span class="c1">//[aaa, bbb, ccc]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sj</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="c1">//[aaa, bbb, ccc]</span><span class="w">
+</span></span></span></code></pre></div>
+
+<h2 class="relative group">1.5 关于字符串的扩展 
+    <div id="15-%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#15-%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ol>
+<li>
+<p><strong>字符串存储的内存原理</strong></p>
+<p>String s = “abc”；直接赋值</p>
+<p>特点：</p>
+<p>​	此时字符串abc是存在字符串常量池中的。</p>
+<p>​	先检查字符串常量池中有没有字符串abc，如果有，不会创建新的，而是直接复用。如果没有abc，才会创建一个新的。</p>
+<p>所以，直接赋值的方式，代码简单，而且节约内存。</p>
+</li>
+<li>
+<p><strong>new出来的字符串</strong></p>
+<p>看到new关键字，一定是在堆里面开辟了一个小空间。</p>
+<p>String s1 = new String（“abc”）；</p>
+<p>String s2 = “abc”；</p>
+<p>s1记录的是new出来的，在堆里面的地址值。</p>
+<p>s2是直接赋值的，所以记录的是字符串常量池中的地址值。</p>
+</li>
+<li>
+<p>==号比较的到底是什么？</p>
+<p>如果比较的是基本数据类型：比的是具体的数值是否相等。</p>
+<p>如果比较的是引用数据类型：比的是地址值是否相等。</p>
+<p>结论：==只能用于比较基本数据类型。不能比较引用数据类型。</p>
+</li>
+</ol>
+
+
+<h2 class="relative group">1.6 String#intern方法（了解） 
+    <div id="16-stringintern%E6%96%B9%E6%B3%95%E4%BA%86%E8%A7%A3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#16-stringintern%E6%96%B9%E6%B3%95%E4%BA%86%E8%A7%A3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><code>String.intern()</code> 是一个 <code>native</code> (本地) 方法，用来处理字符串常量池中的字符串对象引用。它的工作流程可以概括为以下两种情况：</p>
+<p><strong>常量池中已有相同内容的字符串对象</strong>：如果字符串常量池中已经有一个与调用 <code>intern()</code> 方法的字符串内容相同的 <code>String</code> 对象，<code>intern()</code> 方法会直接返回常量池中该对象的引用。</p>
+<p><strong>常量池中没有相同内容的字符串对象</strong>：如果字符串常量池中还没有一个与调用 <code>intern()</code> 方法的字符串内容相同的对象，<code>intern()</code> 方法会将当前字符串对象的引用添加到字符串常量池中，并返回该引用。</p>
+<p>代码示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StringInternExample</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="s">&#34;example&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;example&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s1</span><span class="p">.</span><span class="na">intern</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出 false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">s3</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出 true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>总结：</p>
+<ul>
+<li><code>intern()</code> 方法的主要作用是确保字符串引用在常量池中的唯一性。</li>
+<li>当调用 <code>intern()</code> 时，如果常量池中已经存在相同内容的字符串，则返回常量池中已有对象的引用；否则，将该字符串添加到常量池并返回其引用。</li>
+</ul>
+
+
+<h2 class="relative group">1.7 String类型的变量和常量做“ + ”运算时发生了什么？ 
+    <div id="17-string%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%81%9A--%E8%BF%90%E7%AE%97%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#17-string%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E5%81%9A--%E8%BF%90%E7%AE%97%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>先来看字符串不加 <code>final</code> 关键字拼接的情况（JDK1.8）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;str&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;ing&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">str3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;str&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;ing&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">str4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">str5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;string&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">str4</span><span class="p">);</span><span class="c1">//false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">str5</span><span class="p">);</span><span class="c1">//true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">str4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">str5</span><span class="p">);</span><span class="c1">//false</span><span class="w">
+</span></span></span></code></pre></div><p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250308003644347.png" alt="image-20250308003644347" />
+      
+    </figure>
+</p>
+<p><strong>对于编译期可以确定值的字符串，也就是常量字符串 ，jvm 会将其存入字符串常量池。并且，字符串常量拼接得到的字符串常量在编译阶段就已经被存放字符串常量池，这个得益于编译器的优化。</strong></p>
+<p>在编译过程中，Javac 编译器（下文中统称为编译器）会进行一个叫做 <strong>常量折叠(Constant Folding)</strong> 的代码优化。常量折叠会把常量表达式的值求出来作为常量嵌在最终生成的代码中，这是 Javac 编译器会对源代码做的极少量优化措施之一(代码优化几乎都在即时编译器中进行)。</p>
+<p>对于 <code>String str3 = &quot;str&quot; + &quot;ing&quot;;</code> 编译器会给你优化成 <code>String str3 = &quot;string&quot;;</code> 。</p>
+<p>并不是所有的常量都会进行折叠，只有编译器在程序编译期就可以确定值的常量才可以：</p>
+<ul>
+<li>基本数据类型( <code>byte</code>、<code>boolean</code>、<code>short</code>、<code>char</code>、<code>int</code>、<code>float</code>、<code>long</code>、<code>double</code>)以及字符串常量。</li>
+<li><code>final</code> 修饰的基本数据类型和字符串变量</li>
+<li>字符串通过 “+”拼接得到的字符串、基本数据类型之间算数运算（加减乘除）、基本数据类型的位运算（&laquo;、&raquo;、&raquo;&gt; ）</li>
+</ul>
+<p><strong>引用的值在程序编译期是无法确定的，编译器无法对其进行优化。</strong></p>
+<p>不过，字符串使用 <code>final</code> 关键字声明之后，可以让编译器当做常量来处理。</p>
+<p>示例代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;str&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;ing&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 下面两个表达式其实是等价的</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;str&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;ing&#34;</span><span class="p">;</span><span class="c1">// 常量池中的对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">str2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 常量池中的对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">d</span><span class="p">);</span><span class="c1">// true</span><span class="w">
+</span></span></span></code></pre></div><p>被 <code>final</code> 关键字修饰之后的 <code>String</code> 会被编译器当做常量来处理，编译器在程序编译期就可以确定它的值，其效果就相当于访问常量。</p>
+<p>如果 ，编译器在运行时才能知道其确切值的话，就无法对其优化。</p>
+
+
+<h2 class="relative group">1.8 Java中变量和常量的区别 
+    <div id="18-java%E4%B8%AD%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#18-java%E4%B8%AD%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>在java中，变量和常量是两个不同的概念，他们有以下几点区别：</p>
+<ul>
+<li>
+<p><strong>可变性</strong>：</p>
+<ul>
+<li>
+<p>变量是可以被修改的，其值可以在程序的执行过程中改变。</p>
+</li>
+<li>
+<p>常量是不可被修改的，其值在定义后不能再被改变。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>声明与赋值</strong>：</p>
+<ul>
+<li>变量需要先声明，并可以在声明后进行赋值。声明时需要指定变量的类型</li>
+<li>==<strong>常量在定义时需要使用final关键字进行修饰</strong>==</li>
+</ul>
+</li>
+<li>
+<p><strong>内存空间</strong>：</p>
+<ul>
+<li>变量在内存中占用一块存储空间，可以改变这个存储空间中的值。</li>
+<li>常量通常会被编译器在编译时直接替换为对应的值，所以在内存中不会为常量分配额外的存储空间，而是直接使用常量的值。</li>
+</ul>
+</li>
+<li>
+<p><strong>使用场景</strong>：</p>
+<ul>
+<li>变量用于存储会发生变化的数据，例如计数器、临时结果等，在程序的执行过程中可以根据需要改变其值。</li>
+<li>常量用于表示不可变的数据，例如数学常数、配置项等，在程序中通常希望保持其固定的值，避免误操作导致值的变化。</li>
+</ul>
+</li>
+</ul>
+<p>总结来说，变量是可变的并且需要先声明后赋值，而常量是不可变的并且需要在定义时进行初始化赋值。变量占用内存空间且值可以改变，而常量通常会被编译器直接替换为对应的值，不占用额外的内存空间。变量用于存储会发生变化的数据，常量用于表示不可变的数据。</p>
 
           
           

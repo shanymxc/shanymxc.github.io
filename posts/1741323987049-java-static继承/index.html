@@ -108,7 +108,7 @@
     "keywords": ["example","tag"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "41"
+    "wordCount": "358"
   }]
   </script>
 
@@ -485,7 +485,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-07T00:00:00&#43;00:00">7 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>41 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2025-03-07T00:00:00&#43;00:00">7 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>358 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
@@ -704,13 +704,34 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-is-a-subheading">This is a subheading</a>
+    <li><a href="#11-static关键字">1.1 static关键字</a>
       <ul>
-        <li><a href="#this-is-a-subsubheading">This is a subsubheading</a>
+        <li><a href="#111-定义格式和使用">1.1.1 定义格式和使用</a></li>
+        <li><a href="#112-静态方法和实例方法有何不同">1.1.2 静态方法和实例方法有何不同?</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-继承">1.2 继承</a>
+      <ul>
+        <li><a href="#121-继承的含义">1.2.1 继承的含义</a></li>
+        <li><a href="#122-继承的格式">1.2.2 继承的格式</a></li>
+        <li><a href="#123-子类不能继承的内容">1.2.3 子类不能继承的内容</a></li>
+        <li><a href="#124-继承后的特点成员变量">1.2.4 继承后的特点—成员变量</a></li>
+        <li><a href="#125-继承后的特点成员方法">1.2.5 继承后的特点——成员方法</a></li>
+        <li><a href="#126-方法重写">1.2.6 <a id="方法重写">方法重写</a></a>
           <ul>
-            <li><a href="#this-is-a-subsubsubheading">This is a subsubsubheading</a></li>
+            <li><a href="#1261-概念">1.2.6.1 概念</a></li>
+            <li><a href="#1262-override重写注解">1.2.6.2 @Override重写注解</a></li>
+            <li><a href="#1263-构造器是否可以被重写">1.2.6.3 构造器是否可以被重写</a></li>
           </ul>
         </li>
+        <li><a href="#127-继承后的特点构造方法">1.2.7 继承后的特点—构造方法</a></li>
+        <li><a href="#128-super和this">1.2.8 super(&hellip;)和this(&hellip;)</a>
+          <ul>
+            <li><a href="#1281-super案例图解">1.2.8.1 super(…)案例图解</a></li>
+            <li><a href="#1282-this用法演示">1.2.8.2 this(&hellip;)用法演示</a></li>
+          </ul>
+        </li>
+        <li><a href="#129-继承的特点">1.2.9 继承的特点</a></li>
       </ul>
     </li>
   </ul>
@@ -726,13 +747,34 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#this-is-a-subheading">This is a subheading</a>
+    <li><a href="#11-static关键字">1.1 static关键字</a>
       <ul>
-        <li><a href="#this-is-a-subsubheading">This is a subsubheading</a>
+        <li><a href="#111-定义格式和使用">1.1.1 定义格式和使用</a></li>
+        <li><a href="#112-静态方法和实例方法有何不同">1.1.2 静态方法和实例方法有何不同?</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-继承">1.2 继承</a>
+      <ul>
+        <li><a href="#121-继承的含义">1.2.1 继承的含义</a></li>
+        <li><a href="#122-继承的格式">1.2.2 继承的格式</a></li>
+        <li><a href="#123-子类不能继承的内容">1.2.3 子类不能继承的内容</a></li>
+        <li><a href="#124-继承后的特点成员变量">1.2.4 继承后的特点—成员变量</a></li>
+        <li><a href="#125-继承后的特点成员方法">1.2.5 继承后的特点——成员方法</a></li>
+        <li><a href="#126-方法重写">1.2.6 <a id="方法重写">方法重写</a></a>
           <ul>
-            <li><a href="#this-is-a-subsubsubheading">This is a subsubsubheading</a></li>
+            <li><a href="#1261-概念">1.2.6.1 概念</a></li>
+            <li><a href="#1262-override重写注解">1.2.6.2 @Override重写注解</a></li>
+            <li><a href="#1263-构造器是否可以被重写">1.2.6.3 构造器是否可以被重写</a></li>
           </ul>
         </li>
+        <li><a href="#127-继承后的特点构造方法">1.2.7 继承后的特点—构造方法</a></li>
+        <li><a href="#128-super和this">1.2.8 super(&hellip;)和this(&hellip;)</a>
+          <ul>
+            <li><a href="#1281-super案例图解">1.2.8.1 super(…)案例图解</a></li>
+            <li><a href="#1282-this用法演示">1.2.8.2 this(&hellip;)用法演示</a></li>
+          </ul>
+        </li>
+        <li><a href="#129-继承的特点">1.2.9 继承的特点</a></li>
       </ul>
     </li>
   </ul>
@@ -816,58 +858,480 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>an example to get you started</p>
+          
 
-
-<h1 class="relative group">This is a heading 
-    <div id="this-is-a-heading" class="anchor"></div>
+<h1 class="relative group">static &amp; 继承 
+    <div id="static--%E7%BB%A7%E6%89%BF" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-heading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#static--%E7%BB%A7%E6%89%BF" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
+<p>Java中成员（<strong>变量和方法</strong>）等是存在属性的，Java通过static关键字来进行区分。<strong>static关键字在Java开发非常的重要，对于理解面向对象非常关键。</strong></p>
+<p>关于 <code>static</code> 关键字的使用，它可以用来修饰的成员变量和成员方法，被static修饰的成员是<strong>属于类</strong>的是放在静态区中，没有static修饰的成员变量和方法则是<strong>属于对象</strong>的。我们上面案例中的成员变量都是没有static修饰的，所以属于每个对象。</p>
 
 
-<h2 class="relative group">This is a subheading 
-    <div id="this-is-a-subheading" class="anchor"></div>
+<h2 class="relative group">1.1 static关键字 
+    <div id="11-static%E5%85%B3%E9%94%AE%E5%AD%97" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#11-static%E5%85%B3%E9%94%AE%E5%AD%97" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">This is a subsubheading 
-    <div id="this-is-a-subsubheading" class="anchor"></div>
+<h3 class="relative group">1.1.1 定义格式和使用 
+    <div id="111-%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E5%92%8C%E4%BD%BF%E7%94%A8" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subsubheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#111-%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E5%92%8C%E4%BD%BF%E7%94%A8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>static是静态的意思。 static可以修饰成员变量或者修饰方法。</p>
+<p><strong>静态变量及其访问：</strong></p>
+<p>有static修饰成员变量，说明这个成员变量是属于类的，这个成员变量称为<strong>类变量</strong>或者<strong>静态成员变量</strong>。 直接用  类名访问即可。因为类只有一个，所以静态成员变量在内存区域中也只存在一份。所有的对象都可以共享这个变量。</p>
+<p>静态变量是通过类名来访问的，例如<code>StaticVariableExample.staticVar</code>（如果被 <code>private</code>关键字修饰就无法这样访问了）。</p>
+<p>通常情况下，静态变量会被 <code>final</code> 关键字修饰成为常量。</p>
+<p><strong>实例变量及其访问：</strong></p>
+<p>无static修饰的成员变量属于每个对象的，  这个成员变量叫<strong>实例变量</strong>，之前我们写成员变量就是实例成员变量。</p>
+<p><strong>需要注意的是</strong>：实例成员变量属于每个对象，必须创建类的对象才可以访问。</p>
+<p>格式：对象.实例成员变量</p>
+<p><strong><a id="静态方法">静态方法</a>及其访问：</strong></p>
+<p>有static修饰成员方法，说明这个成员方法是属于类的，这个成员方法称为<strong>类方法或者静态方法</strong>。 直接用  类名访问即可。因为类只有一个，所以静态方法在内存区域中也只存在一份。所有的对象都可以共享这个方法。</p>
+<p>与静态成员变量一样，静态方法也是直接通过<strong>类名.方法名称</strong>即可访问。</p>
+<p><strong>实例方法及其访问：</strong></p>
+<p>无static修饰的成员方法属于每个对象的，这个成员方法也叫做<strong>实例方法</strong>。</p>
+<p><strong>需要注意的是</strong>：实例方法是属于每个对象，必须创建类的对象才可以访问。</p>
+
+
+<h3 class="relative group">1.1.2 静态方法和实例方法有何不同? 
+    <div id="112-%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#112-%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%92%8C%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>1、调用方式</strong></p>
+<p>在外部调用静态方法时，可以使用 <code>类名.方法名</code> 的方式，也可以使用 <code>对象.方法名</code> 的方式，而实例方法只有后面这种方式。也就是说，<strong>调用静态方法可以无需创建对象</strong> 。</p>
+<p>不过，需要注意的是一般不建议使用 <code>对象.方法名</code> 的方式来调用静态方法。这种方式非常容易造成混淆，静态方法不属于类的某个对象而是属于这个类。</p>
+<p>因此，一般建议使用 <code>类名.方法名</code> 的方式来调用静态方法。</p>
+<p><strong>2、访问类成员是否存在限制</strong></p>
+<p>静态方法在访问本类的成员时，只允许访问静态成员（即静态成员变量和静态方法），不允许访问实例成员（即实例成员变量和实例方法），而实例方法不存在这个限制。</p>
+
+
+<h2 class="relative group">1.2 继承 
+    <div id="12-%E7%BB%A7%E6%89%BF" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#12-%E7%BB%A7%E6%89%BF" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>假如多个类中存在相同属性和行为时，我们可以将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要<strong>继承</strong>那一个类即可。</p>
+<p>其中，多个类可以称为<strong>子类</strong>，单独被继承的那一个类称为<strong>父类</strong>、<strong>超类（superclass）<strong>或者</strong>基类</strong>。</p>
+
+
+<h3 class="relative group">1.2.1 继承的含义 
+    <div id="121-%E7%BB%A7%E6%89%BF%E7%9A%84%E5%90%AB%E4%B9%89" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#121-%E7%BB%A7%E6%89%BF%E7%9A%84%E5%90%AB%E4%B9%89" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>继承描述的是事物之间的所属关系，这种关系是：<code>is-a</code> 的关系。父类更通用，子类更具体。我们通过继承，可以使多种事物之间形成一种关系体系。</p>
+<p><del><strong>继承</strong>：就是子类继承父类的<strong>属性</strong>和<strong>行为</strong>，使得子类对象可以直接具有与父类相同的属性、相同的行为。子类可以直接访问父类中的<strong>非私有</strong>的属性和行为。</del></p>
+<p>不同类型的对象，相互之间经常有一定数量的共同点，但同时，每一个对象还定义了额外的特性使得他们与众不同。==<strong>继承是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。</strong>==</p>
+<p>子类拥有父类对象所有的属性和方法（包括私有属性和私有方法），但是父类中的私有属性和方法子类是无法访问，<strong>只是拥有</strong>。</p>
+<p>子类可以拥有自己属性和方法，即子类可以对父类进行扩展。</p>
+<p>子类可以用自己的方式实现父类的方法（<a href="#%e6%96%b9%e6%b3%95%e9%87%8d%e5%86%99">方法重写</a>）。</p>
+<p><strong>继承的好处：</strong></p>
+<ol>
+<li>通过使用继承，可以快速地创建新的类，可以提高代码的重用，程序的可维护性，节省大量创建新类的时间 ，提高我们的开发效率。</li>
+<li>使类与类之间产生了关系。</li>
+</ol>
+
+
+<h3 class="relative group">1.2.2 继承的格式 
+    <div id="122-%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A0%BC%E5%BC%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#122-%E7%BB%A7%E6%89%BF%E7%9A%84%E6%A0%BC%E5%BC%8F" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>通过 <code>extends</code> 关键字，可以声明一个子类继承另外一个父类。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">父类</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">子类</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">父类</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Java是单继承的，一个类只能继承一个直接父类，跟现实世界很像，但是Java中的子类是更加强大的。</p>
+
+
+<h3 class="relative group">1.2.3 子类不能继承的内容 
+    <div id="123-%E5%AD%90%E7%B1%BB%E4%B8%8D%E8%83%BD%E7%BB%A7%E6%89%BF%E7%9A%84%E5%86%85%E5%AE%B9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#123-%E5%AD%90%E7%B1%BB%E4%B8%8D%E8%83%BD%E7%BB%A7%E6%89%BF%E7%9A%84%E5%86%85%E5%AE%B9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>子类不能继承父类的构造方法。</p>
+<p>值得注意的是子类可以继承父类的私有成员（成员变量，方法），只是子类无法直接访问而已，可以通过getter/setter方法访问父类的private成员变量。</p>
+
+
+<h3 class="relative group">1.2.4 继承后的特点—成员变量 
+    <div id="124-%E7%BB%A7%E6%89%BF%E5%90%8E%E7%9A%84%E7%89%B9%E7%82%B9%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#124-%E7%BB%A7%E6%89%BF%E5%90%8E%E7%9A%84%E7%89%B9%E7%82%B9%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>成员变量不重名:</strong></p>
+<p>如果子类父类中出现<strong>不重名</strong>的成员变量，这时的访问是<strong>没有影响的</strong>。</p>
+<p><strong>成员变量重名:</strong></p>
+<p>如果子类父类中出现<strong>重名</strong>的成员变量，这时的访问是<strong>有影响的</strong>。子父类中出现了同名的成员变量时，子类会优先访问自己对象中的成员变量。如果此时想访问父类成员变量,我们可以使用super关键字。</p>
+<p><strong>super访问父类成员变量:</strong></p>
+<p>子父类中出现了同名的成员变量时，在子类中需要访问父类中非私有成员变量时，需要使用<code>super</code> 关键字，修饰父类成员变量，类似于之前学过的 <code>this</code> 。</p>
+<p>super代表的是父类对象的引用，this代表的是当前对象的引用。</p>
+<blockquote>
+<p>Fu 类中的成员变量是非私有的，子类中可以直接访问。若Fu 类中的成员变量私有了，子类是不能直接访问的。通常编码时，我们遵循封装的原则，使用private修饰成员变量，那么访问父类的私有成员变量就可以使用在父类中提供公共的getXxx方法和setXxx方法。</p></blockquote>
+
+
+<h3 class="relative group">1.2.5 继承后的特点——成员方法 
+    <div id="125-%E7%BB%A7%E6%89%BF%E5%90%8E%E7%9A%84%E7%89%B9%E7%82%B9%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#125-%E7%BB%A7%E6%89%BF%E5%90%8E%E7%9A%84%E7%89%B9%E7%82%B9%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>成员方法不重名：</strong></p>
+<p>如果子类父类中出现<strong>不重名</strong>的成员方法，这时的调用是<strong>没有影响的</strong>。对象调用方法时，会先在子类中查找有没有对应的方法，若子类中存在就会执行子类中的方法，若子类中不存在就会执行父类中相应的方法。</p>
+<p><strong>成员方法重名:</strong></p>
+<p>如果子类父类中出现<strong>重名</strong>的成员方法，则创建子类对象调用该方法的时候，子类对象会优先调用自己的方法。</p>
+
+
+<h3 class="relative group">1.2.6 <a id="方法重写">方法重写</a> 
+    <div id="126-%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#126-%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 
 
-<h4 class="relative group">This is a subsubsubheading 
-    <div id="this-is-a-subsubsubheading" class="anchor"></div>
+<h4 class="relative group">1.2.6.1 概念 
+    <div id="1261-%E6%A6%82%E5%BF%B5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#this-is-a-subsubsubheading" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#1261-%E6%A6%82%E5%BF%B5" aria-label="Anchor">#</a>
     </span>        
     
 </h4>
-<p>This is a paragraph with <strong>bold</strong> and <em>italic</em> text.
-Check more at <a href="https://blowfish.page/" target="_blank">Blowfish documentation</a>
-undefined</p>
+<p><strong>方法重写</strong> ：子类中出现与父类一模一样的方法时（返回值类型，方法名和参数列表都相同），会出现覆盖效果，也称为重写或者复写。<strong>声明不变，重新实现</strong>。</p>
+<p>发生在子父类之间的关系。子类继承了父类的方法，但是子类觉得父类的这方法不足以满足自己的需求，子类重新写了一个与父类同名的方法，以便覆盖父类的该方法。</p>
+<p><strong>重载和重写有什么区别？</strong></p>
+<blockquote>
+<p>重载就是同样的一个方法能够根据输入数据的不同，做出不同的处理，也就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。</p>
+<p>重写就是当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要覆盖父类方法</p></blockquote>
+<p><strong>重载</strong>发生在同一个类中（或者父类和子类之间），方法名必须相同，参数类型不同、个数不同、顺序不同，方法返回值和访问修饰符可以不同。</p>
+<blockquote>
+<p>《Java 核心技术》这本书是这样介绍重载的：</p>
+<p>如果多个方法(比如 <code>StringBuilder</code> 的构造方法)有相同的名字、不同的参数， 便产生了重载。</p>
+<p>编译器必须挑选出具体执行哪个方法，它通过用各个方法给出的参数类型与特定方法调用所使用的值类型进行匹配来挑选出相应的方法。 如果编译器找不到匹配的参数， 就会产生编译时错误， 因为根本不存在匹配， 或者没有一个比其他的更好(这个过程被称为重载解析(overloading resolution))。</p>
+<p>Java 允许重载任何方法， 而不只是构造器方法。</p></blockquote>
+<p><strong>重写</strong>发生在运行期，是子类对父类的允许访问的方法的实现过程进行重新编写。</p>
+<ol>
+<li>方法名、参数列表必须相同，子类方法返回值类型应比父类方法返回值类型更小或相等，抛出的异常范围小于等于父类，访问修饰符范围大于等于父类。</li>
+<li>如果父类方法访问修饰符为 <code>private/final/static</code> 则子类就不能重写该方法，但是被 <code>static</code> 修饰的方法能够被再次声明。</li>
+<li>构造方法无法被重写</li>
+</ol>
+<p>综上：<strong>重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">区别点</th>
+          <th style="text-align: left">重载方法</th>
+          <th style="text-align: left">重写方法</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">发生范围</td>
+          <td style="text-align: left">同一个类</td>
+          <td style="text-align: left">子类</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">参数列表</td>
+          <td style="text-align: left">必须修改</td>
+          <td style="text-align: left">一定不能修改</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">返回类型</td>
+          <td style="text-align: left">可修改</td>
+          <td style="text-align: left">子类方法返回值类型应比父类方法返回值类型更小或相等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">异常</td>
+          <td style="text-align: left">可修改</td>
+          <td style="text-align: left">子类方法声明抛出的异常类应比父类方法声明抛出的异常类更小或相等；</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">访问修饰符</td>
+          <td style="text-align: left">可修改</td>
+          <td style="text-align: left">一定不能做更严格的限制（可以降低限制）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">发生阶段</td>
+          <td style="text-align: left">编译期</td>
+          <td style="text-align: left">运行期</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>方法的重写要遵循“两同两小一大”</strong></p>
+<ul>
+<li>
+<p>“两同”即方法名相同、形参列表相同；</p>
+</li>
+<li>
+<p>“两小”指的是子类方法返回值类型应比父类方法返回值类型更小或相等，子类方法声明抛出的异常类应比父类方法声明抛出的异常类更小或相等；</p>
+</li>
+<li>
+<p>“一大”指的是子类方法的访问权限应比父类方法的访问权限更大或相等。</p>
+</li>
+</ul>
+<blockquote>
+<p>关于 <strong>重写的返回值类型</strong> 这里需要额外多说明一下，上面的表述不太清晰准确：如果方法的返回类型是 void 和基本数据类型，则返回值重写时不可修改。但是如果方法的返回值是引用类型，重写时是可以返回该引用类型的子类的</p></blockquote>
+
+
+<h4 class="relative group">1.2.6.2 @Override重写注解 
+    <div id="1262-override%E9%87%8D%E5%86%99%E6%B3%A8%E8%A7%A3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1262-override%E9%87%8D%E5%86%99%E6%B3%A8%E8%A7%A3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>
+<p>@Override:注解，重写注解校验</p>
+</li>
+<li>
+<p>这个注解标记的方法，就说明这个方法必须是重写父类的方法，否则编译阶段报错。</p>
+</li>
+<li>
+<p>建议重写都加上这个注解，一方面可以提高代码的可读性，一方面可以防止重写出错。</p>
+</li>
+</ul>
+<p><strong>注意事项：</strong></p>
+<ol>
+<li>方法重写是发生在子父类之间的关系。</li>
+<li>子类方法覆盖父类方法，必须要保证权限大于等于父类权限。</li>
+<li>子类方法覆盖父类方法，返回值类型、函数名和参数列表都要一模一样。</li>
+</ol>
+
+
+<h4 class="relative group">1.2.6.3 构造器是否可以被重写 
+    <div id="1263-%E6%9E%84%E9%80%A0%E5%99%A8%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E9%87%8D%E5%86%99" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1263-%E6%9E%84%E9%80%A0%E5%99%A8%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E8%A2%AB%E9%87%8D%E5%86%99" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>**构造器在Java中是一种特殊的方法，用于创建和初始化对象。**与其他普通方法不同，构造器的名称必须与类名一致，并且没有返回类型。
+**在Java中，构造器不能被直接重写。**子类无法定义与父类相同名称和参数的构造器。这是因为构造器是用于创建对象并初始化其状态的特殊方法，它与类的实例化密切相关。如果允许子类重写构造器，那么可能会导致对象的创建和初始化过程出现混乱，破坏了类的结构和设计原则。
+然而，**子类可以通过调用父类的构造器来完成对继承的父类的初始化操作。**在子类的构造器中可以使用关键字super来调用父类的构造器，并传递相应的参数。这样可以确保父类的构造器得到正确地执行，从而完成对父类属性的初始化。
+总结起来，构造器本身不能被重写，但子类可以通过调用父类的构造器来实现对父类的初始化操作。</p>
+
+
+<h3 class="relative group">1.2.7 继承后的特点—构造方法 
+    <div id="127-%E7%BB%A7%E6%89%BF%E5%90%8E%E7%9A%84%E7%89%B9%E7%82%B9%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#127-%E7%BB%A7%E6%89%BF%E5%90%8E%E7%9A%84%E7%89%B9%E7%82%B9%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>构造方法的定义格式和作用：</strong></p>
+<ol>
+<li>构造方法的名字是与类名一致的。所以子类是无法继承父类构造方法的。</li>
+<li>构造方法的作用是初始化对象成员变量数据的。所以子类的初始化过程中，必须先执行父类的初始化动作。<strong>子类的构造方法中默认有一个<code>super()</code> ，表示调用父类的构造方法，父类成员变量初始化后，才可以给子类使用。</strong>（<strong>先有爸爸，才能有儿子</strong>）</li>
+</ol>
+<p><strong>继承后子类构方法器特点</strong>:子类所有构造方法的第一行都会默认先调用父类的无参构造方法</p>
+<ul>
+<li>子类构造方法执行的时候，都会在第一行默认先调用父类无参数构造方法一次。</li>
+<li>子类构造方法的第一行都隐含了一个**super()**去调用父类无参数构造方法，**super()**可以省略不写。</li>
+</ul>
+
+
+<h3 class="relative group">1.2.8 super(&hellip;)和this(&hellip;) 
+    <div id="128-super%E5%92%8Cthis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#128-super%E5%92%8Cthis" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>子类有参数构造方法只是初始化了自己对象中的成员变量，而父类中的成员变量依然是没有数据的，怎么解决这个问题呢，我们可以借助与super(&hellip;)去调用父类构造方法，以便初始化继承自父类对象的成员变量。</p>
+<p>关于super与this的例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="s">&#34;凤姐&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">20</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;父类无参&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Person</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// getter/setter省略</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">100</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//super(); // 调用父类无参构造方法,默认就存在，可以不写，必须再第一行</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;子类无参&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="nf">Student</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="err">，</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="err">，</span><span class="kt">double</span><span class="w"> </span><span class="n">score</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="p">,</span><span class="n">age</span><span class="p">);</span><span class="c1">// 调用父类有参构造方法Person(String name , int age)初始化name和age</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">score</span><span class="p">;</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;子类有参&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c1">// getter/setter省略</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo07</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 调用子类有参数构造方法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Student</span><span class="p">(</span><span class="s">&#34;张三&#34;</span><span class="err">，</span><span class="n">20</span><span class="err">，</span><span class="n">99</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s2</span><span class="p">.</span><span class="na">getScore</span><span class="p">());</span><span class="w"> </span><span class="c1">// 99</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s2</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w"> </span><span class="c1">// 输出 张三</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s2</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span><span class="w"> </span><span class="c1">// 输出 20</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>子类的每个构造方法中均有默认的super()，调用父类的空参构造。手动调用父类构造会覆盖默认的super()。</strong></p>
+<p><strong>super() 和 this() 都必须是在构造方法的第一行，所以不能同时出现。</strong></p>
+<p>super(..)是根据参数去确定调用父类哪个构造方法的。</p>
+
+
+<h4 class="relative group">1.2.8.1 super(…)案例图解 
+    <div id="1281-super%E6%A1%88%E4%BE%8B%E5%9B%BE%E8%A7%A3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1281-super%E6%A1%88%E4%BE%8B%E5%9B%BE%E8%A7%A3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><strong>父类空间优先于子类对象产生</strong></p>
+<p>在每次创建子类对象时，先初始化父类空间，再创建其子类对象本身。目的在于子类对象中包含了其对应的父类空间，便可以包含其父类的成员，如果父类成员非private修饰，则子类可以随意使用父类成员。代码体现在子类的构造七调用时，一定先调用父类的构造方法。理解图解如下：</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250308003855600.png" alt="image-20250308003855600" />
+      
+    </figure>
+</p>
+
+
+<h4 class="relative group">1.2.8.2 this(&hellip;)用法演示 
+    <div id="1282-this%E7%94%A8%E6%B3%95%E6%BC%94%E7%A4%BA" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1282-this%E7%94%A8%E6%B3%95%E6%BC%94%E7%A4%BA" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>this(&hellip;)</p>
+<ul>
+<li>默认是去找本类中的其他构造方法，根据参数来确定具体调用哪一个构造方法。</li>
+<li>为了借用其他构造方法的功能。</li>
+</ul>
+
+
+<h3 class="relative group">1.2.9 继承的特点 
+    <div id="129-%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E7%82%B9" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#129-%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E7%82%B9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>
+<p>Java只支持单继承，不支持多继承。</p>
+</li>
+<li>
+<p>一个类可以有多个子类。</p>
+</li>
+<li>
+<p>可以多层继承。</p>
+</li>
+</ol>
+<blockquote>
+<p>顶层父类是Object类。所有的类默认继承Object，作为父类。</p></blockquote>
+<p><strong>关于不支持多继承：</strong></p>
+<p>==<strong>Java不直接支持多继承，即一个类不能同时继承多个父类。</strong>==这是由设计上的考虑和语言特性决定的。
+Java中选择了单继承的设计，主要出于以下几个原因：</p>
+<ol>
+<li><strong>继承的复杂性</strong>：多继承会引入菱形继承等复杂性问题。当一个类同时继承自多个父类时，可能会出现命名冲突、方法重复实现等问题，导致代码难以理解和维护。</li>
+<li><strong>接口的存在</strong>：Java提供了接口（Interface）的概念来解决多继承的问题。接口允许一个类实现多个接口，从而达到类似多继承的效果。接口与类的分离可以降低代码的耦合度，并且使得类的设计更加灵活和可扩展。</li>
+<li><strong>单一职责原则</strong>：Java鼓励使用组合而非继承的方式，遵循设计原则中的单一职责原则。通过将功能划分为独立的类，然后在需要时进行组合，可以实现更灵活、可复用的代码结构，提高代码的可维护性。</li>
+</ol>
+<p>尽管Java不支持直接的多继承，**但可以使用接口或抽象类等方式来模拟部分多继承的功能。**接口提供了一种更灵活、更安全的多继承方式，允许类实现多个接口并获得各个接口的方法声明，同时避免了多继承的复杂性问题。</p>
 
           
           
@@ -911,7 +1375,7 @@ undefined</p>
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/1741323825874-java-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">
+            <a class="flex group mr-3" href="/posts/1741362512399-java-test/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -923,7 +1387,7 @@ undefined</p>
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >java 基础概念</span
+                  >java test</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
