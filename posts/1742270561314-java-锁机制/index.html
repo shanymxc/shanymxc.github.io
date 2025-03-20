@@ -1,0 +1,2765 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Java 锁机制 &middot; Blog homepage</title>
+  <meta name="title" content="Java 锁机制 &middot; Blog homepage" />
+  
+  <meta name="description" content="a description" />
+  <meta name="keywords" content="java, 并发编程, " />
+  
+  
+  <link rel="canonical" href="https://shanymxc.github.io/posts/1742270561314-java-%E9%94%81%E6%9C%BA%E5%88%B6/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.1c9cd0d1ebaf117272b5c4f6bd49878475cb210d5e0da4f061632d779f5bb46851881c187e6e634dba5071c4e3d80e7d5cec1dd80443b2fa68acd358f9eda881.css"
+    integrity="sha512-HJzQ0euvEXJytcT2vUmHhHXLIQ1eDaTwYWMtd59btGhRiBwYfm5jTbpQccTj2A59XOwd2ARDsvporNNY&#43;e2ogQ==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.b6411b5d4cd56c0068d34c4acbce043846adad56b824e3d486a06d3459aed2eb7f7413874b7871cc2c822c8c8834cbed944022918bcc8cca710a962167c36d32.js"
+    integrity="sha512-tkEbXUzVbABo00xKy84EOEatrVa4JOPUhqBtNFmu0ut/dBOHS3hxzCyCLIyINMvtlEAikYvMjMpxCpYhZ8NtMg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="https://shanymxc.github.io/posts/1742270561314-java-%E9%94%81%E6%9C%BA%E5%88%B6/">
+  <meta property="og:site_name" content="Blog homepage">
+  <meta property="og:title" content="Java 锁机制">
+  <meta property="og:description" content="a description">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-18T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="并发编程">
+    <meta property="og:image" content="https://shanymxc.github.io/posts/1742270561314-java-%E9%94%81%E6%9C%BA%E5%88%B6/featured.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://shanymxc.github.io/posts/1742270561314-java-%E9%94%81%E6%9C%BA%E5%88%B6/featured.png">
+  <meta name="twitter:title" content="Java 锁机制">
+  <meta name="twitter:description" content="a description">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Java 锁机制",
+    "headline": "Java 锁机制",
+    "description": "a description",
+    
+    "inLanguage": "en",
+    "url" : "https:\/\/shanymxc.github.io\/posts\/1742270561314-java-%E9%94%81%E6%9C%BA%E5%88%B6\/",
+    "author" : {
+      "@type": "Person",
+      "name": "山有木兮"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-03-18T00:00:00\u002b00:00",
+    "datePublished": "2025-03-18T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-03-18T00:00:00\u002b00:00",
+    
+    "keywords": ["java","并发编程"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2021"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="山有木兮" />
+  
+  
+  
+  <link href="mailto:%20mvz09630521@126.com" rel="me" />
+  
+  
+  <link href="https://github.com/shanymxc" rel="me" />
+  
+  
+  <link href="https://www.google.com/" rel="me" />
+  
+  
+  <link href="https://steamcommunity.com/profiles/76561199164522002" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Blog homepage</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="Posts">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+  <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="Posts">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href=""  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      >Blog homepage</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/"
+      >Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/1742270561314-java-%E9%94%81%E6%9C%BA%E5%88%B6/"
+      >Java 锁机制</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Java 锁机制
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-03-18T00:00:00&#43;00:00">18 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2021 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+<script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
+
+<span class="mb-[2px]">
+    <span id="zen-mode-button"
+          class="text-lg hover:text-primary-500"
+          title="Enable zen mode"
+          data-title-i18n-disable="Enable zen mode"
+          data-title-i18n-enable="Disable zen mode">
+        <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg>
+  </span>
+
+</span>
+    </span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/java/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Java
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    并发编程
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="山有木兮" src="/../assets/profilePhoto_hu_b4a36b85e5a62ffb.jpg" />
+    
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      山有木兮
+    </div>
+    
+    
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">But thy eternal summer shall not fade.</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:%20mvz09630521@126.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/shanymxc"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.google.com/"
+          target="_blank"
+          aria-label="Google"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://steamcommunity.com/profiles/76561199164522002"
+          target="_blank"
+          aria-label="Steam"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-什么是悲观锁">1.1 什么是悲观锁?</a></li>
+    <li><a href="#12-什么是乐观锁">1.2 什么是乐观锁？</a></li>
+    <li><a href="#13-如何实现乐观锁">1.3 如何实现乐观锁？</a>
+      <ul>
+        <li><a href="#131-版本号机制">1.3.1 版本号机制</a></li>
+        <li><a href="#132-cas算法">1.3.2 CAS算法</a></li>
+        <li><a href="#133-java中cas的实现">1.3.3 Java中CAS的实现</a></li>
+        <li><a href="#134-cas算法存在的问题">1.3.4 CAS算法存在的问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-synchronized关键字">1.4 synchronized关键字</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#对象的内存结构">对象的内存结构</a></li>
+            <li><a href="#markword">MarkWord</a></li>
+            <li><a href="#再说monitor重量级锁">再说Monitor重量级锁</a></li>
+            <li><a href="#轻量级锁">轻量级锁</a></li>
+            <li><a href="#偏向锁">偏向锁</a></li>
+          </ul>
+        </li>
+        <li><a href="#你谈谈-jmmjava-内存模型">你谈谈 JMM（Java 内存模型）</a></li>
+        <li><a href="#141-如何使用-synchronized">1.4.1 如何使用 synchronized？</a></li>
+        <li><a href="#142-构造方法可以用-synchronized-修饰么">1.4.2 构造方法可以用 synchronized 修饰么？</a></li>
+        <li><a href="#143-synchronized-底层原理">1.4.3 synchronized 底层原理</a>
+          <ul>
+            <li><a href="#1431-jdk16-之后的synchronized底层做了哪些优化锁升级原理了解吗">1.4.3.1 JDK1.6 之后的synchronized底层做了哪些优化？锁升级原理了解吗？</a></li>
+            <li><a href="#1432-synchronized-和-volatile-有什么区别">1.4.3.2 synchronized 和 volatile 有什么区别？</a></li>
+          </ul>
+        </li>
+        <li><a href="#144-线程同步">1.4.4 线程同步</a></li>
+        <li><a href="#145-synchronized的实现原理">1.4.5 synchronized的实现原理</a></li>
+        <li><a href="#146-synchronized-可以锁字符串吗">1.4.6 synchronized 可以锁字符串吗</a></li>
+        <li><a href="#147--可重入锁">1.4.7  <a id="可重入锁">可重入锁</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#15-reentrantlock">1.5 ReentrantLock</a>
+      <ul>
+        <li><a href="#151-reentrantlock-是什么">1.5.1 ReentrantLock 是什么？</a></li>
+        <li><a href="#152-sychronized和reentrantlock的区别">1.5.2 Sychronized和ReentrantLock的区别</a></li>
+        <li><a href="#152-公平锁和非公平锁">1.5.2 公平锁和非公平锁</a></li>
+        <li><a href="#153-公平锁和非公平锁的底层实现">1.5.3 公平锁和非公平锁的底层实现</a></li>
+        <li><a href="#154-synchronized-和-reentrantlock">1.5.4 synchronized 和 ReentrantLock</a></li>
+        <li><a href="#155-可中断锁和不可中断锁">1.5.5 可中断锁和不可中断锁</a></li>
+        <li><a href="#156-trylock和-lock方法">1.5.6 tryLock（）和 lock（）方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#16-reentrantreadwritelock">1.6 ReentrantReadWriteLock</a>
+      <ul>
+        <li><a href="#161-reentrantreadwritelock-是什么">1.6.1 ReentrantReadWriteLock 是什么？</a></li>
+        <li><a href="#162-共享锁和独占锁有什么区别">1.6.2 共享锁和独占锁有什么区别？</a></li>
+        <li><a href="#163-线程持有读锁还能获取写锁吗">1.6.3 线程持有读锁还能获取写锁吗？</a></li>
+        <li><a href="#164-读锁为什么不能升级为写锁">1.6.4 读锁为什么不能升级为写锁？</a></li>
+        <li><a href="#165-读写锁的应用场景">1.6.5 读写锁的应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#17-stampedlock">1.7 StampedLock</a>
+      <ul>
+        <li><a href="#171-stampedlock是什么">1.7.1 StampedLock是什么？</a></li>
+        <li><a href="#172-stampedlock-的性能为什么更好">1.7.2 StampedLock 的性能为什么更好？</a></li>
+        <li><a href="#173-stampedlock适合什么场景">1.7.3 StampedLock适合什么场景？</a></li>
+        <li><a href="#174-stampedlock的底层原理了解吗">1.7.4 StampedLock的底层原理了解吗？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#18-无锁状态">1.8 无锁状态</a></li>
+    <li><a href="#19-偏向锁">1.9 偏向锁</a></li>
+    <li><a href="#110-轻量级锁">1.10 轻量级锁</a></li>
+    <li><a href="#111-重量级锁">1.11 重量级锁</a></li>
+    <li><a href="#112-锁升级场景">1.12 锁升级场景</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-什么是悲观锁">1.1 什么是悲观锁?</a></li>
+    <li><a href="#12-什么是乐观锁">1.2 什么是乐观锁？</a></li>
+    <li><a href="#13-如何实现乐观锁">1.3 如何实现乐观锁？</a>
+      <ul>
+        <li><a href="#131-版本号机制">1.3.1 版本号机制</a></li>
+        <li><a href="#132-cas算法">1.3.2 CAS算法</a></li>
+        <li><a href="#133-java中cas的实现">1.3.3 Java中CAS的实现</a></li>
+        <li><a href="#134-cas算法存在的问题">1.3.4 CAS算法存在的问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#14-synchronized关键字">1.4 synchronized关键字</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#对象的内存结构">对象的内存结构</a></li>
+            <li><a href="#markword">MarkWord</a></li>
+            <li><a href="#再说monitor重量级锁">再说Monitor重量级锁</a></li>
+            <li><a href="#轻量级锁">轻量级锁</a></li>
+            <li><a href="#偏向锁">偏向锁</a></li>
+          </ul>
+        </li>
+        <li><a href="#你谈谈-jmmjava-内存模型">你谈谈 JMM（Java 内存模型）</a></li>
+        <li><a href="#141-如何使用-synchronized">1.4.1 如何使用 synchronized？</a></li>
+        <li><a href="#142-构造方法可以用-synchronized-修饰么">1.4.2 构造方法可以用 synchronized 修饰么？</a></li>
+        <li><a href="#143-synchronized-底层原理">1.4.3 synchronized 底层原理</a>
+          <ul>
+            <li><a href="#1431-jdk16-之后的synchronized底层做了哪些优化锁升级原理了解吗">1.4.3.1 JDK1.6 之后的synchronized底层做了哪些优化？锁升级原理了解吗？</a></li>
+            <li><a href="#1432-synchronized-和-volatile-有什么区别">1.4.3.2 synchronized 和 volatile 有什么区别？</a></li>
+          </ul>
+        </li>
+        <li><a href="#144-线程同步">1.4.4 线程同步</a></li>
+        <li><a href="#145-synchronized的实现原理">1.4.5 synchronized的实现原理</a></li>
+        <li><a href="#146-synchronized-可以锁字符串吗">1.4.6 synchronized 可以锁字符串吗</a></li>
+        <li><a href="#147--可重入锁">1.4.7  <a id="可重入锁">可重入锁</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#15-reentrantlock">1.5 ReentrantLock</a>
+      <ul>
+        <li><a href="#151-reentrantlock-是什么">1.5.1 ReentrantLock 是什么？</a></li>
+        <li><a href="#152-sychronized和reentrantlock的区别">1.5.2 Sychronized和ReentrantLock的区别</a></li>
+        <li><a href="#152-公平锁和非公平锁">1.5.2 公平锁和非公平锁</a></li>
+        <li><a href="#153-公平锁和非公平锁的底层实现">1.5.3 公平锁和非公平锁的底层实现</a></li>
+        <li><a href="#154-synchronized-和-reentrantlock">1.5.4 synchronized 和 ReentrantLock</a></li>
+        <li><a href="#155-可中断锁和不可中断锁">1.5.5 可中断锁和不可中断锁</a></li>
+        <li><a href="#156-trylock和-lock方法">1.5.6 tryLock（）和 lock（）方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#16-reentrantreadwritelock">1.6 ReentrantReadWriteLock</a>
+      <ul>
+        <li><a href="#161-reentrantreadwritelock-是什么">1.6.1 ReentrantReadWriteLock 是什么？</a></li>
+        <li><a href="#162-共享锁和独占锁有什么区别">1.6.2 共享锁和独占锁有什么区别？</a></li>
+        <li><a href="#163-线程持有读锁还能获取写锁吗">1.6.3 线程持有读锁还能获取写锁吗？</a></li>
+        <li><a href="#164-读锁为什么不能升级为写锁">1.6.4 读锁为什么不能升级为写锁？</a></li>
+        <li><a href="#165-读写锁的应用场景">1.6.5 读写锁的应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#17-stampedlock">1.7 StampedLock</a>
+      <ul>
+        <li><a href="#171-stampedlock是什么">1.7.1 StampedLock是什么？</a></li>
+        <li><a href="#172-stampedlock-的性能为什么更好">1.7.2 StampedLock 的性能为什么更好？</a></li>
+        <li><a href="#173-stampedlock适合什么场景">1.7.3 StampedLock适合什么场景？</a></li>
+        <li><a href="#174-stampedlock的底层原理了解吗">1.7.4 StampedLock的底层原理了解吗？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#18-无锁状态">1.8 无锁状态</a></li>
+    <li><a href="#19-偏向锁">1.9 偏向锁</a></li>
+    <li><a href="#110-轻量级锁">1.10 轻量级锁</a></li>
+    <li><a href="#111-重量级锁">1.11 重量级锁</a></li>
+    <li><a href="#112-锁升级场景">1.12 锁升级场景</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h1 class="relative group">java锁机制 
+    <div id="java%E9%94%81%E6%9C%BA%E5%88%B6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#java%E9%94%81%E6%9C%BA%E5%88%B6" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>在多线程环境下，为了让多线程安全地访问和使用共享变量，必须引入锁机制。锁机制即当一个线程持有锁后，其他线程只能进行等待，直到持有锁的线程释放锁，再次重新竞争锁。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319174824814.png" alt="image-20250319174824814" />
+      
+    </figure>
+</p>
+
+
+<h1 class="relative group">乐观锁和悲观锁 
+    <div id="%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%B9%90%E8%A7%82%E9%94%81%E5%92%8C%E6%82%B2%E8%A7%82%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+
+<h2 class="relative group">1.1 什么是悲观锁? 
+    <div id="11-%E4%BB%80%E4%B9%88%E6%98%AF%E6%82%B2%E8%A7%82%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#11-%E4%BB%80%E4%B9%88%E6%98%AF%E6%82%B2%E8%A7%82%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>悲观锁总是假设最坏的情况，认为共享资源每次被访问的时候就会出现问题(比如共享数据被修改)，所以每次在获取资源操作的时候都会上锁，这样其他线程想拿到这个资源就会阻塞直到锁被上一个持有者释放。也就是说，<strong>共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程</strong>。</p>
+<p>像 Java 中<code>synchronized</code>和<code>ReentrantLock</code>等独占锁就是悲观锁思想的实现。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">performSynchronisedTask</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 需要同步的操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="n">Lock</span><span class="w"> </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ReentrantLock</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">lock</span><span class="p">.</span><span class="na">lock</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="c1">// 需要同步的操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">lock</span><span class="p">.</span><span class="na">unlock</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>高并发的场景下，激烈的锁竞争会造成线程阻塞，大量阻塞线程会导致系统的上下文切换，增加系统的性能开销。并且，悲观锁还可能会存在死锁问题，影响代码的正常运行。</p>
+
+
+<h2 class="relative group">1.2 什么是乐观锁？ 
+    <div id="12-%E4%BB%80%E4%B9%88%E6%98%AF%E4%B9%90%E8%A7%82%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#12-%E4%BB%80%E4%B9%88%E6%98%AF%E4%B9%90%E8%A7%82%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>乐观锁总是假设最好的情况，认为共享资源每次被访问的时候不会出现问题，线程可以不停地执行，无需加锁也无需等待，只是在提交修改的时候去验证对应的资源（也就是数据）是否被其它线程修改了（具体方法可以使用版本号机制或 CAS 算法）。</p>
+<p>在 Java 中<code>java.util.concurrent.atomic</code>包下面的原子变量类（比如<code>AtomicInteger</code>、<code>LongAdder</code>）就是使用了乐观锁的一种实现方式 <strong>CAS</strong> 实现的。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181441757.png" alt="image-20250319181441757" />
+      
+    </figure>
+</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// LongAdder 在高并发场景下会比 AtomicInteger 和 AtomicLong 的性能更好</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 代价就是会消耗更多的内存空间（空间换时间）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">LongAdder</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LongAdder</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sum</span><span class="p">.</span><span class="na">increment</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></div><p>高并发的场景下，乐观锁相比悲观锁来说，不存在锁竞争造成线程阻塞，也不会有死锁的问题，在性能上往往会更胜一筹。但是，如果冲突频繁发生（写占比非常多的情况），会频繁失败和重试，这样同样会非常影响性能，导致 CPU 飙升。</p>
+<p>不过，大量失败重试的问题也是可以解决的，像我们前面提到的 <code>LongAdder</code>以空间换时间的方式就解决了这个问题。</p>
+<p>理论上来说：</p>
+<p>悲观锁通常多用于写比较多的情况（多写场景，竞争激烈），这样可以避免频繁失败和重试影响性能，悲观锁的开销是固定的。不过，如果乐观锁解决了频繁失败和重试这个问题的话（比如<code>LongAdder</code>），也是可以考虑使用乐观锁的，要视实际情况而定。</p>
+<p>乐观锁通常多用于写比较少的情况（多读场景，竞争较少），这样可以避免频繁加锁影响性能。不过，乐观锁主要针对的对象是单个共享变量（参考<code>java.util.concurrent.atomic</code>包下面的原子变量类）。</p>
+
+
+<h2 class="relative group">1.3 如何实现乐观锁？ 
+    <div id="13-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B9%90%E8%A7%82%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#13-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B9%90%E8%A7%82%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>乐观锁一般会使用版本号机制或 CAS 算法实现，CAS 算法相对来说更多一些，这里需要格外注意。</p>
+
+
+<h3 class="relative group">1.3.1 版本号机制 
+    <div id="131-%E7%89%88%E6%9C%AC%E5%8F%B7%E6%9C%BA%E5%88%B6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#131-%E7%89%88%E6%9C%AC%E5%8F%B7%E6%9C%BA%E5%88%B6" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>一般是在数据表中加上一个数据版本号 <code>version</code> 字段，表示数据被修改的次数。当数据被修改时，<code>version</code> 值会加一。当线程 A 要更新数据值时，在读取数据的同时也会读取 <code>version</code> 值，在提交更新时，若刚才读取到的 version 值为当前数据库中的 <code>version</code> 值相等时才更新，否则重试更新操作，直到更新成功。</p>
+<blockquote>
+<p><strong>举一个简单的例子</strong>：假设数据库中帐户信息表中有一个 version 字段，当前值为 1 ；而当前帐户余额字段（ <code>balance</code> ）为 $100 。</p>
+<ol>
+<li>操作员 A 此时将其读出（ <code>version</code>=1 ），并从其帐户余额中扣除 $50（ $100-$50 ）。</li>
+<li>在操作员 A 操作的过程中，操作员 B 也读入此用户信息（ <code>version</code>=1 ），并从其帐户余额中扣除 $20 （ $100-$20 ）。</li>
+<li>操作员 A 完成了修改工作，将数据版本号（ <code>version</code>=1 ），连同帐户扣除后余额（ <code>balance</code>=$50 ），提交至数据库更新，此时由于提交数据版本等于数据库记录当前版本，数据被更新，数据库记录 <code>version</code> 更新为 2 。</li>
+<li>操作员 B 完成了操作，也将版本号（ <code>version</code>=1 ）试图向数据库提交数据（ <code>balance</code>=$80 ），但此时比对数据库记录版本时发现，操作员 B 提交的数据版本号为 1 ，数据库记录当前版本也为 2 ，不满足 “ 提交版本必须等于当前版本才能执行更新 “ 的乐观锁策略，因此，操作员 B 的提交被驳回。</li>
+</ol>
+<p>这样就避免了操作员 B 用基于 <code>version</code>=1 的旧数据修改的结果覆盖操作员 A 的操作结果的可能。</p></blockquote>
+
+
+<h3 class="relative group">1.3.2 CAS算法 
+    <div id="132-cas%E7%AE%97%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#132-cas%E7%AE%97%E6%B3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>CAS 的全称是 <strong>Compare And Swap（比较与交换）</strong> ，用于实现乐观锁，被广泛应用于各大框架中。CAS 的思想很简单，就是用一个预期值和要更新的变量值进行比较，两值相等才会进行更新。</p>
+<p>CAS 是一个原子操作，底层依赖于一条 CPU 的原子指令。</p>
+<blockquote>
+<p><strong>原子操作</strong> 即最小不可拆分的操作，也就是说操作一旦开始，就不能被打断，直到操作完成。</p></blockquote>
+<p>CAS 涉及到三个操作数：</p>
+<ul>
+<li><strong>V</strong>：要更新的变量值(Var)</li>
+<li><strong>E</strong>：预期值(Expected)</li>
+<li><strong>N</strong>：拟写入的新值(New)</li>
+</ul>
+<p>当且仅当 V 的值等于 E 时，CAS 通过原子方式用新值 N 来更新 V 的值。如果不等，说明已经有其它线程更新了 V，则当前线程放弃更新。</p>
+<blockquote>
+<p><strong>举一个简单的例子</strong>：线程 A 要修改变量 i 的值为 6，i 原值为 1（V = 1，E=1，N=6，假设不存在 ABA 问题）。</p>
+<ol>
+<li>i 与 1 进行比较，如果相等， 则说明没被其他线程修改，可以被设置为 6 。</li>
+<li>i 与 1 进行比较，如果不相等，则说明被其他线程修改，当前线程放弃更新，CAS 操作失败。</li>
+</ol>
+<p>当多个线程同时使用 CAS 操作一个变量时，只有一个会胜出，并成功更新，其余均会失败，但失败的线程并不会被挂起，仅是被告知失败，并且允许再次尝试，当然也允许失败的线程放弃操作。</p>
+<p>Java 语言并没有直接实现 CAS，CAS 相关的实现是通过 C++ 内联汇编的形式实现的（JNI 调用）。因此， CAS 的具体实现和操作系统以及 CPU 都有关系。</p></blockquote>
+<p><code>sun.misc</code>包下的<code>Unsafe</code>类提供了<code>compareAndSwapObject</code>、<code>compareAndSwapInt</code>、<code>compareAndSwapLong</code>方法来实现的对<code>Object</code>、<code>int</code>、<code>long</code>类型的 CAS 操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">  *  CAS
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @param o         包含要修改field的对象
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @param offset    对象中某field的偏移量
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @param expected  期望值
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @param update    更新值
+</span></span></span><span class="line"><span class="cl"><span class="cm">  * @return          true | false
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSwapObject</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w">  </span><span class="n">Object</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">update</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSwapInt</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">update</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSwapLong</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">update</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p>关于 <code>Unsafe</code> 类：<a href="https://javaguide.cn/java/basis/unsafe.html" target="_blank">Java 魔法类 Unsafe 详解 - JavaGuide - 2022</a></p>
+
+
+<h3 class="relative group">1.3.3 Java中CAS的实现 
+    <div id="133-java%E4%B8%ADcas%E7%9A%84%E5%AE%9E%E7%8E%B0" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#133-java%E4%B8%ADcas%E7%9A%84%E5%AE%9E%E7%8E%B0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>在 Java 中，实现 CAS（Compare-And-Swap, 比较并交换）操作的一个关键类是<code>Unsafe</code>。</p>
+<p><code>Unsafe</code>类位于<code>sun.misc</code>包下，是一个提供低级别、不安全操作的类。由于其强大的功能和潜在的危险性，它通常用于 JVM 内部或一些需要极高性能和底层访问的库中，而不推荐普通开发者在应用程序中使用。关于 <code>Unsafe</code>类的详细介绍，可以阅读这篇文章：📌<a href="https://javaguide.cn/java/basis/unsafe.html" target="_blank">Java 魔法类 Unsafe 详解</a>。</p>
+<p><code>sun.misc</code>包下的<code>Unsafe</code>类提供了<code>compareAndSwapObject</code>、<code>compareAndSwapInt</code>、<code>compareAndSwapLong</code>方法来实现的对<code>Object</code>、<code>int</code>、<code>long</code>类型的 CAS 操作：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 以原子方式更新对象字段的值。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param o        要操作的对象
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param offset   对象字段的内存偏移量
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param expected 期望的旧值
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @param x        要设置的新值
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @return 如果值被成功更新，则返回 true；否则返回 false
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSwapObject</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 以原子方式更新 int 类型的对象字段的值。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSwapInt</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 以原子方式更新 long 类型的对象字段的值。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSwapLong</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">expected</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p><code>Unsafe</code>类中的 CAS 方法是<code>native</code>方法。<code>native</code>关键字表明这些方法是用本地代码（通常是 C 或 C++）实现的，而不是用 Java 实现的。这些方法直接调用底层的硬件指令来实现原子操作。也就是说，Java 语言并没有直接用 Java 实现 CAS，而是通过 C++ 内联汇编的形式实现的（通过 JNI 调用）。因此，CAS 的具体实现与操作系统以及 CPU 密切相关。</p>
+<p><code>java.util.concurrent.atomic</code> 包提供了一些用于原子操作的类。这些类利用底层的原子指令，确保在多线程环境下的操作是线程安全的。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181521851.png" alt="image-20250319181521851" />
+      
+    </figure>
+</p>
+<p>关于这些 Atomic 原子类的介绍和使用，可以阅读这篇文章：<a href="https://javaguide.cn/java/concurrent/atomic-classes.html" target="_blank">Atomic 原子类总结</a>。</p>
+<p><code>AtomicInteger</code>是 Java 的原子类之一，主要用于对 <code>int</code> 类型的变量进行原子操作，它利用<code>Unsafe</code>类提供的低级别原子操作方法实现无锁的线程安全性。</p>
+<p>下面，我们通过解读<code>AtomicInteger</code>的核心源码（JDK1.8），来说明 Java 如何使用<code>Unsafe</code>类的方法来实现原子操作。</p>
+<blockquote>
+<p><code>AtomicInteger</code>核心源码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 获取 Unsafe 实例</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Unsafe</span><span class="w"> </span><span class="n">unsafe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Unsafe</span><span class="p">.</span><span class="na">getUnsafe</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">valueOffset</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">static</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="c1">// 获取“value”字段在AtomicInteger类中的内存偏移量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="n">valueOffset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">objectFieldOffset</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="p">(</span><span class="n">AtomicInteger</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;value&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Error</span><span class="p">(</span><span class="n">ex</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 确保“value”字段的可见性</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="kd">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 如果当前值等于预期值，则原子地将值设置为newValue</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用 Unsafe#compareAndSwapInt 方法进行CAS操作</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSet</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">expect</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">update</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">compareAndSwapInt</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">valueOffset</span><span class="p">,</span><span class="w"> </span><span class="n">expect</span><span class="p">,</span><span class="w"> </span><span class="n">update</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 原子地将当前值加 delta 并返回旧值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAndAdd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">getAndAddInt</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">valueOffset</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 原子地将当前值加 1 并返回加之前的值（旧值）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用 Unsafe#getAndAddInt 方法进行CAS操作。</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAndIncrement</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">getAndAddInt</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">valueOffset</span><span class="p">,</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 原子地将当前值减 1 并返回减之前的值（旧值）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAndDecrement</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">getAndAddInt</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">valueOffset</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><code>Unsafe#getAndAddInt</code>源码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 原子地获取并增加整数值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAndAddInt</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="c1">// 以 volatile 方式获取对象 o 在内存偏移量 offset 处的整数值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntVolatile</span><span class="p">(</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">compareAndSwapInt</span><span class="p">(</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">delta</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="c1">// 返回旧值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div></blockquote>
+<p>可以看到，<code>getAndAddInt</code> 使用了 <code>do-while</code> 循环：在<code>compareAndSwapInt</code>操作失败时，会不断重试直到成功。也就是说，<code>getAndAddInt</code>方法会通过 <code>compareAndSwapInt</code> 方法来尝试更新 <code>value</code> 的值，如果更新失败（当前值在此期间被其他线程修改），它会重新获取当前值并再次尝试更新，直到操作成功。</p>
+<p>由于 CAS 操作可能会因为并发冲突而失败，因此通常会与<code>while</code>循环搭配使用，在失败后不断重试，直到操作成功。这就是 <strong>自旋锁机制</strong> 。</p>
+
+
+<h3 class="relative group">1.3.4 CAS算法存在的问题 
+    <div id="134-cas%E7%AE%97%E6%B3%95%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#134-cas%E7%AE%97%E6%B3%95%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>ABA问题是CAS算法最常见的问题。</p>
+<p><strong>ABA问题</strong></p>
+<p>如果一个变量 V 初次读取的时候是 A 值，并且在准备赋值的时候检查到它仍然是 A 值，那我们就能说明它的值没有被其他线程修改过了吗？很明显是不能的，因为在这段时间它的值可能被改为其他值，然后又改回 A，那 CAS 操作就会误认为它从来没有被修改过。这个问题被称为 CAS 操作的 <strong>&ldquo;ABA&quot;问题。</strong></p>
+<p>ABA 问题的解决思路是在变量前面追加上<strong>版本号或者时间戳</strong>。JDK 1.5 以后的 <code>AtomicStampedReference</code> 类就是用来解决 ABA 问题的，其中的 <code>compareAndSet()</code> 方法就是首先检查当前引用是否等于预期引用，并且当前标志是否等于预期标志，如果全部相等，则以原子方式将该引用和该标志的值设置为给定的更新值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">compareAndSet</span><span class="p">(</span><span class="n">V</span><span class="w">   </span><span class="n">expectedReference</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                             </span><span class="n">V</span><span class="w">   </span><span class="n">newReference</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                             </span><span class="kt">int</span><span class="w"> </span><span class="n">expectedStamp</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                             </span><span class="kt">int</span><span class="w"> </span><span class="n">newStamp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pair</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">expectedReference</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">current</span><span class="p">.</span><span class="na">reference</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">expectedStamp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">current</span><span class="p">.</span><span class="na">stamp</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">((</span><span class="n">newReference</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">current</span><span class="p">.</span><span class="na">reference</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">newStamp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">current</span><span class="p">.</span><span class="na">stamp</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="n">casPair</span><span class="p">(</span><span class="n">current</span><span class="p">,</span><span class="w"> </span><span class="n">Pair</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">newReference</span><span class="p">,</span><span class="w"> </span><span class="n">newStamp</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>循环时间长开销大</strong></p>
+<p>CAS 经常会用到自旋操作来进行重试，也就是不成功就一直循环执行直到成功。如果长时间不成功，会给 CPU 带来非常大的执行开销。</p>
+<p>如果 JVM 能够支持处理器提供的<code>pause</code>指令，那么自旋操作的效率将有所提升。<code>pause</code>指令有两个重要作用：</p>
+<ol>
+<li><strong>延迟流水线执行指令</strong>：<code>pause</code>指令可以延迟指令的执行，从而减少 CPU 的资源消耗。具体的延迟时间取决于处理器的实现版本，在某些处理器上，延迟时间可能为零。</li>
+<li><strong>避免内存顺序冲突</strong>：在退出循环时，<code>pause</code>指令可以避免由于内存顺序冲突而导致的 CPU 流水线被清空，从而提高 CPU 的执行效率。</li>
+</ol>
+<p><strong>只能保证一个共享变量的原子操作</strong></p>
+<p>CAS 操作仅能对单个共享变量有效。当需要操作多个共享变量时，CAS 就显得无能为力。不过，从 JDK 1.5 开始，Java 提供了<code>AtomicReference</code>类，这使得我们能够保证引用对象之间的原子性。通过将多个变量封装在一个对象中，我们可以使用<code>AtomicReference</code>来执行 CAS 操作。</p>
+<p>除了 <code>AtomicReference</code> 这种方式之外，还可以利用加锁来保证。</p>
+
+
+<h2 class="relative group">1.4 synchronized关键字 
+    <div id="14-synchronized%E5%85%B3%E9%94%AE%E5%AD%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#14-synchronized%E5%85%B3%E9%94%AE%E5%AD%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>synchronized 底层使用的JVM级别中的Monitor 来决定当前线程是否获得了锁，如果某一个线程获得了锁，在没有释放锁之前，其他线程是不能或得到锁的。synchronized 属于悲观锁。</p>
+<p>synchronized 因为需要依赖于JVM级别的Monitor ，相对性能也比较低。</p>
+<p>monitor对象存在于每个Java对象的对象头中，synchronized 锁便是通过这种方式获取锁的，也是为什么Java中任意对象可以作为锁的原因</p>
+<p>monitor内部维护了三个变量</p>
+<ul>
+<li>WaitSet：保存处于Waiting状态的线程</li>
+<li>EntryList：保存处于Blocked状态的线程</li>
+<li>Owner：持有锁的线程</li>
+</ul>
+<p>只有一个线程获取到的标志就是在monitor中设置成功了Owner，一个monitor中只能有一个Owner</p>
+<p>在上锁的过程中，如果有其他线程也来抢锁，则进入EntryList 进行阻塞，当获得锁的线程执行完了，释放了锁，就会唤醒EntryList 中等待的线程竞争锁，竞争的时候是非公平的。</p>
+<p><code>synchronized</code> 是 Java 中的一个关键字，翻译成中文是同步的意思，主要解决的是多个线程之间访问资源的同步性，可以保证被它修饰的方法或者代码块在任意时刻只能有一个线程执行。</p>
+<p>在 Java 早期版本中，<code>synchronized</code> 属于 <strong>重量级锁</strong>，效率低下。这是因为监视器锁（monitor）是依赖于底层的操作系统的 <code>Mutex Lock</code> 来实现的，Java 的线程是映射到操作系统的原生线程之上的。如果要挂起或者唤醒一个线程，都需要操作系统帮忙完成，而操作系统实现线程之间的切换时需要从用户态转换到内核态，这个状态之间的转换需要相对比较长的时间，时间成本相对较高。</p>
+<p>不过，在 Java 6 之后， <code>synchronized</code> 引入了大量的优化如自旋锁、适应性自旋锁、锁消除、锁粗化、偏向锁、轻量级锁等技术来减少锁操作的开销，这些优化让 <code>synchronized</code> 锁的效率提升了很多。因此， <code>synchronized</code> 还是可以在实际项目中使用的，像 JDK 源码、很多开源框架都大量使用了 <code>synchronized</code> 。</p>
+<p>关于偏向锁多补充一点：由于偏向锁增加了 JVM 的复杂性，同时也并没有为所有应用都带来性能提升。因此，在 JDK15 中，偏向锁被默认关闭（仍然可以使用 <code>-XX:+UseBiasedLocking</code> 启用偏向锁），在 JDK18 中，偏向锁已经被彻底废弃（无法通过命令行打开）。</p>
+<blockquote>
+<p>偏向锁：在锁对象的对象头中记录一下当前获取到该锁的线程ID，该线程下次如果又来获取该锁就可以直接获取到了
+轻量级锁：由偏向锁升级而来，当一个线程获取到锁后，此时这把锁是偏向锁，此时如果有第二个线程来竞争锁，偏向锁就会升级为轻量级锁，之所以叫轻量级锁，是为了和重量级锁区分开来，轻量级锁底层是通过自旋来实现的，并不会阻塞线程
+如果自旋次数过多仍然没有获取到锁，则会升级为重量级锁，重量级锁会导致线程阻塞
+自旋锁：自旋锁就是线程在获取锁的过程中，不会去阻塞线程，也就无所谓唤醒线程，阻塞和唤醒这两个步骤都是需要操作系统去进行的，比较消耗时间，自旋锁是线程通过CAS获取预期的一个标记，如果没有获取到，则继续循环获取，如果获取到了则表示获取到了锁，这个过程线程一直在运行中，相对而言没有使用太多的操作系统资源，比较轻量。</p></blockquote>
+<p>Monitor实现的锁属于重量级锁，你了解过锁升级吗？</p>
+<ul>
+<li>Monitor实现的锁属于重量级锁，里面涉及到了用户态和内核态的切换、进程的上下文切换，成本较高，性能比较低。</li>
+<li>在JDK 1.6引入了两种新型锁机制：偏向锁和轻量级锁，它们的引入是为了解决在没有多线程竞争或基本没有竞争的场景下因使用传统锁机制带来的性能开销问题。</li>
+</ul>
+<ol>
+<li>
+
+
+<h4 class="relative group">对象的内存结构 
+    <div id="%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+</li>
+</ol>
+<p>在HotSpot虚拟机中，对象在内存中存储的布局可分为3块区域：对象头（Header）、实例数据（Instance Data）和对齐填充</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181540586.png" alt="image-20250319181540586" />
+      
+    </figure>
+</p>
+<p>我们需要重点分析MarkWord对象头</p>
+<ol>
+<li>
+
+
+<h4 class="relative group">MarkWord 
+    <div id="markword" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#markword" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+</li>
+</ol>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181622639.png" alt="image-20250319181622639" />
+      
+    </figure>
+</p>
+<blockquote>
+<ul>
+<li>hashcode：25位的对象标识Hash码</li>
+<li>age：对象分代年龄占4位</li>
+<li>biased_lock：偏向锁标识，占1位 ，0表示没有开始偏向锁，1表示开启了偏向锁</li>
+<li>thread：持有偏向锁的线程ID，占23位</li>
+<li>epoch：偏向时间戳，占2位</li>
+<li>ptr_to_lock_record：轻量级锁状态下，指向栈中锁记录的指针，占30位</li>
+<li>ptr_to_heavyweight_monitor：重量级锁状态下，指向对象监视器Monitor的指针，占30位</li>
+</ul></blockquote>
+<p>我们可以通过lock的标识，来判断是哪一种锁的等级</p>
+<ul>
+<li>后三位是001表示无锁</li>
+<li>后三位是101表示偏向锁</li>
+<li>后两位是00表示轻量级锁</li>
+<li>后两位是10表示重量级锁</li>
+</ul>
+<ol>
+<li>
+
+
+<h4 class="relative group">再说Monitor重量级锁 
+    <div id="%E5%86%8D%E8%AF%B4monitor%E9%87%8D%E9%87%8F%E7%BA%A7%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%86%8D%E8%AF%B4monitor%E9%87%8D%E9%87%8F%E7%BA%A7%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+</li>
+</ol>
+<p>每个 Java 对象都可以关联一个 Monitor 对象，如果使用 synchronized 给对象上锁（重量级）之后，<strong>该对象头的Mark Word 中就被设置指向 Monitor 对象的指针</strong></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181636967.png" alt="image-20250319181636967" />
+      
+    </figure>
+</p>
+<p>简单说就是：每个对象的对象头都可以设置monoitor的指针，让对象与monitor产生关联</p>
+<ol>
+<li>
+
+
+<h4 class="relative group">轻量级锁 
+    <div id="%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+</li>
+</ol>
+<p>在很多的情况下，在Java程序运行时，同步块中的代码都是不存在竞争的，不同的线程交替的执行同步块中的代码。这种情况下，用重量级锁是没必要的。因此JVM引入了轻量级锁的概念。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 同步块 A</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">method2</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 同步块 B</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>加锁的流程</strong></p>
+<p>1.在线程栈中创建一个Lock Record，将其obj字段指向锁对象。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181652235.png" alt="image-20250319181652235" />
+      
+    </figure>
+</p>
+<p>2.通过CAS指令将Lock Record的地址存储在对象头的mark word中（数据进行交换），如果对象处于无锁状态则修改成功，代表该线程获得了轻量级锁。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181702494.png" alt="image-20250319181702494" />
+      
+    </figure>
+</p>
+<p>3.如果是当前线程已经持有该锁了，代表这是一次锁重入。设置Lock Record第一部分为null，起到了一个重入计数器的作用。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181716221.png" alt="image-20250319181716221" />
+      
+    </figure>
+</p>
+<p>4.如果CAS修改失败，说明发生了竞争，需要膨胀为重量级锁。</p>
+<p><strong>解锁过程</strong></p>
+<p>1.遍历线程栈,找到所有obj字段等于当前锁对象的Lock Record。</p>
+<p>2.如果Lock Record的Mark Word为null，代表这是一次重入，将obj设置为null后continue。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181733615.png" alt="image-20250319181733615" />
+      
+    </figure>
+</p>
+<p>3.如果Lock Record的 Mark Word不为null，则利用CAS指令将对象头的mark word恢复成为无锁状态。如果失败则膨胀为重量级锁。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181746534.png" alt="image-20250319181746534" />
+      
+    </figure>
+</p>
+<ol>
+<li>
+
+
+<h4 class="relative group">偏向锁 
+    <div id="%E5%81%8F%E5%90%91%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%81%8F%E5%90%91%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+</li>
+</ol>
+<p>轻量级锁在没有竞争时（就自己这个线程），每次重入仍然需要执行 CAS 操作。</p>
+<p>Java 6 中引入了偏向锁来做进一步优化：只有第一次使用 CAS 将线程 ID 设置到对象的 Mark Word 头，之后发现</p>
+<p>这个线程 ID 是自己的就表示没有竞争，不用重新 CAS。以后只要不发生竞争，这个对象就归该线程所有</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">m1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 同步块 A</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">m2</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">m2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 同步块 B</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">m3</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">m3</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>加锁的流程</strong></p>
+<p>1.在线程栈中创建一个Lock Record，将其obj字段指向锁对象。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181834213.png" alt="image-20250319181834213" />
+      
+    </figure>
+</p>
+<p>2.通过CAS指令将Lock Record的<strong>线程id</strong>存储在对象头的mark word中，同时也设置偏向锁的标识为101，如果对象处于无锁状态则修改成功，代表该线程获得了偏向锁。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181844478.png" alt="image-20250319181844478" />
+      
+    </figure>
+</p>
+<p>3.如果是当前线程已经持有该锁了，代表这是一次锁重入。设置Lock Record第一部分为null，起到了一个重入计数器的作用。与轻量级锁不同的时，这里不会再次进行cas操作，只是判断对象头中的线程id是否是自己，因为缺少了cas操作，性能相对轻量级锁更好一些</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181855246.png" alt="image-20250319181855246" />
+      
+    </figure>
+</p>
+<p>解锁流程参考轻量级锁</p>
+<p><strong>参考回答</strong></p>
+<p>Java中的synchronized有偏向锁、轻量级锁、重量级锁三种形式，分别对应了锁只被一个线程持有、不同线程交替持有锁、多线程竞争锁三种情况。</p>
+<p>重量级锁：底层使用的Monitor实现，里面涉及到了用户态和内核态的切换、进程的上下文切换，成本较高，性能比较低。</p>
+<p>轻量级锁：线程加锁的时间是错开的（也就是没有竞争），可以使用轻量级锁来优化。轻量级修改了对象头的锁标志，相对重量级锁性能提升很多。每次修改都是CAS操作，保证原子性</p>
+<p>偏向锁：一段很长的时间内都只被一个线程使用锁，可以使用了偏向锁，在第一次获得锁时，会有一个CAS操作，之后该线程再获取锁，只需要判断mark word中是否是自己的线程id即可，而不是开销相对较大的CAS命令</p>
+<p>一旦锁发生了竞争，都会升级为重量级锁</p>
+<ol>
+<li>
+
+
+<h3 class="relative group">你谈谈 JMM（Java 内存模型） 
+    <div id="%E4%BD%A0%E8%B0%88%E8%B0%88-jmmjava-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BD%A0%E8%B0%88%E8%B0%88-jmmjava-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+</li>
+</ol>
+<blockquote>
+<p>难易程度：☆☆☆</p>
+<p>出现频率：☆☆☆</p></blockquote>
+<p>JMM(Java Memory Model)Java内存模型,是java虚拟机规范中所定义的一种内存模型。</p>
+<p>Java内存模型(Java Memory Model)描述了Java程序中各种变量(线程共享变量)的访问规则，以及在JVM中将变量存储到内存和从内存中读取变量这样的底层细节。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181924591.png" alt="image-20250319181924591" />
+      
+    </figure>
+</p>
+<p>特点：</p>
+<ol>
+<li>所有的共享变量都存储于主内存(计算机的RAM)这里所说的变量指的是实例变量和类变量。不包含局部变量，因为局部变量是线程私有的，因此不存在竞争问题。</li>
+<li>每一个线程还存在自己的工作内存，线程的工作内存，保留了被线程使用的变量的工作副本。</li>
+<li>线程对变量的所有的操作(读，写)都必须在工作内存中完成，而不能直接读写主内存中的变量，不同线程之间也不能直接访问对方工作内存中的变量，线程间变量的值的传递需要通过主内存完成。</li>
+</ol>
+<p><strong>参考回答</strong></p>
+<p>Java内存模型是Java虚拟机规范中定义的一种非常重要的内存模型。它的主要作用是描述Java程序中线程共享变量的访问规则，以及这些变量在JVM中是如何被存储和读取的，涉及到一些底层的细节。</p>
+<p>这个模型有几个核心的特点。首先，所有的共享变量，包括实例变量和类变量，都被存储在主内存中，也就是计算机的RAM。需要注意的是，局部变量并不包含在内，因为它们是线程私有的，所以不存在竞争问题。</p>
+<p>其次，每个线程都有自己的工作内存，这里保留了线程所使用的变量的工作副本。这意味着，线程对变量的所有操作，无论是读还是写，都必须在自己的工作内存中完成，而不能直接读写主内存中的变量。</p>
+<p>最后，不同线程之间不能直接访问对方工作内存中的变量。如果线程间需要传递变量的值，那么这个过程必须通过主内存来完成。</p>
+
+
+<h3 class="relative group">1.4.1 如何使用 synchronized？ 
+    <div id="141-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-synchronized" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#141-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-synchronized" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>synchronized</code> 关键字的使用方式主要有下面 3 种：</p>
+<ol>
+<li>修饰实例方法</li>
+<li>修饰静态方法</li>
+<li>修饰代码块</li>
+</ol>
+<p><strong>1. 修饰实例方法</strong>（锁当前对象实例）</p>
+<p>给当前对象实例加锁，进入同步代码前要获得 <strong>当前对象实例的锁</strong> 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//业务代码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>2. 修饰静态方法</strong>（锁当前类）</p>
+<p>给当前类加锁，会作用于类的所有对象实例 ，进入同步代码前要获得 <strong>当前 class 的锁</strong>。</p>
+<p>这是因为静态成员不属于任何一个实例对象，归整个类所有，不依赖于类的特定实例，被类的所有实例共享。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">synchronized</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//业务代码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>静态 <code>synchronized</code> 方法和非静态 <code>synchronized</code> 方法之间的调用互斥么？不互斥！如果一个线程 A 调用一个实例对象的非静态 <code>synchronized</code> 方法，而线程 B 需要调用这个实例对象所属类的静态 <code>synchronized</code> 方法，是允许的，不会发生互斥现象，因为访问静态 <code>synchronized</code> 方法占用的锁是当前类的锁，而访问非静态 <code>synchronized</code> 方法占用的锁是当前实例对象锁。</p>
+<p><strong>3. 修饰代码块</strong>（锁指定对象/类）</p>
+<p>对括号里指定的对象/类加锁：</p>
+<ul>
+<li><code>synchronized(object)</code> 表示进入同步代码库前要获得 <strong>给定对象的锁</strong>。</li>
+<li><code>synchronized(类.class)</code> 表示进入同步代码前要获得 <strong>给定 Class 的锁</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">synchronized</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//业务代码</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>总结</strong></p>
+<ul>
+<li>
+<p><code>synchronized</code> 关键字加到 <code>static</code> 静态方法和 <code>synchronized(class)</code> 代码块上都是是给 Class 类上锁；</p>
+</li>
+<li>
+<p><code>synchronized</code> 关键字加到实例方法上是给对象实例上锁；</p>
+</li>
+<li>
+<p>尽量不要使用 <code>synchronized(String a)</code> 因为 JVM 中，字符串常量池具有缓存功能。</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">1.4.2 构造方法可以用 synchronized 修饰么？ 
+    <div id="142-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E7%94%A8-synchronized-%E4%BF%AE%E9%A5%B0%E4%B9%88" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#142-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E7%94%A8-synchronized-%E4%BF%AE%E9%A5%B0%E4%B9%88" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>构造方法不能使用 synchronized 关键字修饰。不过，可以在构造方法内部使用 synchronized 代码块。</p>
+<p>另外，构造方法本身是线程安全的，但如果在构造方法中涉及到共享资源的操作，就需要采取适当的同步措施来保证整个构造过程的线程安全。</p>
+
+
+<h3 class="relative group">1.4.3 synchronized 底层原理 
+    <div id="143-synchronized-%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#143-synchronized-%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>synchronized 关键字底层原理属于 JVM 层面的东西。</p>
+<p><strong>synchronized 同步语句块的情况</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SynchronizedDemo</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;synchronized 代码块&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>通过 JDK 自带的 <code>javap</code> 命令查看 <code>SynchronizedDemo</code> 类的相关字节码信息：首先切换到类的对应目录执行 <code>javac SynchronizedDemo.java</code> 命令生成编译后的 .class 文件，然后执行<code>javap -c -s -v -l SynchronizedDemo.class</code>。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319181947897.png" alt="image-20250319181947897" />
+      
+    </figure>
+</p>
+<p>从上面我们可以看出：<strong><code>synchronized</code> 同步语句块的实现使用的是 <code>monitorenter</code> 和 <code>monitorexit</code> 指令，其中 <code>monitorenter</code> 指令指向同步代码块的开始位置，<code>monitorexit</code> 指令则指明同步代码块的结束位置。</strong></p>
+<p>上面的字节码中包含一个 <code>monitorenter</code> 指令以及两个 <code>monitorexit</code> 指令，这是为了保证锁在同步代码块代码正常执行以及出现异常的这两种情况下都能被正确释放。</p>
+<p>当执行 <code>monitorenter</code> 指令时，线程试图获取锁也就是获取 <strong>对象监视器 <code>monitor</code></strong> 的持有权。</p>
+<blockquote>
+<p>在 Java 虚拟机(HotSpot)中，Monitor 是基于 C++实现的，由<a href="https://github.com/openjdk-mirror/jdk7u-hotspot/blob/50bdefc3afe944ca74c3093e7448d6b889cd20d1/src/share/vm/runtime/objectMonitor.cpp" target="_blank">ObjectMonitor</a>实现的。每个对象中都内置了一个 <code>ObjectMonitor</code>对象。</p>
+<p>另外，<code>wait/notify</code>等方法也依赖于<code>monitor</code>对象，这就是为什么只有在同步的块或者方法中才能调用<code>wait/notify</code>等方法，否则会抛出<code>java.lang.IllegalMonitorStateException</code>的异常的原因。</p></blockquote>
+<p>在执行<code>monitorenter</code>时，会尝试获取对象的锁，如果锁的计数器为 0 则表示锁可以被获取，获取后将锁计数器设为 1 也就是加 1。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182003747.png" alt="image-20250319182003747" />
+      
+    </figure>
+</p>
+<p>对象锁的的拥有者线程才可以执行 <code>monitorexit</code> 指令来释放锁。在执行 <code>monitorexit</code> 指令后，将锁计数器设为 0，表明锁被释放，其他线程可以尝试获取锁。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182016132.png" alt="image-20250319182016132" />
+      
+    </figure>
+</p>
+<p>如果获取对象锁失败，那当前线程就要阻塞等待，直到锁被另外一个线程释放为止。</p>
+<p><strong>synchronized 修饰方法的情况</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SynchronizedDemo2</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;synchronized 方法&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182033529.png" alt="image-20250319182033529" />
+      
+    </figure>
+</p>
+<p><code>synchronized</code> 修饰的方法并没有 <code>monitorenter</code> 指令和 <code>monitorexit</code> 指令，取而代之的是 <code>ACC_SYNCHRONIZED</code> 标识，该标识指明了该方法是一个同步方法。JVM 通过该 <code>ACC_SYNCHRONIZED</code> 访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用。</p>
+<p>如果是实例方法，JVM 会尝试获取实例对象的锁。如果是静态方法，JVM 会尝试获取当前 class 的锁。</p>
+<p><strong>总结</strong></p>
+<p><code>synchronized</code> 同步语句块的实现使用的是 <code>monitorenter</code> 和 <code>monitorexit</code> 指令，其中 <code>monitorenter</code> 指令指向同步代码块的开始位置，<code>monitorexit</code> 指令则指明同步代码块的结束位置。</p>
+<p><code>synchronized</code> 修饰的方法并没有 <code>monitorenter</code> 指令和 <code>monitorexit</code> 指令，取而代之的是 <code>ACC_SYNCHRONIZED</code> 标识，该标识指明了该方法是一个同步方法。</p>
+<p><strong>不过两者的本质都是对对象监视器 monitor 的获取。</strong></p>
+<p>相关推荐：<a href="https://tech.youzan.com/javasuo-yu-xian-cheng-de-na-xie-shi/" target="_blank">Java 锁与线程的那些事 - 有赞技术团队</a> 。</p>
+<p>🧗🏻 进阶一下：学有余力的小伙伴可以抽时间详细研究一下对象监视器 <code>monitor</code>。</p>
+
+
+<h4 class="relative group">1.4.3.1 JDK1.6 之后的synchronized底层做了哪些优化？锁升级原理了解吗？ 
+    <div id="1431-jdk16-%E4%B9%8B%E5%90%8E%E7%9A%84synchronized%E5%BA%95%E5%B1%82%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E9%94%81%E5%8D%87%E7%BA%A7%E5%8E%9F%E7%90%86%E4%BA%86%E8%A7%A3%E5%90%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1431-jdk16-%E4%B9%8B%E5%90%8E%E7%9A%84synchronized%E5%BA%95%E5%B1%82%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E9%94%81%E5%8D%87%E7%BA%A7%E5%8E%9F%E7%90%86%E4%BA%86%E8%A7%A3%E5%90%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>在 Java 6 之后， <code>synchronized</code> 引入了大量的优化如自旋锁、适应性自旋锁、锁消除、锁粗化、偏向锁、轻量级锁等技术来减少锁操作的开销，这些优化让 <code>synchronized</code> 锁的效率提升了很多（JDK18 中，偏向锁已经被彻底废弃，前面已经提到过了）。</p>
+<p>锁主要存在四种状态，依次是：无锁状态、偏向锁状态、轻量级锁状态、重量级锁状态，他们会随着竞争的激烈而逐渐升级。注意锁可以升级不可降级，这种策略是为了提高获得锁和释放锁的效率。</p>
+<blockquote>
+<p>偏向锁：偏向锁是指当一个线程获取到锁之后，会在对象头中记录下该线程的标识，下次再进入同步块时，无需进行额外的加锁操作，从而提高性能。</p>
+<p>轻量级锁：当多个线程对同一个锁进行争夺时，JVM会使用轻量级锁来避免传统的重量级锁带来的性能消耗。它采用自旋的方式，即不放弃CPU的执行时间，尝试快速获取锁，避免线程阻塞和上下文切换的开销。</p>
+<p>重量级锁：当多个线程对同一个锁进行强烈争夺时，JVM会升级为重量级锁，此时线程会进入阻塞状态，等待锁的释放。这种方式适用于竞争激烈的情况，但会带来较大的性能开销。</p>
+<p>自旋锁（Spin Lock）：自旋锁是一种非阻塞的锁机制，当线程无法立即获取锁时，它会持续检查锁是否被释放，直到获取到锁为止。自旋锁可以减少线程的上下文切换开销，但在锁持有时间较长的情况下，会浪费CPU资源。</p>
+<p>适应性自旋锁（Adaptive Spin Lock）：适应性自旋锁是一种结合了自旋锁和阻塞锁的锁机制。在刚开始时，线程会采用自旋的方式来等待锁的释放，但随着时间的推移，如果锁仍然没有被释放，线程会逐渐切换到阻塞状态，从而减少CPU资源的浪费.</p>
+<p>分段锁（Segmented Locking）：分段锁是一种针对共享资源过多的情况下的锁优化机制。它将共享资源分成多个段，每个线程只需要对其中一部分进行加锁和解锁操作，从而减少了锁的竞争和开销。</p>
+<p>锁粗化（Lock Coarsening）：锁粗化是一种针对长时间持有锁的场景的优化策略。如果一个线程在短时间内需要连续多次加锁和解锁，那么可以将这些加锁和解锁操作合并成一个较大的加锁和解锁操作，从而减少了加锁和解锁的次数，提高了效率。</p>
+<p>乐观锁（Optimistic Locking）：乐观锁是一种基于冲突检测的锁机制。它假设多个线程同时访问和修改同一个数据的概率较小，因此在读取数据时不会加锁，而是在提交修改时检测是否存在冲突。如果存在冲突，则进行回滚或重试操作。乐观锁适用于读操作较多的场景。</p></blockquote>
+<p>锁优化技术是为了提高synchronized的并发性能，根据锁的竞争程度和持有时间的长短选择相应的锁状态，使得多个线程能够更高效地共享资源。</p>
+<p><code>synchronized</code> 锁升级是一个比较复杂的过程，面试也很少问到，如果你想要详细了解的话，可以看看这篇文章：<a href="https://www.cnblogs.com/star95/p/17542850.html" target="_blank">浅析 synchronized 锁升级的原理与实现</a>。</p>
+
+
+<h4 class="relative group">1.4.3.2 synchronized 和 volatile 有什么区别？ 
+    <div id="1432-synchronized-%E5%92%8C-volatile-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1432-synchronized-%E5%92%8C-volatile-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><code>synchronized</code> 关键字和 <code>volatile</code> 关键字是两个互补的存在，而不是对立的存在！</p>
+<ul>
+<li><code>volatile</code> 关键字是线程同步的轻量级实现，所以 <code>volatile</code>性能肯定比<code>synchronized</code>关键字要好 。但是 <code>volatile</code> 关键字只能用于变量而 <code>synchronized</code> 关键字可以修饰方法以及代码块 。</li>
+<li><code>volatile</code> 关键字能保证数据的可见性，但不能保证数据的原子性。<code>synchronized</code> 关键字两者都能保证。</li>
+<li><code>volatile</code>关键字主要用于解决变量在多个线程之间的可见性，而 <code>synchronized</code> 关键字解决的是多个线程之间访问资源的同步性。</li>
+</ul>
+
+
+<h3 class="relative group">1.4.4 线程同步 
+    <div id="144-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#144-%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>同步与异步关注的是<strong>消息通信机制</strong>。</p>
+<ul>
+<li>==<strong>所谓同步，就是在发出一个调用时，在没有得到结果之前，该调用就不返回。</strong>==但是一旦调用返回，就得到返回值了。换句话说，就是由调用者主动等待这个调用的结果。</li>
+<li>==<strong>而异步则是相反，调用在发出之后，这个调用就直接返回了，所以就没有返回结果。</strong>==换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在调用发出之后，被调用者通过“状态”、“通知”、“回调”三种途径通知调用者。</li>
+</ul>
+<p>可以使用哪一种途径依赖于被调用者的实现，除非被调用者提供多种选择，否则不受调用者控制。</p>
+<ul>
+<li>如果被调用者用状态来通知，那么调用者就需要每隔一定时间检查一次，效率就很低。</li>
+<li>如果使用通知和回调的方式，效率则很高。因为被调用者几乎不需要做额外的操作。</li>
+</ul>
+<p><strong>举个例子：</strong></p>
+<p>你打电话问书店老板有没有《高效演讲》这本书。</p>
+<p>如果是<strong>同步通信机制</strong>，书店老板会说，你稍等，”我查一下&rdquo;，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。</p>
+<p>而<strong>异步通信机制</strong>，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调。</p>
+<p>线程的同步是为了保证多个线程按照特定的顺序、协调地访问共享资源，避免数据不一致和竞争条件等问题。
+在Java中，常见的线程同步方式有以下几种：</p>
+<ol>
+<li><strong>使用synchronized关键字</strong>：通过在方法或代码块前加上synchronized关键字，确保同一时间只有一个线程可以执行标记为同步的代码。这样可以避免多个线程同时访问共享资源造成的数据不一致问题。(实现原理： synchronized基于监视器锁（Monitor Lock）实现，底层依赖于操作系统的互斥锁（Mutex）。每个对象在Java中都与一个隐式的监视器相关联，使用synchronized时，线程需要获得对象的监视器锁，然后才能进入同步代码块。Java的对象有一个头（Object Header），其中包含一个Mark Word，用于存储锁的信息。锁有不同的状态，包括无锁状态、偏向锁、轻量级锁和重量级锁，JVM会根据竞争情况自动进行状态变换以优化性能。)</li>
+<li><strong>使用ReentrantLock类</strong>：它是一个**<a href="#%e5%8f%af%e9%87%8d%e5%85%a5%e9%94%81">可重入锁</a>**，通过调用lock()和unlock()方法获取和释放锁。与synchronized不同，ReentrantLock提供了更灵活的同步控制，例如可实现公平性和试锁等待时间。</li>
+<li><strong>使用wait()、notify()和notifyAll()方法</strong>：这些方法是Object类的方法，允许线程间进行协作和通信。通过调用wait()方法使线程进入等待状态，然后其他线程可以通过notify()或notifyAll()方法唤醒等待的线程。</li>
+<li><strong>使用CountDownLatch和CyclicBarrier</strong>：它们是并发工具类，用于线程之间的同步和等待。CountDownLatch可用于等待一组线程完成操作，而CyclicBarrier用于等待一组线程互相达到屏障位置。</li>
+</ol>
+<p>选择适合的同步方式会根据具体需求和场景而定。在使用任何同步机制时，需要注意避免死锁和性能问题，合理设计同步范围和粒度。</p>
+
+
+<h3 class="relative group">1.4.5 synchronized的实现原理 
+    <div id="145-synchronized%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#145-synchronized%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>synchronized是Java语言中最基本的线程同步机制，它通过互斥锁来控制线程对共享变量的访问。</strong>
+具体实现原理如下：</p>
+<ol>
+<li>synchronized的实现基础是对象内部的锁（也称为监视器锁或管程），每个锁关联着一个对象实例。</li>
+<li>当synchronized作用于某个对象时，它就会尝试获取这个对象的锁，如果锁没有被其他线程占用，则当前线程获取到锁，并可以执行同步代码块；如果锁已经被其他线程占用，那么当前线程就会阻塞在同步块之外，直到获取到锁才能进入同步块。</li>
+<li>synchronized还支持作用于类上，此时它锁住的是整个类，而不是类的某个实例。在这种情况下，由于只有一个锁存在，所以所有使用该类的线程都需要等待锁的释放。</li>
+<li>在JVM内部，每个Java对象都有头信息，其中包含了对象的一些元信息和状态标志。synchronized通过修改头信息的状态标志来实现锁的获取和释放。</li>
+<li>synchronized还支持可重入性，即在同一个线程中可以多次获取同一个锁，这样可以避免死锁问题。</li>
+<li>Java虚拟机会通过锁升级的方式来提升synchronized的效率，比如偏向锁、轻量级锁和重量级锁等机制，使得在竞争不激烈的情况下，synchronized的性能可以达到与非同步代码相当的水平。</li>
+</ol>
+
+
+<h3 class="relative group">1.4.6 synchronized 可以锁字符串吗 
+    <div id="146-synchronized-%E5%8F%AF%E4%BB%A5%E9%94%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%90%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#146-synchronized-%E5%8F%AF%E4%BB%A5%E9%94%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%90%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>使用synchronized 锁字符串，需要将字符串添加到字符串常量池中。日常使用中通过通过new对象的方式创建对象，再取对象的字段，因此需要使用intern把字符串放入常量池中，但是直接使用String的intern全部把字符串放入常量池会存在一些问题。显然在数据量很大的情况下，将所有字符串都放入常量池是不合理的，常量池大小依赖服务器内存，且只有等待fullGC，极端情况下会导致频繁fullGC。并且在数据量很大的情况下，将字符串放入常量会存在性能问题。
+可以用google的guava包的interner类：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">test</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Interner</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Interners</span><span class="p">.</span><span class="na">newWeakInterner</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">test</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">synchronized</span><span class="w"> </span><span class="p">(</span><span class="n">lock</span><span class="p">.</span><span class="na">intern</span><span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="na">toString</span><span class="p">())){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">//do...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Interner是通过MapMaker构造ConcurrentMap来实现弱引用，ConcurrentMap用分段的方式保证安全。这里个人觉得比常量池的优点就在于这里是弱引用的方式，便于map的回收，常量池只能依赖于fullGC，这里的回收在不使用或内存不够用条件下即可被回收（Minor GC阶段）</p>
+<blockquote>
+<p>synchronized可以锁存活于字符串常量池中的值，不能锁存活于堆栈中的字符串（字符串地址要相同）
+可以使用String对象.intern() 将该字符串放入字符串常量池中，但是常量池的回收只能依赖于fullGC，故不推荐使用
+推荐使用guava包下的interner类，使用弱引用的方式，在内存不足的时候自动进行垃圾回收</p></blockquote>
+
+
+<h3 class="relative group">1.4.7  <a id="可重入锁">可重入锁</a> 
+    <div id="147--%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#147--%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>可重入锁可以简单理解为一个可以重复获取的锁，就像拿钥匙开锁一样，你可以反复用同一把钥匙开锁。这种锁在同一线程内是安全的，因为它可以被同一线程多次获取，而不会产生不一致的状态。
+举个例子，假设有一个线程A在执行一个方法，同时这个方法内部又调用另一个方法，那么线程A可以重复获取同一个锁，而不会出现死锁的情况。因为同一线程可以多次获取同一个锁，所以这种锁机制避免了死锁的发生。
+但是需要注意，在使用可重入锁时，必须保证在释放锁之前已经获取了该锁，否则会导致死锁。同时还需要保证在获取锁的时候没有嵌套地获取其他锁，否则也会导致死锁。另外，还必须保证在获取锁的时候没有阻塞其他线程，否则同样会导致死锁。
+总之，可重入锁是一种安全的锁机制，可以避免死锁的发生。但是在使用时需要注意以上几点，以确保程序的正确性和安全性。</p>
+<p><strong>阻塞与非阻塞</strong></p>
+<p>阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态。</p>
+<ul>
+<li>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。</li>
+<li>非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。</li>
+</ul>
+<p><strong>接着上面的例子：</strong></p>
+<p>打电话问书店老板有没有《高效演讲》这本书，</p>
+<ul>
+<li>如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果。</li>
+<li>如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了（先去干点别的，不用傻等）， 当然你也要偶尔过几分钟检查一下老板有没有返回结果。</li>
+</ul>
+<p><strong>同步代码块解决数据安全问题：</strong></p>
+<ul>
+<li>
+<p>安全问题出现的条件</p>
+<ul>
+<li>
+<p>是多线程环境</p>
+</li>
+<li>
+<p>有共享数据</p>
+</li>
+<li>
+<p>有多条语句操作共享数据</p>
+</li>
+</ul>
+</li>
+<li>
+<p>如何解决多线程安全问题呢?</p>
+<ul>
+<li>基本思想：让程序没有安全问题的环境</li>
+</ul>
+</li>
+<li>
+<p>怎么实现呢?</p>
+<ul>
+<li>
+<p>把多条语句操作共享数据的代码给锁起来，让任意时刻只能有一个线程执行即可</p>
+</li>
+<li>
+<p>Java提供了同步代码块的方式来解决</p>
+</li>
+</ul>
+</li>
+<li>
+<p>同步代码块格式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">synchronized</span><span class="p">(</span><span class="n">任意对象</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">多条语句操作共享数据的代码</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>synchronized(任意对象)：就相当于给代码加锁了，任意对象就可以看成是一把锁</p>
+</li>
+<li>
+<p>同步的好处和弊端</p>
+<ul>
+<li>
+<p>好处：解决了多线程的数据安全问题</p>
+</li>
+<li>
+<p>弊端：当线程很多时，因为每个线程都会去判断同步上的锁，这是很耗费资源的，无形中会降低程序的运行效率</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>同步方法解决数据安全问题：</strong></p>
+<ul>
+<li>
+<p>同步方法的格式</p>
+<p>同步方法：就是把synchronized关键字加到方法上</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">修饰符</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="n">返回值类型</span><span class="w"> </span><span class="nf">方法名</span><span class="p">(</span><span class="n">方法参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">方法体</span><span class="err">；</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>同步方法的锁对象是什么呢?</p>
+<p>​	this</p>
+</li>
+<li>
+<p>静态同步方法</p>
+<p>同步静态方法：就是把synchronized关键字加到静态方法上</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">修饰符</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="n">返回值类型</span><span class="w"> </span><span class="nf">方法名</span><span class="p">(</span><span class="n">方法参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">方法体</span><span class="err">；</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>同步静态方法的锁对象是什么呢?</p>
+<p>​	类名.class</p>
+</li>
+</ul>
+
+
+<h2 class="relative group">1.5 ReentrantLock 
+    <div id="15-reentrantlock" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#15-reentrantlock" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">1.5.1 ReentrantLock 是什么？ 
+    <div id="151-reentrantlock-%E6%98%AF%E4%BB%80%E4%B9%88" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#151-reentrantlock-%E6%98%AF%E4%BB%80%E4%B9%88" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>ReentrantLock</code> 实现了 <code>Lock</code> 接口，是一个可重入且独占式的锁，和 <code>synchronized</code> 关键字类似。不过，<code>ReentrantLock</code> 更灵活、更强大，增加了轮询、超时、中断、公平锁和非公平锁等高级功能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReentrantLock</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Lock</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span></span></span></code></pre></div><p><code>ReentrantLock</code> 里面有一个内部类 <code>Sync</code>，<code>Sync</code> 继承 AQS（<code>AbstractQueuedSynchronizer</code>），添加锁和释放锁的大部分操作实际上都是在 <code>Sync</code> 中实现的。<code>Sync</code> 有公平锁 <code>FairSync</code> 和非公平锁 <code>NonfairSync</code> 两个子类。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182056304.png" alt="image-20250319182056304" />
+      
+    </figure>
+</p>
+<p><code>ReentrantLock</code> 默认使用非公平锁，也可以通过构造器来显式的指定使用公平锁。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 传入一个 boolean 值，true 时为公平锁，false 时为非公平锁</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="nf">ReentrantLock</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">fair</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fair</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FairSync</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NonfairSync</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>从上面的内容可以看出， <code>ReentrantLock</code> 的底层就是由 AQS 来实现的。关于 AQS 的相关内容推荐阅读 <a href="https://javaguide.cn/java/concurrent/aqs.html" target="_blank">AQS 详解</a> 这篇文章。</p>
+
+
+<h3 class="relative group">1.5.2 Sychronized和ReentrantLock的区别 
+    <div id="152-sychronized%E5%92%8Creentrantlock%E7%9A%84%E5%8C%BA%E5%88%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#152-sychronized%E5%92%8Creentrantlock%E7%9A%84%E5%8C%BA%E5%88%AB" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>sychronized是一个关键字，ReentrantLock是一个类</li>
+<li>sychronized会自动的加锁与释放锁，ReentrantLock需要程序员手动加锁与释放锁</li>
+<li>sychronized的底层是JVM层面的锁，ReentrantLock是API层面的锁</li>
+<li>sychronized是非公平锁，ReentrantLock可以选择公平锁或非公平锁</li>
+<li>sychronized锁的是对象，锁信息保存在对象头中，ReentrantLock通过代码中int类型的state标识来标识锁的状态</li>
+<li>sychronized底层有一个锁升级的过程</li>
+</ol>
+<p><strong>相似之处</strong></p>
+<ol>
+<li>线程安全：两者都可以用于实现对临界区的保护，从而实现线程安全。</li>
+<li>可重入性：两者都支持可重入性，允许一个线程多次获取同一把锁而不会发生死锁。</li>
+<li>互斥锁：本质上都是互斥锁，确保在同一时刻只有一个线程能执行被同步的代码块。</li>
+</ol>
+<p><strong>区别</strong></p>
+<ol>
+<li>灵活性：
+○synchronized是Java语言的内置特性，使用简单，但功能有限。
+○ReentrantLock是一个类，提供了更高级的锁功能，例如：可中断的锁获取、超时获取锁、非阻塞尝试获取锁以及可实现更复杂的同步结构。</li>
+<li>性能：
+○在较低竞争时，synchronized会自动使用优化，比如锁消除和锁粗化，使得它的性能在某些情况下可能高于ReentrantLock。
+○ReentrantLock可能在高竞争下表现更好，因为它可以提供非公平和公平锁模式，公平模式会严格按照请求锁的顺序来分配锁。</li>
+<li>实现的功能：
+○ReentrantLock提供了更多控制功能，如lock()、unlock()方法，可在任何位置灵活调用。而synchronized在语法上是强制块结束时锁自动释放。
+○ReentrantLock提供tryLock()和lockInterruptibly()方法，以响应中断和超时。</li>
+<li>条件变量：
+○ReentrantLock具有与之关联的Condition对象，可以搭配lock来更细粒度的控制线程通信。
+○synchronized配合Object的wait()和notify()/notifyAll()来进行线程之间的通信，但不如Condition灵活。</li>
+</ol>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>**synchronized：**适用于简单的同步需求。由于其语法简单且嵌入在Java语言中，特别适合锁定范围与方法等价的情况。小规模、多线程竞争不高的情况下表现优异。适合开发者不想处理锁的复杂生命周期时使用。</li>
+<li>**ReentrantLock：**适用于需要更高级的同步控制，或者锁定范围与方法不同时。特别是在需要公平锁、可中断锁操作、尝试获取带超时功能的锁，或者需要多个条件等待时，应选择ReentrantLock。当系统规模较大、线程数较多，且具有复杂同步需求的情境时表现突出。</li>
+</ul>
+
+
+<h3 class="relative group">1.5.2 公平锁和非公平锁 
+    <div id="152-%E5%85%AC%E5%B9%B3%E9%94%81%E5%92%8C%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#152-%E5%85%AC%E5%B9%B3%E9%94%81%E5%92%8C%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p><strong>公平锁</strong> : 锁被释放之后，先申请的线程先得到锁。性能较差一些，因为公平锁为了保证时间上的绝对顺序，上下文切换更频繁。</p>
+</li>
+<li>
+<p><strong>非公平锁</strong>：锁被释放之后，后申请的线程可能会先获取到锁，是随机或者按照其他优先级排序的。性能更好，但可能会导致某些线程永远无法获取到锁。</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">1.5.3 公平锁和非公平锁的底层实现 
+    <div id="153-%E5%85%AC%E5%B9%B3%E9%94%81%E5%92%8C%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#153-%E5%85%AC%E5%B9%B3%E9%94%81%E5%92%8C%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>首先不管是公平锁和非公平锁，它们的底层实现都会使用AQS来进行排队，它们的区别在于：线程在使用lock()方法加锁时，如果是公平锁，会先检查AQS队列中是否存在线程在排队，如果有线程在排队，则当前线程也进行排队，如果是非公平锁，则不会去检查是否有线程在排队，而是直接竞争锁。</p>
+<p>不管是公平锁还是非公平锁，一旦没竞争到锁，都会进行排队，当锁释放时，都是唤醒排在最前面的线程，所以非公平锁只是体现在了线程加锁阶段，而没有体现在线程被唤醒阶段。</p>
+<p>另外，ReentrantLock是可重入锁，不管是公平锁还是非公平锁都是可重入的。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182113962.png" alt="image-20250319182113962" />
+      
+    </figure>
+</p>
+<p><strong>非公平锁加锁：</strong></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182141407.png" alt="image-20250319182141407" />
+      
+    </figure>
+</p>
+<p>ReentrantLock是Java中提供的一种可重入锁，它支持两种锁的模式：公平锁和非公平锁。这两种锁模式的底层实现略有不同：</p>
+<ol>
+<li>公平锁（Fair Lock）： 公平锁的特点是按照请求锁的顺序来分配锁，即先到先得。在ReentrantLock中，通过构造函数可以选择创建一个公平锁。公平锁的底层实现使用了一个FIFO队列（First-In-First-Out），即等待队列。当一个线程请求锁时，如果锁已经被其他线程持有，请求线程会被放入等待队列的末尾，按照请求的顺序等待锁的释放。当锁被释放时，等待队列中的第一个线程会被唤醒并获得锁。</li>
+<li>非公平锁（Non-Fair Lock）： 非公平锁不考虑请求锁的顺序，它允许新的请求线程插队并尝试立即获取锁，而不管其他线程是否在等待。在ReentrantLock中，默认情况下创建的是非公平锁。非公平锁的底层实现中，有一个等待队列，但它不会严格按照请求的顺序来分配锁，而是根据线程竞争锁的情况来判断是否立即分配给新的请求线程。
+底层实现中，无论是公平锁还是非公平锁，都使用了类似的同步器（Sync）来管理锁的状态和线程的竞争。不同之处在于如何处理等待队列中的线程，以及是否按照请求的顺序来分配锁。</li>
+</ol>
+<p>需要注意的是，公平锁虽然遵循公平性原则，但在高并发情况下可能会引入较大的性能开销，因为每次都要维护一个有序的等待队列。而非公平锁则更加灵活，但可能导致某些线程一直获取不到锁。</p>
+
+
+<h3 class="relative group">1.5.4 synchronized 和 ReentrantLock 
+    <div id="154-synchronized-%E5%92%8C-reentrantlock" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#154-synchronized-%E5%92%8C-reentrantlock" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>两者都是可重入锁</strong></p>
+<p><strong>可重入锁</strong> 也叫递归锁，指的是线程可以再次获取自己的内部锁。比如一个线程获得了某个对象的锁，此时这个对象锁还没有释放，当其再次想要获取这个对象的锁的时候还是可以获取的，如果是不可重入锁的话，就会造成死锁。</p>
+<p>JDK 提供的所有现成的 <code>Lock</code> 实现类，包括 <code>synchronized</code> 关键字锁都是可重入的。</p>
+<p>在下面的代码中，<code>method1()</code> 和 <code>method2()</code>都被 <code>synchronized</code> 关键字修饰，<code>method1()</code>调用了<code>method2()</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SynchronizedDemo</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;方法1&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">method2</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">synchronized</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;方法2&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>由于 <code>synchronized</code>锁是可重入的，同一个线程在调用<code>method1()</code> 时可以直接获得当前对象的锁，执行 <code>method2()</code> 的时候可以再次获取这个对象的锁，不会产生死锁问题。假如<code>synchronized</code>是不可重入锁的话，由于该对象的锁已被当前线程所持有且无法释放，这就导致线程在执行 <code>method2()</code>时获取锁失败，会出现死锁问题。</p>
+<p><strong>synchronized依赖于JVM而ReentrantLock依赖于API</strong></p>
+<p><code>synchronized</code> 是依赖于 JVM 实现的，前面我们也讲到了 虚拟机团队在 JDK1.6 为 <code>synchronized</code> 关键字进行了很多优化，但是这些优化都是在虚拟机层面实现的，并没有直接暴露给我们。</p>
+<p><code>ReentrantLock</code> 是 JDK 层面实现的（也就是 API 层面，需要 lock() 和 unlock() 方法配合 try/finally 语句块来完成），所以我们可以通过查看它的源代码，来看它是如何实现的。</p>
+<p><strong>ReentrantLock比synchronized增加了一些高级功能</strong></p>
+<p>相比<code>synchronized</code>，<code>ReentrantLock</code>增加了一些高级功能。主要来说主要有三点：</p>
+<ul>
+<li><strong>等待可中断</strong> : <code>ReentrantLock</code>提供了一种能够中断等待锁的线程的机制，通过 <code>lock.lockInterruptibly()</code> 来实现这个机制。也就是说正在等待的线程可以选择放弃等待，改为处理其他事情。</li>
+<li><strong>可实现公平锁</strong> : <code>ReentrantLock</code>可以指定是公平锁还是非公平锁。而<code>synchronized</code>只能是非公平锁。所谓的公平锁就是先等待的线程先获得锁。<code>ReentrantLock</code>默认情况是非公平的，可以通过 <code>ReentrantLock</code>类的<code>ReentrantLock(boolean fair)</code>构造方法来指定是否是公平的。</li>
+<li><strong>可实现选择性通知（锁可以绑定多个条件）</strong>: <code>synchronized</code>关键字与<code>wait()</code>和<code>notify()</code>/<code>notifyAll()</code>方法相结合可以实现等待/通知机制。<code>ReentrantLock</code>类当然也可以实现，但是需要借助于<code>Condition</code>接口与<code>newCondition()</code>方法。</li>
+</ul>
+<p>如果你想使用上述功能，那么选择 <code>ReentrantLock</code> 是一个不错的选择。</p>
+<p>关于 <code>Condition</code>接口的补充：</p>
+<blockquote>
+<p><code>Condition</code>是 JDK1.5 之后才有的，它具有很好的灵活性，比如可以实现多路通知功能也就是在一个<code>Lock</code>对象中可以创建多个<code>Condition</code>实例（即对象监视器），<strong>线程对象可以注册在指定的<code>Condition</code>中，从而可以有选择性的进行线程通知，在调度线程上更加灵活。 在使用<code>notify()/notifyAll()</code>方法进行通知时，被通知的线程是由 JVM 选择的，用<code>ReentrantLock</code>类结合<code>Condition</code>实例可以实现“选择性通知”</strong> ，这个功能非常重要，而且是 <code>Condition</code> 接口默认提供的。而<code>synchronized</code>关键字就相当于整个 <code>Lock</code> 对象中只有一个<code>Condition</code>实例，所有的线程都注册在它一个身上。如果执行<code>notifyAll()</code>方法的话就会通知所有处于等待状态的线程，这样会造成很大的效率问题。而<code>Condition</code>实例的<code>signalAll()</code>方法，只会唤醒注册在该<code>Condition</code>实例中的所有等待线程。</p></blockquote>
+
+
+<h3 class="relative group">1.5.5 可中断锁和不可中断锁 
+    <div id="155-%E5%8F%AF%E4%B8%AD%E6%96%AD%E9%94%81%E5%92%8C%E4%B8%8D%E5%8F%AF%E4%B8%AD%E6%96%AD%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#155-%E5%8F%AF%E4%B8%AD%E6%96%AD%E9%94%81%E5%92%8C%E4%B8%8D%E5%8F%AF%E4%B8%AD%E6%96%AD%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p><strong>可中断锁</strong>：获取锁的过程中可以被中断，不需要一直等到获取锁之后 才能进行其他逻辑处理。<code>ReentrantLock</code> 就属于是可中断锁。</p>
+</li>
+<li>
+<p><strong>不可中断锁</strong>：一旦线程申请了锁，就只能等到拿到锁以后才能进行其他的逻辑处理。 <code>synchronized</code> 就属于是不可中断锁。</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">1.5.6 tryLock（）和 lock（）方法 
+    <div id="156-trylock%E5%92%8C-lock%E6%96%B9%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#156-trylock%E5%92%8C-lock%E6%96%B9%E6%B3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li>tryLock()表示尝试加锁，可能加到，也可能加不到，该方法不会阻塞线程，如果加到锁则返回true，没有加到则返回false</li>
+<li>lock()表示阻塞加锁，线程会阻塞直到加到锁，方法也没有返回值</li>
+</ol>
+
+
+<h2 class="relative group">1.6 ReentrantReadWriteLock 
+    <div id="16-reentrantreadwritelock" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#16-reentrantreadwritelock" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><code>ReentrantReadWriteLock</code> 在实际项目中使用的并不多，面试中也问的比较少，简单了解即可。JDK 1.8 引入了性能更好的读写锁 <code>StampedLock</code> 。</p>
+
+
+<h3 class="relative group">1.6.1 ReentrantReadWriteLock 是什么？ 
+    <div id="161-reentrantreadwritelock-%E6%98%AF%E4%BB%80%E4%B9%88" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#161-reentrantreadwritelock-%E6%98%AF%E4%BB%80%E4%B9%88" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>ReentrantReadWriteLock</code> 实现了 <code>ReadWriteLock</code> ，是一个可重入的读写锁，既可以保证多个线程同时读的效率，同时又可以保证有写入操作时的线程安全。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReentrantReadWriteLock</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">implements</span><span class="w"> </span><span class="n">ReadWriteLock</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ReadWriteLock</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Lock</span><span class="w"> </span><span class="nf">readLock</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Lock</span><span class="w"> </span><span class="nf">writeLock</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>一般锁进行并发控制的规则：读读互斥、读写互斥、写写互斥。</li>
+<li>读写锁进行并发控制的规则：读读不互斥、读写互斥、写写互斥（只有读读不互斥）。</li>
+</ul>
+<p><code>ReentrantReadWriteLock</code> 其实是两把锁，一把是 <code>WriteLock</code> (写锁)，一把是 <code>ReadLock</code>（读锁） 。读锁是共享锁，写锁是独占锁。读锁可以被同时读，可以同时被多个线程持有，而写锁最多只能同时被一个线程持有。</p>
+<p>和 <code>ReentrantLock</code> 一样，<code>ReentrantReadWriteLock</code> 底层也是基于 AQS 实现的。</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182207272.png" alt="image-20250319182207272" />
+      
+    </figure>
+</p>
+<p><code>ReentrantReadWriteLock</code> 也支持公平锁和非公平锁，默认使用非公平锁，可以通过构造器来显示的指定。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 传入一个 boolean 值，true 时为公平锁，false 时为非公平锁</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="nf">ReentrantReadWriteLock</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">fair</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">sync</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fair</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FairSync</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NonfairSync</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">readerLock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ReadLock</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">writerLock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">WriteLock</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><strong>ReentrantReadWriteLock 适合什么场景？</strong></p>
+<p>由于 <code>ReentrantReadWriteLock</code> 既可以保证多个线程同时读的效率，同时又可以保证有写入操作时的线程安全。因此，在读多写少的情况下，使用 <code>ReentrantReadWriteLock</code> 能够明显提升系统性能。</p>
+
+
+<h3 class="relative group">1.6.2 共享锁和独占锁有什么区别？ 
+    <div id="162-%E5%85%B1%E4%BA%AB%E9%94%81%E5%92%8C%E7%8B%AC%E5%8D%A0%E9%94%81%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#162-%E5%85%B1%E4%BA%AB%E9%94%81%E5%92%8C%E7%8B%AC%E5%8D%A0%E9%94%81%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>共享锁</strong>：一把锁可以被多个线程同时获得。</li>
+<li><strong>独占锁</strong>：一把锁只能被一个线程获得。</li>
+</ul>
+
+
+<h3 class="relative group">1.6.3 线程持有读锁还能获取写锁吗？ 
+    <div id="163-%E7%BA%BF%E7%A8%8B%E6%8C%81%E6%9C%89%E8%AF%BB%E9%94%81%E8%BF%98%E8%83%BD%E8%8E%B7%E5%8F%96%E5%86%99%E9%94%81%E5%90%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#163-%E7%BA%BF%E7%A8%8B%E6%8C%81%E6%9C%89%E8%AF%BB%E9%94%81%E8%BF%98%E8%83%BD%E8%8E%B7%E5%8F%96%E5%86%99%E9%94%81%E5%90%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>在线程持有读锁的情况下，该线程不能取得写锁(因为获取写锁的时候，如果发现当前的读锁被占用，就马上获取失败，不管读锁是不是被当前线程持有)。</li>
+<li>在线程持有写锁的情况下，该线程可以继续获取读锁（获取读锁时如果发现写锁被占用，只有写锁没有被当前线程占用的情况才会获取失败）。</li>
+</ul>
+<p>读写锁的源码分析，推荐阅读 <a href="https://mp.weixin.qq.com/s/h3VIUyH9L0v14MrQJiiDbw" target="_blank">聊聊 Java 的几把 JVM 级锁 - 阿里巴巴中间件</a> 这篇文章，写的很不错。</p>
+
+
+<h3 class="relative group">1.6.4 读锁为什么不能升级为写锁？ 
+    <div id="164-%E8%AF%BB%E9%94%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%8D%87%E7%BA%A7%E4%B8%BA%E5%86%99%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#164-%E8%AF%BB%E9%94%81%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%8D%87%E7%BA%A7%E4%B8%BA%E5%86%99%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>写锁可以降级为读锁，但是读锁却不能升级为写锁。这是因为读锁升级为写锁会引起线程的争夺，毕竟写锁属于是独占锁，这样的话，会影响性能。</p>
+<p>另外，还可能会有死锁问题发生。举个例子：假设两个线程的读锁都想升级写锁，则需要对方都释放自己锁，而双方都不释放，就会产生死锁。</p>
+
+
+<h3 class="relative group">1.6.5 读写锁的应用场景 
+    <div id="165-%E8%AF%BB%E5%86%99%E9%94%81%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#165-%E8%AF%BB%E5%86%99%E9%94%81%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>ReadWriteLock 是 Java 提供的一种用于解决并发读写问题的锁机制，其主要目的在于提高在读多写少的场景下的并发性能。ReadWriteLock 允许多个线程同时读取共享资源，但是对写操作是独占的。这意味着在一个线程写入数据时，其他线程既不能读取也不能写入。</p>
+<p><strong>应用场景</strong></p>
+<ol>
+<li>缓存系统：
+在缓存系统中，数据读取频率通常远高于数据写入，因此使用读写锁可以提高读取操作的并发性和效率。</li>
+<li>配置管理：
+系统配置或应用程序配置的数据通常在初始化后多为读取，只有在特殊情况下才会更新，因此适合使用读写锁。</li>
+<li>文档编辑：
+多人协同编辑文档时，可能会有许多人同时查看文档内容，只有少数人进行编辑，这种场合也可以使用读写锁。</li>
+<li>游戏状态：
+游戏服务器可能需要频繁读取玩家的状态，而状态更新相对较少，因此读写锁可以提高状态读取的性能。</li>
+</ol>
+<p><strong>关键点</strong></p>
+<ul>
+<li>提升读取性能：ReadWriteLock 允许多个读取线程同时访问共享资源，从而提高了读取性能。</li>
+<li>写锁独占：只有在没有其他线程读取或写入时，写锁才能获得，这保障了数据在写入时的一致性和安全性。</li>
+<li>适用性：适用于读多写少场景，能显著提高系统在并发读取场景下的性能。</li>
+<li>易于使用：ReadWriteLock 提供了清晰的语义分离（读与写），使得代码更具可读性和维护性。</li>
+</ul>
+
+
+<h2 class="relative group">1.7 StampedLock 
+    <div id="17-stampedlock" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#17-stampedlock" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><code>StampedLock</code> 面试中问的比较少，不是很重要，简单了解即可。</p>
+
+
+<h3 class="relative group">1.7.1 StampedLock是什么？ 
+    <div id="171-stampedlock%E6%98%AF%E4%BB%80%E4%B9%88" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#171-stampedlock%E6%98%AF%E4%BB%80%E4%B9%88" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>StampedLock</code> 是 JDK 1.8 引入的性能更好的读写锁，不可重入且不支持条件变量 <code>Condition</code>。</p>
+<p>不同于一般的 <code>Lock</code> 类，<code>StampedLock</code> 并不是直接实现 <code>Lock</code>或 <code>ReadWriteLock</code>接口，而是基于 <strong>CLH 锁</strong> 独立实现的（AQS 也是基于这玩意）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">StampedLock</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p><code>StampedLock</code> 提供了三种模式的读写控制模式：读锁、写锁和乐观读。</p>
+<ul>
+<li><strong>写锁</strong>：独占锁，一把锁只能被一个线程获得。当一个线程获取写锁后，其他请求读锁和写锁的线程必须等待。类似于 <code>ReentrantReadWriteLock</code> 的写锁，不过这里的写锁是不可重入的。</li>
+<li><strong>读锁</strong> （悲观读）：共享锁，没有线程获取写锁的情况下，多个线程可以同时持有读锁。如果己经有线程持有写锁，则其他线程请求获取该读锁会被阻塞。类似于 <code>ReentrantReadWriteLock</code> 的读锁，不过这里的读锁是不可重入的。</li>
+<li><strong>乐观读</strong>：允许多个线程获取乐观读以及读锁。同时允许一个写线程获取写锁。</li>
+</ul>
+<p>另外，<code>StampedLock</code> 还支持这三种锁在一定条件下进行相互转换 。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">long</span><span class="w"> </span><span class="nf">tryConvertToWriteLock</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">stamp</span><span class="p">){}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">long</span><span class="w"> </span><span class="nf">tryConvertToReadLock</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">stamp</span><span class="p">){}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">long</span><span class="w"> </span><span class="nf">tryConvertToOptimisticRead</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">stamp</span><span class="p">){}</span><span class="w">
+</span></span></span></code></pre></div><p><code>StampedLock</code> 在获取锁的时候会返回一个 long 型的数据戳，该数据戳用于稍后的锁释放参数，如果返回的数据戳为 0 则表示锁获取失败。当前线程持有了锁再次获取锁还是会返回一个新的数据戳，这也是<code>StampedLock</code>不可重入的原因。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 写锁</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">writeLock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w">  </span><span class="c1">// bypass acquireWrite in fully unlocked case only</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">((((</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ABITS</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0L</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">U</span><span class="p">.</span><span class="na">compareAndSwapLong</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">STATE</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">WBIT</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">next</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">acquireWrite</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">0L</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 读锁</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">readLock</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w">  </span><span class="c1">// bypass acquireRead on common uncontended case</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">whead</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">wtail</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ABITS</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">RFULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="n">U</span><span class="p">.</span><span class="na">compareAndSwapLong</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">STATE</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">RUNIT</span><span class="p">))</span><span class="w"> </span><span class="o">?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">next</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">acquireRead</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">0L</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 乐观读</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">tryOptimisticRead</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(((</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">WBIT</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0L</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">SBITS</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">0L</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div>
+
+<h3 class="relative group">1.7.2 StampedLock 的性能为什么更好？ 
+    <div id="172-stampedlock-%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9B%B4%E5%A5%BD" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#172-stampedlock-%E7%9A%84%E6%80%A7%E8%83%BD%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9B%B4%E5%A5%BD" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>相比于传统读写锁多出来的乐观读是<code>StampedLock</code>比 <code>ReadWriteLock</code> 性能更好的关键原因。<code>StampedLock</code> 的乐观读允许一个写线程获取写锁，所以不会导致所有写线程阻塞，也就是当读多写少的时候，写线程有机会获取写锁，减少了线程饥饿的问题，吞吐量大大提高。</p>
+
+
+<h3 class="relative group">1.7.3 StampedLock适合什么场景？ 
+    <div id="173-stampedlock%E9%80%82%E5%90%88%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#173-stampedlock%E9%80%82%E5%90%88%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>和 <code>ReentrantReadWriteLock</code> 一样，<code>StampedLock</code> 同样适合读多写少的业务场景，可以作为 <code>ReentrantReadWriteLock</code>的替代品，性能更好。</p>
+<p>不过，需要注意的是<code>StampedLock</code>不可重入，不支持条件变量 <code>Condition</code>，对中断操作支持也不友好（使用不当容易导致 CPU 飙升）。如果你需要用到 <code>ReentrantLock</code> 的一些高级性能，就不太建议使用 <code>StampedLock</code> 了。</p>
+<p>另外，<code>StampedLock</code> 性能虽好，但使用起来相对比较麻烦，一旦使用不当，就会出现生产问题。强烈建议你在使用<code>StampedLock</code> 之前，看看 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/locks/StampedLock.html" target="_blank">StampedLock 官方文档中的案例</a>。</p>
+
+
+<h3 class="relative group">1.7.4 StampedLock的底层原理了解吗？ 
+    <div id="174-stampedlock%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%BA%86%E8%A7%A3%E5%90%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#174-stampedlock%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%BA%86%E8%A7%A3%E5%90%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><code>StampedLock</code> 不是直接实现 <code>Lock</code>或 <code>ReadWriteLock</code>接口，而是基于 <strong>CLH 锁</strong> 实现的（AQS 也是基于这玩意），CLH 锁是对自旋锁的一种改良，是一种隐式的链表队列。<code>StampedLock</code> 通过 CLH 队列进行线程的管理，通过同步状态值 <code>state</code> 来表示锁的状态和类型。</p>
+<p><code>StampedLock</code> 的原理和 AQS 原理比较类似，这里就不详细介绍了，感兴趣的可以看看下面这两篇文章：</p>
+<ul>
+<li><a href="https://javaguide.cn/java/concurrent/aqs.html" target="_blank">AQS 详解</a></li>
+<li><a href="https://segmentfault.com/a/1190000015808032" target="_blank">StampedLock 底层原理分析</a></li>
+</ul>
+<p>如果你只是准备面试的话，建议多花点精力搞懂 AQS 原理即可，<code>StampedLock</code> 底层原理在面试中遇到的概率非常小。</p>
+
+
+<h1 class="relative group">自旋锁 
+    <div id="%E8%87%AA%E6%97%8B%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%87%AA%E6%97%8B%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>阻塞或唤醒一个Java进程，需要操作系统切换CPU状态来完成，这种状态转换需要耗费处理器时间。如果同步代码块中的内容过于简单，状态转换花费的时间有可能比用户代码执行的时间还长。</p>
+<p>在许多场景中，同步资源的锁定时间很短，为了这一小段时间去切换线程，线程挂起和恢复现场的时间花费可能会让系统得不偿失。如果物理机器有多个处理器，可以让两个或以上的线程并行执行，我们就可以让后面那个请求锁的线程不放弃CPU的执行时间，看看前面那个得到锁的线程是否会很快释放锁。</p>
+<p>而为了让当前线程“稍等一下”，我们就需要让当前线程进行自旋，如果自旋完成后，持有锁的线程已经释放了锁，当前线程就可以不进入阻塞状态而是直接获得同步资源，避免的线程切换的开销，这就是自旋锁。</p>
+<p><strong>自旋锁与非自旋锁流程图</strong></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="./assets/image-20250319182231110.png" alt="image-20250319182231110" />
+      
+    </figure>
+</p>
+<p><strong>自旋锁的缺陷</strong></p>
+<p>自旋等待虽然避免了线程切换的开销，但它要占用处理器时间。如果锁被占用的时间很短，自旋的效果就很好。反之，如果所被占用的时间很长，自旋就是在白白浪费处理器时间。所以，自旋等待的时间必须要有限度，默认情况下是10次，也可以通过
+-Xx:PreBloackSpin来更改。如果在自旋10次都没有获得锁，就应该挂起线程。</p>
+<p><strong>自旋锁的实现原理</strong></p>
+<p>自旋锁的实现原理同样也是CAS，AtomicInteger中调用unsafe进行自增操作源码中的do…while循环就是一个自旋操作，如果修改数值失败则通过循环来执行自旋，直到成功。</p>
+<p><strong>自适应自旋锁</strong></p>
+<p>自旋锁在Java1.6中改为默认开启，并引入了自适应的自旋锁。
+自适应意味着自旋的次数不在固定，而是由前一次在同一个锁上的自旋时间和锁的拥有者的状态共同决定。
+如果在同一个锁对象上，自旋等待刚刚成功获得过锁，并且持有锁的线程正在运行中，那么虚拟机就会认为这次自旋也是很可能再次成功的，进而它将会允许线程自旋相对更长的时间。
+如果对于某个锁，线程很少成功获得过，则会相应减少自旋的时间甚至直接进入阻塞的状态，避免浪费处理器资源。</p>
+
+
+<h1 class="relative group">锁升级 
+    <div id="%E9%94%81%E5%8D%87%E7%BA%A7" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%94%81%E5%8D%87%E7%BA%A7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+
+<h2 class="relative group">1.8 无锁状态 
+    <div id="18-%E6%97%A0%E9%94%81%E7%8A%B6%E6%80%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#18-%E6%97%A0%E9%94%81%E7%8A%B6%E6%80%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>程序不会有锁的竞争。那么这种情况我们不需要加锁，所以这种情况下对象锁状态为无锁。</p>
+
+
+<h2 class="relative group">1.9 偏向锁 
+    <div id="19-%E5%81%8F%E5%90%91%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#19-%E5%81%8F%E5%90%91%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<blockquote>
+<p>偏向锁，顾名思义，它会偏向于第一个访问锁的线程</p></blockquote>
+<ul>
+<li>如果在运行过程中，同步锁只有一个线程访问，不存在多线程争用的情况，则线程是不需要触发同步的，这种情况下，就会给线程加一个偏向锁。线程第二次到达同步代码块时，会判断此时持有锁的线程是否就是自己，如果是则正常往下执行。由于之前没有释放锁，这里也就不需要重新加锁。如果自始至终使用锁的线程只有一个，很明显偏向锁几乎没有额外开销，性能极高。</li>
+<li>如果在运行过程中，遇到了其他线程抢占锁，则持有偏向锁的线程会被挂起，JVM会消除它身上的偏向锁，将锁恢复到标准的轻量级锁。偏向锁通过消除资源无竞争情况下的同步原语，进一步提高了程序的运行性能。一旦有第二个线程加入<code>锁竞争</code>，偏向锁就升级为轻量级锁（自旋锁）。升级为轻量级锁的时候需要撤销偏向锁，撤销偏向锁的时候会导致<code>STW(stop the word)</code>操作；</li>
+</ul>
+<blockquote>
+<p>锁竞争：如果多个线程轮流获取一个锁，但是每次获取锁的时候都很顺利，没有发生阻塞，那么就不存在锁竞争。只有当某线程尝试获取锁的时候，发现该锁已经被占用，只能等待其释放，这才发生了锁竞争。</p></blockquote>
+
+
+<h2 class="relative group">1.10 轻量级锁 
+    <div id="110-%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#110-%E8%BD%BB%E9%87%8F%E7%BA%A7%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li>在轻量级锁状态下继续锁竞争，如果成功就成功获取轻量级锁。否则进入<strong>锁膨胀</strong>阶段，<strong>没有抢到锁的线程将自旋</strong>，即不停地循环判断锁是否能够被成功获取。长时间的自旋操作是非常消耗资源的，一个线程持有锁，其他线程就只能在原地空耗CPU，执行不了任何有效的任务，这种现象叫做<strong>忙等（busy-waiting）</strong>。如果锁竞争情况严重，某个达到最大自旋次数的线程，会将轻量级锁升级为<code>重量级锁</code>。</li>
+</ul>
+<blockquote>
+<p>轻量级锁不会自旋，另一个线程一旦CAS竞争轻量级锁失败，直接进入锁的膨胀。锁膨胀会有自旋操作，但最终在java层面看到的锁状态都会是重量级锁。所以，轻量级锁在加锁过程中是没有自旋的。自旋发生在轻量级锁膨胀为重量级锁的过程中。
+相反，重量级锁在加锁的过程中，为了避免直接park线程，会有自适应自旋操作，来挽救线程被park。</p></blockquote>
+
+
+<h2 class="relative group">1.11 重量级锁 
+    <div id="111-%E9%87%8D%E9%87%8F%E7%BA%A7%E9%94%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#111-%E9%87%8D%E9%87%8F%E7%BA%A7%E9%94%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li>当后续线程尝试获取锁时，发现被占用的锁是重量级锁，则直接将自己挂起，等待将来被唤醒。在JDK1.6之前，synchronized直接加重量级锁，很明显现在得到了很好的优化。</li>
+</ul>
+<blockquote>
+<p>重量级锁的特点：其他线程试图获取锁时，都会被阻塞，只有持有锁的线程释放锁之后才会唤醒这些线程。</p></blockquote>
+<p><strong>锁的优缺点对比</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>锁</th>
+          <th>优点</th>
+          <th>缺点</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>偏向锁</td>
+          <td>加锁和解锁不需要额外的消耗，和执行非同步方法比仅存在纳秒级的差距。</td>
+          <td>如果线程间存在锁竞争，会带来额外的锁撤销的消耗。</td>
+          <td>适用于只有一个线程访问同步块场景。</td>
+      </tr>
+      <tr>
+          <td>轻量级锁</td>
+          <td>竞争的线程不会阻塞，提高了程序的响应速度。</td>
+          <td>如果始终得不到锁竞争的线程使用自旋会消耗CPU。</td>
+          <td>追求响应时间。同步块执行速度非常快。</td>
+      </tr>
+      <tr>
+          <td>重量级锁</td>
+          <td>线程竞争不使用自旋，不会消耗CPU。</td>
+          <td>线程阻塞，响应时间缓慢。</td>
+          <td>追求吞吐量。同步块执行速度较长。</td>
+      </tr>
+  </tbody>
+</table>
+
+
+<h2 class="relative group">1.12 锁升级场景 
+    <div id="112-%E9%94%81%E5%8D%87%E7%BA%A7%E5%9C%BA%E6%99%AF" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#112-%E9%94%81%E5%8D%87%E7%BA%A7%E5%9C%BA%E6%99%AF" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<blockquote>
+<p>场景1： 经常只有某一个线程来加锁。</p></blockquote>
+<ul>
+<li>加锁过程：也许获取锁的经常为同一个线程，这种情况下为了避免加锁造成的性能开销，加<code>偏向锁</code>。</li>
+<li>偏向锁的执行流程如下：
+<ul>
+<li>1、线程首先检查该对象头的线程ID是否为当前线程；</li>
+<li>2、<code>A：</code>如果对象头的线程ID和当前线程ID一致，则直接执行代码；<code>B：</code>如果不是当前线程ID则使用CAS方式替换对象头中的线程ID，如果使用CAS替换不成功则说明有线程正在执行，存在锁的竞争，这时需要撤销偏向锁，升级为轻量级锁。</li>
+<li>3、如果CAS替换成功，则把对象头的线程ID改为自己的线程ID，然后执行代码。</li>
+<li>4、执行代码完成之后释放锁，把对象头的线程ID修改为空。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>场景2： 有线程来参与锁的竞争，但是获取锁的冲突时间很短。</p></blockquote>
+<ul>
+<li><strong>当开始有锁的竞争了，那么偏向锁就会升级到轻量级锁；</strong></li>
+<li>线程获取锁出现冲突时，线程必须做出决定是继续在这里等，还是先去做其他事情，等会再来看看，而轻量级锁的采用了继续在这里等的方式。当发现有锁竞争，线程首先会使用自旋的方式循环在这里获取锁，因为使用自旋的方式非常消耗CPU。当一定时间内通过自旋的方式无法获取到锁的话，那么锁就开始升级为重量级锁了。</li>
+</ul>
+<blockquote>
+<p>场景3： 有大量的线程参与锁的竞争，冲突性很高。</p></blockquote>
+<ul>
+<li>当获取锁冲突多，时间越长的时候，线程肯定无法继续在这里死等了，所以只好先挂起，然后等前面获取锁的线程释放了锁之后，再开启下一轮的锁竞争，而这种形式就是我们的重量级锁。</li>
+</ul>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\/1742270561314-Java-锁机制\/index.md"
+        var oid_likes = "likes_posts\/1742270561314-Java-锁机制\/index.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/1741877418704-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%BB%E7%BB%93-%E4%B8%8A/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >计算机网络总结 上</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-03-13T00:00:00&#43;00:00">13 March 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/1742270512074-java-%E7%BA%BF%E7%A8%8B/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >java 线程</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-03-18T00:00:00&#43;00:00">18 March 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+    <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href=""
+            title="">
+            
+            
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2025
+      山有木兮
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="https://shanymxc.github.io/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>
