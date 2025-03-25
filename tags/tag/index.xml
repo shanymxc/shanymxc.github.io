@@ -301,15 +301,5 @@
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741323945921-java-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/featured.png" />
     </item>
     
-    <item>
-      <title>IO</title>
-      <link>https://shanymxc.github.io/posts/1741259090641-io/</link>
-      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
-      <author>mvz09630521@126.com (山有木兮)</author>
-      <guid>https://shanymxc.github.io/posts/1741259090641-io/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1741259090641-io/featured.png" />
-    </item>
-    
   </channel>
 </rss>
