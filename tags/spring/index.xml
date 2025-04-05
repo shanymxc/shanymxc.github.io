@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on Blog homepage</title>
+    <link>https://shanymxc.github.io/tags/spring/</link>
+    <description>Recent content in Spring on Blog homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>mvz09630521@126.com (山有木兮)</managingEditor>
+    <webMaster>mvz09630521@126.com (山有木兮)</webMaster>
+    <copyright>© 2025 山有木兮</copyright>
+    <lastBuildDate>Sat, 05 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://shanymxc.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SpringAOP</title>
+      <link>https://shanymxc.github.io/posts/1743861126159-springaop/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1743861126159-springaop/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1743861126159-springaop/featured.png" />
+    </item>
+    
+    <item>
+      <title>Spring基础</title>
+      <link>https://shanymxc.github.io/posts/1743861115260-spring%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0000</pubDate>
+      <author>mvz09630521@126.com (山有木兮)</author>
+      <guid>https://shanymxc.github.io/posts/1743861115260-spring%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://shanymxc.github.io/posts/1743861115260-spring%E5%9F%BA%E7%A1%80/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
